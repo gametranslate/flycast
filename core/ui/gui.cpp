@@ -17,6 +17,9 @@
     along with Flycast.  If not, see <https://www.gnu.org/licenses/>.
  */
 #include "gui.h"
+#ifdef FLYCAST_CLARITY
+#include "clarity/clarity.h"
+#endif
 #include "rend/osd.h"
 #include "cfg/cfg.h"
 #include "imgui.h"
@@ -373,6 +376,9 @@ static void delayedKeysUp()
 
 static void gui_endFrame(bool gui_open) {
     imguiDriver->renderDrawData(ImGui::GetDrawData(), gui_open);
+#ifdef FLYCAST_CLARITY_SMOKE_TEST
+    clarity::smokeAfterFrame();
+#endif
     delayedKeysUp();
 }
 
@@ -1346,6 +1352,9 @@ void gui_display_ui()
 	}
 
 	gui_newFrame();
+#ifdef FLYCAST_CLARITY_SMOKE_TEST
+	clarity::smokeBeforeFrame();
+#endif
 	ImGui::NewFrame();
 	error_msg_shown = false;
 	bool gui_open = gui_is_open();
@@ -1645,6 +1654,10 @@ void gui_togglePause()
 
 void gui_setState(GuiState newState)
 {
+#ifdef FLYCAST_CLARITY
+    if (newState == GuiState::Settings && gui_state != GuiState::Settings)
+        clarity::beginSession();
+#endif
 	gui_state = newState;
 	if (newState == GuiState::Closed)
 	{

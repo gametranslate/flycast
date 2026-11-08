@@ -17,6 +17,9 @@
     along with Flycast.  If not, see <https://www.gnu.org/licenses/>.
  */
 #include "settings.h"
+#ifdef FLYCAST_CLARITY
+#include "clarity/clarity.h"
+#endif
 #include "gui.h"
 #include "IconsFontAwesome6.h"
 #include "mainui.h"
@@ -207,24 +210,15 @@ void gui_display_settings()
 	static std::array<bool, 4> mapleDevicesChanges;
 	static std::array<std::array<bool, 2>, 4> expDevicesChanges;
 
-	fullScreenWindow(false);
-	ImguiStyleVar _(ImGuiStyleVar_WindowRounding, 0);
+    auto finishSettings = [&](bool close) {
 
-    ImGui::Begin(T("Settings"), nullptr, ImGuiWindowFlags_DragScrolling | ImGuiWindowFlags_NoResize
-    		| ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse);
-	ImVec2 normal_padding = ImGui::GetStyle().FramePadding;
-
-    if (ImGui::Button(T("Done"), ScaledVec2(100, 30)))
-    {
     	if (uiUserScaleUpdated)
     	{
     		uiUserScaleUpdated = false;
     		mainui_reinit();
     	}
-    	if (game_started)
-    		gui_setState(GuiState::Commands);
-    	else
-    		gui_setState(GuiState::Main);
+        if (close)
+            gui_setState(game_started ? GuiState::Commands : GuiState::Main);
     	dreampotato::update();
  		if (game_started && settings.platform.isConsole())
 		{
@@ -249,7 +243,27 @@ void gui_display_settings()
     	mapleDevicesChanges = {};
     	expDevicesChanges = {};
        	SaveSettings();
-    }
+    };
+#ifdef FLYCAST_CLARITY
+    if (clarity::display(finishSettings))
+        return;
+#endif
+
+	fullScreenWindow(false);
+	ImguiStyleVar _(ImGuiStyleVar_WindowRounding, 0);
+
+    ImGui::Begin(T("Settings"), nullptr, ImGuiWindowFlags_DragScrolling | ImGuiWindowFlags_NoResize
+            | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoCollapse);
+	ImVec2 normal_padding = ImGui::GetStyle().FramePadding;
+
+    if (ImGui::Button(T("Done"), ScaledVec2(100, 30)))
+        finishSettings(true);
+#ifdef FLYCAST_CLARITY
+    ImGui::SameLine();
+    if (clarity::returnFromClassic())
+        finishSettings(false);
+#endif
+
 	if (game_started)
 	{
 	    ImGui::SameLine();

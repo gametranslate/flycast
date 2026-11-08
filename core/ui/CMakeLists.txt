@@ -1,4 +1,19 @@
 if(NOT LIBRETRO)
+    option(FLYCAST_CLARITY "Build Clarity desktop settings" ${WIN32})
+    if(FLYCAST_CLARITY)
+        target_sources(${PROJECT_NAME} PRIVATE clarity/clarity.cpp)
+        target_compile_definitions(${PROJECT_NAME} PRIVATE FLYCAST_CLARITY)
+        option(FLYCAST_CLARITY_SMOKE_TEST "Run deterministic DX11 UI capture test (not a user build)" OFF)
+        if(FLYCAST_CLARITY_SMOKE_TEST AND WIN32 AND USE_DX11)
+            target_sources(${PROJECT_NAME} PRIVATE clarity/tests/ui_smoke.cpp)
+            set_property(SOURCE
+                "${CMAKE_CURRENT_SOURCE_DIR}/gui.cpp"
+                "${CMAKE_CURRENT_SOURCE_DIR}/clarity/clarity.cpp"
+                "${CMAKE_CURRENT_SOURCE_DIR}/clarity/tests/ui_smoke.cpp"
+                TARGET_DIRECTORY ${PROJECT_NAME}
+                APPEND PROPERTY COMPILE_DEFINITIONS FLYCAST_CLARITY_SMOKE_TEST)
+        endif()
+    endif()
     target_sources(${PROJECT_NAME} PRIVATE
             game_scanner.cpp
             game_scanner.h
