@@ -64,6 +64,11 @@ public:
 		set_button(DC_AXIS_RIGHT, 15);			// L
 		set_button(DC_BTN_D, 4);				// Q (Coin)
 		set_button(EMU_BTN_SCREENSHOT, 69);		// F12
+#ifdef FLYCAST_CLARITY
+		set_button(EMU_BTN_SAVESTATE, 58);		// F1
+		set_button(EMU_BTN_LOADSTATE, 59);		// F2
+		set_button(EMU_BTN_NEXTSLOT, 60);		// F3
+#endif
 
 		dirty = false;
 	}

@@ -11,7 +11,7 @@ DX9, Lua, Discord and Breakpad disabled for this package.
 | Expanded Clarity frontend Release build | PASS |
 | `FLYCAST_CLARITY=OFF` Release build | PASS; original frontend compiles |
 | Final Release with `FLYCAST_CLARITY_SMOKE_TEST=OFF` | PASS; smoke source/definitions absent from project and report/capture markers absent from executable |
-| Final user-build interaction | NOT RUN after smoke was disabled: Computer Use reported a physical Escape stop at launch; final Release compiled and contains no smoke report/capture markers |
+| Final user-build interaction | User subsequently reported the normal Release works; this is user feedback, not a completed automated native-dialog suite |
 | Real Option/Settings storage regression | PASS: globals, game A/B isolation, compatibility locks, explicit profile creation/removal, global language |
 | Source option coverage | PASS: 118 upstream references accounted for; UITheme/UILanguage replaced by Clarity controls, Android SAF outside Windows scope |
 | Translation table and printf placeholders | PASS: 704 entries × 8 locales; generated strings/search reproducible |
@@ -55,3 +55,26 @@ The package is assembled from a clean allowlist of files, not the previous
 portable directory used for gameplay. Personal saves, BIOS, mappings, folder
 paths and generated caches are excluded. Source patch reconstruction and ZIP
 checksums are verified by `.work/package-polished.py`.
+
+## Startup defaults update
+
+- Windows Clarity now starts at 1280×900 logical pixels, limited by the monitor
+  work area and DPI. Only the old 640×480 default (or invalid dimensions) is
+  migrated, once; other saved geometry and fullscreen/maximized state remain.
+  The initialized size is saved before the marker so interrupted shutdown cannot
+  restore the old default on the next launch.
+- Fresh appearance is Night; saved Light preferences remain effective. Default
+  keyboard mapping assigns F1 Save State, F2 Load State and F3 Next Save State
+  Slot, through the existing emulator actions. Existing mapping files are kept.
+- A normal Release launched from an isolated DX11 config with no window/theme
+  settings; its saved config after exit recorded 1280×900 and Night=yes. The user
+  interacted with this QA instance. Computer Use capture failed with
+  `window capture timed out`; no screenshot or F1/F2 gameplay claim is made.
+- Release rebuilt with smoke testing OFF after these changes. Review confirmed
+  the keyboard scancodes match both SDL and Windows Raw Input translation.
+  Low-resolution/high-DPI displays, saved-geometry migration and in-game hotkey
+  behavior were reviewed in source but not exercised in this follow-up.
+- The web-download ZIP is a separate, clean binary-only package containing
+  `flycast.exe`, `emu.cfg` (English/Night/DX11) and `LICENSE`. Source, reports,
+  screenshots and personal data are excluded; previous portable folders are
+  untouched. ZIP integrity and executable identity are checked when packaging.

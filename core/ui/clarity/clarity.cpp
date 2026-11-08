@@ -12,7 +12,7 @@
 namespace clarity {
 namespace {
 config::Option<std::string, false> language("Language", "en", "clarity");
-config::Option<bool, false> night("Night", false, "clarity");
+config::Option<bool, false> night("Night", true, "clarity");
 constexpr const char* localeIds[] = {"en", "vi", "de", "fr", "es", "zh_CN", "zh_TW", "ko"};
 constexpr const char* localeNames[] = {"English", "Tiếng Việt", "Deutsch", "Français", "Español", "简体中文", "繁體中文", "한국어"};
 const std::unordered_map<std::string, std::array<const char*, 8>> strings = {

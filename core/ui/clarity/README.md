@@ -5,7 +5,8 @@ The startup library, settings, controller mapping, pause menu, cheats and
 achievement list share the same Light/Night appearance. On desktop Windows,
 all shared file/folder pickers use the standard Windows Common Item Dialog.
 Loading, onboarding and connection dialogs use the same theme. No web runtime
-is required, and the emulator core and existing option defaults are unchanged.
+is required. Emulation option defaults are unchanged; Clarity provides its own
+desktop window, appearance and keyboard shortcut defaults.
 
 ## Building
 
@@ -19,10 +20,16 @@ are shown only when their feature is available.
 
 ## Interface and settings
 
-- English and Light are the initial preferences. English, Vietnamese, German,
+- English and Night are the initial preferences. English, Vietnamese, German,
   French, Spanish, Simplified Chinese, Traditional Chinese and Korean are
   available. Language and theme are global `[clarity]` options in `emu.cfg`,
   independent of the BIOS language and the retained legacy UI preferences.
+- Windows starts with a centered 1280×900 logical-pixel window, reduced to fit
+  the monitor work area at the current DPI. The old 640×480 default upgrades
+  once; other saved sizes, maximized/fullscreen state and later resizes are kept.
+- Default keyboard shortcuts are F1 for Save State, F2 for Load State and F3 for
+  Next Save State Slot. Saved mappings and an explicitly selected Light theme
+  are preserved; Reset mapping restores these shortcuts.
 - The library has game search, platform filters, grid/list views, folder setup
   and direct access to Button mapping, Settings and About. Drop a supported game
   file onto the library to play, or a folder to add it. Add game folder and all

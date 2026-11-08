@@ -866,6 +866,34 @@ bool sdl_recreate_window(u32 flags)
 		}
 	}
 #endif
+#if defined(FLYCAST_CLARITY) && defined(_WIN32) && !defined(TARGET_UWP)
+	const bool initializeClarityWindow = window == nullptr
+			&& !config::loadBool("clarity", "WindowSizeInitialized");
+	if (initializeClarityWindow
+			&& ((windowPos.w == WINDOW_WIDTH && windowPos.h == WINDOW_HEIGHT)
+					|| windowPos.w <= 0 || windowPos.h <= 0))
+	{
+		// Upgrade the old 640x480 default once. Subsequent user resizes, including
+		// a deliberate return to 640x480, keep using the normal saved geometry.
+		SDL_Point position{ windowPos.x, windowPos.y };
+		int display = SDL_GetPointDisplayIndex(&position);
+		if (display < 0)
+			display = 0;
+		windowPos.w = 1280;
+		windowPos.h = 900;
+		SDL_Rect bounds{};
+		if (SDL_GetDisplayUsableBounds(display, &bounds) == 0
+				|| SDL_GetDisplayBounds(display, &bounds) == 0)
+		{
+			// Work area excludes the taskbar. Reserve room for borders/title bar
+			// and scale in the same logical units as the saved window dimensions.
+			windowPos.w = std::min(windowPos.w, std::max(1, int(bounds.w / hdpiScaling) - 64));
+			windowPos.h = std::min(windowPos.h, std::max(1, int(bounds.h / hdpiScaling) - 64));
+		}
+		windowPos.x = SDL_WINDOWPOS_CENTERED_DISPLAY(display);
+		windowPos.y = SDL_WINDOWPOS_CENTERED_DISPLAY(display);
+	}
+#endif
 	if (window != nullptr)
 	{
 		SDL_DestroyWindow(window);
@@ -891,6 +919,16 @@ bool sdl_recreate_window(u32 flags)
 	}
 	settings.display.width = windowPos.w * hdpiScaling;
 	settings.display.height = windowPos.h * hdpiScaling;
+#if defined(FLYCAST_CLARITY) && defined(_WIN32) && !defined(TARGET_UWP)
+	if (initializeClarityWindow)
+	{
+		// Persist the new restore size together with the migration marker, even
+		// if the process is interrupted before its normal shutdown saves geometry.
+		config::saveInt("window", "width", windowPos.w);
+		config::saveInt("window", "height", windowPos.h);
+		config::saveBool("clarity", "WindowSizeInitialized", true);
+	}
+#endif
 
 #ifdef __linux__
 	if (flags & SDL_WINDOW_RESIZABLE)
