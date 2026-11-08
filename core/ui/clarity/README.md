@@ -1,8 +1,9 @@
 # Clarity desktop frontend for Flycast
 
 Clarity is a native C++/Dear ImGui frontend, enabled by default on Windows.
-The startup library, settings, controller mapping, pause menu, file/folder
-picker, cheats and achievement list share the same Light/Night appearance.
+The startup library, settings, controller mapping, pause menu, cheats and
+achievement list share the same Light/Night appearance. On desktop Windows,
+all shared file/folder pickers use the standard Windows Common Item Dialog.
 Loading, onboarding and connection dialogs use the same theme. No web runtime
 is required, and the emulator core and existing option defaults are unchanged.
 
@@ -23,7 +24,11 @@ are shown only when their feature is available.
   available. Language and theme are global `[clarity]` options in `emu.cfg`,
   independent of the BIOS language and the retained legacy UI preferences.
 - The library has game search, platform filters, grid/list views, folder setup
-  and direct access to Button mapping, Settings and About.
+  and direct access to Button mapping, Settings and About. Drop a supported game
+  file onto the library to play, or a folder to add it. Add game folder and all
+  Browse actions open the Windows dialog; there is no Open game button. Drops
+  are ignored while busy or in settings. The disc-change screen accepts disc
+  images and retains Choose a disc.
 - Settings has eleven release pages: Console & appearance, Button mapping,
   Ports & VMU, Graphics, Audio, Library & saves, Folders & BIOS, Network,
   Achievements, Advanced and About. Diagnostics appears in debug/profiling
@@ -44,6 +49,12 @@ are shown only when their feature is available.
 - Saving uses the shared audio gain, UI scaling, Maple reconnect, VMU reset
   and DreamPotato lifecycle. Controller mapping files use upstream input
   detection and persistence rather than a separate mapping format.
+- The Tab quick menu is a centered panel with a primary Resume action, tool
+  tiles, a dedicated save-state preview/slot area and a separate Close Game
+  action. Its content scrolls in small windows. Save/load restrictions and
+  game/disc callbacks retain upstream behavior.
+- Light mode uses white content surfaces, darker text and visible control
+  borders. Hardcore and dependent texture-dump options align with their parents.
 - Icons accompany navigation, categories and major actions. The sidebar
   adapts to translated labels, and becomes an icon rail with tooltips in
   compact windows. Navigation and content scroll independently.
@@ -60,7 +71,8 @@ branding, linking to https://gametranslate.us.
 Keep the UI work on `codex/ui-redesign` and keep `master` separate. Most new code
 lives here, but integration also touches `core/ui` routing, shared widgets,
 settings lifecycle, mapping, cheats, achievements, `core/oslib/i18n.cpp` and
-resource/build registration. This is not a conflict-free overlay.
+resource/build registration, SDL drop routing and a small Windows startup hook
+for native dialogs. This is not a conflict-free overlay.
 
 For an upstream update, fetch upstream and merge `upstream/master` into a
 temporary integration branch based on the UI branch. Review changed UI APIs,
@@ -92,13 +104,32 @@ For deterministic Windows rendering checks, enable
 `-DFLYCAST_CLARITY_SMOKE_TEST=ON`. Run the executable in an isolated folder with
 its own `emu.cfg`, `pvr.rend = 2`, `rend.Resolution = 480`,
 `aica.BufferSize = 987`, a `[window]` width/height and
-`[qa-preserve] unknown = keep-me`. The harness captures 82 actual DX11 frames
+`[qa-preserve] unknown = keep-me`. The harness captures 114 actual DX11 frames
 covering locale/theme variants of the library, mapping and About; all settings
-pages; network variants, pause, cheats and the shared picker. It creates a text
-fixture named `000-picker-fixture.elf` solely to verify unfiltered file listing.
+pages; network variants, pause, cheats and the bottom of Advanced. Additional
+quick-menu captures cover all eight locales in both themes, at top and bottom
+scroll positions with a long title. Drop tests use an artificial disc fixture
+and intercept launch routing; they do not boot or insert a real disc.
 At widths of at least 1000 it also drives real ImGui widgets: navigation, DSP
 save/reload, synthetic controller A mapping/detection/persistence/disconnect and
 return to the library. Narrow runs check rendering only. It does not inject OS
 input. **Turn the smoke option OFF for user builds.**
+
+For optional interactive native-dialog testing in a smoke build, set
+`[qa-preserve] native-dialog = yes` in a fresh isolated config and create
+`Folder Việt Đức` beside its executable. The test opens Add game folder;
+select that exact folder, then cancel the cheat-file dialog that follows.
+It writes `native-dialog-pass.txt` and exits. Selecting another folder fails
+this test and exits: this is test-harness behavior, not a normal user build.
+
+Native dialogs run in a short-lived child invocation of the same executable,
+before emulator initialization. This keeps Explorer extensions outside Flycast's
+fail-fast exception handler. Only the result pipe is inherited, UTF-8 paths are
+returned to the UI thread, and cancellation leaves options unchanged. The main
+window and gamepad navigation are disabled until completion. The shell dialog
+has no cross-process HWND owner, avoiding shared-input-queue/DXGI hangs. Errors
+restore the main window and are displayed there; rejected selections can retry.
+The helper belongs to a job that ends on parent shutdown, so no dialog process
+is left behind. The engine's exception handling and emulation behavior are unchanged.
 
 See `tests/VALIDATION.md` for the results and remaining hardware/gameplay checks.

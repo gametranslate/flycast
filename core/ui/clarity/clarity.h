@@ -13,6 +13,14 @@ void openSettings(Page page);
 bool display(const std::function<void(bool)>& finishSettings,
     std::array<bool, 4>& maple, std::array<std::array<bool, 2>, 4>& expansion);
 void library(Boxart& boxart);
+void handleDropPath(const std::string& path);
+#if defined(_WIN32) && !defined(TARGET_UWP)
+bool windowsPickerMain(int argc, char* argv[], int& exitCode);
+void windowsPicker(const char* prompt, bool (*callback)(bool, std::string), bool file, const std::string& extension);
+void pollWindowsPicker();
+void shutdownWindowsPicker();
+bool windowsPickerActive();
+#endif
 void beginTheme();
 void endTheme();
 const char* tr(const char* key);
@@ -48,6 +56,8 @@ void smokeConfigure(int locale, bool dark, int page);
 void smokeObserve(const char* key);
 int smokePage();
 void smokeUseTestController();
-void smokeSetPickerDirectory(const std::string& path);
+void smokeScrollToBottom(bool value);
+void smokeQuickScroll();
+void smokeTestDrops();
 #endif
 }

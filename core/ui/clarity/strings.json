@@ -6928,5 +6928,115 @@
     "最近解锁",
     "最近解鎖",
     "최근 잠금 해제"
+  ],
+  "Drop a game here": [
+    "Drop a game here",
+    "Thả game vào đây",
+    "Spiel hier ablegen",
+    "Déposez un jeu ici",
+    "Suelta un juego aquí",
+    "将游戏拖放到此处",
+    "將遊戲拖放到此處",
+    "여기에 게임 놓기"
+  ],
+  "Drag a game from Windows Explorer to start playing. Drop a folder to add its games to your library.": [
+    "Drag a game from Windows Explorer to start playing. Drop a folder to add its games to your library.",
+    "Kéo game từ Windows Explorer vào để chơi. Thả thư mục vào để thêm game trong đó vào thư viện.",
+    "Ziehe ein Spiel aus dem Windows-Explorer hierher, um es zu starten. Ordner fügen ihre Spiele zur Bibliothek hinzu.",
+    "Glissez un jeu depuis l’Explorateur Windows pour jouer. Déposez un dossier pour ajouter ses jeux à la bibliothèque.",
+    "Arrastra un juego desde el Explorador de Windows para jugar. Suelta una carpeta para añadir sus juegos a la biblioteca.",
+    "从 Windows 资源管理器拖入游戏即可开始游玩。拖入文件夹可将其中的游戏添加到游戏库。",
+    "從 Windows 檔案總管拖入遊戲即可開始遊玩。拖入資料夾可將其中的遊戲加入遊戲庫。",
+    "Windows 탐색기에서 게임을 끌어 놓으면 실행됩니다. 폴더를 놓으면 게임이 라이브러리에 추가됩니다."
+  ],
+  "Drop a game to play, or a folder to add it to your library.": [
+    "Drop a game to play, or a folder to add it to your library.",
+    "Thả game để chơi, hoặc thả thư mục để thêm vào thư viện.",
+    "Spiel zum Starten oder Ordner zum Hinzufügen ablegen.",
+    "Déposez un jeu pour jouer, ou un dossier pour l’ajouter à la bibliothèque.",
+    "Suelta un juego para jugar o una carpeta para añadirla a la biblioteca.",
+    "拖入游戏开始游玩，或拖入文件夹添加到游戏库。",
+    "拖入遊戲開始遊玩，或拖入資料夾加入遊戲庫。",
+    "게임을 놓아 실행하거나 폴더를 놓아 라이브러리에 추가하세요."
+  ],
+  "Drop a disc image here to insert it.": [
+    "Drop a disc image here to insert it.",
+    "Thả file ảnh đĩa vào đây để đưa đĩa vào.",
+    "Disc-Abbild hier zum Einlegen ablegen.",
+    "Déposez une image disque ici pour l’insérer.",
+    "Suelta una imagen de disco aquí para insertarla.",
+    "将光盘映像拖放到此处以插入。",
+    "將光碟映像拖放到此處以插入。",
+    "여기에 디스크 이미지를 놓아 삽입하세요."
+  ],
+  "This file is not a supported game or disc.": [
+    "This file is not a supported game or disc.",
+    "File này không phải game hoặc ảnh đĩa được hỗ trợ.",
+    "Diese Datei ist kein unterstütztes Spiel oder Disc-Abbild.",
+    "Ce fichier n’est pas un jeu ou une image disque pris en charge.",
+    "Este archivo no es un juego o disco compatible.",
+    "此文件不是支持的游戏或光盘映像。",
+    "此檔案不是支援的遊戲或光碟映像。",
+    "지원되는 게임 또는 디스크 파일이 아닙니다."
+  ],
+  "Quick menu": [
+    "Quick menu",
+    "Menu nhanh",
+    "Schnellmenü",
+    "Menu rapide",
+    "Menú rápido",
+    "快捷菜单",
+    "快捷選單",
+    "빠른 메뉴"
+  ],
+  "Controls & tools": [
+    "Controls & tools",
+    "Điều khiển & công cụ",
+    "Steuerung & Werkzeuge",
+    "Commandes et outils",
+    "Controles y herramientas",
+    "控制与工具",
+    "控制與工具",
+    "컨트롤 및 도구"
+  ],
+  "No saved state yet": [
+    "No saved state yet",
+    "Chưa có bản lưu trạng thái",
+    "Noch kein Spielstand",
+    "Aucun état sauvegardé",
+    "Aún no hay un estado guardado",
+    "尚无即时存档",
+    "尚無即時存檔",
+    "저장된 상태 없음"
+  ],
+  "Windows could not initialize the file dialog.": [
+    "Windows could not initialize the file dialog.",
+    "Windows không thể khởi tạo hộp thoại chọn tệp.",
+    "Windows konnte den Dateidialog nicht initialisieren.",
+    "Windows n’a pas pu initialiser la boîte de dialogue de fichiers.",
+    "Windows no pudo inicializar el selector de archivos.",
+    "Windows 无法初始化文件对话框。",
+    "Windows 無法初始化檔案對話方塊。",
+    "Windows에서 파일 대화 상자를 초기화할 수 없습니다."
+  ],
+  "Windows could not open the file dialog.": [
+    "Windows could not open the file dialog.",
+    "Windows không thể mở hộp thoại chọn tệp.",
+    "Windows konnte den Dateidialog nicht öffnen.",
+    "Windows n’a pas pu ouvrir la boîte de dialogue de fichiers.",
+    "Windows no pudo abrir el selector de archivos.",
+    "Windows 无法打开文件对话框。",
+    "Windows 無法開啟檔案對話方塊。",
+    "Windows에서 파일 대화 상자를 열 수 없습니다."
+  ],
+  "Windows returned an invalid file dialog result.": [
+    "Windows returned an invalid file dialog result.",
+    "Windows trả về kết quả chọn tệp không hợp lệ.",
+    "Windows hat ein ungültiges Dateidialogergebnis zurückgegeben.",
+    "Windows a renvoyé un résultat de sélection non valide.",
+    "Windows devolvió un resultado de selección no válido.",
+    "Windows 返回了无效的文件选择结果。",
+    "Windows 傳回了無效的檔案選擇結果。",
+    "Windows에서 유효하지 않은 파일 선택 결과를 반환했습니다."
   ]
 }

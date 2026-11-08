@@ -16,6 +16,9 @@
 #include "sdl_keyboard_mac.h"
 #include "wsi/context.h"
 #include "ui/gui.h"
+#ifdef FLYCAST_CLARITY
+#include "ui/clarity/clarity.h"
+#endif
 #include "emulator.h"
 #include "stdclass.h"
 #include "imgui.h"
@@ -605,7 +608,11 @@ void input_sdl_handle()
 				break;
 
 			case SDL_DROPFILE:
+#ifdef FLYCAST_CLARITY
+                clarity::handleDropPath(event.drop.file);
+#else
 				gui_start_game(event.drop.file);
+#endif
 				SDL_free(event.drop.file);
 				break;
 

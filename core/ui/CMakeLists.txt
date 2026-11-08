@@ -3,8 +3,12 @@ if(NOT LIBRETRO)
     if(FLYCAST_CLARITY)
         target_sources(${PROJECT_NAME} PRIVATE clarity/clarity.cpp clarity/settings_pages.cpp clarity/library.cpp)
         target_compile_definitions(${PROJECT_NAME} PRIVATE FLYCAST_CLARITY)
+        if(WIN32 AND NOT WINDOWS_STORE)
+            target_sources(${PROJECT_NAME} PRIVATE clarity/windows_picker.cpp)
+            target_link_libraries(${PROJECT_NAME} PRIVATE ole32 shell32 uuid)
+        endif()
         option(FLYCAST_CLARITY_SMOKE_TEST "Run deterministic DX11 UI capture test (not a user build)" OFF)
-        if(FLYCAST_CLARITY_SMOKE_TEST AND WIN32 AND USE_DX11)
+        if(FLYCAST_CLARITY_SMOKE_TEST AND WIN32 AND NOT WINDOWS_STORE AND USE_DX11)
             target_sources(${PROJECT_NAME} PRIVATE clarity/tests/ui_smoke.cpp)
             set_property(SOURCE
                 "${CMAKE_CURRENT_SOURCE_DIR}/gui.cpp"

@@ -110,7 +110,7 @@ void gui_settings_advanced()
 		}
         OptionCheckbox(T("Dump Textures"), config::DumpTextures,
         		T("Dump all textures into data/texdump/<game id>"));
-		ImGui::Indent();
+		if (settingsUseIndent()) ImGui::Indent();
 		{
 			DisabledScope scope(!config::DumpTextures.get());
 			OptionCheckbox(T("Dump Replaced Textures"), config::DumpReplacedTextures,
@@ -118,12 +118,22 @@ void gui_settings_advanced()
 			OptionCheckbox(T("Discard Video and Animated Textures"), config::DumpUniqueTextures,
 					T("Skip dumping video (YUV) and already updated textures"));
 		}
-		ImGui::Unindent();
+		if (settingsUseIndent()) ImGui::Unindent();
         bool logToFile = config::loadBool("log", "LogToFile", false);
+#ifdef FLYCAST_CLARITY
+        if (clarity::cardsActive()) {
+            clarity::beginRow(T("Log to File"), T("Log debug information to flycast.log"));
+            if (ImGui::Checkbox("##log", &logToFile)) config::saveBool("log", "LogToFile", logToFile);
+            ImGui::SameLine(); ImGui::TextUnformatted(clarity::tr(logToFile ? "on" : "off"));
+            clarity::endRow();
+        } else
+#endif
+        {
 		if (ImGui::Checkbox(T("Log to File"), &logToFile))
 			config::saveBool("log", "LogToFile", logToFile);
         ImGui::SameLine();
         ShowHelpMarker(T("Log debug information to flycast.log"));
+        }
 #ifdef SENTRY_UPLOAD
         OptionCheckbox(T("Automatically Report Crashes"), config::UploadCrashLogs,
         		T("Automatically upload crash reports to sentry.io to help in troubleshooting. No personal information is included."));

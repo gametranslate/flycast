@@ -6,12 +6,24 @@
 #include "ui/gui.h"
 #include "ui/gui_util.h"
 #include "input/gamepad_device.h"
+#include "oslib/storage.h"
+#include <filesystem>
+#include <fstream>
 #include <mutex>
 
 namespace clarity {
 void appTopbar();
 namespace {
+#ifdef FLYCAST_CLARITY_SMOKE_TEST
+std::string smokeLaunchedPath;
+bool smokeInsertedDisc = false;
+#endif
 void startMedia(const std::string& path, const std::string& title) {
+#ifdef FLYCAST_CLARITY_SMOKE_TEST
+    smokeLaunchedPath = path;
+    smokeInsertedDisc = gui_state == GuiState::SelectDisk;
+    return;
+#endif
     if (gui_state == GuiState::SelectDisk) {
         try { emu.insertGdrom(path); gui_setState(GuiState::Closed); }
         catch (const FlycastException& e) { gui_error(e.what()); }
@@ -20,13 +32,46 @@ void startMedia(const std::string& path, const std::string& title) {
         gui_start_game(path);
     }
 }
+bool isDisc(const std::string& extension) {
+    return extension == "gdi" || extension == "chd" || extension == "cdi" || extension == "cue";
+}
 bool launchSelected(bool cancelled, std::string path) {
-    if (!cancelled) startMedia(path, get_file_basename(path));
+    if (!cancelled) handleDropPath(path);
     return true;
 }
 bool iconButton(const char* icon, const char* label, ImVec2 size = {}) {
     return ImGui::Button((std::string(icon) + "  " + tr(label)).c_str(), size);
 }
+}
+void handleDropPath(const std::string& droppedPath) {
+    if (gui_state != GuiState::Main && gui_state != GuiState::SelectDisk) return;
+#if defined(_WIN32) && !defined(TARGET_UWP)
+    if (windowsPickerActive()) return;
+#endif
+    try {
+        auto path = std::filesystem::weakly_canonical(std::filesystem::u8path(droppedPath)).u8string();
+        auto info = hostfs::storage().getFileInfo(path);
+        if (info.isDirectory) {
+            if (gui_state == GuiState::SelectDisk) return;
+            auto& paths = config::ContentPath.get();
+            auto equivalent = [&](const std::string& existing) {
+                std::error_code error;
+                return std::filesystem::equivalent(std::filesystem::u8path(existing), std::filesystem::u8path(path), error);
+            };
+            if (std::none_of(paths.begin(), paths.end(), equivalent)) {
+                scanner.stop(); paths.push_back(path); SaveSettings(); scanner.refresh();
+            }
+            return;
+        }
+        std::string extension = get_file_extension(path);
+        bool supported = isDisc(extension) || extension == "zip" || extension == "7z" || extension == "elf"
+            || extension == "bin" || extension == "lst" || extension == "dat";
+        if (!supported || (gui_state == GuiState::SelectDisk && !isDisc(extension))) {
+            gui_error(tr("This file is not a supported game or disc."));
+            return;
+        }
+        startMedia(path, get_file_basename(path));
+    } catch (const std::exception& e) { gui_error(e.what()); }
 }
 void library(Boxart& boxart) {
     fullScreenWindow(false);
@@ -39,7 +84,7 @@ void library(Boxart& boxart) {
     bool disk = gui_state == GuiState::SelectDisk;
     bool open = false, add = false;
     float sidebarWidth = uiScaled(compact ? 84 : 245);
-    if (!compact) for (const char* label : {"Library", "Open game", "Add game folder", "Button mapping", "Settings", "About", "Exit"})
+    if (!compact) for (const char* label : {"Library", "Add game folder", "Button mapping", "Settings", "About", "Exit"})
         sidebarWidth = std::max(sidebarWidth, ImGui::CalcTextSize(tr(label)).x + uiScaled(104));
     ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, compact ? ScaledVec2(10, 12) : ScaledVec2(20, 16));
     ImGui::BeginChild("sidebar", ImVec2(sidebarWidth, 0), ImGuiChildFlags_AlwaysUseWindowPadding);
@@ -56,7 +101,6 @@ void library(Boxart& boxart) {
     ImGui::BeginChild("navigation", ImVec2(0, -uiScaled(compact ? 100 : 112)), ImGuiChildFlags_None, ImGuiWindowFlags_NoBackground);
     if (!compact) muted(tr("PLAY"));
     nav(ICON_FA_LAYER_GROUP, "Library");
-    if (nav(ICON_FA_FOLDER_OPEN, "Open game")) open = true;
     if (!disk) {
         if (nav(ICON_FA_FOLDER_PLUS, "Add game folder")) add = true;
         ImGui::Spacing();
@@ -66,14 +110,18 @@ void library(Boxart& boxart) {
         if (nav(ICON_FA_CIRCLE_INFO, "About")) openSettings(Page::About);
         ImGui::Spacing();
         if (nav(ICON_FA_POWER_OFF, "Exit")) dc_exit();
-    } else if (nav(ICON_FA_ARROW_LEFT, "Cancel")) gui_setState(GuiState::Commands);
+    } else {
+        if (nav(ICON_FA_COMPACT_DISC, "Choose a disc")) open = true;
+        if (nav(ICON_FA_ARROW_LEFT, "Cancel")) gui_setState(GuiState::Commands);
+    }
     ImGui::EndChild();
     ImGui::Separator(); branding();
     ImGui::EndChild();
     ImGui::PopStyleVar();
     ImGui::SameLine(0,0);
-    ImGui::PushStyleColor(ImGuiCol_ChildBg, ImGui::GetStyleColorVec4(ImGuiCol_WindowBg));
+    ImGui::PushStyleColor(ImGuiCol_ChildBg, ImGui::GetStyleColorVec4(ImGuiCol_PopupBg));
     ImGui::BeginChild("library-content", ImVec2(0,0), ImGuiChildFlags_AlwaysUseWindowPadding);
+    ImGui::PopStyleColor();
     scanner.fetch_game_list();
     std::vector<GameMedia> games;
     {
@@ -92,13 +140,14 @@ void library(Boxart& boxart) {
         if (button(tabs[i], platform == i)) platform = i;
     }
     ImGui::Spacing();
+    if (!games.empty()) muted(tr(disk ? "Drop a disc image here to insert it." : "Drop a game to play, or a folder to add it to your library."));
     if (games.empty()) {
         ImGui::BeginChild("welcome", ImVec2(0,0), ImGuiChildFlags_AutoResizeY | ImGuiChildFlags_Borders);
         ImGui::TextColored(accent(), ICON_FA_COMPACT_DISC "  DREAMCAST / NAOMI / ATOMISWAVE");
-        heading("Your next session starts here.", "Add the folder containing your games, or open a game file to begin.");
-        if (iconButton(ICON_FA_FOLDER_PLUS, "Add game folder")) add = true;
-        if (!compact) ImGui::SameLine();
-        if (iconButton(ICON_FA_PLAY, "Open game")) open = true;
+        heading(disk ? "Choose a disc" : "Drop a game here", disk ? "Drop a disc image here to insert it."
+            : "Drag a game from Windows Explorer to start playing. Drop a folder to add its games to your library.");
+        if (disk) { if (iconButton(ICON_FA_COMPACT_DISC, "Choose a disc")) open = true; }
+        else if (iconButton(ICON_FA_FOLDER_PLUS, "Add game folder")) add = true;
         ImGui::EndChild();
         ImGui::Spacing();
         if (!disk) {
@@ -150,10 +199,35 @@ void library(Boxart& boxart) {
         if (!visible) muted(tr("No games match your search."));
     }
     ImGui::EndChild();
-    ImGui::PopStyleColor();
-    if (open) ImGui::OpenPopup("Open game###clarity-game");
-    select_file_popup("Open game###clarity-game", launchSelected, true);
+    if (open) ImGui::OpenPopup("Choose a disc###clarity-disc");
+    select_file_popup("Choose a disc###clarity-disc", launchSelected, true);
     addContentPath(add);
     ImGui::End();
 }
+#ifdef FLYCAST_CLARITY_SMOKE_TEST
+void smokeTestDrops() {
+    namespace fs = std::filesystem;
+    auto original = config::ContentPath.get();
+    auto folder = fs::u8path(get_writable_config_path("drop-test-Đức"));
+    fs::create_directories(folder);
+    auto game = folder / "test.gdi";
+    std::ofstream(game) << "UI fixture, not game content.";
+    gui_setState(GuiState::Main);
+    handleDropPath(folder.u8string());
+    handleDropPath((folder / ".").u8string());
+    if (config::ContentPath.get().size() != original.size() + 1) throw std::runtime_error("drop folder/duplicate");
+    scanner.stop(); config::ContentPath.load();
+    if (config::ContentPath.get().size() != original.size() + 1) throw std::runtime_error("drop folder persistence");
+    handleDropPath(game.u8string());
+    if (smokeLaunchedPath != fs::weakly_canonical(game).u8string() || smokeInsertedDisc) throw std::runtime_error("drop game routing");
+    gui_setState(GuiState::SelectDisk);
+    handleDropPath(game.u8string());
+    if (!smokeInsertedDisc) throw std::runtime_error("drop disc routing");
+    gui_setState(GuiState::Loading);
+    smokeLaunchedPath.clear(); handleDropPath(game.u8string());
+    if (!smokeLaunchedPath.empty()) throw std::runtime_error("drop while busy");
+    scanner.stop(); config::ContentPath = original; SaveSettings(); scanner.refresh();
+    gui_setState(GuiState::Main);
+}
+#endif
 }

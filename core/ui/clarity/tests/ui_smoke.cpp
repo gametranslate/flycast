@@ -9,6 +9,7 @@
 #include <cstdio>
 #include <vector>
 #include <map>
+#include <filesystem>
 #include "imgui.h"
 #include "input/gamepad_device.h"
 #include "imgui_internal.h"
@@ -17,7 +18,7 @@ namespace clarity {
 namespace {
 int frame = 0;
 constexpr int framesPerCase = 8;
-constexpr int cases = 82;
+constexpr int cases = 114;
 std::map<std::string, ImVec2> items;
 class TestPad : public GamepadDevice {
 public:
@@ -33,10 +34,13 @@ std::shared_ptr<TestPad> testPad;
 u64 inputStart = 0;
 int interactionStep = 0, stepFrame = 0;
 bool originalDsp = false;
+bool nativeTest = std::getenv("CLARITY_NATIVE_TEST") != nullptr;
+int nativePhase = 0, nativeFrame = 0;
+bool nativeSeen = false;
 void capture(int index);
 void fail(int code, const char* key) {
     capture(99);
-    if (auto f = std::fopen("clarity-smoke-fail.txt", "w")) {
+    if (auto f = std::fopen(get_writable_config_path("clarity-smoke-fail.txt").c_str(), "w")) {
         std::fprintf(f, "Failed at %s (code %d, frame %d)\n", key, code, frame);
         std::fclose(f);
     }
@@ -75,14 +79,57 @@ void capture(int index) {
     context->getDeviceContext()->Unmap(copy, 0);
     char path[64];
     std::snprintf(path, sizeof(path), "clarity-native-%02d.png", index);
-    if (!stbi_write_png(path, desc.Width, desc.Height, 4, rgba.data(), desc.Width * 4)) std::exit(5);
+    std::string output = get_writable_config_path(path);
+    if (!stbi_write_png(output.c_str(), desc.Width, desc.Height, 4, rgba.data(), desc.Width * 4)) std::exit(5);
 }
 }
 void smokeObserve(const char* key) {
     auto a = ImGui::GetItemRectMin(), b = ImGui::GetItemRectMax();
     if (ImGui::IsItemVisible()) items[key] = ImVec2((a.x + b.x) / 2, (a.y + b.y) / 2);
 }
+void smokeQuickScroll() {
+    const int index = frame / framesPerCase;
+    ImGui::SetScrollY(index >= 98 ? ImGui::GetScrollMaxY() : 0);
+}
 void smokeBeforeFrame() {
+    static bool configured = false;
+    if (!configured) {
+        nativeTest |= config::loadBool("qa-preserve", "native-dialog", false);
+        configured = true;
+    }
+    if (nativeTest) {
+        if (nativeFrame == 0) {
+            smokeConfigure(0,false,0);
+            gui_setState(nativePhase == 0 ? GuiState::Main : GuiState::Cheats);
+            items.clear();
+        }
+        if (nativeFrame >= 8 && nativeFrame <= 11) {
+            ImGui::GetIO().ClearEventsQueue();
+            ImGui::GetIO().ConfigInputTrickleEventQueue = false;
+            ImGui::GetIO().AddFocusEvent(true);
+            auto item = items.find(nativePhase == 0 ? "Add game folder" : "Load");
+            if (item == items.end()) fail(30,"native-dialog-button");
+            ImGui::GetIO().AddMousePosEvent(item->second.x,item->second.y);
+            ImGui::GetIO().AddMouseButtonEvent(0,nativeFrame<10);
+        }
+        if (windowsPickerActive()) nativeSeen = true;
+        if (nativeSeen && !windowsPickerActive()) {
+            std::string expected = get_writable_config_path("Folder Việt Đức");
+            if (config::ContentPath.get().size() != 1
+                    || !std::filesystem::equivalent(std::filesystem::u8path(config::ContentPath.get()[0]),
+                        std::filesystem::u8path(expected))) fail(31,"native-folder-result");
+            if (nativePhase == 0) {
+                nativePhase = 1; nativeFrame = -1; nativeSeen = false;
+            } else {
+                SaveSettings();
+                auto report=std::fopen(get_writable_config_path("native-dialog-pass.txt").c_str(),"w");
+                if (report) { std::fputs("PASS: real Windows folder selection with Unicode path, shared file dialog opened and cancelled; folder preserved.\n",report); std::fclose(report); }
+                std::exit(0);
+            }
+        }
+        ++nativeFrame;
+        return;
+    }
     ImGui::GetIO().ClearEventsQueue();
     ImGui::GetIO().ConfigInputTrickleEventQueue = false;
     ImGui::GetIO().AddFocusEvent(true);
@@ -97,6 +144,8 @@ void smokeBeforeFrame() {
             };
             if (interactionStep == 0) {
                 if (stepFrame == 0) {
+                    smokeScrollToBottom(false);
+                    settings.content.title.clear();
                     if (!GImGui->OpenPopupStack.empty()) ImGui::ClosePopupToLevel(0, true);
                     config::GGPOEnable = config::NetworkEnable = config::BattleCableEnable = false;
                     gui_setState(GuiState::Main);
@@ -197,16 +246,18 @@ void smokeBeforeFrame() {
             if (interactionStep != 99) return;
         }
         closeMappings();
+        try { smokeTestDrops(); } catch (const std::exception& e) { fail(13,e.what()); }
         SaveSettings();
         if (config::loadStr("qa-preserve", "unknown") != "keep-me") fail(12, "preserve");
         auto report = std::fopen("clarity-smoke-pass.txt", "w");
         if (!report) std::exit(6);
-        std::fprintf(report, "PASS: 82 native DX11 renders: 8 locales x 2 themes for library, controllers and About; all 11 Settings pages; GGPO/Naomi/Battle, pause, cheats and file picker. Unknown config preserved.\nWidgets: %s\n",
+        std::fprintf(report, "PASS: 114 native DX11 renders: 8 locales x 2 themes for library, controllers and About; all 11 Settings pages; GGPO/Naomi/Battle, quick menu, cheats and Advanced bottom; 32 additional quick-menu locale/theme captures at top and bottom with a long title. Unicode folder drop, duplicate prevention, persistence, game/disc routing and busy-state guard passed. Unknown config preserved.\nWidgets: %s\n",
             ImGui::GetIO().DisplaySize.x >= 1000 ? "PASS: navigation, DSP save/reload, mapping A through input detection, mapping-file reload, synthetic unplug, return to library; original audio samples and resolution preserved." : "SKIPPED: compact rendering only");
         std::fclose(report);
         std::exit(0);
     }
     if (frame % framesPerCase == 0) {
+        smokeScrollToBottom(index >= 80);
         if (!GImGui->OpenPopupStack.empty()) ImGui::ClosePopupToLevel(0, true);
         int locale = 0, page = 0;
         bool home = index < 16;
@@ -223,24 +274,20 @@ void smokeBeforeFrame() {
             config::BattleCableEnable = index>=74 && index<76;
             if (index>=76 && index<78) gui_setState(GuiState::Commands);
             if (index>=78 && index<80) gui_setState(GuiState::Cheats);
-            if (index>=80) {
-                gui_setState(GuiState::Main);
-                auto path=get_writable_config_path("000-picker-fixture.elf");
-                if (auto file=std::fopen(path.c_str(),"wb")) { std::fputs("UI fixture, not a game.",file); std::fclose(file); }
-                smokeSetPickerDirectory(get_writable_config_path(""));
+            if (index>=80 && index<82) {
+                openSettings(Page::Advanced);
+            }
+            if (index>=82) {
+                smokeConfigure(((index-82)%16)/2, index%2 != 0, 0);
+                settings.content.title = "Quick menu layout test - A Dreamcast game with a long title";
+                gui_setState(GuiState::Commands);
             }
         }
         items.clear();
     }
-    if (index>=80 && frame%framesPerCase>=2 && frame%framesPerCase<=4) {
-        auto it=items.find("Open game");
-        if (it==items.end()) fail(10,"Open game");
-        ImGui::GetIO().AddMousePosEvent(it->second.x,it->second.y);
-        ImGui::GetIO().AddMouseButtonEvent(0,frame%framesPerCase<4);
-    }
-    if (index>=80 && frame%framesPerCase==7 && items.find("file:000-picker-fixture.elf")==items.end()) fail(11,"open-file-filter");
 }
 void smokeAfterFrame() {
+    if (nativeTest) return;
     if (frame < cases*framesPerCase && frame%framesPerCase == framesPerCase-1) capture(frame/framesPerCase);
     ++frame;
 }

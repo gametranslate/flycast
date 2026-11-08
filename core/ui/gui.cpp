@@ -1379,9 +1379,20 @@ void gui_display_ui()
 #ifdef FLYCAST_CLARITY_SMOKE_TEST
 	clarity::smokeBeforeFrame();
 #endif
+#if defined(FLYCAST_CLARITY) && defined(_WIN32) && !defined(TARGET_UWP)
+    if (clarity::windowsPickerActive()) {
+        // Native modality includes gamepad navigation, not just HWND input.
+        ImGui::GetIO().ClearEventsQueue();
+        ImGui::GetIO().ClearInputKeys();
+        ImGui::GetIO().ClearInputMouse();
+    }
+#endif
 	ImGui::NewFrame();
 #ifdef FLYCAST_CLARITY
     clarity::beginTheme();
+#if defined(_WIN32) && !defined(TARGET_UWP)
+    clarity::pollWindowsPicker();
+#endif
 #endif
 	error_msg_shown = false;
 	bool gui_open = gui_is_open();
@@ -1568,6 +1579,9 @@ void gui_term()
 {
 	if (inited)
 	{
+#if defined(FLYCAST_CLARITY) && defined(_WIN32) && !defined(TARGET_UWP)
+        clarity::shutdownWindowsPicker();
+#endif
 #ifdef FLYCAST_CLARITY
         clarity::closeMappings();
 #endif

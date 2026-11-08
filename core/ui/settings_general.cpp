@@ -846,9 +846,17 @@ void gui_settings_achievements()
 	OptionCheckbox(T("Enable RetroAchievements"), config::EnableAchievements, T("Track your game achievements using RetroAchievements.org"));
 	{
 		DisabledScope _(!config::EnableAchievements);
-		ImGui::Indent();
+		if (settingsUseIndent()) ImGui::Indent();
 		OptionCheckbox(T("Hardcore Mode"), config::AchievementsHardcoreMode,
 				T("Enable RetroAchievements hardcore mode. Using cheats and loading a state are not allowed in this mode."));
+#ifdef FLYCAST_CLARITY
+        if (clarity::cardsActive()) {
+            clarity::beginRow(T("Username"));
+            InputText("##username", &config::AchievementsUserName.get(),
+                achievements::isLoggedOn() ? ImGuiInputTextFlags_ReadOnly : ImGuiInputTextFlags_None);
+            clarity::endRow();
+        } else
+#endif
 		InputText(T("Username"), &config::AchievementsUserName.get(),
 				achievements::isLoggedOn() ? ImGuiInputTextFlags_ReadOnly : ImGuiInputTextFlags_None);
 		if (config::EnableAchievements)
@@ -866,6 +874,13 @@ void gui_settings_achievements()
 			else
 			{
 				static char password[256];
+#ifdef FLYCAST_CLARITY
+                if (clarity::cardsActive()) {
+                    clarity::beginRow(T("Password"));
+                    InputText("##password", password, sizeof(password), ImGuiInputTextFlags_Password);
+                    clarity::endRow();
+                } else
+#endif
 				InputText(T("Password"), password, sizeof(password), ImGuiInputTextFlags_Password);
 				if (futureLogin.valid())
 				{
@@ -891,7 +906,7 @@ void gui_settings_achievements()
 				}
 			}
 		}
-		ImGui::Unindent();
+		if (settingsUseIndent()) ImGui::Unindent();
 	}
 #endif
 }

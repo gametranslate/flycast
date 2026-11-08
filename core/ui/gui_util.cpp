@@ -46,14 +46,6 @@ static std::string select_current_directory = "**home**";
 static std::vector<hostfs::FileInfo> subfolders;
 static std::vector<hostfs::FileInfo> folderFiles;
 bool subfolders_read;
-#ifdef FLYCAST_CLARITY_SMOKE_TEST
-namespace clarity {
-void smokeSetPickerDirectory(const std::string& path) {
-    select_current_directory = path;
-    subfolders_read = false;
-}
-}
-#endif
 
 extern int insetLeft, insetRight, insetTop, insetBottom;
 void error_popup();
@@ -73,7 +65,10 @@ namespace hostfs
 void select_file_popup(const char *prompt, StringCallback callback,
 		bool selectFile, const std::string& selectExtension)
 {
-#ifdef FLYCAST_CLARITY
+#if defined(FLYCAST_CLARITY) && defined(_WIN32) && !defined(TARGET_UWP)
+    clarity::windowsPicker(prompt, callback, selectFile, selectExtension);
+    return;
+#elif defined(FLYCAST_CLARITY)
     clarity_file_picker(prompt, callback, selectFile, selectExtension);
     return;
 #endif

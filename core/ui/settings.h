@@ -44,6 +44,15 @@ extern bool uiUserScaleUpdated;
 extern bool game_started;
 extern int insetLeft, insetRight, insetTop, insetBottom;
 
+inline bool settingsUseIndent()
+{
+#ifdef FLYCAST_CLARITY
+    return !clarity::cardsActive();
+#else
+    return true;
+#endif
+}
+
 inline static void header(const char *title)
 {
 #ifdef FLYCAST_CLARITY

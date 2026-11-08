@@ -36,6 +36,9 @@
 #include "sdl/sdl.h"
 #include "emulator.h"
 #include "ui/mainui.h"
+#if defined(FLYCAST_CLARITY) && !defined(TARGET_UWP)
+#include "ui/clarity/clarity.h"
+#endif
 #include "oslib/directory.h"
 #include "oslib/i18n.h"
 #include "dynlink.h"
@@ -313,6 +316,10 @@ int remove(char const *name)
 int main(int argc, char* argv[])
 {
 	nowide::args _(argc, argv);
+#if defined(FLYCAST_CLARITY) && !defined(TARGET_UWP)
+    int pickerExitCode = 0;
+    if (clarity::windowsPickerMain(argc, argv, pickerExitCode)) return pickerExitCode;
+#endif
 
 	WSADATA wsaData;
 	int ret = WSAStartup(MAKEWORD(2, 0), &wsaData);

@@ -27,6 +27,9 @@ bool cards = false;
 ImGuiStyle savedStyle;
 std::string activeLocale;
 char search[180]{};
+#ifdef FLYCAST_CLARITY_SMOKE_TEST
+bool smokeBottom = false;
+#endif
 std::string focusSetting;
 const char* pageKeys[] = {"Console & appearance", "Button mapping", "Ports & VMU", "Graphics",
     "Audio", "Library & saves", "Folders & BIOS", "Network", "Achievements", "Advanced", "About", "Diagnostics"};
@@ -96,10 +99,11 @@ void beginTheme() {
     s.Colors[ImGuiCol_WindowBg] = color(night ? 0x101722 : 0xf5f6fa);
     s.Colors[ImGuiCol_ChildBg] = color(night ? 0x182231 : 0xffffff);
     s.Colors[ImGuiCol_PopupBg] = s.Colors[ImGuiCol_ChildBg];
-    s.Colors[ImGuiCol_Text] = color(night ? 0xeff2f8 : 0x1b2b43);
-    s.Colors[ImGuiCol_TextDisabled] = color(night ? 0xa8b6ca : 0x596b82);
-    s.Colors[ImGuiCol_Border] = color(night ? 0x303e53 : 0xdce2ec);
-    s.Colors[ImGuiCol_FrameBg] = color(night ? 0x263349 : 0xebeff6);
+    s.Colors[ImGuiCol_Text] = color(night ? 0xeff2f8 : 0x152235);
+    s.Colors[ImGuiCol_TextDisabled] = color(night ? 0xa8b6ca : 0x40516a);
+    s.Colors[ImGuiCol_Border] = color(night ? 0x3b4b62 : 0xb7c4d5);
+    s.Colors[ImGuiCol_FrameBg] = color(night ? 0x263349 : 0xf0f4f8);
+    s.Colors[ImGuiCol_ScrollbarGrab] = color(night ? 0x596b82 : 0x8191a5);
     s.Colors[ImGuiCol_FrameBgHovered] = tint();
     s.Colors[ImGuiCol_FrameBgActive] = tint();
     s.Colors[ImGuiCol_Button] = s.Colors[ImGuiCol_FrameBg];
@@ -119,6 +123,8 @@ void beginTheme() {
     s.ItemSpacing = ScaledVec2(10, 10);
     s.CellPadding = ScaledVec2(12, 12);
     s.ScrollbarSize = px(12);
+    s.FrameBorderSize = px(1);
+    s.DisabledAlpha = night ? .65f : .82f;
 }
 void endTheme() { cards = false; ImGui::GetStyle() = savedStyle; }
 bool cardsActive() { return cards; }
@@ -316,12 +322,16 @@ bool display(const std::function<void(bool)>& finishSettings,
     ImGui::EndChild();
     ImGui::PopStyleVar();
     ImGui::SameLine(0, 0);
-    ImGui::PushStyleColor(ImGuiCol_ChildBg, ImGui::GetStyleColorVec4(ImGuiCol_WindowBg));
+    ImGui::PushStyleColor(ImGuiCol_ChildBg, color(night ? 0x101722 : 0xffffff));
     ImGui::BeginChild("workspace", ImVec2(0, 0), ImGuiChildFlags_AlwaysUseWindowPadding);
+    ImGui::PopStyleColor();
     ImGui::SetNextItemWidth(-1);
     ImGui::InputTextWithHint("##search", tr("Find a setting or category..."), search, sizeof(search));
     static Page lastPage = Page::Count;
     ImGui::BeginChild("content", ImVec2(0, -px(66)), ImGuiChildFlags_None, ImGuiWindowFlags_NoBackground);
+#ifdef FLYCAST_CLARITY_SMOKE_TEST
+    if (smokeBottom) ImGui::SetScrollY(ImGui::GetScrollMaxY());
+#endif
     if (lastPage != page) { ImGui::SetScrollY(0); lastPage = page; }
     if (search[0]) {
         heading("Search settings");
@@ -415,7 +425,6 @@ bool display(const std::function<void(bool)>& finishSettings,
         muted(tr("Edits apply immediately. Saved when you leave."));
     }
     ImGui::EndChild();
-    ImGui::PopStyleColor();
     ImGui::End();
     if (save) {
         if (close) closeMappings();
@@ -428,6 +437,7 @@ bool display(const std::function<void(bool)>& finishSettings,
 // Used by the home/library screen, sharing the same top bar and preferences.
 void appTopbar() { topbar("Library"); }
 #ifdef FLYCAST_CLARITY_SMOKE_TEST
+void smokeScrollToBottom(bool value) { smokeBottom = value; }
 int smokePage() { return (int)page; }
 void smokeConfigure(int index, bool dark, int selectedPage) {
     closeMappings();
