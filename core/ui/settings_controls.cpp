@@ -441,6 +441,15 @@ static void detect_input_popup(const Mapping *mapping)
 	ImguiStyleVar _1(ImGuiStyleVar_ItemSpacing, padding);
 	if (ImGui::BeginPopupModal(T("Map Control"), nullptr, ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoMove))
 	{
+#ifdef FLYCAST_CLARITY
+        if (!currentGamepad || !currentGamepad->is_registered() || ImGui::Button(T("Cancel"))) {
+            if (currentGamepad) currentGamepad->cancel_detect_input();
+            mapped_codes.clear();
+            ImGui::CloseCurrentPopup();
+            ImGui::EndPopup();
+            return;
+        }
+#endif
 		ImGui::Text(T("Waiting for control '%s'..."), mapping->name);
 		u64 now = getTimeMs();
 
@@ -1227,3 +1236,7 @@ void gui_settings_controls(std::array<bool, 4>& mapleDevicesChanges, std::array<
 		}
     }
 }
+
+#ifdef FLYCAST_CLARITY
+#include "clarity/controller_panel.inc"
+#endif

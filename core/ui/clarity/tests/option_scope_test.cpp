@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 // Exercise the real upstream Option/Settings classes with an in-memory cfg store.
 #include "cfg/option.h"
-#include "../draft.h"
 #include <cassert>
 #include <map>
 
@@ -32,26 +31,20 @@ int main() {
     config::Option<int> compatibility("compatibility", 0);
     config::Option<std::string, false> language("Language", "en", "clarity");
     auto& settings = config::Settings::instance();
-    int r, c;
-    clarity::Draft draft;
-    draft.bind(r, resolution);
-    draft.bind(c, compatibility);
     settings.save();
     assert(config::loadInt("config", "pvr.Resolution") == 480);
     assert(config::loadStr("clarity", "Language") == "en");
 
     settings.setGameId("TEST-GAME-A");
     compatibility.override(7);
-    draft.capture();
     assert(compatibility.isReadOnly());
-    c = 8; draft.commit();
+    if (!compatibility.isReadOnly()) compatibility = 8;
     assert(compatibility.get() == 7); // Built-in game override is protected globally.
-    draft.capture();
-
-    r = 960; c = 9;
-    assert(!settings.hasPerGameConfig()); // Editing alone doesn't create a profile.
-    settings.setPerGameConfig(true); // The model only does this on Apply.
-    draft.commit(); settings.save();
+    assert(!settings.hasPerGameConfig());
+    settings.setPerGameConfig(true); // Explicitly choose Make Game Config.
+    assert(!compatibility.isReadOnly());
+    resolution = 960; compatibility = 9;
+    settings.save();
     assert(config::loadInt("config", "pvr.Resolution") == 480);
     assert(config::loadInt("TEST-GAME-A", "config.pvr.Resolution") == 960);
     assert(config::loadInt("TEST-GAME-A", "config.compatibility") == 9);
@@ -66,7 +59,10 @@ int main() {
     assert(!settings.hasPerGameConfig()); // Game A does not leak into game B.
     settings.setGameId("TEST-GAME-A"); settings.load(true);
     assert(resolution.get() == 960 && compatibility.get() == 9);
-    draft.capture(); r = 480; draft.commit(); settings.save();
+    resolution = 480; settings.save();
     assert(config::loadStr("TEST-GAME-A", "config.pvr.Resolution").empty());
     // Returning to the global value removes the override using upstream semantics.
+    settings.setPerGameConfig(false); settings.load(false);
+    assert(!config::hasSection("TEST-GAME-A"));
+    assert(resolution.get() == 480 && language.get() == "vi");
 }

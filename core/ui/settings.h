@@ -20,6 +20,9 @@
 #include "game_scanner.h"
 #include "gui_util.h"
 #include "imgui.h"
+#ifdef FLYCAST_CLARITY
+#include "clarity/clarity.h"
+#endif
 #include "oslib/i18n.h"
 #include <array>
 using namespace i18n;
@@ -43,6 +46,9 @@ extern int insetLeft, insetRight, insetTop, insetBottom;
 
 inline static void header(const char *title)
 {
+#ifdef FLYCAST_CLARITY
+    if (clarity::cardsActive()) { clarity::section(title); return; }
+#endif
 	ImguiStyleVar _(ImGuiStyleVar_ButtonTextAlign, ImVec2(0.f, 0.5f)); // Left
 	ImguiStyleVar _1(ImGuiStyleVar_DisabledAlpha, 1.0f);
 	ImGui::BeginDisabled();
@@ -58,3 +64,9 @@ inline static int dnsCharFilter(ImGuiInputTextCallbackData *data)
 			|| (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
 	return static_cast<int>(!good);
 }
+
+void gui_settings_advanced();
+void gui_settings_achievements();
+#if !defined(NDEBUG) || defined(DEBUGFAST) || FC_PROFILER
+void gui_debug_tab();
+#endif

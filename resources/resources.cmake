@@ -61,3 +61,8 @@ cmrc_add_resources(flycast-resources
 	resources/i18n/zh_CN.po
 	resources/i18n/zh_HK.po
 	resources/i18n/zh_TW.po)
+
+if(FLYCAST_CLARITY AND NOT LIBRETRO)
+    cmrc_add_resources(flycast-resources WHENCE resources
+        resources/i18n/vi.po resources/i18n/de.po resources/i18n/es.po resources/i18n/ko.po)
+endif()

@@ -17,6 +17,9 @@
     along with Flycast.  If not, see <https://www.gnu.org/licenses/>.
  */
 #include "i18n.h"
+#ifdef FLYCAST_CLARITY
+#include "ui/clarity/clarity.h"
+#endif
 #include "resources.h"
 #include "cfg/option.h"
 #include "tinygettext/tinygettext.hpp"
@@ -174,6 +177,9 @@ static const std::string& translate(const std::string& msg) {
 }
 
 std::string Ts(const std::string& msg) {
+#ifdef FLYCAST_CLARITY
+    if (const char* translated = clarity::translateBuiltin(msg.c_str())) return translated;
+#endif
 	return translate(msg);
 }
 
@@ -181,6 +187,9 @@ const char *T(const char *msg)
 {
 	if (msg == nullptr)
 		return nullptr;
+#ifdef FLYCAST_CLARITY
+    if (const char* translated = clarity::translateBuiltin(msg)) return translated;
+#endif
 	std::string smsg(msg);
 	const std::string& tr = translate(smsg);
 	if (&tr == &smsg)
@@ -258,6 +267,9 @@ std::string getSystemLocale()
 #ifndef LIBRETRO
 std::string getCurrentLocale()
 {
+#ifdef FLYCAST_CLARITY
+    return clarity::locale();
+#endif
 	std::string locale = config::UILanguage;
 	if (!locale.empty())
 		return locale;

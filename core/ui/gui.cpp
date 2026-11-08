@@ -527,8 +527,16 @@ void cycleSaveStateSlot(int step)
 	SaveSettings();
 }
 
+#ifdef FLYCAST_CLARITY
+#include "clarity/commands.inc"
+#endif
+
 static void gui_display_commands()
 {
+#ifdef FLYCAST_CLARITY
+    clarity_commands();
+    return;
+#endif
 	fullScreenWindow(false);
 	ImGui::SetNextWindowBgAlpha(0.8f);
 	ImguiStyleVar _{ImGuiStyleVar_WindowBorderSize, 0};
@@ -882,6 +890,11 @@ void gui_load_game()
 
 static void gui_display_content()
 {
+#ifdef FLYCAST_CLARITY
+    clarity::library(boxart);
+    contentpath_warning_popup();
+    return;
+#endif
 	fullScreenWindow(false);
 	ImguiStyleVar _(ImGuiStyleVar_WindowRounding, 0);
 	ImguiStyleVar _1(ImGuiStyleVar_WindowBorderSize, 0);
@@ -1102,6 +1115,9 @@ static bool systemdir_selected_callback(bool cancelled, std::string selection)
 
 static void gui_display_onboarding()
 {
+#ifdef FLYCAST_CLARITY
+    clarity::drawBackdrop("Welcome to Flycast");
+#endif
 	const char *title = T("Select Flycast Home Folder");
 	ImGui::OpenPopup(title);
 	select_file_popup(title, &systemdir_selected_callback);
@@ -1127,6 +1143,10 @@ static void gui_network_start()
 	ImGui::SetNextWindowSize(ScaledVec2(360, 0));
 	ImGui::SetNextWindowBgAlpha(0.8f);
 	ImguiStyleVar _1(ImGuiStyleVar_WindowPadding, ScaledVec2(20, 20));
+
+#ifdef FLYCAST_CLARITY
+    clarity::progressWindow("Connecting players");
+#endif
 
 	if (ImGui::Begin("##network", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_AlwaysAutoResize))
 	{
@@ -1247,6 +1267,10 @@ static void gui_display_loadscreen()
 	ImGui::SetNextWindowBgAlpha(0.8f);
 	ImguiStyleVar _(ImGuiStyleVar_WindowPadding, ScaledVec2(20, 20));
 
+#ifdef FLYCAST_CLARITY
+    clarity::progressWindow("Starting your game");
+#endif
+
     if (ImGui::Begin("##loading", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_AlwaysAutoResize))
     {
 		ImguiStyleVar _(ImGuiStyleVar_FramePadding, ScaledVec2(20, 10));
@@ -1356,6 +1380,9 @@ void gui_display_ui()
 	clarity::smokeBeforeFrame();
 #endif
 	ImGui::NewFrame();
+#ifdef FLYCAST_CLARITY
+    clarity::beginTheme();
+#endif
 	error_msg_shown = false;
 	bool gui_open = gui_is_open();
 
@@ -1408,6 +1435,9 @@ void gui_display_ui()
 		break;
 	}
 	error_popup();
+#ifdef FLYCAST_CLARITY
+    clarity::endTheme();
+#endif
     ImGui::Render();
 	gui_endFrame(gui_open);
 	uiThreadRunner.execTasks();
@@ -1538,6 +1568,9 @@ void gui_term()
 {
 	if (inited)
 	{
+#ifdef FLYCAST_CLARITY
+        clarity::closeMappings();
+#endif
 		inited = false;
 		scanner.stop();
 		ImGui::DestroyContext();
@@ -1655,6 +1688,8 @@ void gui_togglePause()
 void gui_setState(GuiState newState)
 {
 #ifdef FLYCAST_CLARITY
+    if (gui_state == GuiState::Settings && newState != GuiState::Settings)
+        clarity::closeMappings();
     if (newState == GuiState::Settings && gui_state != GuiState::Settings)
         clarity::beginSession();
 #endif

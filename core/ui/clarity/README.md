@@ -1,90 +1,104 @@
-# Clarity settings for Flycast
+# Clarity desktop frontend for Flycast
 
-Clarity is a native C++/Dear ImGui settings screen, enabled by default for desktop
-Windows builds. It does not replace the emulation core. The browser concept is a
-visual reference; the native screen reads the current Flycast configuration.
+Clarity is a native C++/Dear ImGui frontend, enabled by default on Windows.
+The startup library, settings, controller mapping, pause menu, file/folder
+picker, cheats and achievement list share the same Light/Night appearance.
+Loading, onboarding and connection dialogs use the same theme. No web runtime
+is required, and the emulator core and existing option defaults are unchanged.
 
 ## Building
 
-Use the normal Flycast build instructions and initialized submodules. Add
-`-DFLYCAST_CLARITY=ON` to enable the screen, or `OFF` to compile only Classic UI.
-The current Windows development build uses Visual Studio 2019 x64, CMake 3.31,
-and `USE_DX9=OFF`, `USE_BREAKPAD=OFF`, `USE_LUA=OFF`. DirectX 11, OpenGL and Vulkan
-remain available. These flags are local build choices, not changes to defaults.
+Use the normal Flycast build instructions with initialized submodules.
+`-DFLYCAST_CLARITY=ON` enables the frontend; `OFF` builds the upstream frontend.
+The local Windows package uses Visual Studio 2019 x64, CMake 3.31 and
+`USE_DX9=OFF`, `USE_BREAKPAD=OFF`, `USE_LUA=OFF`, `USE_DISCORD=OFF`.
+DirectX 11, OpenGL, Vulkan and RetroAchievements are included. These are local
+build choices, not changes to repository defaults. Build-dependent controls
+are shown only when their feature is available.
 
-## Behavior
+## Interface and settings
 
-- English and Light are the initial Clarity preferences. Eight languages and
-  Light/Night are saved globally in the `[clarity]` section of `emu.cfg`.
-  They do not change Dreamcast BIOS language or existing Classic UI preferences.
-- Graphics, audio, input assignments/dead zones, and game folders are staged.
-  Apply commits changed fields; Undo reloads the live configuration. Closing or
-  entering Classic with pending changes offers Apply, Discard, and Keep editing.
-- Opening Settings does not select a preset. Original/Balanced/Sharp change only
-  internal resolution to 480/960/1440 when clicked. They are not performance scores.
-- A running game's existing profile is respected. Customize this game stages
-  profile creation until Apply. Remove profiles in Classic Settings; close the
-  game before editing global defaults. Folder paths and host controller mappings
-  are shared, as in upstream. VMU display and save-state options follow game scope.
-- Read-only compatibility options remain locked. Selecting another renderer
-  starts with its non-OIT mode; per-pixel mode is gated on the applied context's
-  capabilities. Framebuffer emulation retains the user's resolution/widescreen
-  preferences, which the renderer ignores while accurate framebuffer is enabled.
-- Audio buffer samples are not rounded unless the slider changes. Apply updates
-  volume's logarithmic gain. Existing Done/save, Maple reconnect, VMU reset and
-  DreamPicoPort/DreamPotato lifecycle behavior is shared with Classic.
-- Device drafts use weak references. Disconnected devices are dropped; a newly
-  connected device is read without overwriting other pending edits.
-- Classic Settings retains all other options, including button mapping, Maple/VMU
-  device types, networking, BIOS paths, achievements, and diagnostics. It retains
-  its original immediate-edit/save behavior and upstream translation coverage.
-  Clarity's eight-language coverage applies to the new screen, not every legacy
-  dialog. The upstream folder picker also uses the Classic locale.
+- English and Light are the initial preferences. English, Vietnamese, German,
+  French, Spanish, Simplified Chinese, Traditional Chinese and Korean are
+  available. Language and theme are global `[clarity]` options in `emu.cfg`,
+  independent of the BIOS language and the retained legacy UI preferences.
+- The library has game search, platform filters, grid/list views, folder setup
+  and direct access to Button mapping, Settings and About.
+- Settings has eleven release pages: Console & appearance, Button mapping,
+  Ports & VMU, Graphics, Audio, Library & saves, Folders & BIOS, Network,
+  Achievements, Advanced and About. Diagnostics appears in debug/profiling
+  builds. Search finds categories and setting labels. There is no Classic
+  destination in the Clarity frontend.
+- Buttons, direction/axis mappings, triggers, system controls and emulator
+  shortcuts are accessible in the mapping page. It supports device/port
+  selection, Dreamcast/Arcade layouts, per-game mappings, live input feedback,
+  rumble/stick settings, reset confirmation and disconnect cleanup.
+- Edits apply immediately, as in upstream. Save changes persists them without
+  leaving; navigation and Save & return use the shared settings finish path.
+  Some options take effect when restarting the game or renderer. This replaces
+  the former four-page staged Apply/Undo implementation.
+- Opening settings does not choose a preset or round audio buffer samples.
+  Read-only compatibility options remain disabled. Per-game profiles use the
+  original Option/Settings storage; creation is explicit and deletion requires
+  confirmation. Host input mappings and folders retain upstream scope.
+- Saving uses the shared audio gain, UI scaling, Maple reconnect, VMU reset
+  and DreamPotato lifecycle. Controller mapping files use upstream input
+  detection and persistence rather than a separate mapping format.
+- Icons accompany navigation, categories and major actions. The sidebar
+  adapts to translated labels, and becomes an icon rail with tooltips in
+  compact windows. Navigation and content scroll independently.
 
-## Keeping upstream merges manageable
+About credits flyinghead and Flycast contributors, links to the original
+repository, author, license, reicast and dependencies, and invites the user
+to star **flyinghead/flycast**. Clarity/GameTranslate contributions are credited
+separately. Links only open when activated; no star is submitted automatically.
+The supplied `gametranslate.png` is embedded unchanged in the lower-left
+branding, linking to https://gametranslate.us.
 
-Keep `master` tracking upstream code and work on `codex/ui-redesign`. New code,
-translations, tests, and the supplied GameTranslate image live in this directory.
-Integration is limited to `core/ui/CMakeLists.txt`, `gui.cpp` (session entry),
-`settings.cpp` (screen routing and shared lifecycle), and `resources.cmake`.
-There are no emulation-core or existing option-default changes.
+## Keeping upstream updates manageable
 
-When syncing, fetch upstream and merge `upstream/master` into the UI branch.
-Review these four integration points, especially upstream changes to the Done
-path and renderer/settings behavior. Build both Clarity ON and OFF and run the
-checks below. Isolation reduces conflicts; it cannot guarantee conflict-free
-updates when upstream changes the integration APIs.
+Keep the UI work on `codex/ui-redesign` and keep `master` separate. Most new code
+lives here, but integration also touches `core/ui` routing, shared widgets,
+settings lifecycle, mapping, cheats, achievements, `core/oslib/i18n.cpp` and
+resource/build registration. This is not a conflict-free overlay.
 
-## Translations and verification
+For an upstream update, fetch upstream and merge `upstream/master` into a
+temporary integration branch based on the UI branch. Review changed UI APIs,
+settings and input lifecycle, translation/font behavior and build registration.
+Resolve changes, build Clarity ON and OFF, run the coverage/scope/native checks
+below, then merge the tested integration back into the UI branch. Keep backend
+changes separate from presentation changes to make conflicts easier to review.
 
-Edit `strings.json` (column order: en, vi, de, fr, es, zh_CN, zh_TW, ko), then run
-`python core/ui/clarity/generate_strings.py` and commit both the JSON and generated
-`strings.inc`. No Python is required to build Flycast.
+## Translations and validation
 
-`tests/draft_test.cpp` is a standalone C++17 regression test for deferred writes,
-Undo, read-only values, unrelated external updates, and no-op commits.
-`tests/option_scope_test.cpp` uses the real upstream Option/Settings classes with
-an in-memory storage backend to check game isolation, inherited values, protected
-overrides, and global language persistence. Compile with assertions enabled
-(`cl /EHsc /std:c++17 /utf-8 /Icore /Icore/deps/nowide/include ...` or equivalent).
+`strings.json` contains eight-column native translations, ordered
+en, vi, de, fr, es, zh_CN, zh_TW, ko. New authored strings also live in
+`translations.tsv` (pipe-delimited, `\n` for embedded newlines).
+Run `python core/ui/clarity/generate_catalogs.py` to merge these strings,
+generate English aliases for shared dialogs and regenerate the search index
+and `strings.inc`. Commit generated files. No Python is required to build.
+Shared upstream dialogs consult the same translations. Backend-provided device
+names and service/game content retain their original text.
 
-Native checks should cover English first launch, all eight languages, both themes,
-Apply/Undo and reload, pending navigation, a narrow window, folder selection,
-device disconnect/reconnect, per-game isolation and Classic round trips. Actual
-gameplay, physical controller mapping and in-game Maple/VMU reconnection require
-appropriate game content and hardware; a successful UI build is not a playtest.
+`python core/ui/clarity/tests/coverage_test.py` detects missing option references,
+checks all eight columns and compares printf placeholders. It is a source
+coverage check, not proof that every setting was exercised in a game.
+`tests/option_scope_test.cpp` tests the actual upstream Option/Settings classes
+with in-memory storage: global/game isolation, protected overrides, profile
+removal and global language persistence. Compile it as C++17 with assertions
+enabled, include paths `core` and `core/deps/nowide/include`.
 
-For deterministic Windows visual checks, build with
-`-DFLYCAST_CLARITY_SMOKE_TEST=ON`. Run that test executable from an isolated folder
-with its own `emu.cfg`, DirectX 11 (`pvr.rend = 2`), initial resolution 480, and the
-desired `[window]` size. Add `[qa-preserve]` with `unknown = keep-me` to the test
-configuration to check preservation of unrecognized entries.
-It opens Settings, renders 22 locale/theme/category cases, writes PNGs directly
-from the DX11 backbuffer into the working directory and exits. It does not need
-desktop capture or synthesize OS input. At widths of at least 1000 pixels it also
-drives the real ImGui widgets and checks presets, theme changes with pending edits,
-Undo, Apply, pending-navigation decisions, Classic round trips, and persistence.
-This does not test gameplay. Turn this option OFF for the executable for users.
+For deterministic Windows rendering checks, enable
+`-DFLYCAST_CLARITY_SMOKE_TEST=ON`. Run the executable in an isolated folder with
+its own `emu.cfg`, `pvr.rend = 2`, `rend.Resolution = 480`,
+`aica.BufferSize = 987`, a `[window]` width/height and
+`[qa-preserve] unknown = keep-me`. The harness captures 82 actual DX11 frames
+covering locale/theme variants of the library, mapping and About; all settings
+pages; network variants, pause, cheats and the shared picker. It creates a text
+fixture named `000-picker-fixture.elf` solely to verify unfiltered file listing.
+At widths of at least 1000 it also drives real ImGui widgets: navigation, DSP
+save/reload, synthetic controller A mapping/detection/persistence/disconnect and
+return to the library. Narrow runs check rendering only. It does not inject OS
+input. **Turn the smoke option OFF for user builds.**
 
-The unmodified `gametranslate.png` is the logo supplied by the fork owner. The
-lower-left link opens `https://gametranslate.us` only when activated.
+See `tests/VALIDATION.md` for the results and remaining hardware/gameplay checks.

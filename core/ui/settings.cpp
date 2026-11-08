@@ -32,7 +32,7 @@
 #include "hw/mem/addrspace.h"
 #endif
 
-static void gui_settings_advanced()
+void gui_settings_advanced()
 {
 #if FEAT_SHREC != DYNAREC_NONE
     header(T("CPU Mode"));
@@ -142,7 +142,7 @@ static void gui_settings_advanced()
 
 #if !defined(NDEBUG) || defined(DEBUGFAST) || FC_PROFILER
 
-static void gui_debug_tab()
+void gui_debug_tab()
 {
 	header("Logging");
 	{
@@ -245,7 +245,7 @@ void gui_display_settings()
        	SaveSettings();
     };
 #ifdef FLYCAST_CLARITY
-    if (clarity::display(finishSettings))
+    if (clarity::display(finishSettings, mapleDevicesChanges, expDevicesChanges))
         return;
 #endif
 
@@ -258,11 +258,7 @@ void gui_display_settings()
 
     if (ImGui::Button(T("Done"), ScaledVec2(100, 30)))
         finishSettings(true);
-#ifdef FLYCAST_CLARITY
-    ImGui::SameLine();
-    if (clarity::returnFromClassic())
-        finishSettings(false);
-#endif
+
 
 	if (game_started)
 	{

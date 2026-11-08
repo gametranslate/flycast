@@ -17,6 +17,9 @@
     along with reicast.  If not, see <https://www.gnu.org/licenses/>.
  */
 #include "gui_util.h"
+#ifdef FLYCAST_CLARITY
+#include "clarity/clarity.h"
+#endif
 #include <string>
 #include <vector>
 #include <algorithm>
@@ -43,6 +46,14 @@ static std::string select_current_directory = "**home**";
 static std::vector<hostfs::FileInfo> subfolders;
 static std::vector<hostfs::FileInfo> folderFiles;
 bool subfolders_read;
+#ifdef FLYCAST_CLARITY_SMOKE_TEST
+namespace clarity {
+void smokeSetPickerDirectory(const std::string& path) {
+    select_current_directory = path;
+    subfolders_read = false;
+}
+}
+#endif
 
 extern int insetLeft, insetRight, insetTop, insetBottom;
 void error_popup();
@@ -54,9 +65,18 @@ namespace hostfs
 	}
 }
 
+#ifdef FLYCAST_CLARITY
+#include "IconsFontAwesome6.h"
+#include "clarity/file_picker.inc"
+#endif
+
 void select_file_popup(const char *prompt, StringCallback callback,
 		bool selectFile, const std::string& selectExtension)
 {
+#ifdef FLYCAST_CLARITY
+    clarity_file_picker(prompt, callback, selectFile, selectExtension);
+    return;
+#endif
 	fullScreenWindow(true);
 	ImguiStyleVar _(ImGuiStyleVar_WindowRounding, 0);
 	ImguiStyleVar _1(ImGuiStyleVar_FramePadding, ImVec2(4, 3)); // default
@@ -240,6 +260,20 @@ void ShowHelpMarker(const char* desc)
 template<bool PerGameOption>
 bool OptionCheckbox(const char *name, config::Option<bool, PerGameOption>& option, const char *help)
 {
+#ifdef FLYCAST_CLARITY
+    if (clarity::cardsActive()) {
+        clarity::beginRow(name, help, option.isReadOnly());
+        bool value = option;
+        bool changed = ImGui::Checkbox("##value", &value);
+#ifdef FLYCAST_CLARITY_SMOKE_TEST
+        clarity::smokeObserve(name);
+#endif
+        if (changed) option.set(value);
+        ImGui::SameLine(); ImGui::TextUnformatted(clarity::tr(value ? "on" : "off"));
+        clarity::endRow();
+        return changed;
+    }
+#endif
 	bool pressed;
 	{
 		DisabledScope scope(option.isReadOnly());
@@ -262,6 +296,16 @@ template bool OptionCheckbox(const char *name, config::Option<bool, false>& opti
 template<bool PerGameOption>
 bool OptionSlider(const char *name, config::Option<int, PerGameOption>& option, int min, int max, const char *help, const char *format)
 {
+#ifdef FLYCAST_CLARITY
+    if (clarity::cardsActive()) {
+        clarity::beginRow(name, help, option.isReadOnly());
+        int value = option;
+        bool changed = ImGui::SliderInt("##value", &value, min, max, format);
+        if (changed) option.set(value);
+        clarity::endRow();
+        return changed;
+    }
+#endif
 	bool valueChanged;
 	{
 		DisabledScope scope(option.isReadOnly());
@@ -283,6 +327,11 @@ template bool OptionSlider(const char *name, config::Option<int, false>& option,
 
 bool OptionArrowButtons(const char *name, config::Option<int>& option, int min, int max, const char *help, const char *format)
 {
+#ifdef FLYCAST_CLARITY
+    if (clarity::cardsActive()) {
+        return OptionSlider(name, option, min, max, help, format);
+    }
+#endif
 	const float innerSpacing = ImGui::GetStyle().ItemInnerSpacing.x;
 	const std::string id = "##" + std::string(name);
 	{
@@ -343,6 +392,21 @@ template<bool PerGameOption>
 void OptionComboBox(const char *name, config::Option<int, PerGameOption>& option, const char *values[], int count,
 			const char *help)
 {
+#ifdef FLYCAST_CLARITY
+    if (clarity::cardsActive()) {
+        clarity::beginRow(name, help, option.isReadOnly());
+        int value = option;
+        if (ImGui::BeginCombo("##value", value >= 0 && value < count ? values[value] : "?")) {
+            for (int i = 0; i < count; ++i) {
+                if (ImGui::Selectable(values[i], value == i)) option = i;
+                if (value == i) ImGui::SetItemDefaultFocus();
+            }
+            ImGui::EndCombo();
+        }
+        clarity::endRow();
+        return;
+    }
+#endif
 	{
 		DisabledScope scope(option.isReadOnly());
 

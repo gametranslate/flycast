@@ -10,31 +10,29 @@
 #include <vector>
 #include <map>
 #include "imgui.h"
+#include "input/gamepad_device.h"
+#include "imgui_internal.h"
 
 namespace clarity {
 namespace {
 int frame = 0;
 constexpr int framesPerCase = 8;
-constexpr int cases = 22;
+constexpr int cases = 82;
 std::map<std::string, ImVec2> items;
-struct Step { const char* key; int live, draft; bool classic; };
-const Step steps[] = {
-    {"balanced", 480, 960, false},
-    {"night", 480, 960, false},
-    {"revert", 480, 480, false},
-    {"sharp", 480, 1440, false},
-    {"apply", 1440, 1440, false},
-    {"balanced", 1440, 960, false},
-    {"classic", 1440, 960, false},
-    {"cancel", 1440, 960, false},
-    {"classic", 1440, 960, false},
-    {"discard", 1440, 1440, true},
-    {"backClarity", 1440, 1440, false},
-    {"original", 1440, 480, false},
-    {"classic", 1440, 480, false},
-    {"applyContinue", 480, 480, true},
-    {"backClarity", 480, 480, false},
+class TestPad : public GamepadDevice {
+public:
+    TestPad() : GamepadDevice(0, "ClarityRegression") {
+        _name = "Regression controller";
+        _unique_id = "clarity-ui-test";
+        hasAnalogStick = true;
+        input_mapper = std::make_shared<InputMapping>();
+        input_mapper->set_button(DC_BTN_A, 90);
+    }
 };
+std::shared_ptr<TestPad> testPad;
+u64 inputStart = 0;
+int interactionStep = 0, stepFrame = 0;
+bool originalDsp = false;
 void capture(int index);
 void fail(int code, const char* key) {
     capture(99);
@@ -85,50 +83,165 @@ void smokeObserve(const char* key) {
     if (ImGui::IsItemVisible()) items[key] = ImVec2((a.x + b.x) / 2, (a.y + b.y) / 2);
 }
 void smokeBeforeFrame() {
-    // Isolate the deterministic test stream from the host window's real input.
     ImGui::GetIO().ClearEventsQueue();
     ImGui::GetIO().ConfigInputTrickleEventQueue = false;
     ImGui::GetIO().AddFocusEvent(true);
     int index = frame / framesPerCase;
     if (index >= cases) {
-        // Small-window runs only exercise rendering; full-size runs also drive
-        // real widget input through ImGui's public IO API (never OS input).
         if (ImGui::GetIO().DisplaySize.x >= 1000) {
-            int testFrame = frame - cases * framesPerCase;
-            if (testFrame == 0) smokeConfigure(0, false, 0);
-            if (testFrame < framesPerCase) return;
-            int step = (testFrame - framesPerCase) / framesPerCase;
-            int phase = testFrame % framesPerCase;
-            if (step < (int)std::size(steps)) {
-                const auto& test = steps[step];
-                if (phase <= 3) {
-                    auto it = items.find(test.key);
-                    if (it == items.end()) fail(10, test.key);
-                    ImGui::GetIO().AddMousePosEvent(it->second.x, it->second.y);
-                    ImGui::GetIO().AddMouseButtonEvent(0, phase < 2);
+            auto click = [](const char* key) {
+                auto it = items.find(key);
+                if (it == items.end()) fail(10, key);
+                ImGui::GetIO().AddMousePosEvent(it->second.x, it->second.y);
+                ImGui::GetIO().AddMouseButtonEvent(0, stepFrame < 2);
+            };
+            if (interactionStep == 0) {
+                if (stepFrame == 0) {
+                    if (!GImGui->OpenPopupStack.empty()) ImGui::ClosePopupToLevel(0, true);
+                    config::GGPOEnable = config::NetworkEnable = config::BattleCableEnable = false;
+                    gui_setState(GuiState::Main);
+                    smokeConfigure(0, false, 0);
+                    originalDsp = config::DSPEnabled;
+                    items.clear();
                 }
-                if (phase == 6 && !smokeCheck(test.live, test.draft, test.classic)) fail(11, test.key);
-                return;
+                if (stepFrame >= 8) { interactionStep++; stepFrame = -1; }
+            } else if (interactionStep == 1) {
+                if (stepFrame <= 3) click("Settings");
+                if (stepFrame == 7) {
+                    if (gui_state != GuiState::Settings) fail(11, "home-settings");
+                    interactionStep++; stepFrame = -1;
+                }
+            } else if (interactionStep == 2) {
+                if (stepFrame <= 3) click("Audio");
+                if (stepFrame == 7) {
+                    if (smokePage() != (int)Page::Audio) fail(11, "audio-navigation");
+                    interactionStep++; stepFrame = -1;
+                }
+            } else if (interactionStep == 3) {
+                if (stepFrame <= 3) click("Enable DSP");
+                if (stepFrame == 7) {
+                    if (config::DSPEnabled.get() == originalDsp) fail(11, "dsp-widget");
+                    interactionStep++; stepFrame = -1;
+                }
+            } else if (interactionStep == 4) {
+                if (stepFrame <= 3) click("Save changes");
+                if (stepFrame == 7) {
+                    bool before = config::DSPEnabled;
+                    config::DSPEnabled.load();
+                    if (config::DSPEnabled.get() != before) fail(11, "dsp-persistence");
+                    testPad = std::make_shared<TestPad>();
+                    GamepadDevice::Register(testPad);
+                    openSettings(Page::Controllers);
+                    smokeConfigure(0,false,(int)Page::Controllers);
+                    smokeUseTestController();
+                    interactionStep++; stepFrame = -1;
+                }
+            } else if (interactionStep == 5) {
+                // Allow layout to settle, then use the visible A mapping widget.
+                if (stepFrame >= 8 && stepFrame <= 11) {
+                    auto it = items.find("map-A");
+                    if (it == items.end()) fail(10,"map-A");
+                    ImGui::GetIO().AddMousePosEvent(it->second.x,it->second.y);
+                    ImGui::GetIO().AddMouseButtonEvent(0,stepFrame<10);
+                }
+                if (stepFrame == 14) {
+                    if (!testPad->is_input_detecting()) fail(11, "map-detection-start");
+                    inputStart = getTimeMs();
+                    interactionStep++; stepFrame = -1;
+                }
+            } else if (interactionStep == 6) {
+                if (getTimeMs() - inputStart > 400) {
+                    testPad->gamepad_btn_input(42,true);
+                    testPad->gamepad_btn_input(42,false);
+                    interactionStep++; stepFrame = -1;
+                }
+            } else if (interactionStep == 7) {
+                if (stepFrame == 7) {
+                    if (testPad->get_input_mapping()->get_button_code(0,DC_BTN_A) != 42) fail(11,"map-A-result");
+                    interactionStep++; stepFrame = -1;
+                }
+            } else if (interactionStep == 8) {
+                if (stepFrame <= 3) click("Save changes");
+                if (stepFrame == 7) {
+                    if (!testPad->find_mapping(DC_PLATFORM_DREAMCAST)
+                            || testPad->get_input_mapping()->get_button_code(0,DC_BTN_A) != 42) fail(11,"map-file-reload");
+                    GamepadDevice::Unregister(testPad);
+                    interactionStep++; stepFrame = -1;
+                }
+            } else if (interactionStep == 9) {
+                if (stepFrame == 8) {
+                    testPad.reset();
+                    openSettings(Page::About);
+                    interactionStep++; stepFrame = -1;
+                }
+            } else if (interactionStep == 10) {
+                if (stepFrame > 6 && stepFrame <= 10) {
+                    auto it = items.find("Save & return");
+                    if (it == items.end()) fail(10,"Save & return");
+                    ImGui::GetIO().AddMousePosEvent(it->second.x,it->second.y);
+                    ImGui::GetIO().AddMouseButtonEvent(0,stepFrame<9);
+                }
+                if (stepFrame == 14) {
+                    if (gui_state != GuiState::Main) fail(11,"return-library");
+                    interactionStep++; stepFrame = -1;
+                }
+            } else {
+                config::DSPEnabled = originalDsp;
+                closeMappings();
+                SaveSettings();
+                if (config::AudioBufferSize.get() != 987 || config::RenderResolution.get() != 480) fail(12,"view-preserves-settings");
+                // Continue to the final report.
+                interactionStep = 99;
             }
-            if (config::loadInt("config", "rend.Resolution") != 480
-                || config::loadStr("qa-preserve", "unknown") != "keep-me") fail(12, "persistence");
+            ++stepFrame;
+            if (interactionStep != 99) return;
         }
-        std::FILE* report = std::fopen("clarity-smoke-pass.txt", "w");
+        closeMappings();
+        SaveSettings();
+        if (config::loadStr("qa-preserve", "unknown") != "keep-me") fail(12, "preserve");
+        auto report = std::fopen("clarity-smoke-pass.txt", "w");
         if (!report) std::exit(6);
-        std::fprintf(report, "Rendered 8 locales x 2 themes plus 3 other categories x 2 themes.\nWidget interaction tests: %s\n",
-            ImGui::GetIO().DisplaySize.x >= 1000 ? "PASS" : "SKIPPED (small window)");
+        std::fprintf(report, "PASS: 82 native DX11 renders: 8 locales x 2 themes for library, controllers and About; all 11 Settings pages; GGPO/Naomi/Battle, pause, cheats and file picker. Unknown config preserved.\nWidgets: %s\n",
+            ImGui::GetIO().DisplaySize.x >= 1000 ? "PASS: navigation, DSP save/reload, mapping A through input detection, mapping-file reload, synthetic unplug, return to library; original audio samples and resolution preserved." : "SKIPPED: compact rendering only");
         std::fclose(report);
         std::exit(0);
     }
-    if (frame == 0) gui_setState(GuiState::Settings);
     if (frame % framesPerCase == 0) {
-        int locale = index < 16 ? index / 2 : 0;
-        int page = index < 16 ? 0 : (index - 16) / 2 + 1;
-        smokeConfigure(locale, index % 2 != 0, page);
+        if (!GImGui->OpenPopupStack.empty()) ImGui::ClosePopupToLevel(0, true);
+        int locale = 0, page = 0;
+        bool home = index < 16;
+        if (home) locale = index/2;
+        else if (index < 38) page = (index-16)/2;
+        else if (index < 54) { page = 1; locale = (index-38)/2; }
+        else if (index < 70) { page = 10; locale = (index-54)/2; }
+        else page = (int)Page::Network;
+        gui_setState(home ? GuiState::Main : GuiState::Settings);
+        smokeConfigure(locale, index%2 != 0, page);
+        if (index >= 70) {
+            config::GGPOEnable = index<72;
+            config::NetworkEnable = index>=72 && index<74;
+            config::BattleCableEnable = index>=74 && index<76;
+            if (index>=76 && index<78) gui_setState(GuiState::Commands);
+            if (index>=78 && index<80) gui_setState(GuiState::Cheats);
+            if (index>=80) {
+                gui_setState(GuiState::Main);
+                auto path=get_writable_config_path("000-picker-fixture.elf");
+                if (auto file=std::fopen(path.c_str(),"wb")) { std::fputs("UI fixture, not a game.",file); std::fclose(file); }
+                smokeSetPickerDirectory(get_writable_config_path(""));
+            }
+        }
+        items.clear();
     }
+    if (index>=80 && frame%framesPerCase>=2 && frame%framesPerCase<=4) {
+        auto it=items.find("Open game");
+        if (it==items.end()) fail(10,"Open game");
+        ImGui::GetIO().AddMousePosEvent(it->second.x,it->second.y);
+        ImGui::GetIO().AddMouseButtonEvent(0,frame%framesPerCase<4);
+    }
+    if (index>=80 && frame%framesPerCase==7 && items.find("file:000-picker-fixture.elf")==items.end()) fail(11,"open-file-filter");
 }
 void smokeAfterFrame() {
-    if (frame < cases * framesPerCase && frame % framesPerCase == framesPerCase - 1) capture(frame / framesPerCase);
+    if (frame < cases*framesPerCase && frame%framesPerCase == framesPerCase-1) capture(frame/framesPerCase);
     ++frame;
 }
 }

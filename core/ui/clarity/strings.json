@@ -1078,5 +1078,5855 @@
     "按键映射和 VMU 设备可在经典设置中配置。",
     "按鍵對應與 VMU 裝置可在傳統設定中設定。",
     "버튼 매핑과 VMU 장치는 기존 설정에서 구성할 수 있습니다."
+  ],
+  "Language": [
+    "Language",
+    "Ngôn ngữ",
+    "Sprache",
+    "Langue",
+    "Idioma",
+    "语言",
+    "語言",
+    "언어"
+  ],
+  "Appearance": [
+    "Appearance",
+    "Giao diện",
+    "Darstellung",
+    "Apparence",
+    "Apariencia",
+    "外观",
+    "外觀",
+    "화면 모양"
+  ],
+  "Light": [
+    "Light",
+    "Sáng",
+    "Hell",
+    "Clair",
+    "Claro",
+    "浅色",
+    "淺色",
+    "라이트"
+  ],
+  "Night": [
+    "Night",
+    "Đêm",
+    "Nacht",
+    "Nuit",
+    "Noche",
+    "夜间",
+    "夜間",
+    "나이트"
+  ],
+  "Settings": [
+    "Settings",
+    "Cài đặt",
+    "Einstellungen",
+    "Paramètres",
+    "Ajustes",
+    "设置",
+    "設定",
+    "설정"
+  ],
+  "Settings categories": [
+    "Settings categories",
+    "Nhóm cài đặt",
+    "Einstellungskategorien",
+    "Catégories de paramètres",
+    "Categorías de ajustes",
+    "设置分类",
+    "設定分類",
+    "설정 카테고리"
+  ],
+  "Make it yours": [
+    "Make it yours",
+    "Chơi theo cách của bạn",
+    "Ganz nach deinem Geschmack",
+    "À votre image",
+    "A tu manera",
+    "按你的喜好",
+    "隨你喜好",
+    "나만의 설정"
+  ],
+  "Graphics": [
+    "Graphics",
+    "Đồ họa",
+    "Grafik",
+    "Graphismes",
+    "Gráficos",
+    "图形",
+    "圖形",
+    "그래픽"
+  ],
+  "Audio": [
+    "Audio",
+    "Âm thanh",
+    "Audio",
+    "Audio",
+    "Audio",
+    "音频",
+    "音訊",
+    "오디오"
+  ],
+  "Controllers": [
+    "Controllers",
+    "Tay cầm",
+    "Controller",
+    "Manettes",
+    "Mandos",
+    "控制器",
+    "控制器",
+    "컨트롤러"
+  ],
+  "Games & storage": [
+    "Games & storage",
+    "Game & lưu trữ",
+    "Spiele & Speicher",
+    "Jeux et stockage",
+    "Juegos y almacenamiento",
+    "游戏与存储",
+    "遊戲與儲存",
+    "게임 및 저장 공간"
+  ],
+  "Search settings…": [
+    "Search settings…",
+    "Tìm cài đặt…",
+    "Einstellungen suchen…",
+    "Rechercher un réglage…",
+    "Buscar ajustes…",
+    "搜索设置…",
+    "搜尋設定…",
+    "설정 검색…"
+  ],
+  "Apply to": [
+    "Apply to",
+    "Áp dụng cho",
+    "Gilt für",
+    "Appliquer à",
+    "Aplicar a",
+    "应用于",
+    "套用至",
+    "적용 대상"
+  ],
+  "All games": [
+    "All games",
+    "Tất cả game",
+    "Alle Spiele",
+    "Tous les jeux",
+    "Todos los juegos",
+    "所有游戏",
+    "所有遊戲",
+    "모든 게임"
+  ],
+  "Default for games without overrides": [
+    "Default for games without overrides",
+    "Mặc định cho game chưa tùy chỉnh",
+    "Standard für Spiele ohne eigene Einstellungen",
+    "Par défaut pour les jeux sans réglages dédiés",
+    "Por defecto para juegos sin ajustes propios",
+    "未单独设置的游戏使用此配置",
+    "未個別設定的遊戲使用此配置",
+    "개별 설정이 없는 게임의 기본값"
+  ],
+  "The library is shared across the app": [
+    "The library is shared across the app",
+    "Thư viện dùng chung cho toàn ứng dụng",
+    "Die Bibliothek gilt für die gesamte App",
+    "La bibliothèque est commune à toute l’application",
+    "La biblioteca es común a toda la aplicación",
+    "游戏库在整个应用中共享",
+    "遊戲庫在整個應用程式中共用",
+    "라이브러리는 앱 전체에서 공유됩니다"
+  ],
+  "Global settings": [
+    "Global settings",
+    "Cấu hình chung",
+    "Globale Einstellungen",
+    "Réglages globaux",
+    "Ajustes globales",
+    "全局设置",
+    "全域設定",
+    "전역 설정"
+  ],
+  "Using global settings": [
+    "Using global settings",
+    "Kế thừa cài đặt chung",
+    "Globale Einstellungen übernommen",
+    "Réglages globaux hérités",
+    "Usando ajustes globales",
+    "使用全局设置",
+    "使用全域設定",
+    "전역 설정 사용 중"
+  ],
+  "Game-specific settings": [
+    "Game-specific settings",
+    "Tùy chỉnh riêng cho game",
+    "Spielspezifische Einstellungen",
+    "Réglages propres au jeu",
+    "Ajustes del juego",
+    "游戏专属设置",
+    "遊戲專屬設定",
+    "게임별 설정"
+  ],
+  "This game uses your global settings.": [
+    "This game uses your global settings.",
+    "Game đang dùng cài đặt chung.",
+    "Dieses Spiel nutzt die globalen Einstellungen.",
+    "Ce jeu utilise vos réglages globaux.",
+    "Este juego usa tus ajustes globales.",
+    "此游戏正在使用全局设置。",
+    "此遊戲正在使用全域設定。",
+    "이 게임은 전역 설정을 사용합니다."
+  ],
+  "Customize this game": [
+    "Customize this game",
+    "Tùy chỉnh game này",
+    "Für dieses Spiel anpassen",
+    "Personnaliser ce jeu",
+    "Personalizar este juego",
+    "自定义此游戏",
+    "自訂此遊戲",
+    "이 게임 설정 변경"
+  ],
+  "Basic": [
+    "Basic",
+    "Cơ bản",
+    "Einfach",
+    "Essentiel",
+    "Básico",
+    "基本",
+    "基本",
+    "기본"
+  ],
+  "Advanced": [
+    "Advanced",
+    "Nâng cao",
+    "Erweitert",
+    "Avancé",
+    "Avanzado",
+    "高级",
+    "進階",
+    "고급"
+  ],
+  "Settings detail": [
+    "Settings detail",
+    "Mức độ cài đặt",
+    "Einstellungsumfang",
+    "Niveau de détail",
+    "Nivel de detalle",
+    "设置级别",
+    "設定層級",
+    "설정 수준"
+  ],
+  "Quick setup": [
+    "Quick setup",
+    "Chọn nhanh",
+    "Schnellauswahl",
+    "Configuration rapide",
+    "Configuración rápida",
+    "快速设置",
+    "快速設定",
+    "빠른 설정"
+  ],
+  "Choose a starting point": [
+    "Choose a starting point",
+    "Chọn cấu hình để bắt đầu",
+    "Wähle einen Ausgangspunkt",
+    "Choisissez un point de départ",
+    "Elige un punto de partida",
+    "选择起始配置",
+    "選擇起始配置",
+    "시작할 설정을 선택하세요"
+  ],
+  "Original": [
+    "Original",
+    "Nguyên bản",
+    "Original",
+    "Original",
+    "Original",
+    "原始",
+    "原始",
+    "원본"
+  ],
+  "Balanced": [
+    "Balanced",
+    "Cân bằng",
+    "Ausgewogen",
+    "Équilibré",
+    "Equilibrado",
+    "均衡",
+    "均衡",
+    "균형"
+  ],
+  "Sharp": [
+    "Sharp",
+    "Sắc nét",
+    "Scharf",
+    "Net",
+    "Nítido",
+    "清晰",
+    "清晰",
+    "선명"
+  ],
+  "1× · Lowest GPU load": [
+    "1× · Lowest GPU load",
+    "1× · Nhẹ nhất",
+    "1× · Geringste GPU-Last",
+    "1× · Charge GPU minimale",
+    "1× · Menor carga de GPU",
+    "1× · GPU 负载最低",
+    "1× · GPU 負載最低",
+    "1× · GPU 부하 최소"
+  ],
+  "2× · A clearer picture": [
+    "2× · A clearer picture",
+    "2× · Nét hơn",
+    "2× · Klareres Bild",
+    "2× · Image plus nette",
+    "2× · Imagen más clara",
+    "2× · 图像更清晰",
+    "2× · 影像更清晰",
+    "2× · 더 또렷한 화면"
+  ],
+  "3× · Higher GPU load": [
+    "3× · Higher GPU load",
+    "3× · Tăng tải GPU",
+    "3× · Höhere GPU-Last",
+    "3× · Charge GPU accrue",
+    "3× · Mayor carga de GPU",
+    "3× · GPU 负载更高",
+    "3× · GPU 負載更高",
+    "3× · GPU 부하 증가"
+  ],
+  "Internal resolution": [
+    "Internal resolution",
+    "Độ phân giải nội bộ",
+    "Interne Auflösung",
+    "Résolution interne",
+    "Resolución interna",
+    "内部渲染分辨率",
+    "內部渲染解析度",
+    "내부 해상도"
+  ],
+  "Higher resolution looks sharper but uses more GPU power.": [
+    "Higher resolution looks sharper but uses more GPU power.",
+    "Cao hơn cho hình ảnh nét hơn, nhưng tăng tải GPU.",
+    "Höhere Auflösung liefert mehr Schärfe, benötigt aber mehr GPU-Leistung.",
+    "Une résolution supérieure améliore la netteté, mais sollicite davantage le GPU.",
+    "Una resolución mayor mejora la nitidez, pero exige más a la GPU.",
+    "更高的分辨率可提升清晰度，但会增加 GPU 负载。",
+    "更高的解析度可提升清晰度，但會增加 GPU 負載。",
+    "해상도를 높이면 선명해지지만 GPU 부하가 증가합니다."
+  ],
+  "Aspect ratio": [
+    "Aspect ratio",
+    "Tỉ lệ hình ảnh",
+    "Seitenverhältnis",
+    "Format d’image",
+    "Relación de aspecto",
+    "画面比例",
+    "畫面比例",
+    "화면 비율"
+  ],
+  "4:3 preserves the original Dreamcast frame.": [
+    "4:3 preserves the original Dreamcast frame.",
+    "4:3 giữ khung hình gốc của Dreamcast.",
+    "4:3 bewahrt das ursprüngliche Dreamcast-Bildformat.",
+    "Le format 4:3 conserve le cadrage original de la Dreamcast.",
+    "4:3 conserva el encuadre original de Dreamcast.",
+    "4:3 保留 Dreamcast 的原始画面比例。",
+    "4:3 保留 Dreamcast 的原始畫面比例。",
+    "4:3은 Dreamcast의 원래 화면 비율을 유지합니다."
+  ],
+  "Widescreen": [
+    "Widescreen",
+    "Màn hình rộng",
+    "Breitbild",
+    "Écran large",
+    "Pantalla panorámica",
+    "宽屏",
+    "寬螢幕",
+    "와이드스크린"
+  ],
+  "Reduce screen tearing": [
+    "Reduce screen tearing",
+    "Giảm xé hình",
+    "Bildrisse reduzieren",
+    "Réduire les déchirures",
+    "Reducir el desgarro de imagen",
+    "减少画面撕裂",
+    "減少畫面撕裂",
+    "화면 찢어짐 줄이기"
+  ],
+  "Synchronize with your display (VSync).": [
+    "Synchronize with your display (VSync).",
+    "Đồng bộ với màn hình (VSync).",
+    "Mit dem Bildschirm synchronisieren (VSync).",
+    "Synchroniser avec l’écran (VSync).",
+    "Sincronizar con la pantalla (VSync).",
+    "与显示器同步（VSync）。",
+    "與顯示器同步（VSync）。",
+    "디스플레이와 동기화합니다(VSync)."
+  ],
+  "Start with 4:3. Performance depends on your game and hardware.": [
+    "Start with 4:3. Performance depends on your game and hardware.",
+    "Bắt đầu với 4:3. Hiệu năng phụ thuộc game và phần cứng.",
+    "Starte mit 4:3. Die Leistung hängt von Spiel und Hardware ab.",
+    "Commencez en 4:3. Les performances dépendent du jeu et du matériel.",
+    "Empieza con 4:3. El rendimiento depende del juego y del equipo.",
+    "建议从 4:3 开始。性能取决于游戏和硬件。",
+    "建議從 4:3 開始。效能取決於遊戲與硬體。",
+    "4:3으로 시작하세요. 성능은 게임과 하드웨어에 따라 달라집니다."
+  ],
+  "Widescreen may reveal visual glitches outside the original frame. Use it per game.": [
+    "Widescreen may reveal visual glitches outside the original frame. Use it per game.",
+    "Màn hình rộng có thể lộ lỗi ngoài khung gốc. Nên bật riêng từng game.",
+    "Breitbild kann außerhalb des Originalbilds Grafikfehler zeigen. Pro Spiel aktivieren.",
+    "L’écran large peut révéler des défauts hors du cadre original. Activez-le par jeu.",
+    "El modo panorámico puede mostrar fallos fuera del encuadre original. Actívalo por juego.",
+    "宽屏可能暴露原始画面之外的图像错误。建议按游戏启用。",
+    "寬螢幕可能顯示原始畫面外的影像錯誤。建議依遊戲啟用。",
+    "와이드스크린은 원래 화면 밖의 그래픽 오류를 드러낼 수 있습니다. 게임별로 사용하세요."
+  ],
+  "Graphics backend": [
+    "Graphics backend",
+    "Bộ dựng hình",
+    "Grafik-Backend",
+    "Moteur graphique",
+    "Motor gráfico",
+    "图形后端",
+    "圖形後端",
+    "그래픽 백엔드"
+  ],
+  "Choose a backend supported by your device.": [
+    "Choose a backend supported by your device.",
+    "Chọn backend phù hợp với thiết bị.",
+    "Wähle ein von deinem Gerät unterstütztes Backend.",
+    "Choisissez un moteur compatible avec votre appareil.",
+    "Elige un motor compatible con tu equipo.",
+    "选择设备支持的图形后端。",
+    "選擇裝置支援的圖形後端。",
+    "기기에서 지원하는 백엔드를 선택하세요."
+  ],
+  "Transparency sorting": [
+    "Transparency sorting",
+    "Xử lý lớp trong suốt",
+    "Transparenzsortierung",
+    "Tri de la transparence",
+    "Ordenación de transparencia",
+    "透明度排序",
+    "透明度排序",
+    "투명도 정렬"
+  ],
+  "Per Pixel is more accurate but may increase GPU load.": [
+    "Per Pixel is more accurate but may increase GPU load.",
+    "Per Pixel chính xác hơn nhưng có thể tăng tải GPU.",
+    "Per Pixel ist genauer, kann aber die GPU stärker belasten.",
+    "Per Pixel est plus précis, mais peut solliciter davantage le GPU.",
+    "Per Pixel es más preciso, pero puede aumentar la carga de GPU.",
+    "Per Pixel 更精确，但可能增加 GPU 负载。",
+    "Per Pixel 更精確，但可能增加 GPU 負載。",
+    "Per Pixel은 더 정확하지만 GPU 부하가 늘어날 수 있습니다."
+  ],
+  "Accurate framebuffer": [
+    "Accurate framebuffer",
+    "Framebuffer chính xác",
+    "Genauer Framebuffer",
+    "Framebuffer précis",
+    "Framebuffer preciso",
+    "精确帧缓冲",
+    "精確影格緩衝",
+    "정확한 프레임버퍼"
+  ],
+  "For games that need special compatibility.": [
+    "For games that need special compatibility.",
+    "Dành cho game cần tương thích đặc biệt.",
+    "Für Spiele mit besonderen Kompatibilitätsanforderungen.",
+    "Pour les jeux nécessitant une compatibilité particulière.",
+    "Para juegos que necesitan compatibilidad especial.",
+    "用于需要特殊兼容性的游戏。",
+    "用於需要特殊相容性的遊戲。",
+    "특별한 호환성이 필요한 게임에 사용합니다."
+  ],
+  "On": [
+    "On",
+    "Bật",
+    "Ein",
+    "Activé",
+    "Activado",
+    "开",
+    "開",
+    "켜짐"
+  ],
+  "Off": [
+    "Off",
+    "Tắt",
+    "Aus",
+    "Désactivé",
+    "Desactivado",
+    "关",
+    "關",
+    "꺼짐"
+  ],
+  "In-game audio": [
+    "In-game audio",
+    "Âm thanh khi chơi",
+    "Audio im Spiel",
+    "Audio en jeu",
+    "Audio del juego",
+    "游戏音频",
+    "遊戲音訊",
+    "게임 오디오"
+  ],
+  "Volume": [
+    "Volume",
+    "Âm lượng",
+    "Lautstärke",
+    "Volume",
+    "Volumen",
+    "音量",
+    "音量",
+    "음량"
+  ],
+  "Adjust Flycast audio independently.": [
+    "Adjust Flycast audio independently.",
+    "Điều chỉnh riêng âm thanh Flycast.",
+    "Die Lautstärke von Flycast separat anpassen.",
+    "Réglez le volume de Flycast séparément.",
+    "Ajusta el audio de Flycast por separado.",
+    "单独调整 Flycast 的音量。",
+    "單獨調整 Flycast 的音量。",
+    "Flycast의 음량을 개별적으로 조절합니다."
+  ],
+  "Sound effects": [
+    "Sound effects",
+    "Hiệu ứng âm thanh",
+    "Soundeffekte",
+    "Effets sonores",
+    "Efectos de sonido",
+    "音效",
+    "音效",
+    "음향 효과"
+  ],
+  "VMU beeps": [
+    "VMU beeps",
+    "Tiếng bíp VMU",
+    "VMU-Signaltöne",
+    "Bips VMU",
+    "Pitidos de VMU",
+    "VMU 提示音",
+    "VMU 提示音",
+    "VMU 알림음"
+  ],
+  "Play sounds from the virtual memory card.": [
+    "Play sounds from the virtual memory card.",
+    "Phát âm báo từ thẻ nhớ ảo.",
+    "Töne der virtuellen Speicherkarte abspielen.",
+    "Lire les sons de la carte mémoire virtuelle.",
+    "Reproduce los sonidos de la tarjeta de memoria virtual.",
+    "播放虚拟存储卡的提示音。",
+    "播放虛擬記憶卡的提示音。",
+    "가상 메모리 카드의 소리를 재생합니다."
+  ],
+  "Player 1": [
+    "Player 1",
+    "Người chơi 1",
+    "Spieler 1",
+    "Joueur 1",
+    "Jugador 1",
+    "玩家 1",
+    "玩家 1",
+    "플레이어 1"
+  ],
+  "Port A · Dreamcast": [
+    "Port A · Dreamcast",
+    "Cổng A · Dreamcast",
+    "Anschluss A · Dreamcast",
+    "Port A · Dreamcast",
+    "Puerto A · Dreamcast",
+    "端口 A · Dreamcast",
+    "連接埠 A · Dreamcast",
+    "포트 A · Dreamcast"
+  ],
+  "Input device": [
+    "Input device",
+    "Thiết bị đầu vào",
+    "Eingabegerät",
+    "Périphérique d'entrée",
+    "Dispositivo de entrada",
+    "输入设备",
+    "輸入裝置",
+    "입력 장치"
+  ],
+  "Choose a device for this player.": [
+    "Choose a device for this player.",
+    "Chọn thiết bị cho người chơi này.",
+    "Wähle ein Gerät für diesen Spieler.",
+    "Choisissez un périphérique pour ce joueur.",
+    "Elige un dispositivo para este jugador.",
+    "为此玩家选择设备。",
+    "為此玩家選擇裝置。",
+    "이 플레이어가 사용할 장치를 선택하세요."
+  ],
+  "Keyboard": [
+    "Keyboard",
+    "Bàn phím",
+    "Tastatur",
+    "Clavier",
+    "Teclado",
+    "键盘",
+    "鍵盤",
+    "키보드"
+  ],
+  "Analog dead zone": [
+    "Analog dead zone",
+    "Vùng chết cần analog",
+    "Analog-Totzone",
+    "Zone morte analogique",
+    "Zona muerta del stick",
+    "摇杆死区",
+    "搖桿死區",
+    "아날로그 데드존"
+  ],
+  "Increase if your character moves on its own.": [
+    "Increase if your character moves on its own.",
+    "Tăng nếu nhân vật tự di chuyển.",
+    "Erhöhen, wenn sich die Spielfigur von selbst bewegt.",
+    "Augmentez si votre personnage se déplace tout seul.",
+    "Auméntala si el personaje se mueve solo.",
+    "如果角色自行移动，请增大此值。",
+    "如果角色自行移動，請增大此值。",
+    "캐릭터가 저절로 움직이면 값을 높이세요."
+  ],
+  "Show VMU screen": [
+    "Show VMU screen",
+    "Hiện màn hình VMU",
+    "VMU-Bildschirm anzeigen",
+    "Afficher l’écran VMU",
+    "Mostrar pantalla VMU",
+    "显示 VMU 屏幕",
+    "顯示 VMU 螢幕",
+    "VMU 화면 표시"
+  ],
+  "Display the memory card screen while playing.": [
+    "Display the memory card screen while playing.",
+    "Hiện màn hình thẻ nhớ khi chơi.",
+    "Den Speicherkartenbildschirm im Spiel anzeigen.",
+    "Afficher l’écran de la carte mémoire pendant le jeu.",
+    "Muestra la pantalla de la tarjeta de memoria durante el juego.",
+    "在游戏时显示存储卡屏幕。",
+    "在遊戲時顯示記憶卡螢幕。",
+    "게임 중 메모리 카드 화면을 표시합니다."
+  ],
+  "Library & memory cards": [
+    "Library & memory cards",
+    "Thư viện & thẻ nhớ",
+    "Bibliothek & Speicherkarten",
+    "Bibliothèque et cartes mémoire",
+    "Biblioteca y tarjetas de memoria",
+    "游戏库与存储卡",
+    "遊戲庫與記憶卡",
+    "라이브러리 및 메모리 카드"
+  ],
+  "Games folder": [
+    "Games folder",
+    "Thư mục trò chơi",
+    "Spieleordner",
+    "Dossier des jeux",
+    "Carpeta de juegos",
+    "游戏文件夹",
+    "遊戲資料夾",
+    "게임 폴더"
+  ],
+  "Where Flycast looks for your games.": [
+    "Where Flycast looks for your games.",
+    "Nơi Flycast tìm trò chơi của bạn.",
+    "Hier sucht Flycast nach deinen Spielen.",
+    "L’emplacement où Flycast recherche vos jeux.",
+    "Donde Flycast busca tus juegos.",
+    "Flycast 查找游戏的位置。",
+    "Flycast 尋找遊戲的位置。",
+    "Flycast가 게임을 검색할 위치입니다."
+  ],
+  "VMU memory card": [
+    "VMU memory card",
+    "Thẻ nhớ VMU",
+    "VMU-Speicherkarte",
+    "Carte mémoire VMU",
+    "Tarjeta de memoria VMU",
+    "VMU 存储卡",
+    "VMU 記憶卡",
+    "VMU 메모리 카드"
+  ],
+  "Port A · Slot 1": [
+    "Port A · Slot 1",
+    "Cổng A · Khe 1",
+    "Anschluss A · Steckplatz 1",
+    "Port A · Emplacement 1",
+    "Puerto A · Ranura 1",
+    "端口 A · 插槽 1",
+    "連接埠 A · 插槽 1",
+    "포트 A · 슬롯 1"
+  ],
+  "Default VMU": [
+    "Default VMU",
+    "VMU mặc định",
+    "Standard-VMU",
+    "VMU par défaut",
+    "VMU predeterminada",
+    "默认 VMU",
+    "預設 VMU",
+    "기본 VMU"
+  ],
+  "No unsaved changes": [
+    "No unsaved changes",
+    "Chưa có thay đổi",
+    "Keine ungespeicherten Änderungen",
+    "Aucune modification en attente",
+    "Sin cambios pendientes",
+    "没有未保存的更改",
+    "沒有未儲存的變更",
+    "저장하지 않은 변경 사항 없음"
+  ],
+  "Unsaved changes: {n}": [
+    "Unsaved changes: {n}",
+    "Thay đổi chưa lưu: {n}",
+    "Ungespeicherte Änderungen: {n}",
+    "Modifications non enregistrées : {n}",
+    "Cambios sin guardar: {n}",
+    "未保存的更改：{n}",
+    "未儲存的變更：{n}",
+    "저장하지 않은 변경 사항: {n}"
+  ],
+  "Undo changes": [
+    "Undo changes",
+    "Hoàn tác",
+    "Änderungen verwerfen",
+    "Annuler les modifications",
+    "Deshacer cambios",
+    "撤销更改",
+    "復原變更",
+    "변경 취소"
+  ],
+  "Apply": [
+    "Apply",
+    "Áp dụng",
+    "Übernehmen",
+    "Appliquer",
+    "Aplicar",
+    "应用",
+    "套用",
+    "적용"
+  ],
+  "No matching settings in this category.": [
+    "No matching settings in this category.",
+    "Không có mục phù hợp trong nhóm này.",
+    "Keine passenden Einstellungen in dieser Kategorie.",
+    "Aucun réglage correspondant dans cette catégorie.",
+    "No hay ajustes coincidentes en esta categoría.",
+    "此分类中没有匹配的设置。",
+    "此分類中沒有符合的設定。",
+    "이 카테고리에 일치하는 설정이 없습니다."
+  ],
+  "Done": [
+    "Done",
+    "Xong",
+    "Fertig",
+    "Terminé",
+    "Listo",
+    "完成",
+    "完成",
+    "완료"
+  ],
+  "Classic Settings": [
+    "Classic Settings",
+    "Cài đặt cổ điển",
+    "Klassische Einstellungen",
+    "Paramètres classiques",
+    "Ajustes clásicos",
+    "经典设置",
+    "傳統設定",
+    "기존 설정"
+  ],
+  "All options, button mapping and network settings. Changes there use Classic saving behavior.": [
+    "All options, button mapping and network settings. Changes there use Classic saving behavior.",
+    "Đầy đủ tùy chọn, gán nút và mạng. Các thay đổi ở đó dùng cách lưu của UI cổ điển.",
+    "Alle Optionen, Tastenbelegung und Netzwerk. Dort gilt das klassische Speicherverhalten.",
+    "Toutes les options, les touches et le réseau. Ces réglages suivent le mode de sauvegarde classique.",
+    "Todas las opciones, botones y red. Allí se usa el guardado clásico.",
+    "全部选项、按键映射和网络设置。更改遵循经典界面的保存方式。",
+    "全部選項、按鍵對應與網路設定。變更遵循傳統介面的儲存方式。",
+    "모든 옵션, 버튼 매핑 및 네트워크 설정. 해당 화면에서는 기존 저장 방식이 적용됩니다."
+  ],
+  "Save & return to Clarity": [
+    "Save & return to Clarity",
+    "Lưu & về Clarity",
+    "Speichern & zurück zu Clarity",
+    "Enregistrer et revenir à Clarity",
+    "Guardar y volver a Clarity",
+    "保存并返回 Clarity",
+    "儲存並返回 Clarity",
+    "저장 후 Clarity로 돌아가기"
+  ],
+  "You have unsaved changes.": [
+    "You have unsaved changes.",
+    "Bạn có thay đổi chưa lưu.",
+    "Du hast ungespeicherte Änderungen.",
+    "Des modifications ne sont pas enregistrées.",
+    "Tienes cambios sin guardar.",
+    "有未保存的更改。",
+    "有未儲存的變更。",
+    "저장하지 않은 변경 사항이 있습니다."
+  ],
+  "Apply & continue": [
+    "Apply & continue",
+    "Áp dụng & tiếp tục",
+    "Übernehmen & weiter",
+    "Appliquer et continuer",
+    "Aplicar y continuar",
+    "应用并继续",
+    "套用並繼續",
+    "적용 후 계속"
+  ],
+  "Discard & continue": [
+    "Discard & continue",
+    "Bỏ thay đổi & tiếp tục",
+    "Verwerfen & weiter",
+    "Ignorer et continuer",
+    "Descartar y continuar",
+    "放弃并继续",
+    "捨棄並繼續",
+    "취소 후 계속"
+  ],
+  "Keep editing": [
+    "Keep editing",
+    "Tiếp tục sửa",
+    "Weiter bearbeiten",
+    "Continuer à modifier",
+    "Seguir editando",
+    "继续编辑",
+    "繼續編輯",
+    "계속 편집"
+  ],
+  "Current game": [
+    "Current game",
+    "Game đang chạy",
+    "Aktuelles Spiel",
+    "Jeu en cours",
+    "Juego actual",
+    "当前游戏",
+    "目前遊戲",
+    "현재 게임"
+  ],
+  "Close the game to edit global defaults. Use Classic Settings to remove a game profile.": [
+    "Close the game to edit global defaults. Use Classic Settings to remove a game profile.",
+    "Đóng game để sửa mặc định chung. Dùng Cài đặt cổ điển để xóa cấu hình riêng.",
+    "Spiel schließen, um globale Vorgaben zu ändern. Spielprofile lassen sich in den klassischen Einstellungen entfernen.",
+    "Fermez le jeu pour modifier les réglages globaux. Supprimez un profil dans les paramètres classiques.",
+    "Cierra el juego para editar valores globales. Elimina perfiles en Ajustes clásicos.",
+    "关闭游戏后可编辑全局默认值。在经典设置中移除游戏配置。",
+    "關閉遊戲後可編輯全域預設值。在傳統設定中移除遊戲設定檔。",
+    "전역 기본값을 편집하려면 게임을 종료하세요. 게임 프로필은 기존 설정에서 제거할 수 있습니다."
+  ],
+  "Shared across all games": [
+    "Shared across all games",
+    "Dùng chung cho mọi game",
+    "Für alle Spiele gemeinsam",
+    "Commun à tous les jeux",
+    "Compartido por todos los juegos",
+    "所有游戏共用",
+    "所有遊戲共用",
+    "모든 게임에서 공유"
+  ],
+  "This setting is locked by compatibility settings.": [
+    "This setting is locked by compatibility settings.",
+    "Mục này bị khóa bởi cấu hình tương thích.",
+    "Durch Kompatibilitätseinstellungen gesperrt.",
+    "Ce réglage est verrouillé pour la compatibilité.",
+    "Bloqueado por ajustes de compatibilidad.",
+    "此选项已被兼容性设置锁定。",
+    "此選項已被相容性設定鎖定。",
+    "호환성 설정으로 잠긴 항목입니다."
+  ],
+  "Audio buffer": [
+    "Audio buffer",
+    "Bộ đệm âm thanh",
+    "Audiopuffer",
+    "Tampon audio",
+    "Búfer de audio",
+    "音频缓冲",
+    "音訊緩衝",
+    "오디오 버퍼"
+  ],
+  "Increase if audio crackles. Lower values may reduce delay.": [
+    "Increase if audio crackles. Lower values may reduce delay.",
+    "Tăng nếu âm thanh bị rè. Giá trị thấp có thể giảm độ trễ.",
+    "Bei Knacksern erhöhen. Niedrigere Werte können die Verzögerung reduzieren.",
+    "Augmentez en cas de grésillements. Une valeur basse peut réduire le délai.",
+    "Auméntalo si el audio crepita. Un valor menor puede reducir el retardo.",
+    "声音出现杂音时请增大。较小的值可能降低延迟。",
+    "聲音出現雜音時請增大。較小的值可能降低延遲。",
+    "소리가 끊기면 높이세요. 값을 낮추면 지연이 줄어들 수 있습니다."
+  ],
+  "Emulate the Dreamcast sound processor. Uses more CPU.": [
+    "Emulate the Dreamcast sound processor. Uses more CPU.",
+    "Giả lập bộ xử lý âm thanh Dreamcast. Dùng thêm CPU.",
+    "Dreamcast-Soundprozessor emulieren. Benötigt mehr CPU-Leistung.",
+    "Émule le processeur audio Dreamcast. Utilise davantage le CPU.",
+    "Emula el procesador de sonido Dreamcast. Consume más CPU.",
+    "模拟 Dreamcast 声音处理器。需要更多 CPU 资源。",
+    "模擬 Dreamcast 聲音處理器。需要更多 CPU 資源。",
+    "Dreamcast 음향 프로세서를 에뮬레이션합니다. CPU 사용량이 늘어납니다."
+  ],
+  "Connected devices": [
+    "Connected devices",
+    "Thiết bị đã kết nối",
+    "Verbundene Geräte",
+    "Périphériques connectés",
+    "Dispositivos conectados",
+    "已连接的设备",
+    "已連接的裝置",
+    "연결된 장치"
+  ],
+  "No input devices detected.": [
+    "No input devices detected.",
+    "Chưa phát hiện thiết bị điều khiển.",
+    "Keine Eingabegeräte erkannt.",
+    "Aucun périphérique détecté.",
+    "No se detectaron dispositivos.",
+    "未检测到输入设备。",
+    "未偵測到輸入裝置。",
+    "입력 장치가 감지되지 않았습니다."
+  ],
+  "Dreamcast port": [
+    "Dreamcast port",
+    "Cổng Dreamcast",
+    "Dreamcast-Anschluss",
+    "Port Dreamcast",
+    "Puerto Dreamcast",
+    "Dreamcast 端口",
+    "Dreamcast 連接埠",
+    "Dreamcast 포트"
+  ],
+  "Unassigned": [
+    "Unassigned",
+    "Chưa gán",
+    "Nicht zugewiesen",
+    "Non affecté",
+    "Sin asignar",
+    "未分配",
+    "未指派",
+    "할당 안 됨"
+  ],
+  "All ports": [
+    "All ports",
+    "Mọi cổng",
+    "Alle Anschlüsse",
+    "Tous les ports",
+    "Todos los puertos",
+    "所有端口",
+    "所有連接埠",
+    "모든 포트"
+  ],
+  "Add folder": [
+    "Add folder",
+    "Thêm thư mục",
+    "Ordner hinzufügen",
+    "Ajouter un dossier",
+    "Añadir carpeta",
+    "添加文件夹",
+    "新增資料夾",
+    "폴더 추가"
+  ],
+  "Remove from library": [
+    "Remove from library",
+    "Bỏ khỏi thư viện",
+    "Aus Bibliothek entfernen",
+    "Retirer de la bibliothèque",
+    "Quitar de la biblioteca",
+    "从游戏库移除",
+    "從遊戲庫移除",
+    "라이브러리에서 제외"
+  ],
+  "Add a folder to find your games. Your files stay in place.": [
+    "Add a folder to find your games. Your files stay in place.",
+    "Thêm thư mục để tìm game. Tệp gốc giữ nguyên vị trí.",
+    "Füge einen Ordner hinzu. Die Dateien bleiben an ihrem Ort.",
+    "Ajoutez un dossier pour trouver vos jeux. Les fichiers restent à leur place.",
+    "Añade una carpeta para encontrar tus juegos. Los archivos no se mueven.",
+    "添加文件夹以查找游戏。文件会保留在原位置。",
+    "新增資料夾以尋找遊戲。檔案會保留在原位置。",
+    "게임을 찾을 폴더를 추가하세요. 파일은 원래 위치에 유지됩니다."
+  ],
+  "Save state on exit": [
+    "Save state on exit",
+    "Lưu trạng thái khi thoát",
+    "Spielstand beim Beenden speichern",
+    "Sauvegarder l’état à la fermeture",
+    "Guardar estado al salir",
+    "退出时保存状态",
+    "離開時儲存狀態",
+    "종료 시 상태 저장"
+  ],
+  "Load state on start": [
+    "Load state on start",
+    "Nạp trạng thái khi mở",
+    "Spielstand beim Start laden",
+    "Charger l’état au démarrage",
+    "Cargar estado al iniciar",
+    "启动时加载状态",
+    "啟動時載入狀態",
+    "시작 시 상태 불러오기"
+  ],
+  "Save states are separate from the game's VMU saves.": [
+    "Save states are separate from the game's VMU saves.",
+    "Save state tách biệt với dữ liệu lưu VMU trong game.",
+    "Speicherstände sind von VMU-Spielständen getrennt.",
+    "Les états sont distincts des sauvegardes VMU du jeu.",
+    "Los estados son independientes de las partidas VMU.",
+    "即时状态与游戏的 VMU 存档相互独立。",
+    "即時狀態與遊戲的 VMU 存檔相互獨立。",
+    "상태 저장은 게임의 VMU 저장과 별개입니다."
+  ],
+  "Per Triangle": [
+    "Per Triangle",
+    "Theo tam giác",
+    "Pro Dreieck",
+    "Par triangle",
+    "Por triángulo",
+    "逐三角形",
+    "逐三角形",
+    "삼각형별"
+  ],
+  "Per Strip": [
+    "Per Strip",
+    "Theo dải",
+    "Pro Streifen",
+    "Par bande",
+    "Por banda",
+    "逐条带",
+    "逐條帶",
+    "스트립별"
+  ],
+  "Per Pixel": [
+    "Per Pixel",
+    "Theo điểm ảnh",
+    "Pro Pixel",
+    "Par pixel",
+    "Por píxel",
+    "逐像素",
+    "逐像素",
+    "픽셀별"
+  ],
+  "Apply this backend before choosing its transparency modes.": [
+    "Apply this backend before choosing its transparency modes.",
+    "Áp dụng backend này trước khi chọn chế độ trong suốt của nó.",
+    "Dieses Backend zuerst übernehmen, um seine Transparenzmodi zu wählen.",
+    "Appliquez ce moteur avant de choisir ses modes de transparence.",
+    "Aplica este motor antes de elegir sus modos de transparencia.",
+    "请先应用此后端，再选择其透明度模式。",
+    "請先套用此後端，再選擇其透明度模式。",
+    "이 백엔드를 먼저 적용한 뒤 투명도 모드를 선택하세요."
+  ],
+  "Accurate framebuffer runs at native resolution. Upscaling and widescreen preferences are retained for when it is off.": [
+    "Accurate framebuffer runs at native resolution. Upscaling and widescreen preferences are retained for when it is off.",
+    "Framebuffer chính xác chạy ở độ phân giải gốc. Tùy chọn nâng độ phân giải và màn hình rộng được giữ để dùng khi tắt.",
+    "Genauer Framebuffer nutzt native Auflösung. Hochskalierung und Breitbild bleiben für den ausgeschalteten Zustand gespeichert.",
+    "Le framebuffer précis utilise la résolution native. Les préférences de résolution et de format sont conservées pour sa désactivation.",
+    "El framebuffer preciso usa resolución nativa. Se conservan las preferencias de escalado y pantalla panorámica para cuando esté desactivado.",
+    "精确帧缓冲使用原生分辨率。关闭后会恢复保留的缩放和宽屏偏好。",
+    "精確影格緩衝使用原生解析度。關閉後會恢復保留的縮放與寬螢幕偏好。",
+    "정확한 프레임버퍼는 기본 해상도를 사용합니다. 끄면 보관된 업스케일링 및 와이드스크린 설정이 사용됩니다."
+  ],
+  "Button mapping and VMU devices are available in Classic Settings.": [
+    "Button mapping and VMU devices are available in Classic Settings.",
+    "Gán nút và thiết bị VMU nằm trong Cài đặt cổ điển.",
+    "Tastenbelegung und VMU-Geräte findest du in den klassischen Einstellungen.",
+    "Les touches et périphériques VMU sont dans les paramètres classiques.",
+    "Los botones y dispositivos VMU están en Ajustes clásicos.",
+    "按键映射和 VMU 设备可在经典设置中配置。",
+    "按鍵對應與 VMU 裝置可在傳統設定中設定。",
+    "버튼 매핑과 VMU 장치는 기존 설정에서 구성할 수 있습니다."
+  ],
+  "Console & appearance": [
+    "Console & appearance",
+    "Hệ máy & giao diện",
+    "Konsole & Oberfläche",
+    "Console et apparence",
+    "Consola y apariencia",
+    "主机与外观",
+    "主機與外觀",
+    "콘솔 및 화면"
+  ],
+  "Button mapping": [
+    "Button mapping",
+    "Gán nút bấm",
+    "Tastenbelegung",
+    "Affectation des touches",
+    "Asignación de botones",
+    "按键映射",
+    "按鍵對應",
+    "버튼 매핑"
+  ],
+  "Ports & VMU": [
+    "Ports & VMU",
+    "Cổng & VMU",
+    "Anschlüsse & VMU",
+    "Ports et VMU",
+    "Puertos y VMU",
+    "端口与 VMU",
+    "連接埠與 VMU",
+    "포트 및 VMU"
+  ],
+  "Library & saves": [
+    "Library & saves",
+    "Thư viện & bản lưu",
+    "Bibliothek & Spielstände",
+    "Bibliothèque et sauvegardes",
+    "Biblioteca y partidas",
+    "游戏库与存档",
+    "遊戲庫與存檔",
+    "라이브러리 및 저장"
+  ],
+  "Folders & BIOS": [
+    "Folders & BIOS",
+    "Thư mục & BIOS",
+    "Ordner & BIOS",
+    "Dossiers et BIOS",
+    "Carpetas y BIOS",
+    "文件夹与 BIOS",
+    "資料夾與 BIOS",
+    "폴더 및 BIOS"
+  ],
+  "Network": [
+    "Network",
+    "Mạng",
+    "Netzwerk",
+    "Réseau",
+    "Red",
+    "网络",
+    "網路",
+    "네트워크"
+  ],
+  "Achievements": [
+    "Achievements",
+    "Thành tích",
+    "Erfolge",
+    "Succès",
+    "Logros",
+    "成就",
+    "成就",
+    "도전 과제"
+  ],
+  "About": [
+    "About",
+    "Giới thiệu",
+    "Über",
+    "À propos",
+    "Acerca de",
+    "关于",
+    "關於",
+    "정보"
+  ],
+  "Diagnostics": [
+    "Diagnostics",
+    "Chẩn đoán",
+    "Diagnose",
+    "Diagnostic",
+    "Diagnóstico",
+    "诊断",
+    "診斷",
+    "진단"
+  ],
+  "Make Flycast feel at home. Console settings are independent of the interface language.": [
+    "Make Flycast feel at home. Console settings are independent of the interface language.",
+    "Tùy chỉnh Flycast theo ý bạn. Ngôn ngữ máy Dreamcast độc lập với ngôn ngữ giao diện.",
+    "Passe Flycast an. Konsoleneinstellungen sind unabhängig von der Oberflächensprache.",
+    "Personnalisez Flycast. La langue de la console est indépendante de celle de l'interface.",
+    "Personaliza Flycast. El idioma de la consola es independiente del de la interfaz.",
+    "自定义 Flycast。主机语言与界面语言相互独立。",
+    "自訂 Flycast。主機語言與介面語言互相獨立。",
+    "Flycast를 꾸며 보세요. 콘솔 언어와 인터페이스 언어는 별개입니다."
+  ],
+  "Choose a device, select a control, then press the button or move the axis you want to use.": [
+    "Choose a device, select a control, then press the button or move the axis you want to use.",
+    "Chọn thiết bị, chọn chức năng, rồi nhấn nút hoặc di chuyển cần bạn muốn gán.",
+    "Wähle ein Gerät und eine Funktion. Drücke dann die gewünschte Taste oder bewege die Achse.",
+    "Choisissez un périphérique et une commande, puis appuyez sur la touche ou déplacez l'axe souhaité.",
+    "Elige un dispositivo y un control; después pulsa el botón o mueve el eje deseado.",
+    "选择设备和功能，然后按下要分配的按钮或移动摇杆。",
+    "選擇裝置與功能，再按下要指定的按鈕或移動搖桿。",
+    "장치와 기능을 선택한 다음 사용할 버튼을 누르거나 축을 움직이세요."
+  ],
+  "Connect controllers and accessories to the four Dreamcast ports.": [
+    "Connect controllers and accessories to the four Dreamcast ports.",
+    "Kết nối tay cầm và phụ kiện vào bốn cổng Dreamcast.",
+    "Verbinde Controller und Zubehör mit den vier Dreamcast-Anschlüssen.",
+    "Connectez manettes et accessoires aux quatre ports Dreamcast.",
+    "Conecta mandos y accesorios a los cuatro puertos de Dreamcast.",
+    "将控制器和配件连接到四个 Dreamcast 端口。",
+    "將控制器與配件連接至四個 Dreamcast 連接埠。",
+    "Dreamcast 포트 4개에 컨트롤러와 액세서리를 연결하세요."
+  ],
+  "Choose your renderer, picture quality, aspect ratio and compatibility options.": [
+    "Choose your renderer, picture quality, aspect ratio and compatibility options.",
+    "Chọn bộ dựng hình, chất lượng ảnh, tỷ lệ màn hình và tùy chọn tương thích.",
+    "Wähle Renderer, Bildqualität, Seitenverhältnis und Kompatibilitätsoptionen.",
+    "Choisissez le moteur de rendu, la qualité, le format et les options de compatibilité.",
+    "Elige el renderizador, la calidad de imagen, la relación de aspecto y la compatibilidad.",
+    "选择渲染器、画质、宽高比和兼容性选项。",
+    "選擇算繪器、畫質、長寬比與相容性選項。",
+    "렌더러, 화질, 화면 비율 및 호환성 옵션을 선택하세요."
+  ],
+  "Adjust volume, latency and the audio driver.": [
+    "Adjust volume, latency and the audio driver.",
+    "Điều chỉnh âm lượng, độ trễ và trình điều khiển âm thanh.",
+    "Stelle Lautstärke, Latenz und Audiotreiber ein.",
+    "Réglez le volume, la latence et le pilote audio.",
+    "Ajusta el volumen, la latencia y el controlador de audio.",
+    "调整音量、延迟和音频驱动。",
+    "調整音量、延遲與音訊驅動程式。",
+    "음량, 지연 및 오디오 드라이버를 조정하세요."
+  ],
+  "Manage your game library and automatic save states.": [
+    "Manage your game library and automatic save states.",
+    "Quản lý thư viện game và tính năng lưu trạng thái tự động.",
+    "Verwalte deine Spielebibliothek und automatische Speicherstände.",
+    "Gérez vos jeux et les sauvegardes d'état automatiques.",
+    "Gestiona tus juegos y los estados guardados automáticos.",
+    "管理游戏库和自动即时存档。",
+    "管理遊戲庫與自動即時存檔。",
+    "게임 라이브러리와 자동 상태 저장을 관리하세요."
+  ],
+  "Choose where Flycast finds BIOS, games, saves and custom content.": [
+    "Choose where Flycast finds BIOS, games, saves and custom content.",
+    "Chọn nơi Flycast tìm BIOS, game, bản lưu và nội dung tùy chỉnh.",
+    "Lege die Ordner für BIOS, Spiele, Spielstände und eigene Inhalte fest.",
+    "Choisissez les dossiers du BIOS, des jeux, des sauvegardes et du contenu personnalisé.",
+    "Elige las carpetas de BIOS, juegos, partidas y contenido personalizado.",
+    "选择 BIOS、游戏、存档和自定义内容的位置。",
+    "選擇 BIOS、遊戲、存檔與自訂內容的位置。",
+    "BIOS, 게임, 저장 및 사용자 콘텐츠의 위치를 선택하세요."
+  ],
+  "Configure Dreamcast online play, GGPO, Naomi networking and Battle Cable.": [
+    "Configure Dreamcast online play, GGPO, Naomi networking and Battle Cable.",
+    "Cấu hình chơi trực tuyến Dreamcast, GGPO, mạng Naomi và Battle Cable.",
+    "Konfiguriere Dreamcast-Onlinefunktionen, GGPO, Naomi-Netzwerk und Battle Cable.",
+    "Configurez le jeu en ligne Dreamcast, GGPO, le réseau Naomi et Battle Cable.",
+    "Configura el juego en línea de Dreamcast, GGPO, la red Naomi y Battle Cable.",
+    "配置 Dreamcast 在线游戏、GGPO、Naomi 网络和对战线缆。",
+    "設定 Dreamcast 線上遊戲、GGPO、Naomi 網路與對戰線纜。",
+    "Dreamcast 온라인, GGPO, Naomi 네트워크 및 배틀 케이블을 설정하세요."
+  ],
+  "Connect your RetroAchievements account and track your progress.": [
+    "Connect your RetroAchievements account and track your progress.",
+    "Kết nối tài khoản RetroAchievements và theo dõi tiến độ.",
+    "Verbinde dein RetroAchievements-Konto und verfolge deinen Fortschritt.",
+    "Connectez votre compte RetroAchievements et suivez vos progrès.",
+    "Conecta tu cuenta de RetroAchievements y sigue tu progreso.",
+    "连接 RetroAchievements 账户并追踪进度。",
+    "連結 RetroAchievements 帳號並追蹤進度。",
+    "RetroAchievements 계정을 연결하고 진행 상황을 확인하세요."
+  ],
+  "CPU, compatibility, texture dumping, scripting and diagnostic options.": [
+    "CPU, compatibility, texture dumping, scripting and diagnostic options.",
+    "CPU, tương thích, xuất texture, script và công cụ chẩn đoán.",
+    "CPU, Kompatibilität, Texturexport, Skripte und Diagnose.",
+    "Processeur, compatibilité, export de textures, scripts et diagnostic.",
+    "CPU, compatibilidad, exportación de texturas, scripts y diagnóstico.",
+    "CPU、兼容性、纹理导出、脚本和诊断选项。",
+    "CPU、相容性、紋理匯出、指令稿與診斷選項。",
+    "CPU, 호환성, 텍스처 추출, 스크립트 및 진단 옵션입니다."
+  ],
+  "The people and projects behind Flycast.": [
+    "The people and projects behind Flycast.",
+    "Những tác giả và dự án làm nên Flycast.",
+    "Die Menschen und Projekte hinter Flycast.",
+    "Les personnes et projets à l'origine de Flycast.",
+    "Las personas y proyectos detrás de Flycast.",
+    "Flycast 背后的开发者和项目。",
+    "Flycast 背後的開發者與專案。",
+    "Flycast를 만든 개발자와 프로젝트입니다."
+  ],
+  "Logging and profiling tools for troubleshooting.": [
+    "Logging and profiling tools for troubleshooting.",
+    "Ghi nhật ký và đo hiệu năng để khắc phục sự cố.",
+    "Protokollierung und Profiling zur Fehleranalyse.",
+    "Journalisation et profilage pour le dépannage.",
+    "Registros y análisis de rendimiento para resolver problemas.",
+    "用于故障排查的日志和性能分析工具。",
+    "用於疑難排解的記錄與效能分析工具。",
+    "문제 해결을 위한 로그 및 프로파일링 도구입니다."
+  ],
+  "Library": [
+    "Library",
+    "Thư viện",
+    "Bibliothek",
+    "Bibliothèque",
+    "Biblioteca",
+    "游戏库",
+    "遊戲庫",
+    "라이브러리"
+  ],
+  "Open game": [
+    "Open game",
+    "Mở game",
+    "Spiel öffnen",
+    "Ouvrir un jeu",
+    "Abrir juego",
+    "打开游戏",
+    "開啟遊戲",
+    "게임 열기"
+  ],
+  "Add game folder": [
+    "Add game folder",
+    "Thêm thư mục game",
+    "Spieleordner hinzufügen",
+    "Ajouter un dossier de jeux",
+    "Añadir carpeta de juegos",
+    "添加游戏文件夹",
+    "新增遊戲資料夾",
+    "게임 폴더 추가"
+  ],
+  "PLAY": [
+    "PLAY",
+    "CHƠI GAME",
+    "SPIELEN",
+    "JOUER",
+    "JUGAR",
+    "开始游戏",
+    "開始遊戲",
+    "플레이"
+  ],
+  "PERSONALIZE": [
+    "PERSONALIZE",
+    "TÙY CHỈNH",
+    "ANPASSEN",
+    "PERSONNALISER",
+    "PERSONALIZAR",
+    "个性化",
+    "個人化",
+    "맞춤 설정"
+  ],
+  "Your library": [
+    "Your library",
+    "Thư viện của bạn",
+    "Deine Bibliothek",
+    "Votre bibliothèque",
+    "Tu biblioteca",
+    "你的游戏库",
+    "你的遊戲庫",
+    "내 라이브러리"
+  ],
+  "Pick a game. Make yourself at home.": [
+    "Pick a game. Make yourself at home.",
+    "Chọn game và bắt đầu theo cách của bạn.",
+    "Wähle ein Spiel und fühl dich zu Hause.",
+    "Choisissez un jeu et installez-vous.",
+    "Elige un juego y ponte cómodo.",
+    "选择游戏，轻松开玩。",
+    "選擇遊戲，輕鬆開玩。",
+    "게임을 선택하고 편하게 즐기세요."
+  ],
+  "Your next session starts here.": [
+    "Your next session starts here.",
+    "Cuộc chơi tiếp theo bắt đầu ở đây.",
+    "Deine nächste Spielrunde beginnt hier.",
+    "Votre prochaine partie commence ici.",
+    "Tu próxima partida empieza aquí.",
+    "下一场游戏，从这里开始。",
+    "下一場遊戲，從這裡開始。",
+    "다음 게임을 여기서 시작하세요."
+  ],
+  "Add the folder containing your games, or open a game file to begin.": [
+    "Add the folder containing your games, or open a game file to begin.",
+    "Thêm thư mục chứa game hoặc mở một file game để bắt đầu.",
+    "Füge deinen Spieleordner hinzu oder öffne eine Spieldatei.",
+    "Ajoutez le dossier de vos jeux ou ouvrez un fichier de jeu pour commencer.",
+    "Añade la carpeta de tus juegos o abre un archivo de juego para comenzar.",
+    "添加游戏文件夹，或打开游戏文件以开始。",
+    "新增遊戲資料夾，或開啟遊戲檔案以開始。",
+    "게임 폴더를 추가하거나 게임 파일을 열어 시작하세요."
+  ],
+  "Set up your controls": [
+    "Set up your controls",
+    "Thiết lập nút bấm",
+    "Steuerung einrichten",
+    "Configurer les commandes",
+    "Configurar controles",
+    "设置操作",
+    "設定操作",
+    "컨트롤 설정"
+  ],
+  "Map buttons, test input, adjust sticks and assign players.": [
+    "Map buttons, test input, adjust sticks and assign players.",
+    "Gán nút, thử tín hiệu, chỉnh cần analog và phân người chơi.",
+    "Belege Tasten, teste Eingaben, passe Sticks an und weise Spieler zu.",
+    "Affectez les touches, testez les entrées, ajustez les sticks et assignez les joueurs.",
+    "Asigna botones, prueba entradas, ajusta palancas y asigna jugadores.",
+    "映射按钮、测试输入、调整摇杆并分配玩家。",
+    "對應按鈕、測試輸入、調整搖桿並分配玩家。",
+    "버튼 매핑, 입력 테스트, 스틱 조정 및 플레이어 지정이 가능합니다."
+  ],
+  "Tune your picture": [
+    "Tune your picture",
+    "Tinh chỉnh hình ảnh",
+    "Bild anpassen",
+    "Ajuster l'image",
+    "Ajustar la imagen",
+    "调整画面",
+    "調整畫面",
+    "화면 조정"
+  ],
+  "Resolution, widescreen and the renderer that suits your PC.": [
+    "Resolution, widescreen and the renderer that suits your PC.",
+    "Độ phân giải, màn hình rộng và bộ dựng hình phù hợp với PC.",
+    "Auflösung, Breitbild und der passende Renderer für deinen PC.",
+    "Résolution, écran large et moteur de rendu adapté à votre PC.",
+    "Resolución, pantalla panorámica y el renderizador adecuado para tu PC.",
+    "选择适合电脑的分辨率、宽屏和渲染器。",
+    "選擇適合電腦的解析度、寬螢幕與算繪器。",
+    "PC에 맞는 해상도, 와이드스크린 및 렌더러를 선택하세요."
+  ],
+  "Set up BIOS & folders": [
+    "Set up BIOS & folders",
+    "Thiết lập BIOS & thư mục",
+    "BIOS & Ordner einrichten",
+    "Configurer BIOS et dossiers",
+    "Configurar BIOS y carpetas",
+    "设置 BIOS 与文件夹",
+    "設定 BIOS 與資料夾",
+    "BIOS 및 폴더 설정"
+  ],
+  "Search your games...": [
+    "Search your games...",
+    "Tìm game...",
+    "Spiele suchen...",
+    "Rechercher un jeu...",
+    "Buscar juegos...",
+    "搜索游戏…",
+    "搜尋遊戲…",
+    "게임 검색..."
+  ],
+  "Arcade": [
+    "Arcade",
+    "Máy thùng",
+    "Arcade",
+    "Arcade",
+    "Arcade",
+    "街机",
+    "街機",
+    "아케이드"
+  ],
+  "Grid view": [
+    "Grid view",
+    "Dạng lưới",
+    "Rasteransicht",
+    "Vue en grille",
+    "Vista de cuadrícula",
+    "网格视图",
+    "網格檢視",
+    "격자 보기"
+  ],
+  "List view": [
+    "List view",
+    "Dạng danh sách",
+    "Listenansicht",
+    "Vue en liste",
+    "Vista de lista",
+    "列表视图",
+    "清單檢視",
+    "목록 보기"
+  ],
+  "items": [
+    "items",
+    "mục",
+    "Einträge",
+    "éléments",
+    "elementos",
+    "项",
+    "項",
+    "개 항목"
+  ],
+  "No games match your search.": [
+    "No games match your search.",
+    "Không tìm thấy game phù hợp.",
+    "Keine passenden Spiele gefunden.",
+    "Aucun jeu ne correspond à la recherche.",
+    "No hay juegos que coincidan.",
+    "没有符合搜索条件的游戏。",
+    "沒有符合搜尋條件的遊戲。",
+    "검색 결과가 없습니다."
+  ],
+  "Choose a disc": [
+    "Choose a disc",
+    "Chọn đĩa",
+    "Disc auswählen",
+    "Choisir un disque",
+    "Elegir disco",
+    "选择光盘",
+    "選擇光碟",
+    "디스크 선택"
+  ],
+  "Select a Dreamcast disc to insert.": [
+    "Select a Dreamcast disc to insert.",
+    "Chọn đĩa Dreamcast để đưa vào.",
+    "Wähle eine Dreamcast-Disc zum Einlegen.",
+    "Sélectionnez un disque Dreamcast à insérer.",
+    "Selecciona un disco de Dreamcast para insertar.",
+    "选择要放入的 Dreamcast 光盘。",
+    "選擇要放入的 Dreamcast 光碟。",
+    "삽입할 Dreamcast 디스크를 선택하세요."
+  ],
+  "Back to game": [
+    "Back to game",
+    "Trở về game",
+    "Zurück zum Spiel",
+    "Retour au jeu",
+    "Volver al juego",
+    "返回游戏",
+    "返回遊戲",
+    "게임으로 돌아가기"
+  ],
+  "Find a setting or category...": [
+    "Find a setting or category...",
+    "Tìm tùy chọn hoặc danh mục...",
+    "Einstellung oder Kategorie suchen...",
+    "Rechercher un paramètre ou une catégorie...",
+    "Buscar ajuste o categoría...",
+    "搜索设置或分类…",
+    "搜尋設定或分類…",
+    "설정 또는 카테고리 검색..."
+  ],
+  "Search settings": [
+    "Search settings",
+    "Tìm cài đặt",
+    "Einstellungen suchen",
+    "Rechercher des paramètres",
+    "Buscar ajustes",
+    "搜索设置",
+    "搜尋設定",
+    "설정 검색"
+  ],
+  "Save & return": [
+    "Save & return",
+    "Lưu & quay lại",
+    "Speichern & zurück",
+    "Enregistrer et revenir",
+    "Guardar y volver",
+    "保存并返回",
+    "儲存並返回",
+    "저장 후 돌아가기"
+  ],
+  "Save changes": [
+    "Save changes",
+    "Lưu thay đổi",
+    "Änderungen speichern",
+    "Enregistrer",
+    "Guardar cambios",
+    "保存更改",
+    "儲存變更",
+    "변경 사항 저장"
+  ],
+  "Edits apply immediately. Saved when you leave.": [
+    "Edits apply immediately. Saved when you leave.",
+    "Thay đổi có hiệu lực ngay. Lưu khi rời cài đặt.",
+    "Änderungen gelten sofort und werden beim Verlassen gespeichert.",
+    "Modifications immédiates, enregistrées à la sortie.",
+    "Los cambios se aplican al instante y se guardan al salir.",
+    "更改立即生效，退出设置时保存。",
+    "變更立即生效，離開設定時儲存。",
+    "변경 사항은 즉시 적용되며 나갈 때 저장됩니다."
+  ],
+  "Delete this game's overrides and restore global settings?": [
+    "Delete this game's overrides and restore global settings?",
+    "Xóa cấu hình riêng của game và dùng cấu hình chung?",
+    "Spielkonfiguration löschen und globale Einstellungen wiederherstellen?",
+    "Supprimer les réglages du jeu et rétablir les paramètres globaux ?",
+    "¿Eliminar los ajustes del juego y restaurar los globales?",
+    "删除此游戏的专用配置并恢复全局设置？",
+    "刪除此遊戲的專用設定並恢復全域設定？",
+    "게임별 설정을 삭제하고 공통 설정을 복원할까요?"
+  ],
+  "Clear settings. Your way to play.": [
+    "Clear settings. Your way to play.",
+    "Cấu hình rõ ràng. Chơi theo cách của bạn.",
+    "Klare Einstellungen. Dein Spielstil.",
+    "Des réglages clairs. Jouez à votre façon.",
+    "Ajustes claros. Juega a tu manera.",
+    "清晰设置，随心畅玩。",
+    "清楚設定，隨心暢玩。",
+    "명확한 설정. 나만의 플레이."
+  ],
+  "Console": [
+    "Console",
+    "Hệ máy",
+    "Konsole",
+    "Console",
+    "Consola",
+    "主机",
+    "主機",
+    "콘솔"
+  ],
+  "The new scale is applied when you save.": [
+    "The new scale is applied when you save.",
+    "Tỷ lệ mới được áp dụng khi lưu.",
+    "Die neue Skalierung wird beim Speichern angewendet.",
+    "La nouvelle échelle sera appliquée à l'enregistrement.",
+    "La nueva escala se aplica al guardar.",
+    "保存时应用新的界面缩放。",
+    "儲存時套用新的介面縮放。",
+    "저장하면 새 배율이 적용됩니다."
+  ],
+  "Choose your language and Light or Night mode in the top bar.": [
+    "Choose your language and Light or Night mode in the top bar.",
+    "Chọn ngôn ngữ và chế độ Sáng hoặc Đêm ở thanh trên.",
+    "Wähle Sprache und Hell- oder Nachtmodus in der oberen Leiste.",
+    "Choisissez la langue et le mode clair ou nuit dans la barre supérieure.",
+    "Elige el idioma y el modo claro o noche en la barra superior.",
+    "在顶部选择语言及明亮或夜间模式。",
+    "在頂部選擇語言及明亮或夜間模式。",
+    "상단에서 언어와 라이트 또는 야간 모드를 선택하세요."
+  ],
+  "Picture quality": [
+    "Picture quality",
+    "Chất lượng hình ảnh",
+    "Bildqualität",
+    "Qualité d'image",
+    "Calidad de imagen",
+    "画质",
+    "畫質",
+    "화질"
+  ],
+  "Textures & effects": [
+    "Textures & effects",
+    "Texture & hiệu ứng",
+    "Texturen & Effekte",
+    "Textures et effets",
+    "Texturas y efectos",
+    "纹理与特效",
+    "紋理與特效",
+    "텍스처 및 효과"
+  ],
+  "Performance & compatibility": [
+    "Performance & compatibility",
+    "Hiệu năng & tương thích",
+    "Leistung & Kompatibilität",
+    "Performances et compatibilité",
+    "Rendimiento y compatibilidad",
+    "性能与兼容性",
+    "效能與相容性",
+    "성능 및 호환성"
+  ],
+  "Video routing": [
+    "Video routing",
+    "Chia sẻ hình ảnh",
+    "Videoausgabe",
+    "Partage vidéo",
+    "Enrutamiento de vídeo",
+    "视频共享",
+    "視訊分享",
+    "비디오 공유"
+  ],
+  "Sound": [
+    "Sound",
+    "Âm thanh",
+    "Ton",
+    "Son",
+    "Sonido",
+    "声音",
+    "聲音",
+    "사운드"
+  ],
+  "Game library": [
+    "Game library",
+    "Thư viện game",
+    "Spielebibliothek",
+    "Bibliothèque de jeux",
+    "Biblioteca de juegos",
+    "游戏库",
+    "遊戲庫",
+    "게임 라이브러리"
+  ],
+  "Automatic save states": [
+    "Automatic save states",
+    "Lưu trạng thái tự động",
+    "Automatische Speicherstände",
+    "Sauvegardes d'état automatiques",
+    "Estados guardados automáticos",
+    "自动即时存档",
+    "自動即時存檔",
+    "자동 상태 저장"
+  ],
+  "Auto-save on exit": [
+    "Auto-save on exit",
+    "Tự lưu khi thoát game",
+    "Beim Beenden speichern",
+    "Sauvegarder à la fermeture",
+    "Guardar al salir",
+    "退出时自动保存",
+    "結束時自動儲存",
+    "종료 시 자동 저장"
+  ],
+  "Auto-load on launch": [
+    "Auto-load on launch",
+    "Tự tải bản lưu khi mở game",
+    "Beim Start laden",
+    "Charger au lancement",
+    "Cargar al iniciar",
+    "启动时自动加载",
+    "啟動時自動載入",
+    "시작 시 자동 불러오기"
+  ],
+  "Save state slot": [
+    "Save state slot",
+    "Ô lưu trạng thái",
+    "Speicherplatz",
+    "Emplacement de sauvegarde",
+    "Ranura de guardado",
+    "即时存档槽",
+    "即時存檔欄位",
+    "상태 저장 슬롯"
+  ],
+  "Select the slot used by Save State and Load State.": [
+    "Select the slot used by Save State and Load State.",
+    "Chọn ô dùng cho thao tác lưu và tải trạng thái.",
+    "Wähle den Platz für das Speichern und Laden von Zuständen.",
+    "Choisissez l'emplacement utilisé pour sauvegarder et charger l'état.",
+    "Elige la ranura para guardar y cargar estados.",
+    "选择保存和加载即时存档使用的槽位。",
+    "選擇儲存與載入即時存檔使用的欄位。",
+    "상태 저장과 불러오기에 사용할 슬롯을 선택하세요."
+  ],
+  "Browse...": [
+    "Browse...",
+    "Duyệt...",
+    "Durchsuchen...",
+    "Parcourir...",
+    "Examinar...",
+    "浏览…",
+    "瀏覽…",
+    "찾아보기..."
+  ],
+  "Using the default folder.": [
+    "Using the default folder.",
+    "Đang dùng thư mục mặc định.",
+    "Der Standardordner wird verwendet.",
+    "Dossier par défaut utilisé.",
+    "Se usa la carpeta predeterminada.",
+    "正在使用默认文件夹。",
+    "正在使用預設資料夾。",
+    "기본 폴더를 사용합니다."
+  ],
+  "Assign this device to a Dreamcast player.": [
+    "Assign this device to a Dreamcast player.",
+    "Gán thiết bị này cho một người chơi Dreamcast.",
+    "Weise dieses Gerät einem Dreamcast-Spieler zu.",
+    "Assignez ce périphérique à un joueur Dreamcast.",
+    "Asigna este dispositivo a un jugador de Dreamcast.",
+    "将此设备分配给 Dreamcast 玩家。",
+    "將此裝置分配給 Dreamcast 玩家。",
+    "이 장치를 Dreamcast 플레이어에게 지정하세요."
+  ],
+  "Connect a controller or use your keyboard to configure buttons.": [
+    "Connect a controller or use your keyboard to configure buttons.",
+    "Kết nối tay cầm hoặc dùng bàn phím để gán nút.",
+    "Verbinde einen Controller oder verwende die Tastatur.",
+    "Connectez une manette ou utilisez votre clavier pour affecter les touches.",
+    "Conecta un mando o usa el teclado para configurar botones.",
+    "连接控制器或使用键盘配置按键。",
+    "連接控制器或使用鍵盤設定按鍵。",
+    "컨트롤러를 연결하거나 키보드로 버튼을 설정하세요."
+  ],
+  "Rumble & sticks": [
+    "Rumble & sticks",
+    "Rung & cần analog",
+    "Vibration & Sticks",
+    "Vibration et sticks",
+    "Vibración y palancas",
+    "振动与摇杆",
+    "震動與搖桿",
+    "진동 및 스틱"
+  ],
+  "This device does not expose remappable controls.": [
+    "This device does not expose remappable controls.",
+    "Thiết bị này không hỗ trợ gán lại nút.",
+    "Dieses Gerät unterstützt keine Tastenbelegung.",
+    "Ce périphérique ne permet pas de réaffecter les commandes.",
+    "Este dispositivo no permite reasignar controles.",
+    "此设备不支持重新映射按键。",
+    "此裝置不支援重新對應按鍵。",
+    "이 장치는 버튼 재설정을 지원하지 않습니다."
+  ],
+  "Live input": [
+    "Live input",
+    "Tín hiệu trực tiếp",
+    "Live-Eingabe",
+    "Entrée en direct",
+    "Entrada en directo",
+    "实时输入",
+    "即時輸入",
+    "실시간 입력"
+  ],
+  "Press a button to test it.": [
+    "Press a button to test it.",
+    "Nhấn nút để thử.",
+    "Drücke eine Taste zum Testen.",
+    "Appuyez sur une touche pour la tester.",
+    "Pulsa un botón para probarlo.",
+    "按下按钮进行测试。",
+    "按下按鈕進行測試。",
+    "버튼을 눌러 테스트하세요."
+  ],
+  "Reset mappings": [
+    "Reset mappings",
+    "Đặt lại gán nút",
+    "Belegung zurücksetzen",
+    "Réinitialiser les touches",
+    "Restablecer botones",
+    "重置映射",
+    "重設按鍵",
+    "매핑 초기화"
+  ],
+  "Delete this game's button mapping?": [
+    "Delete this game's button mapping?",
+    "Xóa bản gán nút riêng của game này?",
+    "Tastenbelegung für dieses Spiel löschen?",
+    "Supprimer les touches propres à ce jeu ?",
+    "¿Eliminar la asignación de botones de este juego?",
+    "删除此游戏的专用按键映射？",
+    "刪除此遊戲的專用按鍵設定？",
+    "이 게임의 버튼 매핑을 삭제할까요?"
+  ],
+  "All controls": [
+    "All controls",
+    "Tất cả nút",
+    "Alle Steuerungen",
+    "Toutes les commandes",
+    "Todos los controles",
+    "所有按键",
+    "所有按鍵",
+    "모든 컨트롤"
+  ],
+  "Map button": [
+    "Map button",
+    "Gán nút",
+    "Taste zuweisen",
+    "Affecter",
+    "Asignar botón",
+    "映射按键",
+    "對應按鍵",
+    "버튼 지정"
+  ],
+  "Memory & display": [
+    "Memory & display",
+    "Bộ nhớ & hiển thị",
+    "Speicher & Anzeige",
+    "Mémoire et affichage",
+    "Memoria y pantalla",
+    "存储与显示",
+    "儲存與顯示",
+    "메모리 및 표시"
+  ],
+  "Accessory slot": [
+    "Accessory slot",
+    "Khe phụ kiện",
+    "Zubehörsteckplatz",
+    "Emplacement d'accessoire",
+    "Ranura de accesorio",
+    "配件插槽",
+    "配件插槽",
+    "액세서리 슬롯"
+  ],
+  "Mouse & keyboard": [
+    "Mouse & keyboard",
+    "Chuột & bàn phím",
+    "Maus & Tastatur",
+    "Souris et clavier",
+    "Ratón y teclado",
+    "鼠标与键盘",
+    "滑鼠與鍵盤",
+    "마우스 및 키보드"
+  ],
+  "Game paused": [
+    "Game paused",
+    "Game đang tạm dừng",
+    "Spiel pausiert",
+    "Jeu en pause",
+    "Juego en pausa",
+    "游戏已暂停",
+    "遊戲已暫停",
+    "게임 일시 정지"
+  ],
+  "Continue playing": [
+    "Continue playing",
+    "Tiếp tục chơi",
+    "Weiterspielen",
+    "Continuer à jouer",
+    "Seguir jugando",
+    "继续游戏",
+    "繼續遊戲",
+    "계속 플레이"
+  ],
+  "Save states": [
+    "Save states",
+    "Bản lưu trạng thái",
+    "Speicherstände",
+    "Sauvegardes d'état",
+    "Estados guardados",
+    "即时存档",
+    "即時存檔",
+    "상태 저장"
+  ],
+  "Starting your game": [
+    "Starting your game",
+    "Đang khởi động game",
+    "Spiel wird gestartet",
+    "Démarrage du jeu",
+    "Iniciando el juego",
+    "正在启动游戏",
+    "正在啟動遊戲",
+    "게임 시작 중"
+  ],
+  "Connecting players": [
+    "Connecting players",
+    "Đang kết nối người chơi",
+    "Spieler werden verbunden",
+    "Connexion des joueurs",
+    "Conectando jugadores",
+    "正在连接玩家",
+    "正在連接玩家",
+    "플레이어 연결 중"
+  ],
+  "Welcome to Flycast": [
+    "Welcome to Flycast",
+    "Chào mừng đến với Flycast",
+    "Willkommen bei Flycast",
+    "Bienvenue dans Flycast",
+    "Bienvenido a Flycast",
+    "欢迎使用 Flycast",
+    "歡迎使用 Flycast",
+    "Flycast에 오신 것을 환영합니다"
+  ],
+  "Source credits": [
+    "Source credits",
+    "Ghi công mã nguồn",
+    "Quellen & Mitwirkende",
+    "Crédits du code source",
+    "Créditos del código fuente",
+    "源码致谢",
+    "原始碼致謝",
+    "소스 크레딧"
+  ],
+  "Original emulator by flyinghead and the Flycast contributors. Derived from reicast.": [
+    "Original emulator by flyinghead and the Flycast contributors. Derived from reicast.",
+    "Emulator gốc do flyinghead và các cộng tác viên Flycast phát triển, kế thừa từ reicast.",
+    "Originalemulator von flyinghead und den Flycast-Mitwirkenden. Basiert auf reicast.",
+    "Émulateur original par flyinghead et les contributeurs de Flycast. Dérivé de reicast.",
+    "Emulador original de flyinghead y los colaboradores de Flycast. Derivado de reicast.",
+    "原版模拟器由 flyinghead 及 Flycast 贡献者开发，源自 reicast。",
+    "原版模擬器由 flyinghead 與 Flycast 貢獻者開發，源自 reicast。",
+    "원본 에뮬레이터는 flyinghead와 Flycast 기여자들이 개발했으며 reicast에서 파생되었습니다."
+  ],
+  "flyinghead on GitHub": [
+    "flyinghead on GitHub",
+    "GitHub của flyinghead",
+    "flyinghead auf GitHub",
+    "flyinghead sur GitHub",
+    "flyinghead en GitHub",
+    "flyinghead 的 GitHub",
+    "flyinghead 的 GitHub",
+    "flyinghead의 GitHub"
+  ],
+  "Contributors": [
+    "Contributors",
+    "Các cộng tác viên",
+    "Mitwirkende",
+    "Contributeurs",
+    "Colaboradores",
+    "贡献者",
+    "貢獻者",
+    "기여자"
+  ],
+  "Enjoying Flycast? Give flyinghead's original project a star on GitHub.": [
+    "Enjoying Flycast? Give flyinghead's original project a star on GitHub.",
+    "Nếu thấy Flycast hữu ích, hãy tặng một sao cho dự án gốc của flyinghead trên GitHub.",
+    "Gefällt dir Flycast? Gib dem Originalprojekt von flyinghead einen Stern auf GitHub.",
+    "Vous appréciez Flycast ? Offrez une étoile au projet original de flyinghead sur GitHub.",
+    "¿Te gusta Flycast? Dale una estrella al proyecto original de flyinghead en GitHub.",
+    "喜欢 Flycast？请在 GitHub 为 flyinghead 的原版项目点一颗星。",
+    "喜歡 Flycast？請在 GitHub 為 flyinghead 的原版專案點一顆星。",
+    "Flycast가 마음에 드시나요? GitHub에서 flyinghead의 원본 프로젝트에 별을 주세요."
+  ],
+  "Star Flycast on GitHub": [
+    "Star Flycast on GitHub",
+    "Tặng sao cho Flycast trên GitHub",
+    "Flycast auf GitHub einen Stern geben",
+    "Offrir une étoile à Flycast sur GitHub",
+    "Dar una estrella a Flycast en GitHub",
+    "在 GitHub 为 Flycast 点星",
+    "在 GitHub 為 Flycast 點星",
+    "GitHub에서 Flycast에 별 주기"
+  ],
+  "Clarity interface": [
+    "Clarity interface",
+    "Giao diện Clarity",
+    "Clarity-Oberfläche",
+    "Interface Clarity",
+    "Interfaz Clarity",
+    "Clarity 界面",
+    "Clarity 介面",
+    "Clarity 인터페이스"
+  ],
+  "Clarity UI and GameTranslate branding are additions in this fork. Emulator source credit belongs to the original authors.": [
+    "Clarity UI and GameTranslate branding are additions in this fork. Emulator source credit belongs to the original authors.",
+    "Giao diện Clarity và nhận diện GameTranslate là phần bổ sung của bản fork này. Công lao phát triển mã nguồn emulator thuộc về các tác giả gốc.",
+    "Clarity und das GameTranslate-Branding sind Ergänzungen dieses Forks. Der Emulator stammt von den ursprünglichen Autoren.",
+    "L'interface Clarity et l'identité GameTranslate sont des ajouts de ce fork. Le code de l'émulateur est crédité aux auteurs originaux.",
+    "La interfaz Clarity y la identidad GameTranslate son añadidos de este fork. El crédito del emulador corresponde a sus autores originales.",
+    "Clarity 界面和 GameTranslate 品牌是此分支的新增内容。模拟器源码归功于原作者。",
+    "Clarity 介面與 GameTranslate 品牌是此分支的新增內容。模擬器原始碼歸功於原作者。",
+    "Clarity UI와 GameTranslate 브랜딩은 이 포크에 추가된 요소입니다. 에뮬레이터 소스의 공로는 원저자에게 있습니다."
+  ],
+  "License & history": [
+    "License & history",
+    "Giấy phép & lịch sử",
+    "Lizenz & Geschichte",
+    "Licence et historique",
+    "Licencia e historia",
+    "许可与历史",
+    "授權與歷史",
+    "라이선스 및 역사"
+  ],
+  "Flycast is free software under the GNU GPL. This build retains the upstream license and copyright notices.": [
+    "Flycast is free software under the GNU GPL. This build retains the upstream license and copyright notices.",
+    "Flycast là phần mềm tự do theo GNU GPL. Bản này giữ nguyên giấy phép và thông báo bản quyền của dự án gốc.",
+    "Flycast ist freie Software unter der GNU GPL. Lizenz und Urheberrechtshinweise des Originalprojekts bleiben erhalten.",
+    "Flycast est un logiciel libre sous GNU GPL. Cette version conserve la licence et les mentions de copyright d'origine.",
+    "Flycast es software libre bajo GNU GPL. Esta versión conserva la licencia y los avisos de copyright originales.",
+    "Flycast 是遵循 GNU GPL 的自由软件。此版本保留上游许可证和版权声明。",
+    "Flycast 是遵循 GNU GPL 的自由軟體。此版本保留上游授權與著作權聲明。",
+    "Flycast는 GNU GPL 자유 소프트웨어입니다. 이 빌드는 원본 라이선스와 저작권 고지를 유지합니다."
+  ],
+  "Build & system": [
+    "Build & system",
+    "Bản dựng & hệ thống",
+    "Build & System",
+    "Version et système",
+    "Compilación y sistema",
+    "构建与系统",
+    "組建與系統",
+    "빌드 및 시스템"
+  ],
+  "RetroAchievements is not available in this build.": [
+    "RetroAchievements is not available in this build.",
+    "Bản dựng này không có RetroAchievements.",
+    "RetroAchievements ist in diesem Build nicht verfügbar.",
+    "RetroAchievements n'est pas disponible dans cette version.",
+    "RetroAchievements no está disponible en esta compilación.",
+    "此版本不包含 RetroAchievements。",
+    "此版本不包含 RetroAchievements。",
+    "이 빌드에서는 RetroAchievements를 사용할 수 없습니다."
+  ],
+  "Cancel": [
+    "Cancel",
+    "Hủy",
+    "Abbrechen",
+    "Annuler",
+    "Cancelar",
+    "取消",
+    "取消",
+    "취소"
+  ],
+  "Confirm": [
+    "Confirm",
+    "Xác nhận",
+    "Bestätigen",
+    "Confirmer",
+    "Confirmar",
+    "确认",
+    "確認",
+    "확인"
+  ],
+  "Yes": [
+    "Yes",
+    "Có",
+    "Ja",
+    "Oui",
+    "Sí",
+    "是",
+    "是",
+    "예"
+  ],
+  "No": [
+    "No",
+    "Không",
+    "Nein",
+    "Non",
+    "No",
+    "否",
+    "否",
+    "아니요"
+  ],
+  "OK": [
+    "OK",
+    "Đồng ý",
+    "OK",
+    "OK",
+    "Aceptar",
+    "确定",
+    "確定",
+    "확인"
+  ],
+  "None": [
+    "None",
+    "Không có",
+    "Keine",
+    "Aucun",
+    "Ninguno",
+    "无",
+    "無",
+    "없음"
+  ],
+  "All": [
+    "All",
+    "Tất cả",
+    "Alle",
+    "Tous",
+    "Todos",
+    "全部",
+    "全部",
+    "전체"
+  ],
+  "Default": [
+    "Default",
+    "Mặc định",
+    "Standard",
+    "Par défaut",
+    "Predeterminado",
+    "默认",
+    "預設",
+    "기본값"
+  ],
+  "Disabled": [
+    "Disabled",
+    "Tắt",
+    "Deaktiviert",
+    "Désactivé",
+    "Desactivado",
+    "禁用",
+    "停用",
+    "비활성화"
+  ],
+  "Normal": [
+    "Normal",
+    "Bình thường",
+    "Normal",
+    "Normal",
+    "Normal",
+    "正常",
+    "一般",
+    "일반"
+  ],
+  "Maximum": [
+    "Maximum",
+    "Tối đa",
+    "Maximum",
+    "Maximum",
+    "Máximo",
+    "最大",
+    "最大",
+    "최대"
+  ],
+  "Remove": [
+    "Remove",
+    "Gỡ bỏ",
+    "Entfernen",
+    "Retirer",
+    "Quitar",
+    "移除",
+    "移除",
+    "제거"
+  ],
+  "Use Default": [
+    "Use Default",
+    "Dùng mặc định",
+    "Standard verwenden",
+    "Valeur par défaut",
+    "Usar predeterminado",
+    "使用默认值",
+    "使用預設值",
+    "기본값 사용"
+  ],
+  "Make Game Config": [
+    "Make Game Config",
+    "Tạo cấu hình riêng cho game",
+    "Spielkonfiguration erstellen",
+    "Créer une config. de jeu",
+    "Crear config. del juego",
+    "创建游戏配置",
+    "建立遊戲設定",
+    "게임별 설정 만들기"
+  ],
+  "Delete Game Config": [
+    "Delete Game Config",
+    "Xóa cấu hình riêng của game",
+    "Spielkonfiguration löschen",
+    "Supprimer la config. du jeu",
+    "Eliminar config. del juego",
+    "删除游戏配置",
+    "刪除遊戲設定",
+    "게임별 설정 삭제"
+  ],
+  "UI Scaling": [
+    "UI Scaling",
+    "Tỷ lệ giao diện",
+    "UI-Skalierung",
+    "Échelle de l'interface",
+    "Escala de la interfaz",
+    "界面缩放",
+    "介面縮放",
+    "UI 배율"
+  ],
+  "Dreamcast Language": [
+    "Dreamcast Language",
+    "Ngôn ngữ Dreamcast",
+    "Dreamcast-Sprache",
+    "Langue Dreamcast",
+    "Idioma de Dreamcast",
+    "Dreamcast 语言",
+    "Dreamcast 語言",
+    "Dreamcast 언어"
+  ],
+  "Japanese": [
+    "Japanese",
+    "Tiếng Nhật",
+    "Japanisch",
+    "Japonais",
+    "Japonés",
+    "日语",
+    "日文",
+    "일본어"
+  ],
+  "English": [
+    "English",
+    "Tiếng Anh",
+    "Englisch",
+    "Anglais",
+    "Inglés",
+    "英语",
+    "英文",
+    "영어"
+  ],
+  "German": [
+    "German",
+    "Tiếng Đức",
+    "Deutsch",
+    "Allemand",
+    "Alemán",
+    "德语",
+    "德文",
+    "독일어"
+  ],
+  "French": [
+    "French",
+    "Tiếng Pháp",
+    "Französisch",
+    "Français",
+    "Francés",
+    "法语",
+    "法文",
+    "프랑스어"
+  ],
+  "Spanish": [
+    "Spanish",
+    "Tiếng Tây Ban Nha",
+    "Spanisch",
+    "Espagnol",
+    "Español",
+    "西班牙语",
+    "西班牙文",
+    "스페인어"
+  ],
+  "Italian": [
+    "Italian",
+    "Tiếng Ý",
+    "Italienisch",
+    "Italien",
+    "Italiano",
+    "意大利语",
+    "義大利文",
+    "이탈리아어"
+  ],
+  "Broadcast": [
+    "Broadcast",
+    "Chuẩn truyền hình",
+    "Fernsehnorm",
+    "Norme TV",
+    "Norma de TV",
+    "电视制式",
+    "電視制式",
+    "방송 방식"
+  ],
+  "Region": [
+    "Region",
+    "Khu vực",
+    "Region",
+    "Région",
+    "Región",
+    "区域",
+    "區域",
+    "지역"
+  ],
+  "Japan": [
+    "Japan",
+    "Nhật Bản",
+    "Japan",
+    "Japon",
+    "Japón",
+    "日本",
+    "日本",
+    "일본"
+  ],
+  "USA": [
+    "USA",
+    "Hoa Kỳ",
+    "USA",
+    "États-Unis",
+    "EE. UU.",
+    "美国",
+    "美國",
+    "미국"
+  ],
+  "Europe": [
+    "Europe",
+    "Châu Âu",
+    "Europa",
+    "Europe",
+    "Europa",
+    "欧洲",
+    "歐洲",
+    "유럽"
+  ],
+  "Export": [
+    "Export",
+    "Xuất khẩu",
+    "Export",
+    "Export",
+    "Exportación",
+    "出口版",
+    "出口版",
+    "수출"
+  ],
+  "Korea": [
+    "Korea",
+    "Hàn Quốc",
+    "Korea",
+    "Corée",
+    "Corea",
+    "韩国",
+    "韓國",
+    "한국"
+  ],
+  "Cable": [
+    "Cable",
+    "Cáp hình ảnh",
+    "Videokabel",
+    "Câble vidéo",
+    "Cable de vídeo",
+    "视频线缆",
+    "視訊線纜",
+    "비디오 케이블"
+  ],
+  "RGB Component": [
+    "RGB Component",
+    "RGB thành phần",
+    "RGB-Komponente",
+    "Composante RGB",
+    "Componente RGB",
+    "RGB 分量",
+    "RGB 色差",
+    "RGB 컴포넌트"
+  ],
+  "TV Composite": [
+    "TV Composite",
+    "Composite TV",
+    "TV-Composite",
+    "Composite TV",
+    "Compuesto TV",
+    "电视复合",
+    "電視複合",
+    "TV 컴포지트"
+  ],
+  "Naomi Free Play": [
+    "Naomi Free Play",
+    "Chơi miễn phí Naomi",
+    "Naomi-Freispiel",
+    "Jeu gratuit Naomi",
+    "Juego libre Naomi",
+    "Naomi 免费游玩",
+    "Naomi 免費遊玩",
+    "Naomi 무료 플레이"
+  ],
+  "Discord Presence": [
+    "Discord Presence",
+    "Trạng thái Discord",
+    "Discord-Status",
+    "Statut Discord",
+    "Estado en Discord",
+    "Discord 状态",
+    "Discord 狀態",
+    "Discord 상태"
+  ],
+  "Integer Scaling": [
+    "Integer Scaling",
+    "Phóng theo số nguyên",
+    "Ganzzahlige Skalierung",
+    "Mise à l'échelle entière",
+    "Escalado entero",
+    "整数缩放",
+    "整數縮放",
+    "정수 배율"
+  ],
+  "Linear Interpolation": [
+    "Linear Interpolation",
+    "Nội suy tuyến tính",
+    "Lineare Interpolation",
+    "Interpolation linéaire",
+    "Interpolación lineal",
+    "线性插值",
+    "線性內插",
+    "선형 보간"
+  ],
+  "VSync": [
+    "VSync",
+    "Đồng bộ dọc",
+    "VSync",
+    "Synchronisation verticale",
+    "Sincronización vertical",
+    "垂直同步",
+    "垂直同步",
+    "수직 동기화"
+  ],
+  "Duplicate frames": [
+    "Duplicate frames",
+    "Lặp khung hình",
+    "Frames duplizieren",
+    "Dupliquer les images",
+    "Duplicar fotogramas",
+    "复制帧",
+    "複製影格",
+    "프레임 복제"
+  ],
+  "Aspect Ratio": [
+    "Aspect Ratio",
+    "Tỷ lệ màn hình",
+    "Seitenverhältnis",
+    "Format d'image",
+    "Relación de aspecto",
+    "宽高比",
+    "長寬比",
+    "화면 비율"
+  ],
+  "Super Widescreen": [
+    "Super Widescreen",
+    "Màn hình siêu rộng",
+    "Ultrabreitbild",
+    "Écran ultra-large",
+    "Pantalla ultrapanorámica",
+    "超宽屏",
+    "超寬螢幕",
+    "울트라 와이드"
+  ],
+  "Widescreen Game Cheats": [
+    "Widescreen Game Cheats",
+    "Bản sửa màn hình rộng",
+    "Breitbild-Cheats",
+    "Codes écran large",
+    "Trucos de pantalla panorámica",
+    "宽屏补丁",
+    "寬螢幕補丁",
+    "와이드스크린 치트"
+  ],
+  "Horizontal Stretching": [
+    "Horizontal Stretching",
+    "Kéo giãn chiều ngang",
+    "Horizontale Streckung",
+    "Étirement horizontal",
+    "Estiramiento horizontal",
+    "水平拉伸",
+    "水平拉伸",
+    "가로 늘리기"
+  ],
+  "Rotate Screen 90°": [
+    "Rotate Screen 90°",
+    "Xoay màn hình 90°",
+    "Bild um 90° drehen",
+    "Rotation de 90°",
+    "Girar pantalla 90°",
+    "旋转屏幕 90°",
+    "旋轉螢幕 90°",
+    "화면 90° 회전"
+  ],
+  "Graphics API": [
+    "Graphics API",
+    "API đồ họa",
+    "Grafik-API",
+    "API graphique",
+    "API gráfica",
+    "图形 API",
+    "圖形 API",
+    "그래픽 API"
+  ],
+  "Transparent Sorting": [
+    "Transparent Sorting",
+    "Sắp xếp độ trong suốt",
+    "Transparenzsortierung",
+    "Tri de transparence",
+    "Orden de transparencia",
+    "透明排序",
+    "透明排序",
+    "투명도 정렬"
+  ],
+  "Pixel Buffer Size": [
+    "Pixel Buffer Size",
+    "Dung lượng bộ đệm pixel",
+    "Pixelpuffergröße",
+    "Taille du tampon de pixels",
+    "Tamaño del búfer de píxeles",
+    "像素缓冲区大小",
+    "像素緩衝區大小",
+    "픽셀 버퍼 크기"
+  ],
+  "Maximum Layers": [
+    "Maximum Layers",
+    "Số lớp tối đa",
+    "Maximale Ebenen",
+    "Couches maximales",
+    "Capas máximas",
+    "最大层数",
+    "最大層數",
+    "최대 레이어 수"
+  ],
+  "Anisotropic Filtering": [
+    "Anisotropic Filtering",
+    "Lọc bất đẳng hướng",
+    "Anisotrope Filterung",
+    "Filtrage anisotrope",
+    "Filtrado anisotrópico",
+    "各向异性过滤",
+    "非等向性過濾",
+    "이방성 필터링"
+  ],
+  "Texture Filtering": [
+    "Texture Filtering",
+    "Lọc texture",
+    "Texturfilterung",
+    "Filtrage des textures",
+    "Filtrado de texturas",
+    "纹理过滤",
+    "紋理過濾",
+    "텍스처 필터링"
+  ],
+  "Force Nearest-Neighbor": [
+    "Force Nearest-Neighbor",
+    "Buộc lấy điểm gần nhất",
+    "Nächsten Nachbarn erzwingen",
+    "Forcer le plus proche voisin",
+    "Forzar vecino más cercano",
+    "强制最近邻",
+    "強制最近鄰",
+    "최근접 필터 강제"
+  ],
+  "Force Linear": [
+    "Force Linear",
+    "Buộc tuyến tính",
+    "Linear erzwingen",
+    "Forcer le linéaire",
+    "Forzar lineal",
+    "强制线性",
+    "強制線性",
+    "선형 필터 강제"
+  ],
+  "Load Custom Textures": [
+    "Load Custom Textures",
+    "Tải texture tùy chỉnh",
+    "Eigene Texturen laden",
+    "Charger les textures personnalisées",
+    "Cargar texturas personalizadas",
+    "加载自定义纹理",
+    "載入自訂紋理",
+    "사용자 텍스처 불러오기"
+  ],
+  "Preload Custom Textures": [
+    "Preload Custom Textures",
+    "Nạp trước texture tùy chỉnh",
+    "Eigene Texturen vorladen",
+    "Précharger les textures personnalisées",
+    "Precargar texturas personalizadas",
+    "预加载自定义纹理",
+    "預先載入自訂紋理",
+    "사용자 텍스처 미리 불러오기"
+  ],
+  "Shadows": [
+    "Shadows",
+    "Đổ bóng",
+    "Schatten",
+    "Ombres",
+    "Sombras",
+    "阴影",
+    "陰影",
+    "그림자"
+  ],
+  "Fog": [
+    "Fog",
+    "Sương mù",
+    "Nebel",
+    "Brouillard",
+    "Niebla",
+    "雾效",
+    "霧效",
+    "안개"
+  ],
+  "Automatic Frame Skipping": [
+    "Automatic Frame Skipping",
+    "Tự bỏ khung hình",
+    "Automatisches Frameskipping",
+    "Saut d'images automatique",
+    "Salto automático de fotogramas",
+    "自动跳帧",
+    "自動跳格",
+    "자동 프레임 건너뛰기"
+  ],
+  "Frame Skipping": [
+    "Frame Skipping",
+    "Bỏ khung hình",
+    "Frameskipping",
+    "Saut d'images",
+    "Salto de fotogramas",
+    "跳帧",
+    "跳格",
+    "프레임 건너뛰기"
+  ],
+  "Full Framebuffer Emulation": [
+    "Full Framebuffer Emulation",
+    "Giả lập đầy đủ framebuffer",
+    "Vollständige Framebuffer-Emulation",
+    "Émulation complète du framebuffer",
+    "Emulación completa del framebuffer",
+    "完整帧缓冲模拟",
+    "完整影格緩衝模擬",
+    "완전한 프레임버퍼 에뮬레이션"
+  ],
+  "Delay Frame Swapping": [
+    "Delay Frame Swapping",
+    "Trì hoãn đổi khung hình",
+    "Framewechsel verzögern",
+    "Retarder l'échange d'images",
+    "Retrasar intercambio de fotogramas",
+    "延迟帧交换",
+    "延遲影格交換",
+    "프레임 교환 지연"
+  ],
+  "Fix Upscale Bleeding Edge": [
+    "Fix Upscale Bleeding Edge",
+    "Sửa lem viền khi tăng độ phân giải",
+    "Texturbluten beim Hochskalieren beheben",
+    "Corriger les débordements de pixels",
+    "Corregir bordes al ampliar",
+    "修复放大边缘渗色",
+    "修正放大邊緣滲色",
+    "업스케일 경계 번짐 수정"
+  ],
+  "Native Depth Interpolation": [
+    "Native Depth Interpolation",
+    "Nội suy độ sâu gốc",
+    "Native Tiefeninterpolation",
+    "Interpolation de profondeur native",
+    "Interpolación de profundidad nativa",
+    "原生深度插值",
+    "原生深度內插",
+    "네이티브 깊이 보간"
+  ],
+  "Copy Rendered Textures to VRAM": [
+    "Copy Rendered Textures to VRAM",
+    "Chép texture đã dựng về VRAM",
+    "Gerenderte Texturen in VRAM kopieren",
+    "Copier les textures rendues en VRAM",
+    "Copiar texturas renderizadas a VRAM",
+    "将渲染纹理复制到 VRAM",
+    "將算繪紋理複製到 VRAM",
+    "렌더링한 텍스처를 VRAM에 복사"
+  ],
+  "Show FPS Counter": [
+    "Show FPS Counter",
+    "Hiện số FPS",
+    "FPS anzeigen",
+    "Afficher les FPS",
+    "Mostrar FPS",
+    "显示帧率",
+    "顯示影格率",
+    "FPS 표시"
+  ],
+  "Show VMU In-game": [
+    "Show VMU In-game",
+    "Hiện VMU trong game",
+    "VMU im Spiel anzeigen",
+    "Afficher le VMU en jeu",
+    "Mostrar VMU en el juego",
+    "在游戏中显示 VMU",
+    "在遊戲中顯示 VMU",
+    "게임 내 VMU 표시"
+  ],
+  "Send video content to another program": [
+    "Send video content to another program",
+    "Gửi hình ảnh sang chương trình khác",
+    "Video an anderes Programm senden",
+    "Envoyer la vidéo vers un autre logiciel",
+    "Enviar vídeo a otro programa",
+    "向其他程序发送视频",
+    "向其他程式傳送視訊",
+    "다른 프로그램으로 비디오 전송"
+  ],
+  "Scale down before sending": [
+    "Scale down before sending",
+    "Thu nhỏ trước khi gửi",
+    "Vor dem Senden verkleinern",
+    "Réduire avant l'envoi",
+    "Reducir antes de enviar",
+    "发送前缩小",
+    "傳送前縮小",
+    "전송 전 축소"
+  ],
+  "Output vertical resolution": [
+    "Output vertical resolution",
+    "Độ phân giải dọc đầu ra",
+    "Vertikale Ausgabeauflösung",
+    "Résolution verticale de sortie",
+    "Resolución vertical de salida",
+    "输出垂直分辨率",
+    "輸出垂直解析度",
+    "출력 세로 해상도"
+  ],
+  "Output texture size: %d x %d": [
+    "Output texture size: %d x %d",
+    "Kích thước texture đầu ra: %d x %d",
+    "Ausgabetextur: %d x %d",
+    "Texture de sortie : %d x %d",
+    "Textura de salida: %d x %d",
+    "输出纹理尺寸：%d x %d",
+    "輸出紋理尺寸：%d x %d",
+    "출력 텍스처 크기: %d x %d"
+  ],
+  "Volume Level": [
+    "Volume Level",
+    "Âm lượng",
+    "Lautstärke",
+    "Volume",
+    "Volumen",
+    "音量",
+    "音量",
+    "음량"
+  ],
+  "Enable DSP": [
+    "Enable DSP",
+    "Bật DSP",
+    "DSP aktivieren",
+    "Activer le DSP",
+    "Activar DSP",
+    "启用 DSP",
+    "啟用 DSP",
+    "DSP 활성화"
+  ],
+  "Enable VMU Sounds": [
+    "Enable VMU Sounds",
+    "Bật âm thanh VMU",
+    "VMU-Töne aktivieren",
+    "Activer les sons VMU",
+    "Activar sonidos VMU",
+    "启用 VMU 声音",
+    "啟用 VMU 聲音",
+    "VMU 소리 활성화"
+  ],
+  "Audio Driver": [
+    "Audio Driver",
+    "Trình điều khiển âm thanh",
+    "Audiotreiber",
+    "Pilote audio",
+    "Controlador de audio",
+    "音频驱动",
+    "音訊驅動程式",
+    "오디오 드라이버"
+  ],
+  "auto - Automatic driver selection": [
+    "auto - Automatic driver selection",
+    "auto - Tự chọn trình điều khiển",
+    "auto – Automatische Treiberauswahl",
+    "auto – Sélection automatique",
+    "auto – Selección automática",
+    "auto - 自动选择驱动",
+    "auto - 自動選擇驅動",
+    "auto - 드라이버 자동 선택"
+  ],
+  "Latency": [
+    "Latency",
+    "Độ trễ",
+    "Latenz",
+    "Latence",
+    "Latencia",
+    "延迟",
+    "延遲",
+    "지연"
+  ],
+  "Automatic Latency": [
+    "Automatic Latency",
+    "Tự chọn độ trễ",
+    "Automatische Latenz",
+    "Latence automatique",
+    "Latencia automática",
+    "自动延迟",
+    "自動延遲",
+    "자동 지연"
+  ],
+  "Content Location": [
+    "Content Location",
+    "Thư mục game",
+    "Spieleordner",
+    "Dossiers de jeux",
+    "Carpetas de juegos",
+    "游戏位置",
+    "遊戲位置",
+    "게임 위치"
+  ],
+  "Rescan Content": [
+    "Rescan Content",
+    "Quét lại game",
+    "Spiele neu suchen",
+    "Rechercher les jeux",
+    "Volver a buscar juegos",
+    "重新扫描游戏",
+    "重新掃描遊戲",
+    "게임 다시 검색"
+  ],
+  "Box Art Game List": [
+    "Box Art Game List",
+    "Hiện bìa game",
+    "Spielecover anzeigen",
+    "Afficher les jaquettes",
+    "Mostrar carátulas",
+    "显示游戏封面",
+    "顯示遊戲封面",
+    "게임 표지 표시"
+  ],
+  "Fetch Box Art": [
+    "Fetch Box Art",
+    "Tải bìa game",
+    "Spielecover herunterladen",
+    "Télécharger les jaquettes",
+    "Descargar carátulas",
+    "下载游戏封面",
+    "下載遊戲封面",
+    "게임 표지 다운로드"
+  ],
+  "Hide Legacy Naomi Roms": [
+    "Hide Legacy Naomi Roms",
+    "Ẩn ROM Naomi kiểu cũ",
+    "Alte Naomi-ROMs ausblenden",
+    "Masquer les anciennes ROM Naomi",
+    "Ocultar ROM antiguas de Naomi",
+    "隐藏旧版 Naomi ROM",
+    "隱藏舊版 Naomi ROM",
+    "이전 형식 Naomi ROM 숨기기"
+  ],
+  "Home Folder": [
+    "Home Folder",
+    "Thư mục chính",
+    "Hauptordner",
+    "Dossier principal",
+    "Carpeta principal",
+    "主文件夹",
+    "主資料夾",
+    "홈 폴더"
+  ],
+  "BIOS Folders": [
+    "BIOS Folders",
+    "Thư mục BIOS",
+    "BIOS-Ordner",
+    "Dossiers BIOS",
+    "Carpetas de BIOS",
+    "BIOS 文件夹",
+    "BIOS 資料夾",
+    "BIOS 폴더"
+  ],
+  "VMU Folder": [
+    "VMU Folder",
+    "Thư mục VMU",
+    "VMU-Ordner",
+    "Dossier VMU",
+    "Carpeta de VMU",
+    "VMU 文件夹",
+    "VMU 資料夾",
+    "VMU 폴더"
+  ],
+  "Savestate Folders": [
+    "Savestate Folders",
+    "Thư mục lưu trạng thái",
+    "Speicherstandordner",
+    "Dossiers des états sauvegardés",
+    "Carpetas de estados guardados",
+    "即时存档文件夹",
+    "即時存檔資料夾",
+    "상태 저장 폴더"
+  ],
+  "Game Save Folder": [
+    "Game Save Folder",
+    "Thư mục lưu dữ liệu game",
+    "Spielstandordner",
+    "Dossier des sauvegardes de jeu",
+    "Carpeta de partidas",
+    "游戏存档文件夹",
+    "遊戲存檔資料夾",
+    "게임 저장 폴더"
+  ],
+  "Texture Pack Folders": [
+    "Texture Pack Folders",
+    "Thư mục gói texture",
+    "Texturpaketordner",
+    "Dossiers des packs de textures",
+    "Carpetas de texturas",
+    "纹理包文件夹",
+    "紋理包資料夾",
+    "텍스처 팩 폴더"
+  ],
+  "Texture Dump Folder": [
+    "Texture Dump Folder",
+    "Thư mục xuất texture",
+    "Texturexportordner",
+    "Dossier d'export des textures",
+    "Carpeta de texturas extraídas",
+    "纹理导出文件夹",
+    "紋理匯出資料夾",
+    "텍스처 추출 폴더"
+  ],
+  "Box Art Folder": [
+    "Box Art Folder",
+    "Thư mục bìa game",
+    "Coverordner",
+    "Dossier des jaquettes",
+    "Carpeta de carátulas",
+    "封面文件夹",
+    "封面資料夾",
+    "게임 표지 폴더"
+  ],
+  "Controller Mapping Folders": [
+    "Controller Mapping Folders",
+    "Thư mục gán nút",
+    "Ordner für Tastenbelegungen",
+    "Dossiers des profils de commandes",
+    "Carpetas de asignaciones",
+    "按键映射文件夹",
+    "按鍵設定資料夾",
+    "버튼 매핑 폴더"
+  ],
+  "Cheat Folders": [
+    "Cheat Folders",
+    "Thư mục mã cheat",
+    "Cheat-Ordner",
+    "Dossiers des codes",
+    "Carpetas de trucos",
+    "作弊码文件夹",
+    "作弊碼資料夾",
+    "치트 폴더"
+  ],
+  "Network Type": [
+    "Network Type",
+    "Kiểu mạng",
+    "Netzwerktyp",
+    "Type de réseau",
+    "Tipo de red",
+    "网络类型",
+    "網路類型",
+    "네트워크 유형"
+  ],
+  "Native": [
+    "Native",
+    "Gốc",
+    "Nativ",
+    "Natif",
+    "Nativo",
+    "原生",
+    "原生",
+    "네이티브"
+  ],
+  "Battle Cable": [
+    "Battle Cable",
+    "Cáp đối kháng",
+    "Battle Cable",
+    "Câble de liaison",
+    "Cable de batalla",
+    "对战线缆",
+    "對戰線纜",
+    "배틀 케이블"
+  ],
+  "Play as Player 1": [
+    "Play as Player 1",
+    "Chơi ở vị trí người 1",
+    "Als Spieler 1 spielen",
+    "Jouer en tant que joueur 1",
+    "Jugar como jugador 1",
+    "作为玩家 1 游玩",
+    "以玩家 1 遊玩",
+    "플레이어 1로 플레이"
+  ],
+  "Peer": [
+    "Peer",
+    "Máy đối phương",
+    "Gegenstelle",
+    "Adversaire",
+    "Oponente",
+    "对端",
+    "對端",
+    "상대"
+  ],
+  "Frame Delay": [
+    "Frame Delay",
+    "Độ trễ khung hình",
+    "Frameverzögerung",
+    "Délai d'images",
+    "Retraso de fotogramas",
+    "帧延迟",
+    "影格延遲",
+    "프레임 지연"
+  ],
+  "Left Thumbstick": [
+    "Left Thumbstick",
+    "Cần analog trái",
+    "Linker Stick",
+    "Stick gauche",
+    "Palanca izquierda",
+    "左摇杆",
+    "左搖桿",
+    "왼쪽 스틱"
+  ],
+  "Horizontal": [
+    "Horizontal",
+    "Chiều ngang",
+    "Horizontal",
+    "Horizontal",
+    "Horizontal",
+    "水平",
+    "水平",
+    "가로"
+  ],
+  "Full": [
+    "Full",
+    "Đầy đủ",
+    "Vollständig",
+    "Complet",
+    "Completo",
+    "完整",
+    "完整",
+    "전체"
+  ],
+  "Enable Chat": [
+    "Enable Chat",
+    "Bật trò chuyện",
+    "Chat aktivieren",
+    "Activer le chat",
+    "Activar chat",
+    "启用聊天",
+    "啟用聊天",
+    "채팅 활성화"
+  ],
+  "Enable Chat Window Timeout": [
+    "Enable Chat Window Timeout",
+    "Tự ẩn cửa sổ trò chuyện",
+    "Chat automatisch schließen",
+    "Fermer le chat automatiquement",
+    "Cerrar chat automáticamente",
+    "自动关闭聊天窗口",
+    "自動關閉聊天視窗",
+    "채팅창 자동 닫기"
+  ],
+  "Chat Window Timeout (seconds)": [
+    "Chat Window Timeout (seconds)",
+    "Thời gian ẩn trò chuyện (giây)",
+    "Chat-Zeitlimit (Sekunden)",
+    "Délai du chat (secondes)",
+    "Tiempo del chat (segundos)",
+    "聊天超时（秒）",
+    "聊天逾時（秒）",
+    "채팅창 시간 제한(초)"
+  ],
+  "Network Statistics": [
+    "Network Statistics",
+    "Thống kê mạng",
+    "Netzwerkstatistik",
+    "Statistiques réseau",
+    "Estadísticas de red",
+    "网络统计",
+    "網路統計",
+    "네트워크 통계"
+  ],
+  "Network Role": [
+    "Network Role",
+    "Vai trò mạng",
+    "Netzwerkrolle",
+    "Rôle réseau",
+    "Rol de red",
+    "网络角色",
+    "網路角色",
+    "네트워크 역할"
+  ],
+  "Master": [
+    "Master",
+    "Máy chủ",
+    "Master",
+    "Maître",
+    "Maestro",
+    "主机",
+    "主機",
+    "마스터"
+  ],
+  "Slave": [
+    "Slave",
+    "Máy khách",
+    "Slave",
+    "Esclave",
+    "Esclavo",
+    "从机",
+    "從機",
+    "슬레이브"
+  ],
+  "Satellite": [
+    "Satellite",
+    "Máy quan sát",
+    "Satellit",
+    "Satellite",
+    "Satélite",
+    "卫星机",
+    "衛星機",
+    "위성"
+  ],
+  "Server": [
+    "Server",
+    "Máy chủ",
+    "Server",
+    "Serveur",
+    "Servidor",
+    "服务器",
+    "伺服器",
+    "서버"
+  ],
+  "Match Code": [
+    "Match Code",
+    "Mã kết nối trận",
+    "Spielcode",
+    "Code de partie",
+    "Código de partida",
+    "对战代码",
+    "對戰代碼",
+    "매치 코드"
+  ],
+  "Code": [
+    "Code",
+    "Mã",
+    "Code",
+    "Code",
+    "Código",
+    "代码",
+    "代碼",
+    "코드"
+  ],
+  "Connect": [
+    "Connect",
+    "Kết nối",
+    "Verbinden",
+    "Connecter",
+    "Conectar",
+    "连接",
+    "連接",
+    "연결"
+  ],
+  "Disconnect": [
+    "Disconnect",
+    "Ngắt kết nối",
+    "Trennen",
+    "Déconnecter",
+    "Desconectar",
+    "断开",
+    "中斷連線",
+    "연결 해제"
+  ],
+  "Manual": [
+    "Manual",
+    "Thủ công",
+    "Manuell",
+    "Manuel",
+    "Manual",
+    "手动",
+    "手動",
+    "수동"
+  ],
+  "Act as Master": [
+    "Act as Master",
+    "Làm máy chủ",
+    "Als Master agieren",
+    "Agir en maître",
+    "Actuar como maestro",
+    "作为主机",
+    "作為主機",
+    "마스터로 동작"
+  ],
+  "Local Port": [
+    "Local Port",
+    "Cổng máy này",
+    "Lokaler Port",
+    "Port local",
+    "Puerto local",
+    "本地端口",
+    "本機連接埠",
+    "로컬 포트"
+  ],
+  "Network Options": [
+    "Network Options",
+    "Tùy chọn mạng",
+    "Netzwerkoptionen",
+    "Options réseau",
+    "Opciones de red",
+    "网络选项",
+    "網路選項",
+    "네트워크 옵션"
+  ],
+  "Enable UPnP": [
+    "Enable UPnP",
+    "Bật UPnP",
+    "UPnP aktivieren",
+    "Activer UPnP",
+    "Activar UPnP",
+    "启用 UPnP",
+    "啟用 UPnP",
+    "UPnP 활성화"
+  ],
+  "Broadcast Digital Outputs": [
+    "Broadcast Digital Outputs",
+    "Phát tín hiệu đầu ra số",
+    "Digitale Ausgänge übertragen",
+    "Diffuser les sorties numériques",
+    "Difundir salidas digitales",
+    "广播数字输出",
+    "廣播數位輸出",
+    "디지털 출력 전송"
+  ],
+  "Broadband Adapter Emulation": [
+    "Broadband Adapter Emulation",
+    "Giả lập bộ mạng BBA",
+    "Breitbandadapter emulieren",
+    "Émuler l'adaptateur haut débit",
+    "Emular adaptador de banda ancha",
+    "模拟宽带适配器",
+    "模擬寬頻網路卡",
+    "광대역 어댑터 에뮬레이션"
+  ],
+  "Use DCNet": [
+    "Use DCNet",
+    "Dùng DCNet",
+    "DCNet verwenden",
+    "Utiliser DCNet",
+    "Usar DCNet",
+    "使用 DCNet",
+    "使用 DCNet",
+    "DCNet 사용"
+  ],
+  "ISP User Name": [
+    "ISP User Name",
+    "Tên người dùng ISP",
+    "ISP-Benutzername",
+    "Nom d'utilisateur FAI",
+    "Usuario del ISP",
+    "ISP 用户名",
+    "ISP 使用者名稱",
+    "ISP 사용자 이름"
+  ],
+  "Multiboard Screens": [
+    "Multiboard Screens",
+    "Màn hình đa bo mạch",
+    "Multiboard-Bildschirme",
+    "Écrans multicarte",
+    "Pantallas multiplaca",
+    "多板屏幕",
+    "多板螢幕",
+    "멀티보드 화면"
+  ],
+  "1 (Twin, Satellite)": [
+    "1 (Twin, Satellite)",
+    "1 (Twin, Satellite)",
+    "1 (Twin, Satellit)",
+    "1 (Twin, Satellite)",
+    "1 (Twin, Satélite)",
+    "1（双屏、卫星机）",
+    "1（雙螢幕、衛星機）",
+    "1 (트윈, 위성)"
+  ],
+  "2+ (Deluxe, Main screen)": [
+    "2+ (Deluxe, Main screen)",
+    "2+ (Deluxe, màn hình chính)",
+    "2+ (Deluxe, Hauptbildschirm)",
+    "2+ (Deluxe, écran principal)",
+    "2+ (Deluxe, principal)",
+    "2+（豪华版、主屏）",
+    "2+（豪華版、主螢幕）",
+    "2+ (디럭스, 메인 화면)"
+  ],
+  "Directions": [
+    "Directions",
+    "Hướng di chuyển",
+    "Richtungen",
+    "Directions",
+    "Direcciones",
+    "方向",
+    "方向",
+    "방향"
+  ],
+  "Buttons": [
+    "Buttons",
+    "Nút bấm",
+    "Tasten",
+    "Boutons",
+    "Botones",
+    "按钮",
+    "按鈕",
+    "버튼"
+  ],
+  "Triggers": [
+    "Triggers",
+    "Nút cò",
+    "Schultertasten",
+    "Gâchettes",
+    "Gatillos",
+    "扳机",
+    "扳機",
+    "트리거"
+  ],
+  "System Buttons": [
+    "System Buttons",
+    "Nút hệ thống",
+    "Systemtasten",
+    "Touches système",
+    "Botones del sistema",
+    "系统按钮",
+    "系統按鈕",
+    "시스템 버튼"
+  ],
+  "Emulator": [
+    "Emulator",
+    "Emulator",
+    "Emulator",
+    "Émulateur",
+    "Emulador",
+    "模拟器",
+    "模擬器",
+    "에뮬레이터"
+  ],
+  "Up": [
+    "Up",
+    "Lên",
+    "Hoch",
+    "Haut",
+    "Arriba",
+    "上",
+    "上",
+    "위"
+  ],
+  "Down": [
+    "Down",
+    "Xuống",
+    "Runter",
+    "Bas",
+    "Abajo",
+    "下",
+    "下",
+    "아래"
+  ],
+  "Left": [
+    "Left",
+    "Trái",
+    "Links",
+    "Gauche",
+    "Izquierda",
+    "左",
+    "左",
+    "왼쪽"
+  ],
+  "Right": [
+    "Right",
+    "Phải",
+    "Rechts",
+    "Droite",
+    "Derecha",
+    "右",
+    "右",
+    "오른쪽"
+  ],
+  "Thumbstick Up": [
+    "Thumbstick Up",
+    "Cần trái lên",
+    "Linker Stick hoch",
+    "Stick gauche haut",
+    "Palanca izquierda arriba",
+    "左摇杆上",
+    "左搖桿上",
+    "왼쪽 스틱 위"
+  ],
+  "Thumbstick Down": [
+    "Thumbstick Down",
+    "Cần trái xuống",
+    "Linker Stick runter",
+    "Stick gauche bas",
+    "Palanca izquierda abajo",
+    "左摇杆下",
+    "左搖桿下",
+    "왼쪽 스틱 아래"
+  ],
+  "Thumbstick Left": [
+    "Thumbstick Left",
+    "Cần trái sang trái",
+    "Linker Stick links",
+    "Stick gauche gauche",
+    "Palanca izquierda izquierda",
+    "左摇杆左",
+    "左搖桿左",
+    "왼쪽 스틱 왼쪽"
+  ],
+  "Thumbstick Right": [
+    "Thumbstick Right",
+    "Cần trái sang phải",
+    "Linker Stick rechts",
+    "Stick gauche droite",
+    "Palanca izquierda derecha",
+    "左摇杆右",
+    "左搖桿右",
+    "왼쪽 스틱 오른쪽"
+  ],
+  "R.Thumbstick Up": [
+    "R.Thumbstick Up",
+    "Cần phải lên",
+    "Rechter Stick hoch",
+    "Stick droit haut",
+    "Palanca derecha arriba",
+    "右摇杆上",
+    "右搖桿上",
+    "오른쪽 스틱 위"
+  ],
+  "R.Thumbstick Down": [
+    "R.Thumbstick Down",
+    "Cần phải xuống",
+    "Rechter Stick runter",
+    "Stick droit bas",
+    "Palanca derecha abajo",
+    "右摇杆下",
+    "右搖桿下",
+    "오른쪽 스틱 아래"
+  ],
+  "R.Thumbstick Left": [
+    "R.Thumbstick Left",
+    "Cần phải sang trái",
+    "Rechter Stick links",
+    "Stick droit gauche",
+    "Palanca derecha izquierda",
+    "右摇杆左",
+    "右搖桿左",
+    "오른쪽 스틱 왼쪽"
+  ],
+  "R.Thumbstick Right": [
+    "R.Thumbstick Right",
+    "Cần phải sang phải",
+    "Rechter Stick rechts",
+    "Stick droit droite",
+    "Palanca derecha derecha",
+    "右摇杆右",
+    "右搖桿右",
+    "오른쪽 스틱 오른쪽"
+  ],
+  "Axis 3 Up": [
+    "Axis 3 Up",
+    "Trục 3 lên",
+    "Achse 3 hoch",
+    "Axe 3 haut",
+    "Eje 3 arriba",
+    "轴 3 上",
+    "軸 3 上",
+    "축 3 위"
+  ],
+  "Axis 3 Down": [
+    "Axis 3 Down",
+    "Trục 3 xuống",
+    "Achse 3 runter",
+    "Axe 3 bas",
+    "Eje 3 abajo",
+    "轴 3 下",
+    "軸 3 下",
+    "축 3 아래"
+  ],
+  "Axis 3 Left": [
+    "Axis 3 Left",
+    "Trục 3 trái",
+    "Achse 3 links",
+    "Axe 3 gauche",
+    "Eje 3 izquierda",
+    "轴 3 左",
+    "軸 3 左",
+    "축 3 왼쪽"
+  ],
+  "Axis 3 Right": [
+    "Axis 3 Right",
+    "Trục 3 phải",
+    "Achse 3 rechts",
+    "Axe 3 droite",
+    "Eje 3 derecha",
+    "轴 3 右",
+    "軸 3 右",
+    "축 3 오른쪽"
+  ],
+  "DPad2 Up": [
+    "DPad2 Up",
+    "D-pad 2 lên",
+    "D-Pad 2 hoch",
+    "Croix 2 haut",
+    "Cruceta 2 arriba",
+    "方向键 2 上",
+    "方向鍵 2 上",
+    "방향 패드 2 위"
+  ],
+  "DPad2 Down": [
+    "DPad2 Down",
+    "D-pad 2 xuống",
+    "D-Pad 2 runter",
+    "Croix 2 bas",
+    "Cruceta 2 abajo",
+    "方向键 2 下",
+    "方向鍵 2 下",
+    "방향 패드 2 아래"
+  ],
+  "DPad2 Left": [
+    "DPad2 Left",
+    "D-pad 2 trái",
+    "D-Pad 2 links",
+    "Croix 2 gauche",
+    "Cruceta 2 izquierda",
+    "方向键 2 左",
+    "方向鍵 2 左",
+    "방향 패드 2 왼쪽"
+  ],
+  "DPad2 Right": [
+    "DPad2 Right",
+    "D-pad 2 phải",
+    "D-Pad 2 rechts",
+    "Croix 2 droite",
+    "Cruceta 2 derecha",
+    "方向键 2 右",
+    "方向鍵 2 右",
+    "방향 패드 2 오른쪽"
+  ],
+  "Left Trigger": [
+    "Left Trigger",
+    "Cò trái",
+    "Linker Trigger",
+    "Gâchette gauche",
+    "Gatillo izquierdo",
+    "左扳机",
+    "左扳機",
+    "왼쪽 트리거"
+  ],
+  "Right Trigger": [
+    "Right Trigger",
+    "Cò phải",
+    "Rechter Trigger",
+    "Gâchette droite",
+    "Gatillo derecho",
+    "右扳机",
+    "右扳機",
+    "오른쪽 트리거"
+  ],
+  "Left Trigger 2": [
+    "Left Trigger 2",
+    "Cò trái 2",
+    "Linker Trigger 2",
+    "Gâchette gauche 2",
+    "Gatillo izquierdo 2",
+    "左扳机 2",
+    "左扳機 2",
+    "왼쪽 트리거 2"
+  ],
+  "Right Trigger 2": [
+    "Right Trigger 2",
+    "Cò phải 2",
+    "Rechter Trigger 2",
+    "Gâchette droite 2",
+    "Gatillo derecho 2",
+    "右扳机 2",
+    "右扳機 2",
+    "오른쪽 트리거 2"
+  ],
+  "Start": [
+    "Start",
+    "Bắt đầu",
+    "Start",
+    "Démarrer",
+    "Inicio",
+    "开始",
+    "開始",
+    "시작"
+  ],
+  "Reload": [
+    "Reload",
+    "Nạp lại",
+    "Nachladen",
+    "Recharger",
+    "Recargar",
+    "装填",
+    "裝填",
+    "재장전"
+  ],
+  "Menu": [
+    "Menu",
+    "Menu",
+    "Menü",
+    "Menu",
+    "Menú",
+    "菜单",
+    "選單",
+    "메뉴"
+  ],
+  "Exit": [
+    "Exit",
+    "Thoát",
+    "Beenden",
+    "Quitter",
+    "Salir",
+    "退出",
+    "結束",
+    "종료"
+  ],
+  "Pause": [
+    "Pause",
+    "Tạm dừng",
+    "Pause",
+    "Pause",
+    "Pausa",
+    "暂停",
+    "暫停",
+    "일시 정지"
+  ],
+  "Fast-forward": [
+    "Fast-forward",
+    "Tua nhanh",
+    "Vorspulen",
+    "Avance rapide",
+    "Avance rápido",
+    "快进",
+    "快轉",
+    "빨리 감기"
+  ],
+  "Load State": [
+    "Load State",
+    "Tải trạng thái",
+    "Zustand laden",
+    "Charger l'état",
+    "Cargar estado",
+    "加载即时存档",
+    "載入即時存檔",
+    "상태 불러오기"
+  ],
+  "Save State": [
+    "Save State",
+    "Lưu trạng thái",
+    "Zustand speichern",
+    "Sauvegarder l'état",
+    "Guardar estado",
+    "保存即时存档",
+    "儲存即時存檔",
+    "상태 저장"
+  ],
+  "Load State in RAM": [
+    "Load State in RAM",
+    "Tải trạng thái trong RAM",
+    "Zustand aus RAM laden",
+    "Charger l'état en RAM",
+    "Cargar estado en RAM",
+    "从 RAM 加载状态",
+    "從 RAM 載入狀態",
+    "RAM 상태 불러오기"
+  ],
+  "Save State in RAM": [
+    "Save State in RAM",
+    "Lưu trạng thái vào RAM",
+    "Zustand im RAM speichern",
+    "Sauvegarder l'état en RAM",
+    "Guardar estado en RAM",
+    "保存状态到 RAM",
+    "儲存狀態至 RAM",
+    "RAM에 상태 저장"
+  ],
+  "Next Save State Slot": [
+    "Next Save State Slot",
+    "Ô lưu tiếp theo",
+    "Nächster Speicherplatz",
+    "Emplacement suivant",
+    "Ranura siguiente",
+    "下一个存档槽",
+    "下一個存檔欄位",
+    "다음 저장 슬롯"
+  ],
+  "Previous Save State Slot": [
+    "Previous Save State Slot",
+    "Ô lưu trước",
+    "Vorheriger Speicherplatz",
+    "Emplacement précédent",
+    "Ranura anterior",
+    "上一个存档槽",
+    "上一個存檔欄位",
+    "이전 저장 슬롯"
+  ],
+  "Bypass Emulated Keyboard": [
+    "Bypass Emulated Keyboard",
+    "Bỏ qua bàn phím giả lập",
+    "Emulierte Tastatur umgehen",
+    "Contourner le clavier émulé",
+    "Omitir teclado emulado",
+    "绕过模拟键盘",
+    "略過模擬鍵盤",
+    "에뮬레이트된 키보드 우회"
+  ],
+  "Save Screenshot": [
+    "Save Screenshot",
+    "Chụp ảnh màn hình",
+    "Screenshot speichern",
+    "Capturer l'écran",
+    "Capturar pantalla",
+    "保存截图",
+    "儲存截圖",
+    "스크린샷 저장"
+  ],
+  "Dreamcast Controls": [
+    "Dreamcast Controls",
+    "Nút Dreamcast",
+    "Dreamcast-Steuerung",
+    "Commandes Dreamcast",
+    "Controles de Dreamcast",
+    "Dreamcast 按键",
+    "Dreamcast 按鍵",
+    "Dreamcast 컨트롤"
+  ],
+  "Arcade Controls": [
+    "Arcade Controls",
+    "Nút máy thùng",
+    "Arcade-Steuerung",
+    "Commandes arcade",
+    "Controles arcade",
+    "街机按键",
+    "街機按鍵",
+    "아케이드 컨트롤"
+  ],
+  "Map": [
+    "Map",
+    "Gán",
+    "Zuweisen",
+    "Affecter",
+    "Asignar",
+    "映射",
+    "對應",
+    "지정"
+  ],
+  "Unmap": [
+    "Unmap",
+    "Bỏ gán",
+    "Entfernen",
+    "Effacer",
+    "Quitar",
+    "清除映射",
+    "清除對應",
+    "지정 해제"
+  ],
+  "Map Control": [
+    "Map Control",
+    "Gán chức năng",
+    "Steuerung zuweisen",
+    "Affecter une commande",
+    "Asignar control",
+    "映射控制",
+    "對應控制",
+    "컨트롤 지정"
+  ],
+  "Waiting for control '%s'...": [
+    "Waiting for control '%s'...",
+    "Đang chờ nút '%s'...",
+    "Warte auf Eingabe für '%s'...",
+    "En attente de la commande « %s »...",
+    "Esperando el control «%s»...",
+    "正在等待“%s”的输入…",
+    "正在等待「%s」的輸入…",
+    "'%s' 입력 대기 중..."
+  ],
+  "Time out in %d s": [
+    "Time out in %d s",
+    "Hết giờ sau %d giây",
+    "Zeitlimit in %d s",
+    "Expiration dans %d s",
+    "Tiempo restante: %d s",
+    "%d 秒后超时",
+    "%d 秒後逾時",
+    "%d초 후 시간 초과"
+  ],
+  "Current inputs:": [
+    "Current inputs:",
+    "Đầu vào hiện tại:",
+    "Aktuelle Eingaben:",
+    "Entrées actuelles :",
+    "Entradas actuales:",
+    "当前输入：",
+    "目前輸入：",
+    "현재 입력:"
+  ],
+  "Sequential": [
+    "Sequential",
+    "Theo thứ tự",
+    "Sequenziell",
+    "Séquentiel",
+    "Secuencial",
+    "按顺序",
+    "依序",
+    "순차 입력"
+  ],
+  "Are you sure you want to reset the mappings to default?": [
+    "Are you sure you want to reset the mappings to default?",
+    "Bạn muốn đặt lại toàn bộ nút về mặc định?",
+    "Tastenbelegung wirklich auf Standard zurücksetzen?",
+    "Voulez-vous rétablir l'affectation par défaut ?",
+    "¿Restablecer las asignaciones predeterminadas?",
+    "确定将按键映射恢复为默认值？",
+    "確定將按鍵對應恢復為預設值？",
+    "버튼 매핑을 기본값으로 초기화할까요?"
+  ],
+  "Gamepad": [
+    "Gamepad",
+    "Tay cầm",
+    "Gamepad",
+    "Manette",
+    "Mando",
+    "手柄",
+    "手把",
+    "게임패드"
+  ],
+  "Arcade / Hit Box": [
+    "Arcade / Hit Box",
+    "Máy thùng / Hit Box",
+    "Arcade / Hit Box",
+    "Arcade / Hit Box",
+    "Arcade / Hit Box",
+    "街机 / Hit Box",
+    "街機 / Hit Box",
+    "아케이드 / 히트박스"
+  ],
+  "Gamepad Settings": [
+    "Gamepad Settings",
+    "Cài đặt tay cầm",
+    "Gamepad-Einstellungen",
+    "Réglages de la manette",
+    "Ajustes del mando",
+    "手柄设置",
+    "手把設定",
+    "게임패드 설정"
+  ],
+  "Rumble": [
+    "Rumble",
+    "Rung",
+    "Vibration",
+    "Vibration",
+    "Vibración",
+    "振动",
+    "震動",
+    "진동"
+  ],
+  "Power": [
+    "Power",
+    "Cường độ",
+    "Stärke",
+    "Puissance",
+    "Intensidad",
+    "强度",
+    "強度",
+    "강도"
+  ],
+  "Thumbsticks": [
+    "Thumbsticks",
+    "Cần analog",
+    "Sticks",
+    "Sticks",
+    "Palancas",
+    "摇杆",
+    "搖桿",
+    "스틱"
+  ],
+  "Dead zone": [
+    "Dead zone",
+    "Vùng chết",
+    "Totzone",
+    "Zone morte",
+    "Zona muerta",
+    "死区",
+    "死區",
+    "데드존"
+  ],
+  "Saturation": [
+    "Saturation",
+    "Độ bão hòa",
+    "Sättigung",
+    "Saturation",
+    "Saturación",
+    "饱和度",
+    "飽和度",
+    "포화도"
+  ],
+  "Mouse sensitivity": [
+    "Mouse sensitivity",
+    "Độ nhạy chuột",
+    "Mausempfindlichkeit",
+    "Sensibilité de la souris",
+    "Sensibilidad del ratón",
+    "鼠标灵敏度",
+    "滑鼠靈敏度",
+    "마우스 감도"
+  ],
+  "Use Raw Input": [
+    "Use Raw Input",
+    "Dùng Raw Input",
+    "Raw Input verwenden",
+    "Utiliser Raw Input",
+    "Usar Raw Input",
+    "使用原始输入",
+    "使用原始輸入",
+    "Raw Input 사용"
+  ],
+  "Dreamcast Devices": [
+    "Dreamcast Devices",
+    "Thiết bị Dreamcast",
+    "Dreamcast-Geräte",
+    "Périphériques Dreamcast",
+    "Dispositivos Dreamcast",
+    "Dreamcast 设备",
+    "Dreamcast 裝置",
+    "Dreamcast 장치"
+  ],
+  "Port": [
+    "Port",
+    "Cổng",
+    "Anschluss",
+    "Port",
+    "Puerto",
+    "端口",
+    "連接埠",
+    "포트"
+  ],
+  "Port %c": [
+    "Port %c",
+    "Cổng %c",
+    "Anschluss %c",
+    "Port %c",
+    "Puerto %c",
+    "端口 %c",
+    "連接埠 %c",
+    "포트 %c"
+  ],
+  "Sega Controller": [
+    "Sega Controller",
+    "Tay cầm Sega",
+    "Sega-Controller",
+    "Manette Sega",
+    "Mando Sega",
+    "世嘉控制器",
+    "SEGA 控制器",
+    "세가 컨트롤러"
+  ],
+  "Light Gun": [
+    "Light Gun",
+    "Súng ánh sáng",
+    "Lightgun",
+    "Pistolet optique",
+    "Pistola de luz",
+    "光枪",
+    "光槍",
+    "라이트건"
+  ],
+  "Mouse": [
+    "Mouse",
+    "Chuột",
+    "Maus",
+    "Souris",
+    "Ratón",
+    "鼠标",
+    "滑鼠",
+    "마우스"
+  ],
+  "Twin Stick": [
+    "Twin Stick",
+    "Cần đôi",
+    "Twin Stick",
+    "Double stick",
+    "Palanca doble",
+    "双摇杆",
+    "雙搖桿",
+    "트윈 스틱"
+  ],
+  "Arcade/Ascii Stick": [
+    "Arcade/Ascii Stick",
+    "Cần Arcade/Ascii",
+    "Arcade/Ascii-Stick",
+    "Stick Arcade/Ascii",
+    "Palanca Arcade/Ascii",
+    "街机/Ascii 摇杆",
+    "街機/Ascii 搖桿",
+    "아케이드/Ascii 스틱"
+  ],
+  "Maracas Controller": [
+    "Maracas Controller",
+    "Tay cầm Maracas",
+    "Maracas-Controller",
+    "Manette maracas",
+    "Controlador de maracas",
+    "沙锤控制器",
+    "沙鈴控制器",
+    "마라카스 컨트롤러"
+  ],
+  "Fishing Controller": [
+    "Fishing Controller",
+    "Tay cầm câu cá",
+    "Angelcontroller",
+    "Canne à pêche",
+    "Caña de pescar",
+    "钓鱼控制器",
+    "釣魚控制器",
+    "낚시 컨트롤러"
+  ],
+  "Pop'n Music controller": [
+    "Pop'n Music controller",
+    "Tay cầm Pop'n Music",
+    "Pop'n-Music-Controller",
+    "Manette Pop'n Music",
+    "Mando Pop'n Music",
+    "Pop'n Music 控制器",
+    "Pop'n Music 控制器",
+    "Pop'n Music 컨트롤러"
+  ],
+  "Racing Controller": [
+    "Racing Controller",
+    "Vô lăng đua xe",
+    "Rennlenkrad",
+    "Volant",
+    "Volante",
+    "赛车控制器",
+    "賽車控制器",
+    "레이싱 컨트롤러"
+  ],
+  "Densha de Go! Controller": [
+    "Densha de Go! Controller",
+    "Tay cầm Densha de Go!",
+    "Densha-de-Go!-Controller",
+    "Manette Densha de Go!",
+    "Mando Densha de Go!",
+    "电车 GO! 控制器",
+    "電車 GO! 控制器",
+    "Densha de Go! 컨트롤러"
+  ],
+  "Panther DC/Full Controller": [
+    "Panther DC/Full Controller",
+    "Tay cầm Panther DC/Full",
+    "Panther DC/Full Controller",
+    "Manette Panther DC/Full",
+    "Mando Panther DC/Full",
+    "Panther DC/Full 控制器",
+    "Panther DC/Full 控制器",
+    "Panther DC/Full 컨트롤러"
+  ],
+  "DreamParaPara Controller": [
+    "DreamParaPara Controller",
+    "Tay cầm DreamParaPara",
+    "DreamParaPara-Controller",
+    "Manette DreamParaPara",
+    "Mando DreamParaPara",
+    "DreamParaPara 控制器",
+    "DreamParaPara 控制器",
+    "DreamParaPara 컨트롤러"
+  ],
+  "Sega VMU": [
+    "Sega VMU",
+    "VMU Sega",
+    "Sega-VMU",
+    "VMU Sega",
+    "VMU Sega",
+    "世嘉 VMU",
+    "SEGA VMU",
+    "세가 VMU"
+  ],
+  "Vibration Pack": [
+    "Vibration Pack",
+    "Bộ rung",
+    "Vibrationsmodul",
+    "Kit de vibration",
+    "Pack de vibración",
+    "振动包",
+    "震動包",
+    "진동 팩"
+  ],
+  "Microphone": [
+    "Microphone",
+    "Micro",
+    "Mikrofon",
+    "Microphone",
+    "Micrófono",
+    "麦克风",
+    "麥克風",
+    "마이크"
+  ],
+  "Crosshair": [
+    "Crosshair",
+    "Tâm ngắm",
+    "Fadenkreuz",
+    "Viseur",
+    "Mira",
+    "准星",
+    "準星",
+    "조준점"
+  ],
+  "Crosshair Size": [
+    "Crosshair Size",
+    "Kích thước tâm ngắm",
+    "Fadenkreuzgröße",
+    "Taille du viseur",
+    "Tamaño de la mira",
+    "准星大小",
+    "準星大小",
+    "조준점 크기"
+  ],
+  "Per Game VMU A1": [
+    "Per Game VMU A1",
+    "VMU A1 riêng cho từng game",
+    "Eigene VMU A1 je Spiel",
+    "VMU A1 par jeu",
+    "VMU A1 por juego",
+    "每个游戏独立 VMU A1",
+    "每個遊戲獨立 VMU A1",
+    "게임별 VMU A1"
+  ],
+  "Use Physical VMU Storage": [
+    "Use Physical VMU Storage",
+    "Dùng bộ nhớ VMU thật",
+    "Physische VMU verwenden",
+    "Utiliser un VMU physique",
+    "Usar VMU física",
+    "使用实体 VMU 存储",
+    "使用實體 VMU 儲存",
+    "실제 VMU 저장 장치 사용"
+  ],
+  "CPU Mode": [
+    "CPU Mode",
+    "Chế độ CPU",
+    "CPU-Modus",
+    "Mode CPU",
+    "Modo de CPU",
+    "CPU 模式",
+    "CPU 模式",
+    "CPU 모드"
+  ],
+  "Dynarec": [
+    "Dynarec",
+    "Biên dịch động",
+    "Dynarec",
+    "Recompilation dynamique",
+    "Recompilación dinámica",
+    "动态重编译",
+    "動態重編譯",
+    "동적 재컴파일"
+  ],
+  "Interpreter": [
+    "Interpreter",
+    "Thông dịch",
+    "Interpreter",
+    "Interpréteur",
+    "Intérprete",
+    "解释器",
+    "直譯器",
+    "인터프리터"
+  ],
+  "SH4 Clock": [
+    "SH4 Clock",
+    "Xung nhịp SH4",
+    "SH4-Takt",
+    "Fréquence SH4",
+    "Frecuencia SH4",
+    "SH4 频率",
+    "SH4 時脈",
+    "SH4 클럭"
+  ],
+  "Other": [
+    "Other",
+    "Khác",
+    "Sonstiges",
+    "Autres",
+    "Otros",
+    "其他",
+    "其他",
+    "기타"
+  ],
+  "HLE BIOS": [
+    "HLE BIOS",
+    "BIOS HLE",
+    "HLE-BIOS",
+    "BIOS HLE",
+    "BIOS HLE",
+    "HLE BIOS",
+    "HLE BIOS",
+    "HLE BIOS"
+  ],
+  "Multi-threaded emulation": [
+    "Multi-threaded emulation",
+    "Giả lập đa luồng",
+    "Mehrthread-Emulation",
+    "Émulation multithread",
+    "Emulación multihilo",
+    "多线程模拟",
+    "多執行緒模擬",
+    "다중 스레드 에뮬레이션"
+  ],
+  "Serial Console": [
+    "Serial Console",
+    "Bảng điều khiển nối tiếp",
+    "Serielle Konsole",
+    "Console série",
+    "Consola serie",
+    "串口控制台",
+    "序列埠主控台",
+    "직렬 콘솔"
+  ],
+  "Dreamcast 32MB RAM Mod": [
+    "Dreamcast 32MB RAM Mod",
+    "Bản mở rộng RAM Dreamcast 32MB",
+    "Dreamcast 32-MB-RAM-Mod",
+    "Extension RAM Dreamcast 32 Mo",
+    "Mod de RAM Dreamcast de 32 MB",
+    "Dreamcast 32MB 内存扩展",
+    "Dreamcast 32MB 記憶體擴充",
+    "Dreamcast 32MB RAM 모드"
+  ],
+  "Dump Textures": [
+    "Dump Textures",
+    "Xuất texture",
+    "Texturen exportieren",
+    "Exporter les textures",
+    "Extraer texturas",
+    "导出纹理",
+    "匯出紋理",
+    "텍스처 추출"
+  ],
+  "Dump Replaced Textures": [
+    "Dump Replaced Textures",
+    "Xuất cả texture đã thay",
+    "Ersetzte Texturen exportieren",
+    "Exporter les textures remplacées",
+    "Extraer texturas reemplazadas",
+    "导出已替换纹理",
+    "匯出已替換紋理",
+    "교체된 텍스처 추출"
+  ],
+  "Discard Video and Animated Textures": [
+    "Discard Video and Animated Textures",
+    "Bỏ texture video và chuyển động",
+    "Video- und Animationstexturen überspringen",
+    "Ignorer les textures animées et vidéo",
+    "Omitir texturas animadas y de vídeo",
+    "忽略视频及动画纹理",
+    "略過影片及動畫紋理",
+    "영상 및 애니메이션 텍스처 제외"
+  ],
+  "Log to File": [
+    "Log to File",
+    "Ghi nhật ký vào file",
+    "In Datei protokollieren",
+    "Journaliser dans un fichier",
+    "Guardar registro en archivo",
+    "记录到文件",
+    "記錄至檔案",
+    "파일에 로그 기록"
+  ],
+  "Automatically Report Crashes": [
+    "Automatically Report Crashes",
+    "Tự báo lỗi crash",
+    "Abstürze automatisch melden",
+    "Signaler les plantages automatiquement",
+    "Informar de fallos automáticamente",
+    "自动报告崩溃",
+    "自動回報當機",
+    "충돌 자동 보고"
+  ],
+  "Lua Scripting": [
+    "Lua Scripting",
+    "Script Lua",
+    "Lua-Skripte",
+    "Scripts Lua",
+    "Scripts Lua",
+    "Lua 脚本",
+    "Lua 指令稿",
+    "Lua 스크립트"
+  ],
+  "Lua Filename": [
+    "Lua Filename",
+    "Tên file Lua",
+    "Lua-Dateiname",
+    "Fichier Lua",
+    "Archivo Lua",
+    "Lua 文件名",
+    "Lua 檔名",
+    "Lua 파일 이름"
+  ],
+  "Enable RetroAchievements": [
+    "Enable RetroAchievements",
+    "Bật RetroAchievements",
+    "RetroAchievements aktivieren",
+    "Activer RetroAchievements",
+    "Activar RetroAchievements",
+    "启用 RetroAchievements",
+    "啟用 RetroAchievements",
+    "RetroAchievements 활성화"
+  ],
+  "Hardcore Mode": [
+    "Hardcore Mode",
+    "Chế độ Hardcore",
+    "Hardcore-Modus",
+    "Mode Hardcore",
+    "Modo Hardcore",
+    "硬核模式",
+    "硬核模式",
+    "하드코어 모드"
+  ],
+  "Username": [
+    "Username",
+    "Tên đăng nhập",
+    "Benutzername",
+    "Nom d'utilisateur",
+    "Usuario",
+    "用户名",
+    "使用者名稱",
+    "사용자 이름"
+  ],
+  "Password": [
+    "Password",
+    "Mật khẩu",
+    "Passwort",
+    "Mot de passe",
+    "Contraseña",
+    "密码",
+    "密碼",
+    "비밀번호"
+  ],
+  "Authentication successful": [
+    "Authentication successful",
+    "Đăng nhập thành công",
+    "Anmeldung erfolgreich",
+    "Authentification réussie",
+    "Autenticación correcta",
+    "验证成功",
+    "驗證成功",
+    "인증 성공"
+  ],
+  "Authenticating...": [
+    "Authenticating...",
+    "Đang đăng nhập...",
+    "Anmeldung läuft...",
+    "Authentification...",
+    "Autenticando...",
+    "正在验证…",
+    "正在驗證…",
+    "인증 중..."
+  ],
+  "Login": [
+    "Login",
+    "Đăng nhập",
+    "Anmelden",
+    "Connexion",
+    "Iniciar sesión",
+    "登录",
+    "登入",
+    "로그인"
+  ],
+  "Logout": [
+    "Logout",
+    "Đăng xuất",
+    "Abmelden",
+    "Déconnexion",
+    "Cerrar sesión",
+    "退出登录",
+    "登出",
+    "로그아웃"
+  ],
+  "Resume": [
+    "Resume",
+    "Tiếp tục",
+    "Fortsetzen",
+    "Reprendre",
+    "Continuar",
+    "继续",
+    "繼續",
+    "계속"
+  ],
+  "Cheats": [
+    "Cheats",
+    "Mã cheat",
+    "Cheats",
+    "Codes de triche",
+    "Trucos",
+    "作弊码",
+    "作弊碼",
+    "치트"
+  ],
+  "Insert Disk": [
+    "Insert Disk",
+    "Đưa đĩa vào",
+    "Disc einlegen",
+    "Insérer un disque",
+    "Insertar disco",
+    "插入光盘",
+    "插入光碟",
+    "디스크 삽입"
+  ],
+  "Eject Disk": [
+    "Eject Disk",
+    "Nhả đĩa",
+    "Disc auswerfen",
+    "Éjecter le disque",
+    "Expulsar disco",
+    "弹出光盘",
+    "退出光碟",
+    "디스크 꺼내기"
+  ],
+  "Close Game": [
+    "Close Game",
+    "Đóng game",
+    "Spiel schließen",
+    "Fermer le jeu",
+    "Cerrar juego",
+    "关闭游戏",
+    "關閉遊戲",
+    "게임 닫기"
+  ],
+  "Slot %d": [
+    "Slot %d",
+    "Ô %d",
+    "Platz %d",
+    "Emplacement %d",
+    "Ranura %d",
+    "槽位 %d",
+    "欄位 %d",
+    "슬롯 %d"
+  ],
+  "Empty": [
+    "Empty",
+    "Trống",
+    "Leer",
+    "Vide",
+    "Vacío",
+    "空",
+    "空",
+    "비어 있음"
+  ],
+  "Barcode Card": [
+    "Barcode Card",
+    "Thẻ mã vạch",
+    "Barcode-Karte",
+    "Carte à code-barres",
+    "Tarjeta de código de barras",
+    "条码卡",
+    "條碼卡",
+    "바코드 카드"
+  ],
+  "Version: %s": [
+    "Version: %s",
+    "Phiên bản: %s",
+    "Version: %s",
+    "Version : %s",
+    "Versión: %s",
+    "版本：%s",
+    "版本：%s",
+    "버전: %s"
+  ],
+  "Git Hash: %s": [
+    "Git Hash: %s",
+    "Mã Git: %s",
+    "Git-Hash: %s",
+    "Hash Git : %s",
+    "Hash de Git: %s",
+    "Git 哈希：%s",
+    "Git 雜湊：%s",
+    "Git 해시: %s"
+  ],
+  "Build Date: %s": [
+    "Build Date: %s",
+    "Ngày dựng: %s",
+    "Build-Datum: %s",
+    "Date de compilation : %s",
+    "Fecha de compilación: %s",
+    "构建日期：%s",
+    "組建日期：%s",
+    "빌드 날짜: %s"
+  ],
+  "Platform": [
+    "Platform",
+    "Nền tảng",
+    "Plattform",
+    "Plateforme",
+    "Plataforma",
+    "平台",
+    "平台",
+    "플랫폼"
+  ],
+  "CPU: %s": [
+    "CPU: %s",
+    "CPU: %s",
+    "CPU: %s",
+    "CPU : %s",
+    "CPU: %s",
+    "CPU：%s",
+    "CPU：%s",
+    "CPU: %s"
+  ],
+  "Operating System: %s": [
+    "Operating System: %s",
+    "Hệ điều hành: %s",
+    "Betriebssystem: %s",
+    "Système : %s",
+    "Sistema operativo: %s",
+    "操作系统：%s",
+    "作業系統：%s",
+    "운영체제: %s"
+  ],
+  "Driver Name: %s": [
+    "Driver Name: %s",
+    "Trình điều khiển: %s",
+    "Treiber: %s",
+    "Pilote : %s",
+    "Controlador: %s",
+    "驱动名称：%s",
+    "驅動名稱：%s",
+    "드라이버 이름: %s"
+  ],
+  "Third-party libraries": [
+    "Third-party libraries",
+    "Thư viện bên thứ ba",
+    "Drittanbieterbibliotheken",
+    "Bibliothèques tierces",
+    "Bibliotecas de terceros",
+    "第三方库",
+    "第三方程式庫",
+    "타사 라이브러리"
+  ],
+  "Select folder": [
+    "Select folder",
+    "Chọn thư mục",
+    "Ordner wählen",
+    "Choisir un dossier",
+    "Elegir carpeta",
+    "选择文件夹",
+    "選擇資料夾",
+    "폴더 선택"
+  ],
+  "Select a Content Folder": [
+    "Select a Content Folder",
+    "Chọn thư mục game",
+    "Spieleordner wählen",
+    "Choisir un dossier de jeux",
+    "Elegir carpeta de juegos",
+    "选择游戏文件夹",
+    "選擇遊戲資料夾",
+    "게임 폴더 선택"
+  ],
+  "Select Flycast Home Folder": [
+    "Select Flycast Home Folder",
+    "Chọn thư mục chính Flycast",
+    "Flycast-Hauptordner wählen",
+    "Choisir le dossier principal de Flycast",
+    "Elegir carpeta principal de Flycast",
+    "选择 Flycast 主文件夹",
+    "選擇 Flycast 主資料夾",
+    "Flycast 홈 폴더 선택"
+  ],
+  ".. Up to Parent Folder": [
+    ".. Up to Parent Folder",
+    ".. Thư mục cha",
+    ".. Übergeordneter Ordner",
+    ".. Dossier parent",
+    ".. Carpeta superior",
+    ".. 上级文件夹",
+    ".. 上層資料夾",
+    ".. 상위 폴더"
+  ],
+  "Select Current Folder": [
+    "Select Current Folder",
+    "Chọn thư mục này",
+    "Diesen Ordner wählen",
+    "Choisir ce dossier",
+    "Elegir esta carpeta",
+    "选择当前文件夹",
+    "選擇目前資料夾",
+    "현재 폴더 선택"
+  ],
+  "Storage": [
+    "Storage",
+    "Ổ lưu trữ",
+    "Speicher",
+    "Stockage",
+    "Almacenamiento",
+    "存储设备",
+    "儲存裝置",
+    "저장 장치"
+  ],
+  "Adjust the emulator's audio level": [
+    "Adjust the emulator's audio level",
+    "Điều chỉnh âm lượng của emulator.",
+    "Lautstärke des Emulators einstellen.",
+    "Régler le volume de l'émulateur.",
+    "Ajusta el volumen del emulador.",
+    "调整模拟器音量。",
+    "調整模擬器音量。",
+    "에뮬레이터 음량을 조정합니다."
+  ],
+  "Adjust the size of UI elements and fonts.": [
+    "Adjust the size of UI elements and fonts.",
+    "Điều chỉnh kích thước giao diện và chữ.",
+    "Größe der Bedienelemente und Schrift einstellen.",
+    "Ajuster la taille des éléments et des textes.",
+    "Ajusta el tamaño de los controles y del texto.",
+    "调整界面元素和字体大小。",
+    "調整介面元素與字型大小。",
+    "UI 요소와 글꼴 크기를 조정합니다."
+  ],
+  "BIOS region": [
+    "BIOS region",
+    "Khu vực của BIOS.",
+    "Region des BIOS.",
+    "Région du BIOS.",
+    "Región de la BIOS.",
+    "BIOS 区域。",
+    "BIOS 區域。",
+    "BIOS 지역입니다."
+  ],
+  "The language as configured in the Dreamcast BIOS": [
+    "The language as configured in the Dreamcast BIOS",
+    "Ngôn ngữ được chọn trong BIOS Dreamcast.",
+    "Im Dreamcast-BIOS eingestellte Sprache.",
+    "Langue configurée dans le BIOS Dreamcast.",
+    "Idioma configurado en la BIOS de Dreamcast.",
+    "Dreamcast BIOS 中设置的语言。",
+    "Dreamcast BIOS 中設定的語言。",
+    "Dreamcast BIOS에 설정된 언어입니다."
+  ],
+  "TV broadcasting standard for non-VGA modes": [
+    "TV broadcasting standard for non-VGA modes",
+    "Chuẩn truyền hình khi không dùng VGA.",
+    "Fernsehnorm für Modi ohne VGA.",
+    "Norme TV pour les modes non VGA.",
+    "Norma de TV para modos sin VGA.",
+    "非 VGA 模式的电视制式。",
+    "非 VGA 模式的電視制式。",
+    "VGA 이외 모드의 TV 방송 방식입니다."
+  ],
+  "Video connection type": [
+    "Video connection type",
+    "Loại cáp kết nối hình ảnh.",
+    "Art der Videoverbindung.",
+    "Type de connexion vidéo.",
+    "Tipo de conexión de vídeo.",
+    "视频连接类型。",
+    "視訊連接類型。",
+    "비디오 연결 유형입니다."
+  ],
+  "Configure Naomi games in Free Play mode.": [
+    "Configure Naomi games in Free Play mode.",
+    "Cho game Naomi chạy ở chế độ chơi miễn phí.",
+    "Naomi-Spiele im Freispielmodus starten.",
+    "Activer le jeu gratuit pour Naomi.",
+    "Configura Naomi en modo de juego libre.",
+    "让 Naomi 游戏以免费模式运行。",
+    "讓 Naomi 遊戲以免費模式執行。",
+    "Naomi 게임을 무료 플레이 모드로 설정합니다."
+  ],
+  "Show which game you are playing on Discord": [
+    "Show which game you are playing on Discord",
+    "Hiện game đang chơi trên Discord.",
+    "Aktuelles Spiel auf Discord anzeigen.",
+    "Afficher le jeu en cours sur Discord.",
+    "Muestra el juego actual en Discord.",
+    "在 Discord 显示当前游戏。",
+    "在 Discord 顯示目前遊戲。",
+    "Discord에 플레이 중인 게임을 표시합니다."
+  ],
+  "Scales the output by the maximum integer multiple allowed by the display resolution.": [
+    "Scales the output by the maximum integer multiple allowed by the display resolution.",
+    "Phóng hình ảnh theo hệ số nguyên lớn nhất vừa màn hình.",
+    "Vergrößert um den größten ganzzahligen Faktor, der auf den Bildschirm passt.",
+    "Agrandit par le plus grand facteur entier adapté à l'écran.",
+    "Amplía por el mayor factor entero que cabe en la pantalla.",
+    "使用屏幕可容纳的最大整数倍缩放。",
+    "使用螢幕可容納的最大整數倍縮放。",
+    "화면에 맞는 최대 정수 배율로 확대합니다."
+  ],
+  "Scales the output with linear interpolation. Will use nearest neighbor interpolation otherwise. Disable with integer scaling.": [
+    "Scales the output with linear interpolation. Will use nearest neighbor interpolation otherwise. Disable with integer scaling.",
+    "Bật để làm mịn khi phóng hình. Tắt để dùng điểm gần nhất; nên tắt khi phóng theo số nguyên.",
+    "Glättet die Ausgabe linear. Sonst wird der nächste Nachbar verwendet. Bei ganzzahliger Skalierung ausschalten.",
+    "Lisse l'image par interpolation linéaire. Sinon, utilise le plus proche voisin. Désactiver avec l'échelle entière.",
+    "Suaviza con interpolación lineal; si se desactiva usa vecino más cercano. Desactívalo con escalado entero.",
+    "使用线性插值平滑缩放，否则使用最近邻。整数缩放时请关闭。",
+    "使用線性內插平滑縮放，否則使用最近鄰。整數縮放時請關閉。",
+    "선형 보간으로 부드럽게 확대합니다. 끄면 최근접 보간을 사용합니다. 정수 배율에서는 끄세요."
+  ],
+  "Synchronizes the frame rate with the screen refresh rate. Recommended": [
+    "Synchronizes the frame rate with the screen refresh rate. Recommended",
+    "Đồng bộ khung hình với tần số quét màn hình. Nên bật.",
+    "Synchronisiert mit der Bildwiederholrate. Empfohlen.",
+    "Synchronise avec le rafraîchissement de l'écran. Recommandé.",
+    "Sincroniza con la frecuencia de la pantalla. Recomendado.",
+    "与显示器刷新率同步，建议启用。",
+    "與顯示器更新率同步，建議啟用。",
+    "화면 주사율과 동기화합니다. 권장합니다."
+  ],
+  "Duplicate frames on high refresh rate monitors (120 Hz and higher)": [
+    "Duplicate frames on high refresh rate monitors (120 Hz and higher)",
+    "Lặp khung hình trên màn hình từ 120 Hz trở lên.",
+    "Dupliziert Frames auf Monitoren ab 120 Hz.",
+    "Duplique les images sur les écrans de 120 Hz ou plus.",
+    "Duplica fotogramas en pantallas de 120 Hz o más.",
+    "在 120 Hz 及以上显示器上复制帧。",
+    "在 120 Hz 及以上顯示器上複製影格。",
+    "120 Hz 이상 모니터에서 프레임을 복제합니다."
+  ],
+  "Draw geometry outside of the normal 4:3 aspect ratio. May produce graphical glitches in the revealed areas.\nAspect Fit and shows the full 16:9 content.": [
+    "Draw geometry outside of the normal 4:3 aspect ratio. May produce graphical glitches in the revealed areas.\nAspect Fit and shows the full 16:9 content.",
+    "Vẽ thêm bên ngoài khung 4:3 để hiển thị đầy đủ 16:9. Vùng mở rộng có thể có lỗi hình ảnh.",
+    "Zeigt Geometrie außerhalb von 4:3 für ein vollständiges 16:9-Bild. Zusätzliche Bereiche können Grafikfehler zeigen.",
+    "Affiche la géométrie hors du cadre 4:3 en 16:9 complet. Des défauts peuvent apparaître dans les zones ajoutées.",
+    "Muestra geometría fuera de 4:3 para una imagen 16:9 completa. Puede causar fallos en las zonas añadidas.",
+    "绘制 4:3 范围外的几何图形以显示完整 16:9 画面，新增区域可能出现显示错误。",
+    "繪製 4:3 範圍外的幾何圖形以顯示完整 16:9 畫面，新增區域可能出現顯示錯誤。",
+    "4:3 밖의 도형을 그려 전체 16:9 화면을 표시합니다. 추가 영역에 그래픽 오류가 생길 수 있습니다."
+  ],
+  "Use the full width of the screen or window when its aspect ratio is greater than 16:9.\nAspect Fill and remove black bars. Not compatible with integer scaling.": [
+    "Use the full width of the screen or window when its aspect ratio is greater than 16:9.\nAspect Fill and remove black bars. Not compatible with integer scaling.",
+    "Lấp đầy chiều ngang nếu màn hình rộng hơn 16:9. Xóa viền đen; không dùng cùng phóng theo số nguyên.",
+    "Nutzt bei breiteren Formaten als 16:9 die gesamte Breite. Entfernt schwarze Balken; nicht mit ganzzahliger Skalierung kombinierbar.",
+    "Remplit la largeur au-delà de 16:9 et retire les bandes noires. Incompatible avec l'échelle entière.",
+    "Llena la anchura en formatos mayores que 16:9 y elimina barras negras. Incompatible con escalado entero.",
+    "宽高比超过 16:9 时铺满宽度并去除黑边，不兼容整数缩放。",
+    "長寬比超過 16:9 時填滿寬度並移除黑邊，不相容於整數縮放。",
+    "16:9보다 넓은 화면을 채우고 검은 여백을 제거합니다. 정수 배율과 호환되지 않습니다."
+  ],
+  "Modify the game so that it displays in 16:9 anamorphic format and use horizontal screen stretching. Only some games are supported.": [
+    "Modify the game so that it displays in 16:9 anamorphic format and use horizontal screen stretching. Only some games are supported.",
+    "Sửa game để hiển thị 16:9 bằng cách kéo giãn ngang. Chỉ hỗ trợ một số game.",
+    "Passt unterstützte Spiele durch horizontale Streckung an anamorphes 16:9 an.",
+    "Adapte les jeux compatibles au 16:9 anamorphique par étirement horizontal.",
+    "Modifica juegos compatibles a 16:9 anamórfico con estiramiento horizontal.",
+    "修改受支持游戏，以水平拉伸显示变形宽屏 16:9 画面。",
+    "修改受支援遊戲，以水平拉伸顯示變形寬螢幕 16:9 畫面。",
+    "지원 게임을 가로로 늘려 아나모픽 16:9로 표시합니다."
+  ],
+  "Stretch the screen horizontally": [
+    "Stretch the screen horizontally",
+    "Kéo giãn hình ảnh theo chiều ngang.",
+    "Streckt das Bild horizontal.",
+    "Étire l'image horizontalement.",
+    "Estira la imagen horizontalmente.",
+    "水平拉伸画面。",
+    "水平拉伸畫面。",
+    "화면을 가로로 늘립니다."
+  ],
+  "Rotate the screen 90° counterclockwise": [
+    "Rotate the screen 90° counterclockwise",
+    "Xoay màn hình 90° ngược chiều kim đồng hồ.",
+    "Dreht das Bild 90° gegen den Uhrzeigersinn.",
+    "Tourne l'image de 90° dans le sens antihoraire.",
+    "Gira la imagen 90° en sentido antihorario.",
+    "逆时针旋转画面 90°。",
+    "逆時針旋轉畫面 90°。",
+    "화면을 반시계 방향으로 90° 회전합니다."
+  ],
+  "The size of the pixel buffer. May need to be increased when upscaling by a large factor.": [
+    "The size of the pixel buffer. May need to be increased when upscaling by a large factor.",
+    "Bộ đệm pixel có thể cần tăng khi dùng độ phân giải rất cao.",
+    "Bei starker Hochskalierung kann ein größerer Pixelpuffer nötig sein.",
+    "Un tampon plus grand peut être nécessaire avec une forte mise à l'échelle.",
+    "Puede requerir un búfer mayor al ampliar mucho la resolución.",
+    "高倍率放大时可能需要增大像素缓冲区。",
+    "高倍率放大時可能需要增大像素緩衝區。",
+    "높은 업스케일 배율에서는 더 큰 픽셀 버퍼가 필요할 수 있습니다."
+  ],
+  "Maximum number of transparent layers. May need to be increased for some complex scenes. Decreasing it may improve performance.": [
+    "Maximum number of transparent layers. May need to be increased for some complex scenes. Decreasing it may improve performance.",
+    "Số lớp trong suốt tối đa. Tăng cho cảnh phức tạp; giảm để cải thiện hiệu năng.",
+    "Maximale Transparenzebenen. Für komplexe Szenen erhöhen; weniger Ebenen können schneller sein.",
+    "Nombre maximal de couches transparentes. Augmenter pour les scènes complexes, réduire pour les performances.",
+    "Máximo de capas transparentes. Auméntalo en escenas complejas; reducirlo puede mejorar el rendimiento.",
+    "最大透明层数。复杂场景可增加，减少可提升性能。",
+    "最大透明層數。複雜場景可增加，減少可提升效能。",
+    "최대 투명 레이어 수입니다. 복잡한 장면에서는 늘리고 성능을 높이려면 줄이세요."
+  ],
+  "Load custom/high-res textures from data/textures/<game id>": [
+    "Load custom/high-res textures from data/textures/<game id>",
+    "Tải texture tùy chỉnh/độ phân giải cao từ data/textures/<game id>.",
+    "Lädt eigene oder hochauflösende Texturen aus data/textures/<game id>.",
+    "Charge les textures personnalisées/HD depuis data/textures/<game id>.",
+    "Carga texturas personalizadas/HD desde data/textures/<game id>.",
+    "从 data/textures/<game id> 加载自定义或高清纹理。",
+    "從 data/textures/<game id> 載入自訂或高解析度紋理。",
+    "data/textures/<game id>에서 사용자/고해상도 텍스처를 불러옵니다."
+  ],
+  "Preload custom textures at game start. May improve performance but increases memory usage": [
+    "Preload custom textures at game start. May improve performance but increases memory usage",
+    "Nạp texture tùy chỉnh khi mở game. Có thể nhanh hơn nhưng dùng nhiều RAM.",
+    "Lädt eigene Texturen beim Spielstart. Kann schneller sein, benötigt aber mehr Speicher.",
+    "Précharge les textures au lancement. Peut accélérer le jeu mais utilise plus de mémoire.",
+    "Precarga texturas al iniciar. Puede mejorar el rendimiento, pero usa más memoria.",
+    "启动时预加载纹理，可能提升性能，但增加内存占用。",
+    "啟動時預先載入紋理，可能提升效能，但增加記憶體使用量。",
+    "시작 시 텍스처를 미리 불러옵니다. 성능은 좋아질 수 있지만 메모리를 더 사용합니다."
+  ],
+  "Enable modifier volumes, usually used for shadows": [
+    "Enable modifier volumes, usually used for shadows",
+    "Bật modifier volume, thường dùng cho đổ bóng.",
+    "Aktiviert Modifier-Volumes, meist für Schatten.",
+    "Active les volumes modificateurs, souvent utilisés pour les ombres.",
+    "Activa volúmenes modificadores, normalmente usados para sombras.",
+    "启用通常用于阴影的修饰体积。",
+    "啟用通常用於陰影的修飾體積。",
+    "주로 그림자에 쓰이는 모디파이어 볼륨을 활성화합니다."
+  ],
+  "Enable fog effects": [
+    "Enable fog effects",
+    "Bật hiệu ứng sương mù.",
+    "Aktiviert Nebeleffekte.",
+    "Active les effets de brouillard.",
+    "Activa los efectos de niebla.",
+    "启用雾效。",
+    "啟用霧效。",
+    "안개 효과를 활성화합니다."
+  ],
+  "Number of frames to skip between two actually rendered frames": [
+    "Number of frames to skip between two actually rendered frames",
+    "Số khung hình bị bỏ giữa hai khung được dựng.",
+    "Anzahl übersprungener Frames zwischen gerenderten Frames.",
+    "Nombre d'images sautées entre deux images rendues.",
+    "Número de fotogramas omitidos entre los renderizados.",
+    "两次实际渲染之间跳过的帧数。",
+    "兩次實際算繪之間略過的影格數。",
+    "렌더링된 프레임 사이에서 건너뛸 프레임 수입니다."
+  ],
+  "Fully accurate VRAM framebuffer emulation. Helps games that directly access the framebuffer for special effects. Very slow and incompatible with upscaling and wide screen.": [
+    "Fully accurate VRAM framebuffer emulation. Helps games that directly access the framebuffer for special effects. Very slow and incompatible with upscaling and wide screen.",
+    "Giả lập framebuffer VRAM chính xác cho hiệu ứng truy cập trực tiếp. Rất chậm; không hỗ trợ tăng độ phân giải hay màn hình rộng.",
+    "Exakte VRAM-Framebuffer-Emulation für direkte Zugriffe. Sehr langsam; nicht mit Hochskalierung oder Breitbild kompatibel.",
+    "Émulation exacte du framebuffer VRAM pour les effets à accès direct. Très lente, incompatible avec l'augmentation de résolution et l'écran large.",
+    "Emulación exacta del framebuffer VRAM para efectos de acceso directo. Muy lenta; incompatible con alta resolución y pantalla panorámica.",
+    "精确模拟 VRAM 帧缓冲，改善直接访问特效。速度很慢，不兼容提高分辨率和宽屏。",
+    "精確模擬 VRAM 影格緩衝，改善直接存取特效。速度很慢，不相容於提高解析度與寬螢幕。",
+    "직접 접근 효과를 위해 VRAM 프레임버퍼를 정확히 에뮬레이트합니다. 매우 느리며 업스케일과 와이드스크린을 지원하지 않습니다."
+  ],
+  "Useful to avoid flashing screen or glitchy videos. Not recommended on slow platforms": [
+    "Useful to avoid flashing screen or glitchy videos. Not recommended on slow platforms",
+    "Giúp tránh nhấp nháy màn hình hoặc lỗi video. Không nên bật trên máy chậm.",
+    "Kann Flackern und Videofehler vermeiden. Nicht für langsame Geräte empfohlen.",
+    "Peut éviter les clignotements et défauts vidéo. Déconseillé sur les appareils lents.",
+    "Puede evitar parpadeos y errores de vídeo. No recomendado en equipos lentos.",
+    "有助于避免闪屏或视频错误，不建议在较慢设备上启用。",
+    "有助於避免閃爍或影片錯誤，不建議在較慢裝置上啟用。",
+    "화면 깜빡임과 영상 오류를 줄입니다. 느린 기기에는 권장하지 않습니다."
+  ],
+  "Helps with texture bleeding case when upscaling. Disabling it can help if pixels are warping when upscaling in 2D games (MVC2, CVS, KOF, etc.)": [
+    "Helps with texture bleeding case when upscaling. Disabling it can help if pixels are warping when upscaling in 2D games (MVC2, CVS, KOF, etc.)",
+    "Giảm lem texture khi tăng độ phân giải. Nếu game 2D như MVC2/CVS/KOF bị méo pixel, thử tắt.",
+    "Verringert Texturbluten beim Hochskalieren. Bei verzerrten Pixeln in 2D-Spielen wie MVC2, CVS oder KOF ausschalten.",
+    "Réduit le débordement des textures. Désactiver en cas de pixels déformés dans les jeux 2D comme MVC2, CVS ou KOF.",
+    "Reduce el sangrado de texturas. Desactívalo si se deforman píxeles en juegos 2D como MVC2, CVS o KOF.",
+    "减少放大时纹理渗色。若 MVC2、CVS、KOF 等 2D 游戏像素变形，可尝试关闭。",
+    "減少放大時紋理滲色。若 MVC2、CVS、KOF 等 2D 遊戲像素變形，可嘗試關閉。",
+    "업스케일 시 텍스처 번짐을 줄입니다. MVC2, CVS, KOF 등 2D 게임의 픽셀이 왜곡되면 꺼 보세요."
+  ],
+  "Helps with texture corruption and depth issues on AMD GPUs. Can also help Intel GPUs in some cases.": [
+    "Helps with texture corruption and depth issues on AMD GPUs. Can also help Intel GPUs in some cases.",
+    "Giảm lỗi texture/độ sâu trên GPU AMD, đôi khi cả Intel.",
+    "Hilft bei Textur- und Tiefenfehlern auf AMD-, teilweise auch Intel-GPUs.",
+    "Aide à corriger les textures et la profondeur sur les GPU AMD, parfois Intel.",
+    "Ayuda con errores de texturas y profundidad en GPU AMD y, a veces, Intel.",
+    "改善 AMD GPU 的纹理和深度问题，有时也适用于 Intel。",
+    "改善 AMD GPU 的紋理與深度問題，有時也適用於 Intel。",
+    "AMD GPU의 텍스처 및 깊이 문제를 개선하며 일부 Intel GPU에도 도움이 됩니다."
+  ],
+  "Copy rendered-to textures back to VRAM. Slower but accurate": [
+    "Copy rendered-to textures back to VRAM. Slower but accurate",
+    "Chép texture được dựng về VRAM. Chậm hơn nhưng chính xác.",
+    "Kopiert gerenderte Texturen zurück in VRAM. Langsamer, aber genauer.",
+    "Recopie les textures rendues en VRAM. Plus lent mais précis.",
+    "Copia texturas renderizadas a VRAM. Más lento, pero preciso.",
+    "将渲染纹理复制回 VRAM，较慢但准确。",
+    "將算繪紋理複製回 VRAM，較慢但準確。",
+    "렌더링한 텍스처를 VRAM에 복사합니다. 느리지만 정확합니다."
+  ],
+  "Show on-screen frame/sec counter": [
+    "Show on-screen frame/sec counter",
+    "Hiện số khung hình/giây trên màn hình.",
+    "Zeigt die Bildrate auf dem Bildschirm an.",
+    "Affiche le nombre d'images par seconde.",
+    "Muestra los fotogramas por segundo.",
+    "在屏幕上显示每秒帧数。",
+    "在螢幕上顯示每秒影格數。",
+    "화면에 초당 프레임 수를 표시합니다."
+  ],
+  "Show the VMU LCD screens while in-game": [
+    "Show the VMU LCD screens while in-game",
+    "Hiện màn hình LCD của VMU khi chơi.",
+    "Zeigt VMU-LCDs während des Spiels.",
+    "Affiche les écrans LCD VMU pendant le jeu.",
+    "Muestra las pantallas LCD de VMU durante el juego.",
+    "在游戏中显示 VMU 液晶屏。",
+    "在遊戲中顯示 VMU 液晶螢幕。",
+    "게임 중 VMU LCD 화면을 표시합니다."
+  ],
+  "e.g. Route GPU texture to OBS Studio directly instead of using CPU intensive Display/Window Capture": [
+    "e.g. Route GPU texture to OBS Studio directly instead of using CPU intensive Display/Window Capture",
+    "Gửi texture GPU thẳng tới OBS Studio để giảm tải CPU so với chụp màn hình/cửa sổ.",
+    "Sendet GPU-Texturen direkt an OBS Studio und spart CPU-Last gegenüber Bildschirmaufnahmen.",
+    "Envoie directement les textures GPU à OBS Studio pour réduire la charge CPU des captures.",
+    "Envía texturas GPU directamente a OBS Studio para reducir la carga de CPU de la captura.",
+    "将 GPU 纹理直接发送至 OBS Studio，减少屏幕或窗口捕获的 CPU 开销。",
+    "將 GPU 紋理直接傳送至 OBS Studio，減少螢幕或視窗擷取的 CPU 負擔。",
+    "GPU 텍스처를 OBS Studio에 직접 전송해 화면 캡처의 CPU 부하를 줄입니다."
+  ],
+  "Could increase performance when sharing a smaller texture, YMMV": [
+    "Could increase performance when sharing a smaller texture, YMMV",
+    "Chia sẻ texture nhỏ hơn có thể cải thiện hiệu năng, tùy hệ thống.",
+    "Kleinere geteilte Texturen können je nach System schneller sein.",
+    "Une texture partagée plus petite peut améliorer les performances selon le système.",
+    "Compartir una textura menor puede mejorar el rendimiento según el equipo.",
+    "共享较小纹理可能提升性能，效果因系统而异。",
+    "分享較小紋理可能提升效能，效果因系統而異。",
+    "더 작은 텍스처를 공유하면 시스템에 따라 성능이 좋아질 수 있습니다."
+  ],
+  "Enable the Dreamcast Digital Sound Processor. Only recommended on fast platforms": [
+    "Enable the Dreamcast Digital Sound Processor. Only recommended on fast platforms",
+    "Bật bộ xử lý âm thanh DSP của Dreamcast. Nên dùng trên máy đủ mạnh.",
+    "Aktiviert den Dreamcast-DSP. Nur für schnelle Systeme empfohlen.",
+    "Active le DSP Dreamcast. Recommandé uniquement sur les appareils rapides.",
+    "Activa el DSP de Dreamcast. Recomendado solo en equipos rápidos.",
+    "启用 Dreamcast 数字音频处理器，仅建议在较快设备上使用。",
+    "啟用 Dreamcast 數位音訊處理器，僅建議在較快裝置上使用。",
+    "Dreamcast DSP를 활성화합니다. 빠른 기기에서만 권장합니다."
+  ],
+  "Play VMU beeps when enabled.": [
+    "Play VMU beeps when enabled.",
+    "Phát tiếng bíp của VMU khi bật.",
+    "Spielt die Signaltöne der VMU ab.",
+    "Joue les bips du VMU.",
+    "Reproduce los pitidos de VMU.",
+    "启用时播放 VMU 提示音。",
+    "啟用時播放 VMU 提示音。",
+    "VMU 비프음을 재생합니다."
+  ],
+  "The audio driver to use": [
+    "The audio driver to use",
+    "Chọn trình điều khiển phát âm thanh.",
+    "Zu verwendender Audiotreiber.",
+    "Pilote audio à utiliser.",
+    "Controlador de audio que se usará.",
+    "选择使用的音频驱动。",
+    "選擇使用的音訊驅動程式。",
+    "사용할 오디오 드라이버입니다."
+  ],
+  "Sets the maximum audio latency. Not supported by all audio drivers.": [
+    "Sets the maximum audio latency. Not supported by all audio drivers.",
+    "Độ trễ âm thanh tối đa. Một số driver không hỗ trợ.",
+    "Maximale Audiolatenz. Nicht von allen Treibern unterstützt.",
+    "Latence audio maximale. Non prise en charge par tous les pilotes.",
+    "Latencia máxima de audio. No todos los controladores la admiten.",
+    "最大音频延迟，并非所有驱动都支持。",
+    "最大音訊延遲，並非所有驅動程式都支援。",
+    "최대 오디오 지연입니다. 일부 드라이버는 지원하지 않습니다."
+  ],
+  "Display game cover art in the game list.": [
+    "Display game cover art in the game list.",
+    "Hiển thị bìa trong danh sách game.",
+    "Zeigt Cover in der Spieleliste.",
+    "Affiche les jaquettes dans la liste.",
+    "Muestra carátulas en la lista.",
+    "在游戏列表显示封面。",
+    "在遊戲清單顯示封面。",
+    "게임 목록에 표지를 표시합니다."
+  ],
+  "Fetch cover images from TheGamesDB.net.": [
+    "Fetch cover images from TheGamesDB.net.",
+    "Tải hình bìa từ TheGamesDB.net.",
+    "Lädt Cover von TheGamesDB.net.",
+    "Télécharge les jaquettes depuis TheGamesDB.net.",
+    "Descarga carátulas de TheGamesDB.net.",
+    "从 TheGamesDB.net 下载封面。",
+    "從 TheGamesDB.net 下載封面。",
+    "TheGamesDB.net에서 표지를 다운로드합니다."
+  ],
+  "Hide .bin, .dat and .lst files from the content browser": [
+    "Hide .bin, .dat and .lst files from the content browser",
+    "Ẩn file .bin, .dat và .lst trong thư viện.",
+    "Blendet .bin-, .dat- und .lst-Dateien aus.",
+    "Masque les fichiers .bin, .dat et .lst.",
+    "Oculta archivos .bin, .dat y .lst.",
+    "隐藏 .bin、.dat 和 .lst 文件。",
+    "隱藏 .bin、.dat 與 .lst 檔案。",
+    ".bin, .dat 및 .lst 파일을 숨깁니다."
+  ],
+  "Load the last saved state of the game when starting": [
+    "Load the last saved state of the game when starting",
+    "Tải trạng thái lưu gần nhất khi khởi động game.",
+    "Lädt beim Start den letzten Speicherzustand.",
+    "Charge le dernier état sauvegardé au lancement.",
+    "Carga el último estado guardado al iniciar.",
+    "启动时加载上次保存的状态。",
+    "啟動時載入上次儲存的狀態。",
+    "시작 시 마지막 상태 저장을 불러옵니다."
+  ],
+  "Save the state of the game when stopping": [
+    "Save the state of the game when stopping",
+    "Lưu trạng thái khi đóng game.",
+    "Speichert beim Beenden den Spielzustand.",
+    "Sauvegarde l'état à la fermeture du jeu.",
+    "Guarda el estado al cerrar el juego.",
+    "结束游戏时保存状态。",
+    "結束遊戲時儲存狀態。",
+    "게임 종료 시 상태를 저장합니다."
+  ],
+  "The folders where your games are stored": [
+    "The folders where your games are stored",
+    "Các thư mục chứa game của bạn.",
+    "Ordner mit deinen Spielen.",
+    "Dossiers contenant vos jeux.",
+    "Carpetas que contienen tus juegos.",
+    "存放游戏的文件夹。",
+    "存放遊戲的資料夾。",
+    "게임이 저장된 폴더입니다."
+  ],
+  "The folder where Flycast saves configuration files and VMUs. BIOS files should be in a subfolder named \"data\"": [
+    "The folder where Flycast saves configuration files and VMUs. BIOS files should be in a subfolder named \"data\"",
+    "Nơi lưu cấu hình và VMU. Đặt BIOS trong thư mục con tên \"data\".",
+    "Ordner für Konfiguration und VMUs. BIOS-Dateien gehören in den Unterordner „data“.",
+    "Dossier des réglages et VMU. Placez les BIOS dans le sous-dossier « data ».",
+    "Carpeta de configuración y VMU. Pon la BIOS en la subcarpeta «data».",
+    "存放配置和 VMU 的文件夹。BIOS 应放在名为“data”的子文件夹中。",
+    "存放設定與 VMU 的資料夾。BIOS 應放在名為「data」的子資料夾中。",
+    "설정과 VMU 저장 폴더입니다. BIOS는 'data' 하위 폴더에 넣으세요."
+  ],
+  "Folders containing BIOS files (e.g. dc_boot.bin or dc_bios.bin) and arcade BIOS": [
+    "Folders containing BIOS files (e.g. dc_boot.bin or dc_bios.bin) and arcade BIOS",
+    "Thư mục chứa dc_boot.bin, dc_bios.bin và BIOS máy thùng.",
+    "Ordner mit dc_boot.bin, dc_bios.bin und Arcade-BIOS.",
+    "Dossiers de dc_boot.bin, dc_bios.bin et des BIOS arcade.",
+    "Carpetas de dc_boot.bin, dc_bios.bin y BIOS arcade.",
+    "包含 dc_boot.bin、dc_bios.bin 和街机 BIOS 的文件夹。",
+    "包含 dc_boot.bin、dc_bios.bin 與街機 BIOS 的資料夾。",
+    "dc_boot.bin, dc_bios.bin 및 아케이드 BIOS 폴더입니다."
+  ],
+  "Folder where VMU (.bin) saves are stored": [
+    "Folder where VMU (.bin) saves are stored",
+    "Thư mục chứa bản lưu VMU (.bin).",
+    "Ordner für VMU-Spielstände (.bin).",
+    "Dossier des sauvegardes VMU (.bin).",
+    "Carpeta de partidas VMU (.bin).",
+    "存放 VMU（.bin）存档的文件夹。",
+    "存放 VMU（.bin）存檔的資料夾。",
+    "VMU(.bin) 저장 폴더입니다."
+  ],
+  "Folders for save states. First path is used for new states; all are searched when loading": [
+    "Folders for save states. First path is used for new states; all are searched when loading",
+    "Thư mục đầu tiên dùng để ghi trạng thái mới; khi tải sẽ tìm trong mọi thư mục.",
+    "Neue Zustände werden im ersten Ordner gespeichert. Beim Laden werden alle durchsucht.",
+    "Le premier dossier reçoit les nouveaux états ; tous sont parcourus au chargement.",
+    "Los estados nuevos se guardan en la primera carpeta; al cargar se buscan en todas.",
+    "新状态写入第一个文件夹，加载时搜索所有文件夹。",
+    "新狀態寫入第一個資料夾，載入時搜尋所有資料夾。",
+    "새 상태는 첫 폴더에 저장하며 불러올 때는 모든 폴더를 검색합니다."
+  ],
+  "Folder for game save data (e.g. arcade NVRAM)": [
+    "Folder for game save data (e.g. arcade NVRAM)",
+    "Thư mục lưu dữ liệu game như NVRAM máy thùng.",
+    "Ordner für Spieldaten, z. B. Arcade-NVRAM.",
+    "Dossier des données de jeu, comme la NVRAM arcade.",
+    "Carpeta de datos del juego, como NVRAM arcade.",
+    "游戏存储数据（如街机 NVRAM）的文件夹。",
+    "遊戲儲存資料（如街機 NVRAM）的資料夾。",
+    "아케이드 NVRAM 등 게임 데이터 저장 폴더입니다."
+  ],
+  "Folders containing textures/<gameId> or <gameId> under a textures subfolder": [
+    "Folders containing textures/<gameId> or <gameId> under a textures subfolder",
+    "Thư mục chứa textures/<gameId> hoặc thư mục ID game bên trong textures.",
+    "Ordner mit textures/<gameId> oder Spiel-IDs unter textures.",
+    "Dossiers contenant textures/<gameId> ou les identifiants de jeu sous textures.",
+    "Carpetas con textures/<gameId> o IDs de juego dentro de textures.",
+    "包含 textures/<gameId> 或 textures 下游戏 ID 文件夹的位置。",
+    "包含 textures/<gameId> 或 textures 下遊戲 ID 資料夾的位置。",
+    "textures/<gameId> 또는 textures 아래 게임 ID 폴더의 위치입니다."
+  ],
+  "Folder where texture dumps are saved. Game-specific subfolders will be created automatically": [
+    "Folder where texture dumps are saved. Game-specific subfolders will be created automatically",
+    "Nơi xuất texture. Tự tạo thư mục con cho từng game.",
+    "Zielordner für Texturexporte. Unterordner je Spiel entstehen automatisch.",
+    "Dossier d'export des textures. Les sous-dossiers par jeu sont créés automatiquement.",
+    "Carpeta de texturas extraídas. Las subcarpetas por juego se crean automáticamente.",
+    "纹理导出位置，会自动创建各游戏的子文件夹。",
+    "紋理匯出位置，會自動建立各遊戲的子資料夾。",
+    "텍스처 추출 위치입니다. 게임별 하위 폴더를 자동으로 만듭니다."
+  ],
+  "Folder containing box art images (png/jpg). If empty, Flycast will use the default Home Folder/boxart for downloads and generated art": [
+    "Folder containing box art images (png/jpg). If empty, Flycast will use the default Home Folder/boxart for downloads and generated art",
+    "Nơi chứa bìa png/jpg. Để trống để dùng thư mục boxart mặc định.",
+    "Ordner für PNG/JPG-Cover. Leer lassen für den Standardordner boxart.",
+    "Dossier des jaquettes PNG/JPG. Vide : utilise le dossier boxart par défaut.",
+    "Carpeta de carátulas PNG/JPG. Vacía: usa la carpeta boxart predeterminada.",
+    "PNG/JPG 封面文件夹。留空使用默认 boxart 文件夹。",
+    "PNG/JPG 封面資料夾。留空使用預設 boxart 資料夾。",
+    "PNG/JPG 표지 폴더입니다. 비우면 기본 boxart 폴더를 사용합니다."
+  ],
+  "Folders containing controller mapping files (.cfg). The emulator also looks in Home Folder/mappings. Per-game mappings are suffixed with _<gameId>.cfg": [
+    "Folders containing controller mapping files (.cfg). The emulator also looks in Home Folder/mappings. Per-game mappings are suffixed with _<gameId>.cfg",
+    "Thư mục chứa bản gán nút .cfg; vẫn tìm trong mappings mặc định. Bản riêng cho game có đuôi _<gameId>.cfg.",
+    "Ordner für .cfg-Tastenprofile; auch mappings wird durchsucht. Spielprofile enden auf _<gameId>.cfg.",
+    "Dossiers des profils .cfg ; mappings est aussi parcouru. Les profils par jeu finissent par _<gameId>.cfg.",
+    "Carpetas de perfiles .cfg; también se busca en mappings. Los perfiles por juego terminan en _<gameId>.cfg.",
+    "存放 .cfg 按键文件，也会搜索默认 mappings。游戏专用文件以 _<gameId>.cfg 结尾。",
+    "存放 .cfg 按鍵檔案，也會搜尋預設 mappings。遊戲專用檔案以 _<gameId>.cfg 結尾。",
+    ".cfg 매핑 폴더이며 기본 mappings도 검색합니다. 게임별 파일은 _<gameId>.cfg로 끝납니다."
+  ],
+  "Folders containing cheat files (.cht/.txt) named with the game ID. Flycast will auto-load matching files if present": [
+    "Folders containing cheat files (.cht/.txt) named with the game ID. Flycast will auto-load matching files if present",
+    "Thư mục chứa .cht/.txt đặt tên theo ID game. Flycast tự nạp file khớp.",
+    "Ordner mit .cht/.txt-Dateien nach Spiel-ID. Passende Dateien werden automatisch geladen.",
+    "Dossiers de codes .cht/.txt nommés par l'ID du jeu. Chargement automatique si présents.",
+    "Carpetas de trucos .cht/.txt con el ID del juego. Se cargan automáticamente si coinciden.",
+    "存放以游戏 ID 命名的 .cht/.txt 文件，匹配文件会自动加载。",
+    "存放以遊戲 ID 命名的 .cht/.txt 檔案，符合的檔案會自動載入。",
+    "게임 ID로 이름 붙인 .cht/.txt 치트 폴더입니다. 일치하는 파일을 자동으로 불러옵니다."
+  ],
+  "Deselect to play as player 2": [
+    "Deselect to play as player 2",
+    "Tắt để chơi ở vị trí người 2.",
+    "Deaktivieren, um als Spieler 2 zu spielen.",
+    "Désactiver pour jouer en joueur 2.",
+    "Desactívalo para jugar como jugador 2.",
+    "取消选择以作为玩家 2 游玩。",
+    "取消選取以玩家 2 遊玩。",
+    "플레이어 2로 플레이하려면 끄세요."
+  ],
+  "Your peer IP address and optional port": [
+    "Your peer IP address and optional port",
+    "Địa chỉ IP của đối phương, có thể thêm cổng.",
+    "IP-Adresse der Gegenstelle, optional mit Port.",
+    "Adresse IP de l'adversaire et port facultatif.",
+    "IP del oponente y puerto opcional.",
+    "对端 IP 地址和可选端口。",
+    "對端 IP 位址與選用連接埠。",
+    "상대 IP 주소와 선택적인 포트입니다."
+  ],
+  "Sets Frame Delay, advisable for sessions with ping >100 ms": [
+    "Sets Frame Delay, advisable for sessions with ping >100 ms",
+    "Đặt độ trễ khung hình, hữu ích khi ping trên 100 ms.",
+    "Frameverzögerung, sinnvoll bei Ping über 100 ms.",
+    "Délai d'images conseillé si le ping dépasse 100 ms.",
+    "Retraso de fotogramas aconsejable con ping superior a 100 ms.",
+    "设置帧延迟，适用于延迟超过 100 ms 的连接。",
+    "設定影格延遲，適用於延遲超過 100 ms 的連線。",
+    "프레임 지연을 설정합니다. 핑이 100 ms보다 클 때 권장합니다."
+  ],
+  "Open the chat window when a chat message is received": [
+    "Open the chat window when a chat message is received",
+    "Mở cửa sổ trò chuyện khi có tin nhắn.",
+    "Öffnet den Chat bei neuen Nachrichten.",
+    "Ouvre le chat à la réception d'un message.",
+    "Abre el chat al recibir un mensaje.",
+    "收到消息时打开聊天窗口。",
+    "收到訊息時開啟聊天視窗。",
+    "메시지를 받으면 채팅창을 엽니다."
+  ],
+  "Automatically close chat window after 20 seconds": [
+    "Automatically close chat window after 20 seconds",
+    "Tự đóng cửa sổ trò chuyện sau 20 giây.",
+    "Schließt den Chat nach 20 Sekunden.",
+    "Ferme le chat après 20 secondes.",
+    "Cierra el chat tras 20 segundos.",
+    "20 秒后自动关闭聊天窗口。",
+    "20 秒後自動關閉聊天視窗。",
+    "20초 후 채팅창을 자동으로 닫습니다."
+  ],
+  "Display network statistics on screen": [
+    "Display network statistics on screen",
+    "Hiện thống kê mạng trên màn hình.",
+    "Zeigt Netzwerkstatistiken an.",
+    "Affiche les statistiques réseau.",
+    "Muestra estadísticas de red.",
+    "在屏幕上显示网络统计。",
+    "在螢幕上顯示網路統計。",
+    "화면에 네트워크 통계를 표시합니다."
+  ],
+  "The server to connect to. Leave blank to find a server automatically on the default port": [
+    "The server to connect to. Leave blank to find a server automatically on the default port",
+    "Máy chủ cần kết nối. Để trống để tự tìm trên cổng mặc định.",
+    "Serveradresse. Leer lassen für automatische Suche am Standardport.",
+    "Adresse du serveur. Vide : recherche automatique sur le port par défaut.",
+    "Dirección del servidor. Vacío: búsqueda automática en el puerto predeterminado.",
+    "服务器地址。留空则在默认端口自动查找。",
+    "伺服器位址。留空則在預設連接埠自動尋找。",
+    "서버 주소입니다. 비우면 기본 포트에서 자동으로 검색합니다."
+  ],
+  "Choose a unique word or number and share it with your opponent.": [
+    "Choose a unique word or number and share it with your opponent.",
+    "Chọn một từ hoặc số riêng và gửi cho người cùng chơi.",
+    "Wähle ein eindeutiges Wort oder eine Zahl und teile es mit deinem Gegner.",
+    "Choisissez un mot ou nombre unique et partagez-le avec votre adversaire.",
+    "Elige una palabra o número único y compártelo con tu oponente.",
+    "选择一个独特的词或数字并告知对手。",
+    "選擇一個獨特的詞或數字並告知對手。",
+    "고유한 단어나 숫자를 정해 상대와 공유하세요."
+  ],
+  "The peer to connect to. Leave blank to find a player automatically on the default port": [
+    "The peer to connect to. Leave blank to find a player automatically on the default port",
+    "Máy đối phương. Để trống để tự tìm trên cổng mặc định.",
+    "Gegenstelle. Leer lassen für automatische Spielersuche am Standardport.",
+    "Adversaire à connecter. Vide : recherche automatique sur le port par défaut.",
+    "Oponente al que conectar. Vacío: búsqueda automática en el puerto predeterminado.",
+    "对端地址。留空则在默认端口自动查找玩家。",
+    "對端位址。留空則在預設連接埠自動尋找玩家。",
+    "상대 주소입니다. 비우면 기본 포트에서 플레이어를 자동 검색합니다."
+  ],
+  "Only used for Maximum Speed. One of the peer must be master.": [
+    "Only used for Maximum Speed. One of the peer must be master.",
+    "Chỉ dùng cho Maximum Speed. Một bên phải là máy chủ.",
+    "Nur für Maximum Speed. Ein Teilnehmer muss Master sein.",
+    "Uniquement pour Maximum Speed. Un joueur doit être maître.",
+    "Solo para Maximum Speed. Un participante debe ser maestro.",
+    "仅用于 Maximum Speed，其中一方必须为主机。",
+    "僅用於 Maximum Speed，其中一方必須為主機。",
+    "Maximum Speed 전용입니다. 한쪽은 마스터여야 합니다."
+  ],
+  "The local UDP port to use": [
+    "The local UDP port to use",
+    "Cổng UDP dùng trên máy này.",
+    "Lokaler UDP-Port.",
+    "Port UDP local à utiliser.",
+    "Puerto UDP local.",
+    "要使用的本地 UDP 端口。",
+    "要使用的本機 UDP 連接埠。",
+    "사용할 로컬 UDP 포트입니다."
+  ],
+  "Automatically configure your network router for netplay": [
+    "Automatically configure your network router for netplay",
+    "Tự cấu hình router để chơi qua mạng.",
+    "Konfiguriert den Router automatisch für Netzspiele.",
+    "Configure automatiquement le routeur pour le jeu en réseau.",
+    "Configura automáticamente el router para jugar en red.",
+    "自动配置路由器以进行网络游戏。",
+    "自動設定路由器以進行網路遊戲。",
+    "네트워크 플레이를 위해 공유기를 자동 설정합니다."
+  ],
+  "Broadcast digital outputs and force-feedback state on TCP port 8000. Compatible with the \"-output network\" MAME option. Arcade games only.": [
+    "Broadcast digital outputs and force-feedback state on TCP port 8000. Compatible with the \"-output network\" MAME option. Arcade games only.",
+    "Phát đầu ra số và trạng thái phản hồi lực qua TCP 8000. Tương thích MAME \"-output network\"; chỉ cho máy thùng.",
+    "Überträgt digitale Ausgänge und Force-Feedback über TCP 8000. Kompatibel mit MAME „-output network“. Nur Arcade.",
+    "Diffuse sorties numériques et retour de force sur TCP 8000. Compatible MAME « -output network ». Arcade uniquement.",
+    "Transmite salidas digitales y fuerza por TCP 8000. Compatible con MAME «-output network». Solo arcade.",
+    "通过 TCP 8000 广播数字输出及力反馈，兼容 MAME 的“-output network”，仅限街机。",
+    "透過 TCP 8000 廣播數位輸出與力回饋，相容於 MAME 的「-output network」，僅限街機。",
+    "TCP 8000으로 디지털 출력과 포스 피드백을 전송합니다. MAME '-output network'와 호환되며 아케이드 전용입니다."
+  ],
+  "Emulate the Ethernet Broadband Adapter (BBA) instead of the Modem": [
+    "Emulate the Ethernet Broadband Adapter (BBA) instead of the Modem",
+    "Giả lập bộ mạng Ethernet BBA thay cho modem.",
+    "Emuliert den Ethernet-BBA statt des Modems.",
+    "Émule l'adaptateur Ethernet BBA à la place du modem.",
+    "Emula el adaptador Ethernet BBA en lugar del módem.",
+    "模拟以太网宽带适配器 BBA，而非调制解调器。",
+    "模擬乙太網路寬頻網路卡 BBA，而非數據機。",
+    "모뎀 대신 이더넷 BBA를 에뮬레이트합니다."
+  ],
+  "Use the DCNet cloud service for Dreamcast Internet access.": [
+    "Use the DCNet cloud service for Dreamcast Internet access.",
+    "Dùng dịch vụ DCNet để Dreamcast truy cập Internet.",
+    "Verwendet DCNet für den Dreamcast-Internetzugang.",
+    "Utilise DCNet pour l'accès Internet Dreamcast.",
+    "Usa DCNet para el acceso a Internet de Dreamcast.",
+    "使用 DCNet 云服务连接 Dreamcast 网络。",
+    "使用 DCNet 雲端服務連接 Dreamcast 網路。",
+    "Dreamcast 인터넷 연결에 DCNet 클라우드 서비스를 사용합니다."
+  ],
+  "The ISP user name stored in the console Flash RAM. Used by some online games as the player name. Leave blank to keep the current Flash RAM value.": [
+    "The ISP user name stored in the console Flash RAM. Used by some online games as the player name. Leave blank to keep the current Flash RAM value.",
+    "Tên ISP lưu trong Flash RAM, một số game dùng làm tên người chơi. Để trống để giữ tên hiện tại.",
+    "ISP-Name im Flash-RAM; manche Onlinespiele nutzen ihn als Spielernamen. Leer lassen, um ihn beizubehalten.",
+    "Nom FAI en mémoire Flash, utilisé comme pseudo par certains jeux. Vide : conserve la valeur actuelle.",
+    "Usuario ISP en Flash RAM, usado como nombre en algunos juegos. Vacío: conserva el valor actual.",
+    "存于闪存的 ISP 用户名，部分网络游戏用作玩家名。留空保留当前值。",
+    "存於快閃記憶體的 ISP 使用者名稱，部分網路遊戲用作玩家名。留空保留目前值。",
+    "플래시 RAM의 ISP 이름이며 일부 온라인 게임이 플레이어 이름으로 사용합니다. 비우면 현재 값을 유지합니다."
+  ],
+  "Use the dynamic recompiler. Recommended in most cases": [
+    "Use the dynamic recompiler. Recommended in most cases",
+    "Dùng bộ biên dịch động. Phù hợp trong hầu hết trường hợp.",
+    "Dynamischen Recompiler verwenden. Meist empfohlen.",
+    "Utiliser le recompilateur dynamique. Généralement recommandé.",
+    "Usa el recompilador dinámico. Recomendado normalmente.",
+    "使用动态重编译器，大多数情况下建议启用。",
+    "使用動態重編譯器，大多數情況下建議啟用。",
+    "동적 재컴파일러를 사용합니다. 대부분의 경우 권장합니다."
+  ],
+  "Use the interpreter. Very slow but may help in case of a dynarec problem": [
+    "Use the interpreter. Very slow but may help in case of a dynarec problem",
+    "Dùng bộ thông dịch. Rất chậm nhưng hữu ích khi dynarec gặp lỗi.",
+    "Interpreter verwenden. Sehr langsam, kann aber bei Dynarec-Problemen helfen.",
+    "Utiliser l'interpréteur. Très lent, utile en cas de problème de recompilation.",
+    "Usa el intérprete. Muy lento, pero puede ayudar si falla Dynarec.",
+    "使用解释器，速度很慢，但可能解决动态重编译问题。",
+    "使用直譯器，速度很慢，但可能解決動態重編譯問題。",
+    "인터프리터를 사용합니다. 매우 느리지만 동적 재컴파일 문제에 도움이 될 수 있습니다."
+  ],
+  "Over/Underclock the main SH4 CPU. Default is 200 MHz. Other values may crash, freeze or trigger unexpected nuclear reactions.": [
+    "Over/Underclock the main SH4 CPU. Default is 200 MHz. Other values may crash, freeze or trigger unexpected nuclear reactions.",
+    "Thay xung CPU SH4. Mặc định 200 MHz; giá trị khác có thể khiến game lỗi hoặc treo.",
+    "SH4-Takt ändern. Standard: 200 MHz. Andere Werte können Abstürze oder Hänger verursachen.",
+    "Modifier la fréquence SH4. Défaut : 200 MHz. D'autres valeurs peuvent provoquer des plantages.",
+    "Cambia la frecuencia SH4. Predeterminada: 200 MHz. Otros valores pueden provocar fallos o bloqueos.",
+    "调整 SH4 频率，默认 200 MHz。其他值可能导致崩溃或卡死。",
+    "調整 SH4 時脈，預設 200 MHz。其他值可能導致當機或停滯。",
+    "SH4 클럭을 조정합니다. 기본값은 200 MHz이며 다른 값은 충돌이나 멈춤을 일으킬 수 있습니다."
+  ],
+  "Force high-level BIOS emulation": [
+    "Force high-level BIOS emulation",
+    "Buộc dùng giả lập BIOS cấp cao.",
+    "Erzwingt High-Level-BIOS-Emulation.",
+    "Force l'émulation BIOS de haut niveau.",
+    "Fuerza la emulación BIOS de alto nivel.",
+    "强制使用高级 BIOS 模拟。",
+    "強制使用高階 BIOS 模擬。",
+    "고수준 BIOS 에뮬레이션을 강제합니다."
+  ],
+  "Run the emulated CPU and GPU on different threads": [
+    "Run the emulated CPU and GPU on different threads",
+    "Chạy CPU và GPU giả lập trên các luồng riêng.",
+    "CPU und GPU auf getrennten Threads emulieren.",
+    "Émuler CPU et GPU sur des fils séparés.",
+    "Emula CPU y GPU en hilos separados.",
+    "在不同线程上运行模拟的 CPU 和 GPU。",
+    "在不同執行緒上執行模擬的 CPU 與 GPU。",
+    "에뮬레이트된 CPU와 GPU를 서로 다른 스레드에서 실행합니다."
+  ],
+  "Dump the Dreamcast serial console to stdout": [
+    "Dump the Dreamcast serial console to stdout",
+    "Xuất console nối tiếp của Dreamcast ra stdout.",
+    "Gibt die serielle Dreamcast-Konsole auf stdout aus.",
+    "Envoie la console série Dreamcast vers stdout.",
+    "Envía la consola serie Dreamcast a stdout.",
+    "将 Dreamcast 串口控制台输出到 stdout。",
+    "將 Dreamcast 序列埠主控台輸出至 stdout。",
+    "Dreamcast 직렬 콘솔을 stdout으로 출력합니다."
+  ],
+  "Enables 32MB RAM Mod for Dreamcast. May affect compatibility": [
+    "Enables 32MB RAM Mod for Dreamcast. May affect compatibility",
+    "Bật mở rộng RAM Dreamcast lên 32MB. Có thể ảnh hưởng tương thích.",
+    "Aktiviert 32 MB RAM für Dreamcast. Kann die Kompatibilität beeinträchtigen.",
+    "Active 32 Mo de RAM Dreamcast. Peut affecter la compatibilité.",
+    "Activa 32 MB de RAM Dreamcast. Puede afectar la compatibilidad.",
+    "启用 Dreamcast 32MB 内存扩展，可能影响兼容性。",
+    "啟用 Dreamcast 32MB 記憶體擴充，可能影響相容性。",
+    "Dreamcast 32MB RAM 모드를 활성화합니다. 호환성에 영향을 줄 수 있습니다."
+  ],
+  "Dump all textures into data/texdump/<game id>": [
+    "Dump all textures into data/texdump/<game id>",
+    "Xuất mọi texture vào data/texdump/<game id>.",
+    "Exportiert alle Texturen nach data/texdump/<game id>.",
+    "Exporte toutes les textures vers data/texdump/<game id>.",
+    "Extrae todas las texturas a data/texdump/<game id>.",
+    "将所有纹理导出到 data/texdump/<game id>。",
+    "將所有紋理匯出至 data/texdump/<game id>。",
+    "모든 텍스처를 data/texdump/<game id>로 추출합니다."
+  ],
+  "Always dump textures that are already replaced by custom textures": [
+    "Always dump textures that are already replaced by custom textures",
+    "Xuất cả texture đã được thay bằng bản tùy chỉnh.",
+    "Exportiert auch bereits ersetzte Texturen.",
+    "Exporte aussi les textures déjà remplacées.",
+    "Extrae también texturas ya reemplazadas.",
+    "也导出已被自定义纹理替换的纹理。",
+    "也匯出已被自訂紋理替換的紋理。",
+    "사용자 텍스처로 교체된 텍스처도 추출합니다."
+  ],
+  "Skip dumping video (YUV) and already updated textures": [
+    "Skip dumping video (YUV) and already updated textures",
+    "Bỏ qua texture video YUV và texture đã cập nhật.",
+    "Überspringt YUV-Video und bereits aktualisierte Texturen.",
+    "Ignore la vidéo YUV et les textures déjà mises à jour.",
+    "Omite vídeo YUV y texturas ya actualizadas.",
+    "跳过 YUV 视频和已更新纹理的导出。",
+    "略過 YUV 影片與已更新紋理的匯出。",
+    "YUV 영상과 이미 갱신된 텍스처는 추출하지 않습니다."
+  ],
+  "Log debug information to flycast.log": [
+    "Log debug information to flycast.log",
+    "Ghi thông tin gỡ lỗi vào flycast.log.",
+    "Schreibt Debug-Informationen nach flycast.log.",
+    "Écrit les informations de débogage dans flycast.log.",
+    "Guarda información de depuración en flycast.log.",
+    "将调试信息写入 flycast.log。",
+    "將偵錯資訊寫入 flycast.log。",
+    "flycast.log에 디버그 정보를 기록합니다."
+  ],
+  "Automatically upload crash reports to sentry.io to help in troubleshooting. No personal information is included.": [
+    "Automatically upload crash reports to sentry.io to help in troubleshooting. No personal information is included.",
+    "Tự gửi báo cáo crash tới sentry.io để khắc phục lỗi; không gồm thông tin cá nhân.",
+    "Lädt Absturzberichte ohne persönliche Daten zu sentry.io hoch.",
+    "Envoie les rapports de plantage à sentry.io, sans données personnelles.",
+    "Envía informes de fallos a sentry.io sin datos personales.",
+    "自动向 sentry.io 上传崩溃报告，不含个人信息。",
+    "自動向 sentry.io 上傳當機報告，不含個人資訊。",
+    "개인정보 없이 충돌 보고서를 sentry.io에 자동 업로드합니다."
+  ],
+  "Specify lua filename to use. Should be located in Flycast config folder. Defaults to flycast.lua when empty.": [
+    "Specify lua filename to use. Should be located in Flycast config folder. Defaults to flycast.lua when empty.",
+    "Tên file Lua trong thư mục cấu hình. Để trống dùng flycast.lua.",
+    "Lua-Datei im Konfigurationsordner. Leer bedeutet flycast.lua.",
+    "Fichier Lua dans le dossier de configuration. Vide : flycast.lua.",
+    "Archivo Lua en la carpeta de configuración. Vacío: flycast.lua.",
+    "配置文件夹中的 Lua 文件名，留空使用 flycast.lua。",
+    "設定資料夾中的 Lua 檔名，留空使用 flycast.lua。",
+    "설정 폴더의 Lua 파일 이름입니다. 비우면 flycast.lua를 사용합니다."
+  ],
+  "Minimum deflection to register as input": [
+    "Minimum deflection to register as input",
+    "Mức lệch cần tối thiểu để nhận tín hiệu.",
+    "Minimale Stickauslenkung für eine Eingabe.",
+    "Déviation minimale du stick pour détecter une entrée.",
+    "Desviación mínima para registrar una entrada.",
+    "识别输入所需的最小摇杆偏移。",
+    "辨識輸入所需的最小搖桿偏移。",
+    "입력으로 감지할 최소 스틱 이동량입니다."
+  ],
+  "Value sent to the game at 100% thumbstick deflection. Values greater than 100% will saturate before full deflection of the thumbstick.": [
+    "Value sent to the game at 100% thumbstick deflection. Values greater than 100% will saturate before full deflection of the thumbstick.",
+    "Tín hiệu khi đẩy hết cần. Trên 100% sẽ đạt mức tối đa trước khi đẩy hết.",
+    "Wert bei vollem Stickausschlag. Über 100% wird das Maximum früher erreicht.",
+    "Valeur à déviation maximale. Au-dessus de 100 %, le maximum est atteint plus tôt.",
+    "Valor con la palanca al máximo. Más de 100 % alcanza el máximo antes.",
+    "摇杆完全偏移时的输入值，超过 100% 时会提前达到最大值。",
+    "搖桿完全偏移時的輸入值，超過 100% 時會提前達到最大值。",
+    "스틱을 끝까지 밀었을 때의 값입니다. 100%보다 크면 끝까지 밀기 전에 최댓값에 도달합니다."
+  ],
+  "Rumble power": [
+    "Rumble power",
+    "Cường độ rung của tay cầm.",
+    "Vibrationsstärke des Controllers.",
+    "Intensité de vibration de la manette.",
+    "Intensidad de vibración del mando.",
+    "手柄振动强度。",
+    "手把震動強度。",
+    "컨트롤러 진동 강도입니다."
+  ],
+  "Supports multiple pointing devices (mice, light guns) and keyboards": [
+    "Supports multiple pointing devices (mice, light guns) and keyboards",
+    "Hỗ trợ nhiều chuột, súng ánh sáng và bàn phím.",
+    "Unterstützt mehrere Mäuse, Lightguns und Tastaturen.",
+    "Prend en charge plusieurs souris, pistolets et claviers.",
+    "Admite varios ratones, pistolas de luz y teclados.",
+    "支持多个鼠标、光枪和键盘。",
+    "支援多個滑鼠、光槍與鍵盤。",
+    "여러 마우스, 라이트건 및 키보드를 지원합니다."
+  ],
+  "When enabled, each game has its own VMU on port 1 of controller A.": [
+    "When enabled, each game has its own VMU on port 1 of controller A.",
+    "Mỗi game có VMU riêng ở khe 1 của tay cầm A.",
+    "Jedes Spiel erhält eine eigene VMU in Steckplatz 1 von Controller A.",
+    "Chaque jeu possède son VMU dans l'emplacement 1 de la manette A.",
+    "Cada juego tiene su VMU en la ranura 1 del mando A.",
+    "每个游戏在控制器 A 的插槽 1 使用独立 VMU。",
+    "每個遊戲在控制器 A 的插槽 1 使用獨立 VMU。",
+    "각 게임이 컨트롤러 A의 슬롯 1에서 별도의 VMU를 사용합니다."
+  ],
+  "Enables read and write access to physical VMU storage via DreamPicoPort or DreamPotato. This is not compatible with load state events.": [
+    "Enables read and write access to physical VMU storage via DreamPicoPort or DreamPotato. This is not compatible with load state events.",
+    "Đọc/ghi VMU thật qua DreamPicoPort hoặc DreamPotato. Không tương thích tải trạng thái.",
+    "Liest und schreibt echte VMUs über DreamPicoPort oder DreamPotato. Nicht mit dem Laden von Speicherzuständen kompatibel.",
+    "Lit et écrit les VMU physiques via DreamPicoPort ou DreamPotato. Incompatible avec le chargement d'états.",
+    "Lee y escribe VMU físicas mediante DreamPicoPort o DreamPotato. Incompatible con cargar estados.",
+    "通过 DreamPicoPort 或 DreamPotato 读写实体 VMU，不兼容加载即时存档。",
+    "透過 DreamPicoPort 或 DreamPotato 讀寫實體 VMU，不相容於載入即時存檔。",
+    "DreamPicoPort 또는 DreamPotato로 실제 VMU를 읽고 씁니다. 상태 불러오기와 호환되지 않습니다."
+  ],
+  "When checked, this combo will only activate when all keys are pressed in the given sequence.\nWhen not checked, the combo will activate when all keys are pressed in any order.": [
+    "When checked, this combo will only activate when all keys are pressed in the given sequence.\nWhen not checked, the combo will activate when all keys are pressed in any order.",
+    "Bật để tổ hợp chỉ có hiệu lực khi nhấn đúng thứ tự. Tắt để chấp nhận mọi thứ tự.",
+    "Aktiviert die Kombination nur in dieser Reihenfolge. Ohne Haken ist die Reihenfolge beliebig.",
+    "Active la combinaison uniquement dans cet ordre. Sinon, l'ordre est libre.",
+    "Activa la combinación solo en este orden. Si se desactiva, acepta cualquier orden.",
+    "勾选后必须按指定顺序输入组合键，否则顺序不限。",
+    "勾選後必須依指定順序輸入組合鍵，否則順序不限。",
+    "켜면 지정된 순서로 눌러야 조합이 작동합니다. 끄면 순서에 상관없습니다."
+  ],
+  "Track your game achievements using RetroAchievements.org": [
+    "Track your game achievements using RetroAchievements.org",
+    "Theo dõi thành tích qua RetroAchievements.org.",
+    "Verfolgt Erfolge über RetroAchievements.org.",
+    "Suit les succès via RetroAchievements.org.",
+    "Sigue los logros mediante RetroAchievements.org.",
+    "使用 RetroAchievements.org 追踪成就。",
+    "使用 RetroAchievements.org 追蹤成就。",
+    "RetroAchievements.org로 도전 과제를 추적합니다."
+  ],
+  "Enable RetroAchievements hardcore mode. Using cheats and loading a state are not allowed in this mode.": [
+    "Enable RetroAchievements hardcore mode. Using cheats and loading a state are not allowed in this mode.",
+    "Chế độ Hardcore không cho dùng cheat hay tải trạng thái.",
+    "Hardcore-Modus erlaubt weder Cheats noch das Laden von Speicherzuständen.",
+    "Le mode Hardcore interdit les codes et le chargement d'états.",
+    "El modo Hardcore impide trucos y cargar estados.",
+    "硬核模式禁止作弊及加载即时存档。",
+    "硬核模式禁止作弊與載入即時存檔。",
+    "하드코어 모드에서는 치트와 상태 불러오기를 사용할 수 없습니다."
+  ],
+  "Choose Image...": [
+    "Choose Image...",
+    "Chọn hình...",
+    "Bild wählen...",
+    "Choisir une image...",
+    "Elegir imagen...",
+    "选择图片…",
+    "選擇圖片…",
+    "이미지 선택..."
+  ],
+  "Confirm Reset": [
+    "Confirm Reset",
+    "Xác nhận đặt lại",
+    "Zurücksetzen bestätigen",
+    "Confirmer la réinitialisation",
+    "Confirmar restablecimiento",
+    "确认重置",
+    "確認重設",
+    "초기화 확인"
+  ],
+  "Controller Mapping": [
+    "Controller Mapping",
+    "Gán nút tay cầm",
+    "Controller-Belegung",
+    "Affectation de la manette",
+    "Asignación del mando",
+    "控制器映射",
+    "控制器對應",
+    "컨트롤러 매핑"
+  ],
+  "Controller Type:": [
+    "Controller Type:",
+    "Loại tay cầm:",
+    "Controllertyp:",
+    "Type de manette :",
+    "Tipo de mando:",
+    "控制器类型：",
+    "控制器類型：",
+    "컨트롤러 유형:"
+  ],
+  "Controls": [
+    "Controls",
+    "Điều khiển",
+    "Steuerung",
+    "Commandes",
+    "Controles",
+    "控制",
+    "控制",
+    "컨트롤"
+  ],
+  "Crosshair color": [
+    "Crosshair color",
+    "Màu tâm ngắm",
+    "Fadenkreuzfarbe",
+    "Couleur du viseur",
+    "Color de la mira",
+    "准星颜色",
+    "準星顏色",
+    "조준점 색상"
+  ],
+  "Edit Layout": [
+    "Edit Layout",
+    "Chỉnh bố cục",
+    "Layout bearbeiten",
+    "Modifier la disposition",
+    "Editar disposición",
+    "编辑布局",
+    "編輯配置",
+    "배치 편집"
+  ],
+  "Frame Pacing (Experimental)": [
+    "Frame Pacing (Experimental)",
+    "Nhịp khung hình (thử nghiệm)",
+    "Frame-Pacing (experimentell)",
+    "Cadence d'images (expérimental)",
+    "Ritmo de fotogramas (experimental)",
+    "帧节奏（实验性）",
+    "影格節奏（實驗性）",
+    "프레임 페이싱(실험적)"
+  ],
+  "General": [
+    "General",
+    "Chung",
+    "Allgemein",
+    "Général",
+    "General",
+    "常规",
+    "一般",
+    "일반"
+  ],
+  "Haptic": [
+    "Haptic",
+    "Phản hồi rung",
+    "Haptik",
+    "Retour haptique",
+    "Respuesta háptica",
+    "触觉反馈",
+    "觸覺回饋",
+    "햅틱"
+  ],
+  "Haptic feedback power": [
+    "Haptic feedback power",
+    "Cường độ phản hồi rung.",
+    "Stärke des haptischen Feedbacks.",
+    "Intensité du retour haptique.",
+    "Intensidad de respuesta háptica.",
+    "触觉反馈强度。",
+    "觸覺回饋強度。",
+    "햅틱 피드백 강도입니다."
+  ],
+  "Name": [
+    "Name",
+    "Tên",
+    "Name",
+    "Nom",
+    "Nombre",
+    "名称",
+    "名稱",
+    "이름"
+  ],
+  "Physical Devices": [
+    "Physical Devices",
+    "Thiết bị thật",
+    "Physische Geräte",
+    "Périphériques physiques",
+    "Dispositivos físicos",
+    "物理设备",
+    "實體裝置",
+    "물리 장치"
+  ],
+  "Reset...": [
+    "Reset...",
+    "Đặt lại...",
+    "Zurücksetzen...",
+    "Réinitialiser...",
+    "Restablecer...",
+    "重置…",
+    "重設…",
+    "초기화..."
+  ],
+  "Select a PNG file": [
+    "Select a PNG file",
+    "Chọn file PNG",
+    "PNG-Datei wählen",
+    "Choisir un fichier PNG",
+    "Elegir archivo PNG",
+    "选择 PNG 文件",
+    "選擇 PNG 檔案",
+    "PNG 파일 선택"
+  ],
+  "System": [
+    "System",
+    "Hệ thống",
+    "System",
+    "Système",
+    "Sistema",
+    "系统",
+    "系統",
+    "시스템"
+  ],
+  "Transparency": [
+    "Transparency",
+    "Độ trong suốt",
+    "Transparenz",
+    "Transparence",
+    "Transparencia",
+    "透明度",
+    "透明度",
+    "투명도"
+  ],
+  "Video": [
+    "Video",
+    "Hình ảnh",
+    "Video",
+    "Vidéo",
+    "Vídeo",
+    "视频",
+    "視訊",
+    "비디오"
+  ],
+  "View": [
+    "View",
+    "Hiển thị",
+    "Ansicht",
+    "Affichage",
+    "Vista",
+    "视图",
+    "檢視",
+    "보기"
+  ],
+  "Virtual gamepad buttons transparency": [
+    "Virtual gamepad buttons transparency",
+    "Độ trong suốt của nút tay cầm ảo.",
+    "Transparenz der virtuellen Gamepad-Tasten.",
+    "Transparence des boutons de la manette virtuelle.",
+    "Transparencia de botones del mando virtual.",
+    "虚拟手柄按钮的透明度。",
+    "虛擬手把按鈕的透明度。",
+    "가상 게임패드 버튼의 투명도입니다."
+  ],
+  "Add": [
+    "Add",
+    "Thêm",
+    "Hinzufügen",
+    "Ajouter",
+    "Añadir",
+    "添加",
+    "新增",
+    "추가"
+  ],
+  "Load": [
+    "Load",
+    "Tải",
+    "Laden",
+    "Charger",
+    "Cargar",
+    "加载",
+    "載入",
+    "불러오기"
+  ],
+  "Close": [
+    "Close",
+    "Đóng",
+    "Schließen",
+    "Fermer",
+    "Cerrar",
+    "关闭",
+    "關閉",
+    "닫기"
+  ],
+  "Manage the cheat codes for this game.": [
+    "Manage the cheat codes for this game.",
+    "Quản lý mã cheat của game này.",
+    "Verwalte die Cheats für dieses Spiel.",
+    "Gérez les codes de triche de ce jeu.",
+    "Gestiona los trucos de este juego.",
+    "管理此游戏的作弊码。",
+    "管理此遊戲的作弊碼。",
+    "이 게임의 치트 코드를 관리합니다."
+  ],
+  "(No cheat loaded)": [
+    "(No cheat loaded)",
+    "(Chưa nạp mã cheat)",
+    "(Keine Cheats geladen)",
+    "(Aucun code chargé)",
+    "(No hay trucos cargados)",
+    "（未加载作弊码）",
+    "（未載入作弊碼）",
+    "(불러온 치트 없음)"
+  ],
+  "ADD CHEAT": [
+    "ADD CHEAT",
+    "THÊM MÃ CHEAT",
+    "CHEAT HINZUFÜGEN",
+    "AJOUTER UN CODE",
+    "AÑADIR TRUCO",
+    "添加作弊码",
+    "新增作弊碼",
+    "치트 추가"
+  ],
+  "Select a cheat file": [
+    "Select a cheat file",
+    "Chọn file cheat",
+    "Cheat-Datei wählen",
+    "Choisir un fichier de codes",
+    "Elegir archivo de trucos",
+    "选择作弊码文件",
+    "選擇作弊碼檔案",
+    "치트 파일 선택"
+  ],
+  "You have unlocked %d of %d achievements and %d of %d points.": [
+    "You have unlocked %d of %d achievements and %d of %d points.",
+    "Bạn đã đạt %d/%d thành tích và %d/%d điểm.",
+    "Du hast %d von %d Erfolgen und %d von %d Punkten erreicht.",
+    "Vous avez débloqué %d succès sur %d et %d points sur %d.",
+    "Has desbloqueado %d de %d logros y %d de %d puntos.",
+    "已解锁 %d/%d 项成就，获得 %d/%d 分。",
+    "已解鎖 %d/%d 項成就，獲得 %d/%d 分。",
+    "도전 과제 %d/%d개와 점수 %d/%d점을 획득했습니다."
+  ],
+  "Locked": [
+    "Locked",
+    "Chưa mở khóa",
+    "Gesperrt",
+    "Verrouillés",
+    "Bloqueados",
+    "未解锁",
+    "未解鎖",
+    "잠김"
+  ],
+  "Unlocked": [
+    "Unlocked",
+    "Đã mở khóa",
+    "Freigeschaltet",
+    "Déverrouillés",
+    "Desbloqueados",
+    "已解锁",
+    "已解鎖",
+    "잠금 해제됨"
+  ],
+  "Active Challenges": [
+    "Active Challenges",
+    "Thử thách đang diễn ra",
+    "Aktive Herausforderungen",
+    "Défis actifs",
+    "Desafíos activos",
+    "进行中的挑战",
+    "進行中的挑戰",
+    "진행 중인 도전"
+  ],
+  "Almost There": [
+    "Almost There",
+    "Sắp hoàn thành",
+    "Fast geschafft",
+    "Presque terminés",
+    "Casi completados",
+    "即将完成",
+    "即將完成",
+    "거의 완료"
+  ],
+  "Recently Unlocked": [
+    "Recently Unlocked",
+    "Vừa mở khóa",
+    "Kürzlich freigeschaltet",
+    "Déverrouillés récemment",
+    "Desbloqueados recientemente",
+    "最近解锁",
+    "最近解鎖",
+    "최근 잠금 해제"
   ]
 }

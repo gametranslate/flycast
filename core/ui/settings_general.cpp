@@ -405,58 +405,7 @@ void gui_settings_general()
 #if USE_DISCORD
 	OptionCheckbox(T("Discord Presence"), config::DiscordPresence, T("Show which game you are playing on Discord"));
 #endif
-#ifdef USE_RACHIEVEMENTS
-	OptionCheckbox(T("Enable RetroAchievements"), config::EnableAchievements, T("Track your game achievements using RetroAchievements.org"));
-	{
-		DisabledScope _(!config::EnableAchievements);
-		ImGui::Indent();
-		OptionCheckbox(T("Hardcore Mode"), config::AchievementsHardcoreMode,
-				T("Enable RetroAchievements hardcore mode. Using cheats and loading a state are not allowed in this mode."));
-		InputText(T("Username"), &config::AchievementsUserName.get(),
-				achievements::isLoggedOn() ? ImGuiInputTextFlags_ReadOnly : ImGuiInputTextFlags_None);
-		if (config::EnableAchievements)
-		{
-			static std::future<void> futureLogin;
-			achievements::init();
-			if (achievements::isLoggedOn())
-			{
-				ImGui::Text("%s", T("Authentication successful"));
-				if (futureLogin.valid())
-					futureLogin.get();
-				if (ImGui::Button(T("Logout"), ScaledVec2(100, 0)))
-					achievements::logout();
-			}
-			else
-			{
-				static char password[256];
-				InputText(T("Password"), password, sizeof(password), ImGuiInputTextFlags_Password);
-				if (futureLogin.valid())
-				{
-					if (futureLogin.wait_for(std::chrono::seconds::zero()) == std::future_status::timeout) {
-						ImGui::Text("%s", T("Authenticating..."));
-					}
-					else
-					{
-						try {
-							futureLogin.get();
-						} catch (const FlycastException& e) {
-							gui_error(e.what());
-						}
-					}
-				}
-				{
-					DisabledScope _(config::AchievementsUserName.get().empty() || password[0] == '\0');
-					if (ImGui::Button(T("Login"), ScaledVec2(100, 0)) && !futureLogin.valid())
-					{
-						futureLogin = achievements::login(config::AchievementsUserName.get().c_str(), password);
-						memset(password, 0, sizeof(password));
-					}
-				}
-			}
-		}
-		ImGui::Unindent();
-	}
-#endif
+	gui_settings_achievements();
 
 // Custom Paths section - hidden on Android and iOS
 #if !defined(TARGET_IPHONE)
@@ -889,4 +838,60 @@ void applyCurrentTheme()
 		applySoftTheme();          // New "Aqua Chill" theme
 	else
 		applyDarkTheme();
+}
+
+void gui_settings_achievements()
+{
+#ifdef USE_RACHIEVEMENTS
+	OptionCheckbox(T("Enable RetroAchievements"), config::EnableAchievements, T("Track your game achievements using RetroAchievements.org"));
+	{
+		DisabledScope _(!config::EnableAchievements);
+		ImGui::Indent();
+		OptionCheckbox(T("Hardcore Mode"), config::AchievementsHardcoreMode,
+				T("Enable RetroAchievements hardcore mode. Using cheats and loading a state are not allowed in this mode."));
+		InputText(T("Username"), &config::AchievementsUserName.get(),
+				achievements::isLoggedOn() ? ImGuiInputTextFlags_ReadOnly : ImGuiInputTextFlags_None);
+		if (config::EnableAchievements)
+		{
+			static std::future<void> futureLogin;
+			achievements::init();
+			if (achievements::isLoggedOn())
+			{
+				ImGui::Text("%s", T("Authentication successful"));
+				if (futureLogin.valid())
+					futureLogin.get();
+				if (ImGui::Button(T("Logout"), ScaledVec2(100, 0)))
+					achievements::logout();
+			}
+			else
+			{
+				static char password[256];
+				InputText(T("Password"), password, sizeof(password), ImGuiInputTextFlags_Password);
+				if (futureLogin.valid())
+				{
+					if (futureLogin.wait_for(std::chrono::seconds::zero()) == std::future_status::timeout) {
+						ImGui::Text("%s", T("Authenticating..."));
+					}
+					else
+					{
+						try {
+							futureLogin.get();
+						} catch (const FlycastException& e) {
+							gui_error(e.what());
+						}
+					}
+				}
+				{
+					DisabledScope _(config::AchievementsUserName.get().empty() || password[0] == '\0');
+					if (ImGui::Button(T("Login"), ScaledVec2(100, 0)) && !futureLogin.valid())
+					{
+						futureLogin = achievements::login(config::AchievementsUserName.get().c_str(), password);
+						memset(password, 0, sizeof(password));
+					}
+				}
+			}
+		}
+		ImGui::Unindent();
+	}
+#endif
 }

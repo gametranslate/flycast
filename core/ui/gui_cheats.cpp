@@ -17,6 +17,9 @@
     along with Flycast.  If not, see <https://www.gnu.org/licenses/>.
 */
 #include "gui.h"
+#ifdef FLYCAST_CLARITY
+#include "clarity/clarity.h"
+#endif
 #include "imgui.h"
 #include "gui_util.h"
 #include "cheats.h"
@@ -93,6 +96,15 @@ void gui_cheats()
     		| ImGuiWindowFlags_NoMove | ImGuiWindowFlags_AlwaysAutoResize);
 
 	const char *title = T("Select a cheat file");
+#ifdef FLYCAST_CLARITY
+    clarity::heading("Cheats", "Manage the cheat codes for this game.");
+    if (clarity::button("Add")) ImGui::OpenPopup("addCheat");
+    addCheat();
+    ImGui::SameLine();
+    if (clarity::button("Load")) ImGui::OpenPopup(title);
+    ImGui::SameLine();
+    if (clarity::button("Back to game")) gui_setState(GuiState::Commands);
+#else
     {
 		ImguiStyleVar _(ImGuiStyleVar_FramePadding, ScaledVec2(20, 8));
 		ImGui::AlignTextToFramePadding();
@@ -125,6 +137,7 @@ void gui_cheats()
 
 		ImGui::Unindent(uiScaled(10));
     }
+#endif
 	select_file_popup(title, [](bool cancelled, std::string selection)
 		{
 			cheatFileSelected(cancelled, selection);
@@ -140,8 +153,14 @@ void gui_cheats()
 			{
 				ImguiID _(("cheat" + std::to_string(i)).c_str());
 				bool v = cheatManager.cheatEnabled(i);
+#ifdef FLYCAST_CLARITY
+                clarity::beginRow(cheatManager.cheatDescription(i).c_str());
+                if (ImGui::Checkbox("##enabled", &v)) cheatManager.enableCheat(i, v);
+                clarity::endRow();
+#else
 				if (ImGui::Checkbox(cheatManager.cheatDescription(i).c_str(), &v))
 					cheatManager.enableCheat(i, v);
+#endif
 			}
     }
     scrollWhenDraggingOnVoid();

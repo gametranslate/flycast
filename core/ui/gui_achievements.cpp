@@ -19,6 +19,9 @@
 #ifdef USE_RACHIEVEMENTS
 #include "gui_achievements.h"
 #include "gui.h"
+#ifdef FLYCAST_CLARITY
+#include "clarity/clarity.h"
+#endif
 #include "gui_util.h"
 #include "imgui_driver.h"
 #include "stdclass.h"
@@ -277,8 +280,44 @@ bool Notification::draw()
 	return true;
 }
 
+#ifdef FLYCAST_CLARITY
+static void clarityAchievementList() {
+    fullScreenWindow(false);
+    ImGui::Begin("##clarity-achievements", nullptr, ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoSavedSettings);
+    auto game = getCurrentGame();
+    clarity::heading("Achievements", game.title.c_str());
+    if (clarity::button("Back to game")) gui_setState(GuiState::Commands);
+    ImGui::TextWrapped(T("You have unlocked %d of %d achievements and %d of %d points."),
+        game.unlockedAchievements, game.totalAchievements, game.points, game.totalPoints);
+    if (settings.raHardcoreMode) clarity::muted(T("Hardcore Mode"));
+    ImGui::BeginChild("achievements", ImVec2(0,0));
+    int id=0;
+    std::string category;
+    for (const auto& ach : getAchievementList()) {
+        if (category != ach.category) { category=ach.category; clarity::section(T(category.c_str())); }
+        ImGui::PushID(id++);
+        ImGui::BeginChild("achievement", ImVec2(0,0), ImGuiChildFlags_AutoResizeY | ImGuiChildFlags_Borders);
+        ImguiFileTexture texture(ach.image);
+        texture.draw(ScaledVec2(56,56));
+        ImGui::SameLine();
+        ImGui::BeginGroup();
+        ImGui::TextWrapped("%s", ach.title.c_str());
+        clarity::muted(ach.description.c_str());
+        clarity::muted(ach.status.c_str());
+        ImGui::EndGroup();
+        ImGui::EndChild();
+        ImGui::PopID();
+    }
+    ImGui::EndChild();
+    ImGui::End();
+}
+#endif
 void achievementList()
 {
+#ifdef FLYCAST_CLARITY
+    clarityAchievementList();
+    return;
+#endif
 	fullScreenWindow(false);
 	ImguiStyleVar _(ImGuiStyleVar_WindowBorderSize, 0);
 

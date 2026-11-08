@@ -1,18 +1,53 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 #pragma once
-
 #include <functional>
+#include <string>
+#include <array>
+#include "imgui.h"
 
+class Boxart;
 namespace clarity {
-// All hooks are compiled out when FLYCAST_CLARITY is disabled.
+enum class Page { System, Controllers, Devices, Video, Audio, Library, Paths, Network, Achievements, Advanced, About, Debug, Count };
 void beginSession();
-bool display(const std::function<void(bool close)>& finishSettings);
-bool returnFromClassic();
+void openSettings(Page page);
+bool display(const std::function<void(bool)>& finishSettings,
+    std::array<bool, 4>& maple, std::array<std::array<bool, 2>, 4>& expansion);
+void library(Boxart& boxart);
+void beginTheme();
+void endTheme();
+const char* tr(const char* key);
+const char* translateBuiltin(const char* text);
+std::string locale();
+ImVec4 accent();
+void muted(const char* text);
+void heading(const char* text, const char* subtitle = nullptr);
+void section(const char* text);
+bool button(const char* key, bool selected = false, ImVec2 size = {});
+void branding();
+bool cardsActive();
+void setCards(bool value);
+bool beginRow(const char* title, const char* help = nullptr, bool locked = false);
+void endRow();
+void graphicsPage();
+void audioPage();
+void pathsPage();
+void networkPage();
+void generalPage();
+void libraryPage();
+void aboutPage();
+void drawBackdrop(const char* title);
+void progressWindow(const char* title);
+void closeMappings();
+void saveMappings();
+void controllerPage();
+void devicesPage(std::array<bool, 4>& maple, std::array<std::array<bool, 2>, 4>& expansion);
 #ifdef FLYCAST_CLARITY_SMOKE_TEST
 void smokeBeforeFrame();
 void smokeAfterFrame();
 void smokeConfigure(int locale, bool dark, int page);
 void smokeObserve(const char* key);
-bool smokeCheck(int liveResolution, int draftResolution, bool inClassic);
+int smokePage();
+void smokeUseTestController();
+void smokeSetPickerDirectory(const std::string& path);
 #endif
 }
