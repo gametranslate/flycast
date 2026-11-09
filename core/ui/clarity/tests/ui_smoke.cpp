@@ -152,7 +152,8 @@ void smokeBeforeFrame() {
                 SaveSettings();
                 auto report=std::fopen(get_writable_config_path("native-dialog-pass.txt").c_str(),"w");
                 if (report) { std::fputs("PASS: real Windows folder selection with Unicode path, shared file dialog opened and cancelled; folder preserved.\n",report); std::fclose(report); }
-                std::exit(0);
+                dc_exit();
+                return;
             }
         }
         ++nativeFrame;
@@ -283,7 +284,10 @@ void smokeBeforeFrame() {
         std::fprintf(report, "PASS: 114 native renders: 8 locales x 2 themes for library, controllers and About; all 11 Settings pages; GGPO/Naomi/Battle, quick menu, cheats and Advanced bottom; 32 additional quick-menu locale/theme captures at top and bottom with a long title. Unicode folder drop, duplicate prevention, persistence, game/disc routing and busy-state guard passed. Unknown config preserved.\nWidgets: %s\n",
             ImGui::GetIO().DisplaySize.x >= uiScaled(1000) ? "PASS: navigation, DSP save/reload, mapping A through input detection, mapping-file reload, synthetic unplug, return to library; original audio samples and resolution preserved." : "SKIPPED: compact rendering only");
         std::fclose(report);
-        std::exit(0);
+        // Let the normal main loop release SDL devices, UI listeners and the
+        // renderer before static destruction. exit() bypasses flycast_term().
+        dc_exit();
+        return;
     }
     if (frame % framesPerCase == 0) {
         smokeScrollToBottom(index >= 80);

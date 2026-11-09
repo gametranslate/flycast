@@ -7,7 +7,7 @@ on:
       target:
         description: Platforms to build
         type: choice
-        options: [all, desktop, android, android-check]
+        options: [all, desktop, linux, macos, android, android-check]
         default: all
       apk_run:
         description: Existing workflow run containing the Android preview (android-check only)
@@ -25,11 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - os: ubuntu-22.04
-            platform: Linux-x64
-          - os: macos-latest
-            platform: macOS-universal
+        include: ${{ fromJSON(inputs.target == 'linux' && '[{"os":"ubuntu-22.04","platform":"Linux-x64"}]' || inputs.target == 'macos' && '[{"os":"macos-latest","platform":"macOS-universal"}]' || '[{"os":"ubuntu-22.04","platform":"Linux-x64"},{"os":"macos-latest","platform":"macOS-universal"}]') }}
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     steps:
@@ -108,7 +104,7 @@ jobs:
           path: dist/*
           if-no-files-found: error
   android:
-    if: inputs.target != 'desktop' && inputs.target != 'android-check'
+    if: inputs.target == '' || inputs.target == 'all' || inputs.target == 'android'
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
