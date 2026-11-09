@@ -1,9 +1,14 @@
 # Clarity desktop frontend for Flycast
 
-Clarity is a native C++/Dear ImGui frontend, enabled by default on Windows.
+Clarity is a native C++/Dear ImGui frontend, enabled by default on desktop
+Windows, Linux, macOS and Android (standalone builds, not Libretro).
 The startup library, settings, controller mapping, pause menu, cheats and
 achievement list share the same Light/Night appearance. On desktop Windows,
 all shared file/folder pickers use the standard Windows Common Item Dialog.
+Linux uses the desktop portal and macOS uses Cocoa panels via a pinned
+Native File Dialog Extended dependency. A missing Linux portal falls back to
+the built-in Clarity file browser. Android uses Storage Access Framework and
+retains document URIs; Java selection results are applied on the UI thread.
 Loading, onboarding and connection dialogs use the same theme. No web runtime
 is required. Emulation option defaults are unchanged; Clarity provides its own
 desktop window, appearance and keyboard shortcut defaults.
@@ -24,7 +29,7 @@ are shown only when their feature is available.
   French, Spanish, Simplified Chinese, Traditional Chinese and Korean are
   available. Language and theme are global `[clarity]` options in `emu.cfg`,
   independent of the BIOS language and the retained legacy UI preferences.
-- Windows starts with a centered 1280×900 logical-pixel window, reduced to fit
+- Desktop builds start with a centered 1280×900 logical-pixel window, reduced to fit
   the monitor work area at the current DPI. The old 640×480 default upgrades
   once; other saved sizes, maximized/fullscreen state and later resizes are kept.
 - Default keyboard shortcuts are F1 for Save State, F2 for Load State and F3 for
@@ -65,6 +70,9 @@ are shown only when their feature is available.
 - Icons accompany navigation, categories and major actions. The sidebar
   adapts to translated labels, and becomes an icon rail with tooltips in
   compact windows. Navigation and content scroll independently.
+- Android settings use a labeled category selector instead of an icon-only
+  sidebar, larger touch padding/scrollbars and system folder selection. The
+  library guides touch users to select a folder instead of dragging files.
 
 About credits flyinghead and Flycast contributors, links to the original
 repository, author, license, reicast and dependencies, and invites the user
@@ -140,3 +148,25 @@ The helper belongs to a job that ends on parent shutdown, so no dialog process
 is left behind. The engine's exception handling and emulation behavior are unchanged.
 
 See `tests/VALIDATION.md` for the results and remaining hardware/gameplay checks.
+
+## Multiplatform builds
+
+`.github/workflows/clarity-platforms.yml` builds Linux x64 AppImage, macOS
+universal (Intel + Apple Silicon) app ZIP, and an Android preview APK. Linux
+and macOS run the opt-in OpenGL capture suite before rebuilding with the test
+harness OFF for packaging. QA images/logs are separate workflow artifacts.
+
+Linux native-picker build dependencies include dbus-1, wayland-client and
+wayland-scanner. The desktop requires an xdg-desktop-portal provider for native
+dialogs. macOS uses AppKit. CMake fetches NFDe v1.4.1 at commit
+`65b2f070a0fcfee0d453a64e770a217ab0b6ff4f`; its license is included in packages.
+Set `FETCHCONTENT_SOURCE_DIR_CLARITY_NFD` to a local copy for offline builds.
+
+Android uses `-Pclarity=true` (default) with application ID
+`us.gametranslate.flycast`, so it can coexist with upstream Flycast. Use
+`-Pclarity=false` to build the original package/UI. `-PclarityPreview=true`
+signs a testing APK with the existing debug keystore; it is explicitly a
+preview, not a production-signed Play Store release. Normal release signing
+continues to require a private release keystore. No signing keys are uploaded
+by this workflow. Android physical touch/controller and SAF checks still need
+an Android device; desktop CI is not proof of mobile runtime behavior.

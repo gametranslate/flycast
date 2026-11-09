@@ -474,6 +474,9 @@ void aboutPage() {
     ImGui::TextLinkOpenURL("GNU GPL · LICENSE", "https://github.com/flyinghead/flycast/blob/master/LICENSE");
     ImGui::TextLinkOpenURL("reicast", "https://github.com/skmp/reicast-emulator");
     ImGui::TextLinkOpenURL(tr("Third-party libraries"), "https://github.com/flyinghead/flycast/tree/master/core/deps");
+#ifdef CLARITY_DESKTOP_PICKER
+    ImGui::TextLinkOpenURL("Native File Dialog Extended", "https://github.com/btzy/nativefiledialog-extended");
+#endif
     section("Build & system");
     gui_settings_about();
 }
