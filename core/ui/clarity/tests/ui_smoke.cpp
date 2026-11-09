@@ -3,6 +3,8 @@
 // No game, desktop input injection, user configuration or screen-capture service.
 #include "ui/clarity/clarity.h"
 #include "ui/gui.h"
+#include "ui/gui_util.h"
+#include "cfg/option.h"
 #ifdef _WIN32
 #include "rend/dx11/dx11context.h"
 #else

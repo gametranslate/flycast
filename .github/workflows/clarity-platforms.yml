@@ -3,13 +3,20 @@ on:
   push:
     branches: [codex/clarity-multiplatform]
   workflow_dispatch:
+    inputs:
+      target:
+        description: Platforms to build
+        type: choice
+        options: [all, desktop, android]
+        default: all
 permissions:
   contents: read
 concurrency:
-  group: clarity-platforms-${{ github.ref }}
+  group: clarity-platforms-${{ github.ref }}-${{ inputs.target || 'all' }}
   cancel-in-progress: true
 jobs:
   desktop:
+    if: inputs.target != 'android'
     strategy:
       fail-fast: false
       matrix:
@@ -96,6 +103,7 @@ jobs:
           path: dist/*
           if-no-files-found: error
   android:
+    if: inputs.target != 'desktop'
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:

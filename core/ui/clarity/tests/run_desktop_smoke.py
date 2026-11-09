@@ -20,6 +20,7 @@ if platform.system() == "Darwin":
 else:
     env["XDG_CONFIG_HOME"] = str(output / "config")
     env["XDG_DATA_HOME"] = str(output / "data")
+    (output / "data/flycast").mkdir(parents=True)
     config = output / "config/flycast"
     config.mkdir(parents=True)
 
