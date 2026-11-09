@@ -199,6 +199,10 @@ static ImGuiKey keycodeToImGuiKey(u8 keycode)
 	}
 }
 
+#ifdef FLYCAST_CLARITY
+static std::string fontLocale;
+#endif
+
 void gui_updateStyle()
 {
 	static float uiScale;
@@ -232,7 +236,6 @@ void gui_updateStyle()
     settings.display.uiScale *= config::UIScaling / 100.f;
 	bool sameLocale = true;
 #ifdef FLYCAST_CLARITY
-	static std::string fontLocale;
 	const std::string currentLocale = clarity::locale();
 	sameLocale = fontLocale == currentLocale;
 	fontLocale = currentLocale;
@@ -328,7 +331,8 @@ static void gui_newFrame()
 {
 #ifdef FLYCAST_CLARITY
 	// Rebuild regional font faces between frames when the UI locale changes.
-	gui_updateStyle();
+	if (fontLocale != clarity::locale())
+		gui_updateStyle();
 #endif
 	imguiDriver->newFrame();
 	ImGui::GetIO().DisplaySize.x = settings.display.width;

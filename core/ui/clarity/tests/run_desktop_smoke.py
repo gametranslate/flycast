@@ -46,6 +46,8 @@ for name, width, height in [("full", 1280, 900), ("compact", 640, 480)]:
     if result.returncode:
         print((case / "run.log").read_text(errors="replace")[-12000:])
     assert result.returncode == 0, (name, result.returncode)
+    # Locale changes rebuild the atlas; ordinary frames must reuse it.
+    assert (case / "run.log").read_text(errors="replace").count("Screen DPI is") < 80, "Font atlas rebuilt on ordinary frames"
     assert (case / "clarity-smoke-pass.txt").exists(), name
     captures = list(case.glob("clarity-native-*.png"))
     assert len(captures) == 114, (name, len(captures))

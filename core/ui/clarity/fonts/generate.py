@@ -13,6 +13,7 @@ from fontTools import subset
 from fontTools.ttLib import TTCollection, TTFont
 
 root = Path(__file__).resolve().parent
+assert len(sys.argv) == 3, 'Supply Regular and Bold upstream TTC paths'
 strings = json.loads((root.parent / 'strings.json').read_text(encoding='utf-8'))
 text = ''.join(value for row in strings.values() for value in row)
 text += 'EnglishTiếng ViệtDeutschFrançaisEspañol简体中文繁體中文한국어'
