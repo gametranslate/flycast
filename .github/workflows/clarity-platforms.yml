@@ -7,16 +7,21 @@ on:
       target:
         description: Platforms to build
         type: choice
-        options: [all, desktop, android]
+        options: [all, desktop, android, android-check]
         default: all
+      apk_run:
+        description: Existing workflow run containing the Android preview (android-check only)
+        type: string
+        default: '0'
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: clarity-platforms-${{ github.ref }}-${{ inputs.target || 'all' }}
   cancel-in-progress: true
 jobs:
   desktop:
-    if: inputs.target != 'android'
+    if: inputs.target != 'android' && inputs.target != 'android-check'
     strategy:
       fail-fast: false
       matrix:
@@ -103,7 +108,7 @@ jobs:
           path: dist/*
           if-no-files-found: error
   android:
-    if: inputs.target != 'desktop'
+    if: inputs.target != 'desktop' && inputs.target != 'android-check'
     runs-on: ubuntu-latest
     timeout-minutes: 60
     steps:
@@ -129,3 +134,35 @@ jobs:
           name: Clarity-Android-preview
           path: dist/*
           if-no-files-found: error
+  android-startup:
+    if: inputs.target == 'android-check'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/download-artifact@v7
+        with:
+          name: Clarity-Android-preview
+          run-id: ${{ inputs.apk_run }}
+          github-token: ${{ github.token }}
+          path: apk
+      - name: Enable KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: Verify APK and start Android
+        uses: reactivecircus/android-emulator-runner@4c44018e59b437e86cdfc41da381398f93ed8808
+        with:
+          api-level: 35
+          arch: x86_64
+          target: default
+          profile: pixel_2
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          script: python3 core/ui/clarity/tests/run_android_startup.py
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: Clarity-QA-Android-startup
+          path: android-evidence
+          if-no-files-found: warn
