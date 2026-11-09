@@ -68,9 +68,12 @@ try:
             adb('shell', 'input', 'swipe', '225', '572', '225', '572', '350')  # Button mapping
             time.sleep(2)
             capture('button-mapping.png')
-            adb('shell', 'input', 'swipe', '1700', '750', '1700', '450', '600')
+            # The ImGui content uses its visible scrollbar, not Android's
+            # native swipe-to-scroll gesture. Coordinates are from the capture.
+            adb('shell', 'input', 'swipe', '1860', '410', '1860', '560', '600')
             time.sleep(2)
             capture('button-mapping-scrolled.png')
+            assert (output / 'button-mapping.png').read_bytes() != (output / 'button-mapping-scrolled.png').read_bytes(), 'Mapping scrollbar did not change the capture'
         activity = adb('shell', 'dumpsys', 'activity', 'activities')
         (output / f'activity-{index}.txt').write_text(activity)
         assert any(package in line for line in activity.splitlines() if 'mResumedActivity' in line or 'topResumedActivity' in line), 'Flycast is not foreground'
