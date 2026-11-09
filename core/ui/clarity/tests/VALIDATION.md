@@ -30,7 +30,7 @@ DX9, Lua, Discord and Breakpad disabled for this package.
 | Physical controllers, rumble, reconnect, real gameplay and performance | NOT RUN |
 | In-game Maple/VMU reconnect and save/load with real game content | NOT RUN; shared upstream lifecycle retained |
 | Real network sessions and RetroAchievements authentication/game list | NOT RUN; network variants and account-page layout rendered |
-| Other operating systems | NOT RUN; Windows is the current target |
+| Other operating systems | See the multiplatform follow-up below |
 
 The 114-case suite comprises library (8 locales × 2 themes), eleven settings
 pages (English × 2 themes), controller mapping (8 × 2), About (8 × 2), GGPO,
@@ -78,3 +78,29 @@ checksums are verified by `.work/package-polished.py`.
   `flycast.exe`, `emu.cfg` (English/Night/DX11) and `LICENSE`. Source, reports,
   screenshots and personal data are excluded; previous portable folders are
   untouched. ZIP integrity and executable identity are checked when packaging.
+
+## Multiplatform follow-up (2026-11-09)
+
+- Linux CI run `42588184564` passed 114 OpenGL captures at 1280x900 and 114
+  at 640x480, the full-window widget/mapping/persistence suite and drop-routing
+  fixtures. It rebuilt with the harness OFF and generated an AppImage.
+- An isolated Ubuntu 24.04/WSL AddressSanitizer build exposed an existing font
+  ownership mismatch: embedded resources allocated with `new[]` were handed
+  to ImGui, whose allocator releases with `free`. Embedded font buffers now
+  use ImGui's allocator. Both 114-frame runs, widget checks and normal shutdown
+  pass AddressSanitizer after the fix (`detect_leaks=0` for graphics-driver
+  allocations; allocator mismatch and use-after-free checks remain enabled).
+- The smoke harness now exits through `dc_exit()` and the normal main-loop
+  teardown, instead of bypassing Flycast cleanup with `std::exit()`.
+- macOS universal compilation and actual OpenGL captures were observed. The
+  runner limits its display to 1024x768, yielding a 1024x642 full-case window;
+  the test now scrolls to the A binding before attempting to map it. Final
+  package verification is pending a run containing the font fix.
+- Android APK installation and two startup/relaunch checks passed on Android
+  15 x86_64 emulation. The first input attempt showed that instantaneous ADB
+  taps can be missed by the software renderer's frame polling; the integration
+  script now holds touch for 350 ms. Final native-picker/mapping screenshots
+  and a rebuilt APK containing the font fix are pending.
+- Real gameplay, save-state hotkeys with a game, physical controllers, online
+  services and completed native-folder selection on the new platforms remain
+  unverified. CI render captures are not gameplay tests.

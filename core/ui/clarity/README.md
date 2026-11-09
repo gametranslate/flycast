@@ -38,7 +38,7 @@ are shown only when their feature is available.
 - The library has game search, platform filters, grid/list views, folder setup
   and direct access to Button mapping, Settings and About. Drop a supported game
   file onto the library to play, or a folder to add it. Add game folder and all
-  Browse actions open the Windows dialog; there is no Open game button. Drops
+  Browse actions use the platform picker; there is no Open game button. Drops
   are ignored while busy or in settings. The disc-change screen accepts disc
   images and retains Choose a disc.
 - Settings has eleven release pages: Console & appearance, Button mapping,
@@ -137,7 +137,7 @@ select that exact folder, then cancel the cheat-file dialog that follows.
 It writes `native-dialog-pass.txt` and exits. Selecting another folder fails
 this test and exits: this is test-harness behavior, not a normal user build.
 
-Native dialogs run in a short-lived child invocation of the same executable,
+Windows native dialogs run in a short-lived child invocation of the same executable,
 before emulator initialization. This keeps Explorer extensions outside Flycast's
 fail-fast exception handler. Only the result pipe is inherited, UTF-8 paths are
 returned to the UI thread, and cancellation leaves options unchanged. The main
@@ -155,6 +155,11 @@ See `tests/VALIDATION.md` for the results and remaining hardware/gameplay checks
 universal (Intel + Apple Silicon) app ZIP, and an Android preview APK. Linux
 and macOS run the opt-in OpenGL capture suite before rebuilding with the test
 harness OFF for packaging. QA images/logs are separate workflow artifacts.
+Manual runs can target all platforms, desktop, Linux, macOS or Android. The
+`android-check` target takes an existing `apk_run` ID and installs its preview
+on a disposable Android 15 emulator, captures startup/mapping, and checks the
+system folder picker opens and cancels. These checks do not boot a game or
+substitute for physical device testing.
 
 Linux native-picker build dependencies include dbus-1, wayland-client and
 wayland-scanner. The desktop requires an xdg-desktop-portal provider for native

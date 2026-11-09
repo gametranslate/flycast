@@ -22,6 +22,7 @@
 #include "oslib/resources.h"
 #include "IconsFontAwesome6.h"
 #include "imgui/misc/freetype/imgui_freetype.h"
+#include <cstring>
 
 ImFont *boldFont;
 
@@ -248,6 +249,18 @@ static void loadFonts(const std::vector<FontEntry>& entries, const ImFontConfig&
 	}
 }
 
+// ImGui owns embedded font buffers and releases them through its allocator.
+// resource::load() uses new[], which must not be handed to ImGui's free().
+static void* loadAtlasFont(const char* path, size_t& size)
+{
+	auto resourceData = resource::load(path, size);
+	verify(resourceData != nullptr);
+	void* data = ImGui::MemAlloc(size);
+	verify(data != nullptr);
+	memcpy(data, resourceData.get(), size);
+	return data;
+}
+
 void gui_loadFonts()
 {
 	ImGuiIO& io = ImGui::GetIO();
@@ -259,17 +272,15 @@ void gui_loadFonts()
 	const float fontSize = uiScaled(17.f);
 	
 	size_t dataSize;
-	std::unique_ptr<u8[]> data = resource::load("fonts/Roboto-Medium.ttf", dataSize);
-	verify(data != nullptr);
-	ImFont *regularFont = io.Fonts->AddFontFromMemoryTTF(data.release(), (int)dataSize, fontSize, nullptr, nullptr);
+	void* data = loadAtlasFont("fonts/Roboto-Medium.ttf", dataSize);
+	ImFont *regularFont = io.Fonts->AddFontFromMemoryTTF(data, (int)dataSize, fontSize, nullptr, nullptr);
 	ImFontConfig fontConfig;
 	fontConfig.MergeMode = true;
 	fontConfig.DstFont = regularFont;
 	
 	// Bold font
-	data = resource::load("fonts/Roboto-Bold.ttf", dataSize);
-	verify(data != nullptr);
-	boldFont = io.Fonts->AddFontFromMemoryTTF(data.release(), (int)dataSize, fontSize, nullptr, nullptr);
+	data = loadAtlasFont("fonts/Roboto-Bold.ttf", dataSize);
+	boldFont = io.Fonts->AddFontFromMemoryTTF(data, (int)dataSize, fontSize, nullptr, nullptr);
 	ImFontConfig boldFontConfig;
 	boldFontConfig.MergeMode = true;
 	boldFontConfig.DstFont = boldFont;
@@ -469,14 +480,13 @@ void gui_loadFonts()
 	loadFonts(boldFonts, boldFontConfig);
 	
 	// Font Awesome symbols
-	data = resource::load("fonts/" FONT_ICON_FILE_NAME_FAS, dataSize);
-	verify(data != nullptr);
+	data = loadAtlasFont("fonts/" FONT_ICON_FILE_NAME_FAS, dataSize);
 	
 	ImFontConfig faFontConfig = fontConfig;
 	faFontConfig.FontDataOwnedByAtlas = false;
-	io.Fonts->AddFontFromMemoryTTF(data.get(), (int)dataSize, fontSize, &faFontConfig);
+	io.Fonts->AddFontFromMemoryTTF(data, (int)dataSize, fontSize, &faFontConfig);
 	boldFontConfig.FontDataOwnedByAtlas = true;
-	io.Fonts->AddFontFromMemoryTTF(data.release(), (int)dataSize, fontSize, &boldFontConfig);
+	io.Fonts->AddFontFromMemoryTTF(data, (int)dataSize, fontSize, &boldFontConfig);
 
 	// AddFont() may sync the active ImGui font stack using the previous size.
 	// Re-apply the rebuilt atlas size after all fonts have been registered.

@@ -42,7 +42,8 @@ try:
         # These controls were visually located in the Pixel 2 CI capture.
         assert size == (1920, 1080), 'Review UI coordinates for this display first'
         if index == 0:
-            adb('shell', 'input', 'tap', '99', '510')  # Add game folder
+            # Keep down/up apart for the software renderer's frame polling.
+            adb('shell', 'input', 'swipe', '99', '510', '99', '510', '350')  # Add game folder
             time.sleep(3)
             capture('folder-dialog.png')
             picker = adb('shell', 'dumpsys', 'activity', 'activities')
@@ -52,7 +53,7 @@ try:
             time.sleep(2)
             capture('folder-cancelled.png')
         else:
-            adb('shell', 'input', 'tap', '99', '700')  # Button mapping
+            adb('shell', 'input', 'swipe', '99', '700', '99', '700', '350')  # Button mapping
             time.sleep(2)
             capture('button-mapping.png')
         activity = adb('shell', 'dumpsys', 'activity', 'activities')
