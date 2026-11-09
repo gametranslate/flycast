@@ -1,0 +1,107 @@
+name: Clarity platforms
+on:
+  push:
+    branches: [codex/clarity-multiplatform]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: clarity-platforms-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  desktop:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-22.04
+            platform: Linux-x64
+          - os: macos-latest
+            platform: macOS-universal
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Linux dependencies
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ninja-build pkg-config libcurl4-openssl-dev libasound2-dev libpulse-dev libudev-dev libgl1-mesa-dev libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxfixes-dev libxi-dev libxss-dev libxkbcommon-dev libdbus-1-dev libwayland-dev wayland-protocols libdecor-0-dev libdrm-dev libgbm-dev libegl1-mesa-dev libgles2-mesa-dev xvfb xauth xdotool dbus-x11
+      - name: macOS dependencies
+        if: runner.os == 'macOS'
+        run: |
+          curl -fL --retry 3 https://github.com/KhronosGroup/MoltenVK/releases/download/v1.4.2/MoltenVK-macos.tar -o "$RUNNER_TEMP/MoltenVK.tar"
+          tar -xf "$RUNNER_TEMP/MoltenVK.tar" -C "$RUNNER_TEMP"
+          dylib=$(find "$RUNNER_TEMP/MoltenVK" -path '*/macOS/libMoltenVK.dylib' -print -quit)
+          test -n "$dylib"
+          echo "MOLTENVK_DYLIB=$dylib" >> "$GITHUB_ENV"
+      - name: Configure
+        shell: bash
+        run: |
+          args=(-G Ninja)
+          if [ "$RUNNER_OS" = macOS ]; then args=(-G Xcode -DCMAKE_OSX_ARCHITECTURES='x86_64;arm64' "-DMOLTENVK_DYLIB=$MOLTENVK_DYLIB"); fi
+          cmake -S . -B build/clarity "${args[@]}" -DCMAKE_BUILD_TYPE=Release -DFLYCAST_CLARITY=ON -DFLYCAST_CLARITY_SMOKE_TEST=OFF -DUSE_BREAKPAD=OFF -DUSE_DISCORD=OFF -DUSE_LUA=OFF -DUSE_OPENMP=OFF -DUSE_HOST_SDL=OFF -DUSE_HOST_LIBZIP=OFF -DFT_DISABLE_PNG=ON -DFT_DISABLE_BZIP2=ON -DFT_DISABLE_BROTLI=ON
+      - name: Build
+        run: cmake --build build/clarity --config Release --parallel 3
+      - name: Verify frontend and translations
+        run: |
+          python3 core/ui/clarity/tests/coverage_test.py
+          grep -q 'FLYCAST_CLARITY:BOOL=ON' build/clarity/CMakeCache.txt
+          grep -q 'FLYCAST_CLARITY_SMOKE_TEST:BOOL=OFF' build/clarity/CMakeCache.txt
+      - name: Package Linux
+        if: runner.os == 'Linux'
+        run: |
+          mkdir -p dist AppDir/usr/share/licenses/flycast
+          cp LICENSE AppDir/usr/share/licenses/flycast/
+          cp build/clarity/_deps/clarity_nfd-src/LICENSE AppDir/usr/share/licenses/flycast/NFD-LICENSE
+          curl -fL --retry 3 https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -o "$RUNNER_TEMP/linuxdeploy.AppImage"
+          chmod +x "$RUNNER_TEMP/linuxdeploy.AppImage"
+          APPIMAGE_EXTRACT_AND_RUN=1 "$RUNNER_TEMP/linuxdeploy.AppImage" --appdir AppDir --executable build/clarity/flycast --desktop-file shell/linux/flycast.desktop --icon-file shell/linux/flycast.png --output appimage
+          mv Flycast*.AppImage dist/Flycast-Clarity-Linux-x64.AppImage
+          sha256sum dist/* > dist/SHA256SUMS.txt
+      - name: Package macOS
+        if: runner.os == 'macOS'
+        run: |
+          mkdir -p dist
+          app=build/clarity/Release/Flycast.app
+          cp LICENSE "$app/Contents/Resources/LICENSE"
+          cp build/clarity/_deps/clarity_nfd-src/LICENSE "$app/Contents/Resources/NFD-LICENSE"
+          lipo -verify_arch x86_64 arm64 "$app/Contents/MacOS/Flycast"
+          codesign --force --deep --sign - "$app"
+          codesign --verify --deep --strict "$app"
+          ditto -c -k --sequesterRsrc --keepParent "$app" dist/Flycast-Clarity-macOS-universal.zip
+          shasum -a 256 dist/*.zip > dist/SHA256SUMS.txt
+      - uses: actions/upload-artifact@v7
+        with:
+          name: Clarity-${{ matrix.platform }}
+          path: dist/*
+          if-no-files-found: error
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - uses: actions/setup-java@v5
+        with:
+          java-version: '17'
+          distribution: temurin
+          cache: gradle
+      - name: Build Android preview
+        working-directory: shell/android-studio
+        run: ./gradlew assembleRelease -Pclarity=true -PclarityPreview=true --parallel --max-workers=3
+      - name: Package
+        run: |
+          mkdir -p dist
+          cp shell/android-studio/flycast/build/outputs/apk/release/*.apk dist/Flycast-Clarity-Android-preview.apk
+          sha256sum dist/*.apk > dist/SHA256SUMS.txt
+      - uses: actions/upload-artifact@v7
+        with:
+          name: Clarity-Android-preview
+          path: dist/*
+          if-no-files-found: error

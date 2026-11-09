@@ -1388,10 +1388,20 @@ void gui_display_ui()
     }
 #endif
 	ImGui::NewFrame();
+#if defined(CLARITY_DESKTOP_PICKER) || defined(CLARITY_ANDROID_PICKER)
+    if (clarity::platformPickerActive()) {
+        ImGui::GetIO().ClearEventsQueue();
+        ImGui::GetIO().ClearInputKeys();
+        ImGui::GetIO().ClearInputMouse();
+    }
+#endif
 #ifdef FLYCAST_CLARITY
     clarity::beginTheme();
 #if defined(_WIN32) && !defined(TARGET_UWP)
     clarity::pollWindowsPicker();
+#endif
+#if defined(CLARITY_DESKTOP_PICKER) || defined(CLARITY_ANDROID_PICKER)
+    clarity::pollPlatformPicker();
 #endif
 #endif
 	error_msg_shown = false;
@@ -1581,6 +1591,9 @@ void gui_term()
 	{
 #if defined(FLYCAST_CLARITY) && defined(_WIN32) && !defined(TARGET_UWP)
         clarity::shutdownWindowsPicker();
+#endif
+#if defined(CLARITY_DESKTOP_PICKER) || defined(CLARITY_ANDROID_PICKER)
+        clarity::shutdownPlatformPicker();
 #endif
 #ifdef FLYCAST_CLARITY
         clarity::closeMappings();

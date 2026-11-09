@@ -69,6 +69,9 @@ void select_file_popup(const char *prompt, StringCallback callback,
     clarity::windowsPicker(prompt, callback, selectFile, selectExtension);
     return;
 #elif defined(FLYCAST_CLARITY)
+#if defined(CLARITY_DESKTOP_PICKER) || defined(CLARITY_ANDROID_PICKER)
+    if (clarity::platformPicker(prompt, callback, selectFile, selectExtension)) return;
+#endif
     clarity_file_picker(prompt, callback, selectFile, selectExtension);
     return;
 #endif

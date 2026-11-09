@@ -21,6 +21,12 @@ void pollWindowsPicker();
 void shutdownWindowsPicker();
 bool windowsPickerActive();
 #endif
+#if defined(CLARITY_DESKTOP_PICKER) || defined(CLARITY_ANDROID_PICKER)
+bool platformPicker(const char* prompt, bool (*callback)(bool, std::string), bool file, const std::string& extension);
+void pollPlatformPicker();
+void shutdownPlatformPicker();
+bool platformPickerActive();
+#endif
 void beginTheme();
 void endTheme();
 const char* tr(const char* key);

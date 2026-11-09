@@ -8,6 +8,9 @@ fun gitVersionName(): String {
     }.standardOutput.asText.get().trim()
 }
 
+val clarityBuild = providers.gradleProperty("clarity").orElse("true").get().toBoolean()
+val clarityPreview = providers.gradleProperty("clarityPreview").orElse("false").get().toBoolean()
+
 android {
     namespace = "com.flycast.emulator"
     ndkVersion = "29.0.14206865"
@@ -18,7 +21,8 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.flycast.emulator"
+        applicationId = if (clarityBuild) "us.gametranslate.flycast" else "com.flycast.emulator"
+        manifestPlaceholders["flycastAppLabel"] = if (clarityBuild) "Flycast Clarity" else "Flycast"
         minSdk = 21
         targetSdk = 36
         versionCode = 8
@@ -28,6 +32,8 @@ android {
         externalNativeBuild {
             cmake {
                 arguments += "-DANDROID_ARM_MODE=arm"
+                arguments += "-DFLYCAST_CLARITY=" + if (clarityBuild) "ON" else "OFF"
+                arguments += "-DFLYCAST_CLARITY_SMOKE_TEST=OFF"
                 arguments += "-DSENTRY_UPLOAD_URL=" + (System.getenv("SENTRY_UPLOAD_URL") ?: "")
                 arguments += "-DUSE_OPENMP=OFF"
                 arguments += "-DANDROID_WEAK_API_DEFS=ON"
@@ -56,7 +62,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
-            signingConfig = signingConfigs.getByName("release")
+            signingConfig = signingConfigs.getByName(if (clarityPreview) "debug" else "release")
         }
     }
     compileOptions {

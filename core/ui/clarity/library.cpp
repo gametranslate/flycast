@@ -10,6 +10,7 @@
 #include <filesystem>
 #include <fstream>
 #include <mutex>
+#include <algorithm>
 
 namespace clarity {
 void appTopbar();
@@ -48,13 +49,18 @@ void handleDropPath(const std::string& droppedPath) {
 #if defined(_WIN32) && !defined(TARGET_UWP)
     if (windowsPickerActive()) return;
 #endif
+#if defined(CLARITY_DESKTOP_PICKER) || defined(CLARITY_ANDROID_PICKER)
+    if (platformPickerActive()) return;
+#endif
     try {
-        auto path = std::filesystem::weakly_canonical(std::filesystem::u8path(droppedPath)).u8string();
+        const bool document = droppedPath.rfind("content://", 0) == 0;
+        auto path = document ? droppedPath : std::filesystem::weakly_canonical(std::filesystem::u8path(droppedPath)).u8string();
         auto info = hostfs::storage().getFileInfo(path);
         if (info.isDirectory) {
             if (gui_state == GuiState::SelectDisk) return;
             auto& paths = config::ContentPath.get();
             auto equivalent = [&](const std::string& existing) {
+                if (document || existing.rfind("content://", 0) == 0) return existing == path;
                 std::error_code error;
                 return std::filesystem::equivalent(std::filesystem::u8path(existing), std::filesystem::u8path(path), error);
             };
@@ -63,7 +69,7 @@ void handleDropPath(const std::string& droppedPath) {
             }
             return;
         }
-        std::string extension = get_file_extension(path);
+        std::string extension = get_file_extension(info.name);
         bool supported = isDisc(extension) || extension == "zip" || extension == "7z" || extension == "elf"
             || extension == "bin" || extension == "lst" || extension == "dat";
         if (!supported || (gui_state == GuiState::SelectDisk && !isDisc(extension))) {
