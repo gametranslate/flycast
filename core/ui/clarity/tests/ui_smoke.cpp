@@ -328,6 +328,8 @@ void smokeBeforeFrame() {
 }
 void smokeAfterFrame() {
     if (nativeTest) return;
+    if (frame < 16*framesPerCase && frame%framesPerCase == framesPerCase-1
+            && !smokeFontsCovered()) fail(41, "translation-font-coverage");
     if (frame < cases*framesPerCase && frame%framesPerCase == framesPerCase-1) capture(frame/framesPerCase);
     ++frame;
 }

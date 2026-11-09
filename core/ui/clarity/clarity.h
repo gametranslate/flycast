@@ -65,5 +65,6 @@ void smokeUseTestController();
 void smokeScrollToBottom(bool value);
 void smokeQuickScroll();
 void smokeTestDrops();
+bool smokeFontsCovered();
 #endif
 }

@@ -289,6 +289,19 @@ void gui_loadFonts()
 	std::vector<FontEntry> boldFonts;
 	fontConfig.Flags |= ImFontFlags_NoLoadError;
 	boldFontConfig.Flags |= ImFontFlags_NoLoadError;
+
+#ifdef FLYCAST_CLARITY
+	// Embedded UI subsets guarantee translations even on minimal Linux installs.
+	// Preserve regional Han forms; system fonts below fill in other game names.
+	const std::string locale = i18n::getCurrentLocale();
+	ImFontConfig uiConfig = fontConfig;
+	uiConfig.FontNo = locale == "zh_TW" ? 1 : locale == "ko" ? 2 : 0;
+	data = loadAtlasFont("clarity/fonts/ClarityUI-Regular.ttc", dataSize);
+	io.Fonts->AddFontFromMemoryTTF(data, (int)dataSize, fontSize, &uiConfig);
+	uiConfig.DstFont = boldFont;
+	data = loadAtlasFont("clarity/fonts/ClarityUI-Bold.ttc", dataSize);
+	io.Fonts->AddFontFromMemoryTTF(data, (int)dataSize, fontSize, &uiConfig);
+#endif
 	
 	ImFontConfig emojiConfig = fontConfig;
 	emojiConfig.FontLoaderFlags |= ImGuiFreeTypeLoaderFlags_LoadColor | ImGuiFreeTypeBuilderFlags_Bitmap;

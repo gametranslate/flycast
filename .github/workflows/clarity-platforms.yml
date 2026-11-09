@@ -81,6 +81,7 @@ jobs:
           mkdir -p dist AppDir/usr/share/licenses/flycast
           cp LICENSE AppDir/usr/share/licenses/flycast/
           cp build/clarity/_deps/clarity_nfd-src/LICENSE AppDir/usr/share/licenses/flycast/NFD-LICENSE
+          cp core/ui/clarity/fonts/OFL.txt AppDir/usr/share/licenses/flycast/Clarity-Fonts-OFL.txt
           curl -fL --retry 3 https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage -o "$RUNNER_TEMP/linuxdeploy.AppImage"
           chmod +x "$RUNNER_TEMP/linuxdeploy.AppImage"
           APPIMAGE_EXTRACT_AND_RUN=1 "$RUNNER_TEMP/linuxdeploy.AppImage" --appdir AppDir --executable build/clarity/flycast --desktop-file shell/linux/flycast.desktop --icon-file shell/linux/flycast.png --output appimage
@@ -93,7 +94,9 @@ jobs:
           app=build/clarity/Release/Flycast.app
           cp LICENSE "$app/Contents/Resources/LICENSE"
           cp build/clarity/_deps/clarity_nfd-src/LICENSE "$app/Contents/Resources/NFD-LICENSE"
-          lipo -verify_arch x86_64 arm64 "$app/Contents/MacOS/Flycast"
+          cp core/ui/clarity/fonts/OFL.txt "$app/Contents/Resources/Clarity-Fonts-OFL.txt"
+          lipo "$app/Contents/MacOS/Flycast" -verify_arch x86_64 arm64
+          find "$app" -name '*.dylib' -exec lipo {} -verify_arch x86_64 arm64 \;
           codesign --force --deep --sign - "$app"
           codesign --verify --deep --strict "$app"
           ditto -c -k --sequesterRsrc --keepParent "$app" dist/Flycast-Clarity-macOS-universal.zip

@@ -2,6 +2,8 @@
 #include "clarity.h"
 #include "ui/settings.h"
 #include "ui/gui.h"
+#include "ui/gui_font.h"
+#include "imgui_internal.h"
 #include "ui/imgui_driver.h"
 #include "ui/IconsFontAwesome6.h"
 #include "oslib/resources.h"
@@ -458,6 +460,26 @@ bool display(const std::function<void(bool)>& finishSettings,
 // Used by the home/library screen, sharing the same top bar and preferences.
 void appTopbar() { topbar("Library"); }
 #ifdef FLYCAST_CLARITY_SMOKE_TEST
+bool smokeFontsCovered() {
+    auto check = [](const char* text) {
+        while (*text) {
+            unsigned int codepoint = 0;
+            const int bytes = ImTextCharFromUtf8(&codepoint, text, nullptr);
+            if (bytes <= 0) return false;
+            text += bytes;
+            if (codepoint < 32) continue;
+            if (!ImGui::GetIO().Fonts->Fonts[0]->IsGlyphInFont(codepoint)
+                    || !boldFont->IsGlyphInFont(codepoint)) {
+                ERROR_LOG(RENDERER, "Clarity %s missing glyph U+%04X", locale().c_str(), codepoint);
+                return false;
+            }
+        }
+        return true;
+    };
+    for (const auto& row : strings) if (!check(row.second[localeIndex()])) return false;
+    for (const char* name : localeNames) if (!check(name)) return false;
+    return true;
+}
 void smokeScrollToBottom(bool value) { smokeBottom = value; }
 int smokePage() { return (int)page; }
 void smokeConfigure(int index, bool dark, int selectedPage) {

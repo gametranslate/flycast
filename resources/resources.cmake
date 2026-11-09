@@ -2,7 +2,10 @@ cmrc_add_resource_library(flycast-resources ALIAS flycast::res NAMESPACE flycast
 
 if(FLYCAST_CLARITY AND NOT LIBRETRO)
     cmrc_add_resources(flycast-resources WHENCE core/ui
-        core/ui/clarity/gametranslate.png)
+        core/ui/clarity/gametranslate.png
+        core/ui/clarity/fonts/ClarityUI-Regular.ttc.zip
+        core/ui/clarity/fonts/ClarityUI-Bold.ttc.zip
+        core/ui/clarity/fonts/OFL.txt)
 endif()
 
 cmrc_add_resources(flycast-resources

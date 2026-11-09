@@ -218,12 +218,26 @@ void gui_updateStyle()
 #else
 	settings.display.uiScale = dpiScale;
 #endif
+#if defined(__ANDROID__) && defined(FLYCAST_CLARITY)
+	// High physical DPI on landscape phones must leave room for settings content.
+	// User scaling is still applied below this automatic fit.
+	const float fitScale = std::max(1.f, std::min(settings.display.width / 720.f,
+		settings.display.height / 540.f));
+	settings.display.uiScale = std::min(settings.display.uiScale, fitScale);
+#endif
    	// Limit scaling on small low-res screens
     if (settings.display.width <= 640 || settings.display.height <= 480)
     	settings.display.uiScale = std::min(1.2f, settings.display.uiScale);
 #endif
     settings.display.uiScale *= config::UIScaling / 100.f;
-	if (settings.display.uiScale == uiScale && ImGui::GetIO().Fonts->IsBuilt())
+	bool sameLocale = true;
+#ifdef FLYCAST_CLARITY
+	static std::string fontLocale;
+	const std::string currentLocale = clarity::locale();
+	sameLocale = fontLocale == currentLocale;
+	fontLocale = currentLocale;
+#endif
+	if (settings.display.uiScale == uiScale && sameLocale && ImGui::GetIO().Fonts->IsBuilt())
 		return;
 	uiScale = settings.display.uiScale;
 
@@ -312,6 +326,10 @@ void gui_set_mouse_wheel(float delta) {
 
 static void gui_newFrame()
 {
+#ifdef FLYCAST_CLARITY
+	// Rebuild regional font faces between frames when the UI locale changes.
+	gui_updateStyle();
+#endif
 	imguiDriver->newFrame();
 	ImGui::GetIO().DisplaySize.x = settings.display.width;
 	ImGui::GetIO().DisplaySize.y = settings.display.height;

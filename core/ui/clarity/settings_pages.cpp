@@ -9,6 +9,7 @@
 #include "network/ice.h"
 #include "imgui_stdlib.h"
 #include "version.h"
+#include "oslib/resources.h"
 #include <algorithm>
 #include <initializer_list>
 #include <functional>
@@ -474,6 +475,15 @@ void aboutPage() {
     ImGui::TextLinkOpenURL("GNU GPL · LICENSE", "https://github.com/flyinghead/flycast/blob/master/LICENSE");
     ImGui::TextLinkOpenURL("reicast", "https://github.com/skmp/reicast-emulator");
     ImGui::TextLinkOpenURL(tr("Third-party libraries"), "https://github.com/flyinghead/flycast/tree/master/core/deps");
+    ImGui::TextLinkOpenURL("Noto Sans CJK", "https://github.com/notofonts/noto-cjk");
+    if (ImGui::CollapsingHeader("Clarity UI CJK · SIL OFL 1.1")) {
+        static const std::string license = [] {
+            size_t size = 0;
+            auto bytes = resource::load("clarity/fonts/OFL.txt", size);
+            return bytes ? std::string(reinterpret_cast<const char*>(bytes.get()), size) : std::string{};
+        }();
+        ImGui::TextWrapped("%s", license.c_str());
+    }
 #ifdef CLARITY_DESKTOP_PICKER
     ImGui::TextLinkOpenURL("Native File Dialog Extended", "https://github.com/btzy/nativefiledialog-extended");
 #endif

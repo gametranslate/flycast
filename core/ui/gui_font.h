@@ -18,4 +18,7 @@
  */
 #pragma once
 
+struct ImFont;
+extern ImFont* boldFont;
+
 void gui_loadFonts();
