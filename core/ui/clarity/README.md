@@ -110,6 +110,10 @@ names and service/game content retain their original text.
 `python core/ui/clarity/tests/coverage_test.py` detects missing option references,
 checks all eight columns and compares printf placeholders. It is a source
 coverage check, not proof that every setting was exercised in a game.
+Clarity embeds regional Noto CJK subsets so its Chinese/Korean translations
+do not depend on installed system fonts. See `fonts/README.md` to regenerate
+them when adding strings. The native smoke suite checks every translated
+character in both weights, and verifies that ordinary frames reuse the atlas.
 `tests/option_scope_test.cpp` tests the actual upstream Option/Settings classes
 with in-memory storage: global/game isolation, protected overrides, profile
 removal and global language persistence. Compile it as C++17 with assertions
@@ -160,6 +164,13 @@ Manual runs can target all platforms, desktop, Linux, macOS or Android. The
 on a disposable Android 15 emulator, captures startup/mapping, and checks the
 system folder picker opens and cancels. These checks do not boot a game or
 substitute for physical device testing.
+Use `android_mode=capture` first after layout changes, review the actual device
+screenshots, then update control coordinates and run `android_mode=controls`.
+Both modes verify the APK signature before installing it. The mobile default
+scale is constrained by the landscape viewport, with user scaling applied
+afterward, so high DPI does not consume the settings content area.
+On Android, drag the visible scrollbar on the right to reach lower settings
+and button mappings. Content swiping is not implemented in this preview.
 
 Linux native-picker build dependencies include dbus-1, wayland-client and
 wayland-scanner. The desktop requires an xdg-desktop-portal provider for native

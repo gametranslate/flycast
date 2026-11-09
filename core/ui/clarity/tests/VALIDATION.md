@@ -104,3 +104,54 @@ checksums are verified by `.work/package-polished.py`.
 - Real gameplay, save-state hotkeys with a game, physical controllers, online
   services and completed native-folder selection on the new platforms remain
   unverified. CI render captures are not gameplay tests.
+
+## Multiplatform package verification (source 389dd06b4)
+
+- GitHub run `42593961869` successfully built Linux, universal macOS and all
+  four Android ABIs. Desktop packages were rebuilt with smoke testing OFF.
+- Windows DX11 and Linux OpenGL passed 114 full-window plus 114 compact
+  captures each. macOS passed the same suites at its runner-constrained
+  1024x642 and 640x480 viewports. Full cases passed navigation, DSP persistence,
+  synthetic A-button mapping/reload/unplug and Unicode drop-routing fixtures.
+- Bundled regional CJK subsets fixed missing Chinese/Korean UI glyphs on
+  Linux and macOS. Every catalog string and language-selector name is checked
+  against both font weights in all eight locales. Selected Chinese/Korean
+  screenshots were visually reviewed. Subsets include SIL OFL notices in
+  metadata and an embedded, readable About section; desktop packages also
+  contain the license as a separate file.
+- Linux/WSL AddressSanitizer passed both 114-frame suites after font changes,
+  including normal teardown and locale changes. Leak detection was disabled
+  for driver allocations; allocator mismatch/use-after-free detection stayed on.
+  A regression check now catches rebuilding the atlas on ordinary frames.
+- The downloaded AppImage launched in extract-and-run mode (without FUSE)
+  with fresh isolated XDG directories in Ubuntu 24.04/WSL/Xvfb, displayed
+  English/Night at 1280x900 for 40 seconds,
+  then exited cleanly through WM_DELETE_WINDOW. Geometry persisted. Initial
+  xdotool name lookup failed; xwininfo and a root-window screenshot confirmed
+  the visible Flycast window. The final package check uses xwininfo.
+- macOS ZIP inspection confirmed x86_64 and arm64 in both the app and bundled
+  MoltenVK, with no build-machine/Homebrew dependencies. CI verified ad-hoc
+  signing. The app targets macOS 10.15/11; bundled MoltenVK targets macOS 12.
+  The package is not Apple-notarized. JIT/gameplay and both CPU types on real
+  hardware were not exercised by these UI tests.
+- Android archive verification confirmed four ELF ABIs, the expected source
+  revision, embedded font notice and absence of the smoke harness. Run
+  `42597553521` verified the APK's v1/v2 signatures and Android Debug certificate,
+  installed the exact 389dd06b4 APK, and captured two successful launches on
+  Android 15 x86_64. The viewport is 1920x1080 at scale 2.0, versus 3.15 before
+  the fit adjustment. Run `42598062789` also opened/cancelled real DocumentsUI
+  and reached Button mapping; the device selector and port control were
+  visible. No physical controller or game was used. Content swiping did not
+  scroll ImGui. Final run `42598673992` passed with the same APK; dragging the
+  visible scrollbar from (1860,410) to (1860,560) exposed the A/B mapping rows.
+  Before/after screenshots were visually reviewed: the device/port section
+  moved out of view, mapping controls became reachable and the footer stayed
+  fixed. This confirms scrollbar navigation, not touch-content swipe support.
+- The clean Windows ZIP contains only flycast.exe, emu.cfg, LICENSE and
+  Clarity-Fonts-OFL.txt. All package checks reject personal files and test
+  artifacts. The older published Windows asset remains unchanged.
+- All four uploaded binaries and SHA256SUMS.txt were downloaded from the draft
+  release and matched the local SHA-256 checksums byte-for-byte. The release
+  tag `clarity-2026.11.09-multiplatform` targets the exact binary source
+  `389dd06b448bad8d2c07d693e9fbe8e6f10d051e`; later CI/docs changes do not
+  change the packaged source revision.
