@@ -4,11 +4,14 @@ import subprocess
 import time
 import re
 import struct
+import os
+import sys
 import xml.etree.ElementTree as ET
 
 output = Path('android-evidence')
 output.mkdir(exist_ok=True)
 package = 'us.gametranslate.flycast'
+capture_only = '--capture-only' in sys.argv
 
 def adb(*args, binary=False):
     result = subprocess.run(['adb', *args], check=True, capture_output=True, timeout=60)
@@ -20,7 +23,14 @@ def capture(name):
     (output / name).write_bytes(png)
     return struct.unpack('>II', png[16:24])
 
+sdk = Path(os.environ.get('ANDROID_HOME') or os.environ['ANDROID_SDK_ROOT'])
+signer = sorted((sdk / 'build-tools').glob('*/apksigner'))[-1]
+signature = subprocess.run([str(signer), 'verify', '--verbose', '--print-certs',
+                            'apk/Flycast-Clarity-Android-preview.apk'],
+                           check=True, capture_output=True, text=True, timeout=60)
+(output / 'signature.txt').write_text(signature.stdout)
 adb('install', '-g', 'apk/Flycast-Clarity-Android-preview.apk')
+(output / 'package.txt').write_text(adb('shell', 'dumpsys', 'package', package))
 adb('logcat', '-c')
 try:
     for index in range(2):
@@ -41,7 +51,9 @@ try:
         size = capture('startup.png' if index == 0 else 'relaunch.png')
         # These controls were visually located in the Pixel 2 CI capture.
         assert size == (1920, 1080), 'Review UI coordinates for this display first'
-        if index == 0:
+        if capture_only:
+            pass
+        elif index == 0:
             # Keep down/up apart for the software renderer's frame polling.
             adb('shell', 'input', 'swipe', '99', '510', '99', '510', '350')  # Add game folder
             time.sleep(3)
@@ -64,4 +76,8 @@ finally:
     log = adb('logcat', '-d')
     (output / 'logcat.txt').write_text(log)
 assert 'FATAL EXCEPTION' not in log and 'Fatal signal' not in log, 'Crash recorded'
-(output / 'PASS.txt').write_text('PASS: APK installed, two launches stayed alive, native DocumentsUI folder picker opened and cancelled, mapping navigation tapped and captured, no fatal crash in logcat. Screenshots require visual review. No game, physical controller, or completed SAF folder selection was tested.\n')
+if capture_only:
+    summary = 'Signature verified; APK installed; two launches captured without fatal crash. Controls NOT TESTED: review screenshots before choosing coordinates.'
+else:
+    summary = 'Signature verified; APK installed; two launches stayed alive; native DocumentsUI folder picker opened and cancelled; mapping navigation tapped and captured; no fatal crash in logcat.'
+(output / 'PASS.txt').write_text('PASS: ' + summary + ' Screenshots require visual review. No game, physical controller, or completed SAF folder selection was tested.\n')

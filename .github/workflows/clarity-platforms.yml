@@ -13,6 +13,11 @@ on:
         description: Existing workflow run containing the Android preview (android-check only)
         type: string
         default: '0'
+      android_mode:
+        description: Capture a new Android layout before updating control-test coordinates
+        type: choice
+        options: [controls, capture]
+        default: controls
 permissions:
   contents: read
   actions: read
@@ -158,7 +163,7 @@ jobs:
           target: default
           profile: pixel_2
           emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
-          script: python3 core/ui/clarity/tests/run_android_startup.py
+          script: python3 core/ui/clarity/tests/run_android_startup.py ${{ inputs.android_mode == 'capture' && '--capture-only' || '' }}
       - uses: actions/upload-artifact@v7
         if: always()
         with:
