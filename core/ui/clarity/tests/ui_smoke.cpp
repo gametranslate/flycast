@@ -216,6 +216,13 @@ void smokeBeforeFrame() {
                     interactionStep++; stepFrame = -1;
                 }
             } else if (interactionStep == 5) {
+                // macOS runners can constrain the window to a short display.
+                // Scroll the actual content before targeting the A binding.
+                if (stepFrame <= 1) {
+                    auto size = ImGui::GetIO().DisplaySize;
+                    ImGui::GetIO().AddMousePosEvent(size.x * .75f, size.y * .55f);
+                    if (stepFrame == 1) ImGui::GetIO().AddMouseWheelEvent(0, -5);
+                }
                 // Allow layout to settle, then use the visible A mapping widget.
                 if (stepFrame >= 8 && stepFrame <= 11) {
                     auto it = items.find("map-A");

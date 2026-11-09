@@ -3,6 +3,7 @@ from pathlib import Path
 import subprocess
 import time
 import re
+import struct
 import xml.etree.ElementTree as ET
 
 output = Path('android-evidence')
@@ -17,6 +18,7 @@ def capture(name):
     png = adb('exec-out', 'screencap', '-p', binary=True)
     assert png.startswith(b'\x89PNG') and len(png) > 5000
     (output / name).write_bytes(png)
+    return struct.unpack('>II', png[16:24])
 
 adb('install', '-g', 'apk/Flycast-Clarity-Android-preview.apk')
 adb('logcat', '-c')
@@ -32,11 +34,27 @@ try:
         window = adb('exec-out', 'cat', '/sdcard/clarity-window.xml')
         (output / f'window-{index}.xml').write_text(window)
         for node in ET.fromstring(window).iter('node'):
-            if node.get('text') == 'Got it' and node.get('package') == 'com.android.systemui':
+            if node.get('text') == 'Got it' and node.get('package') in ('android', 'com.android.systemui'):
                 x1, y1, x2, y2 = map(int, re.findall(r'\d+', node.get('bounds')))
                 adb('shell', 'input', 'tap', str((x1+x2)//2), str((y1+y2)//2))
                 time.sleep(1)
-        capture('startup.png' if index == 0 else 'relaunch.png')
+        size = capture('startup.png' if index == 0 else 'relaunch.png')
+        # These controls were visually located in the Pixel 2 CI capture.
+        assert size == (1920, 1080), 'Review UI coordinates for this display first'
+        if index == 0:
+            adb('shell', 'input', 'tap', '99', '510')  # Add game folder
+            time.sleep(3)
+            capture('folder-dialog.png')
+            picker = adb('shell', 'dumpsys', 'activity', 'activities')
+            (output / 'folder-activity.txt').write_text(picker)
+            assert any('documentsui' in line for line in picker.splitlines() if 'ResumedActivity' in line), 'System document picker did not open'
+            adb('shell', 'input', 'keyevent', 'KEYCODE_BACK')
+            time.sleep(2)
+            capture('folder-cancelled.png')
+        else:
+            adb('shell', 'input', 'tap', '99', '700')  # Button mapping
+            time.sleep(2)
+            capture('button-mapping.png')
         activity = adb('shell', 'dumpsys', 'activity', 'activities')
         (output / f'activity-{index}.txt').write_text(activity)
         assert any(package in line for line in activity.splitlines() if 'mResumedActivity' in line or 'topResumedActivity' in line), 'Flycast is not foreground'
@@ -45,4 +63,4 @@ finally:
     log = adb('logcat', '-d')
     (output / 'logcat.txt').write_text(log)
 assert 'FATAL EXCEPTION' not in log and 'Fatal signal' not in log, 'Crash recorded'
-(output / 'PASS.txt').write_text('PASS: APK installed, app stayed alive and foreground for two 15-second launches, screenshots captured, no fatal crash in logcat. No game, touch navigation, controller, or SAF selection was tested.\n')
+(output / 'PASS.txt').write_text('PASS: APK installed, two launches stayed alive, native DocumentsUI folder picker opened and cancelled, mapping navigation tapped and captured, no fatal crash in logcat. Screenshots require visual review. No game, physical controller, or completed SAF folder selection was tested.\n')
