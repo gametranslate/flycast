@@ -1,15 +1,20 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
-// Opt-in renderer test: captures the actual ImGui DX11 backbuffer and exits.
+// Opt-in renderer test: captures the actual DX11/OpenGL backbuffer and exits.
 // No game, desktop input injection, user configuration or screen-capture service.
 #include "ui/clarity/clarity.h"
 #include "ui/gui.h"
+#ifdef _WIN32
 #include "rend/dx11/dx11context.h"
+#else
+#include "wsi/gl_context.h"
+#endif
 #include "stb_image_write.h"
 #include <cstdlib>
 #include <cstdio>
 #include <vector>
 #include <map>
 #include <filesystem>
+#include <algorithm>
 #include "imgui.h"
 #include "input/gamepad_device.h"
 #include "imgui_internal.h"
@@ -47,6 +52,7 @@ void fail(int code, const char* key) {
     std::exit(code);
 }
 void capture(int index) {
+#ifdef _WIN32
     auto* context = DX11Context::Instance();
     ComPtr<ID3D11Resource> resource;
     context->getRenderTarget()->GetResource(&resource.get());
@@ -77,6 +83,25 @@ void capture(int index) {
         }
     }
     context->getDeviceContext()->Unmap(copy, 0);
+#else
+    struct { int Width, Height; } desc{settings.display.width, settings.display.height};
+    if (desc.Width <= 0 || desc.Height <= 0) std::exit(2);
+    std::vector<unsigned char> raw(desc.Width * desc.Height * 4), rgba(raw.size());
+    GLint framebuffer, readBuffer, packing;
+    glGetIntegerv(GL_READ_FRAMEBUFFER_BINDING, &framebuffer);
+    glGetIntegerv(GL_READ_BUFFER, &readBuffer);
+    glGetIntegerv(GL_PACK_ALIGNMENT, &packing);
+    glBindFramebuffer(GL_READ_FRAMEBUFFER, 0);
+    glReadBuffer(GL_BACK);
+    glPixelStorei(GL_PACK_ALIGNMENT, 1);
+    glReadPixels(0, 0, desc.Width, desc.Height, GL_RGBA, GL_UNSIGNED_BYTE, raw.data());
+    glBindFramebuffer(GL_READ_FRAMEBUFFER, framebuffer);
+    glReadBuffer(readBuffer);
+    glPixelStorei(GL_PACK_ALIGNMENT, packing);
+    for (int y = 0; y < desc.Height; ++y)
+        std::copy_n(raw.data() + (desc.Height - 1 - y) * desc.Width * 4,
+            desc.Width * 4, rgba.data() + y * desc.Width * 4);
+#endif
     char path[64];
     std::snprintf(path, sizeof(path), "clarity-native-%02d.png", index);
     std::string output = get_writable_config_path(path);
@@ -97,6 +122,7 @@ void smokeBeforeFrame() {
         nativeTest |= config::loadBool("qa-preserve", "native-dialog", false);
         configured = true;
     }
+#ifdef _WIN32
     if (nativeTest) {
         if (nativeFrame == 0) {
             smokeConfigure(0,false,0);
@@ -130,12 +156,13 @@ void smokeBeforeFrame() {
         ++nativeFrame;
         return;
     }
+#endif
     ImGui::GetIO().ClearEventsQueue();
     ImGui::GetIO().ConfigInputTrickleEventQueue = false;
     ImGui::GetIO().AddFocusEvent(true);
     int index = frame / framesPerCase;
     if (index >= cases) {
-        if (ImGui::GetIO().DisplaySize.x >= 1000) {
+        if (ImGui::GetIO().DisplaySize.x >= uiScaled(1000)) {
             auto click = [](const char* key) {
                 auto it = items.find(key);
                 if (it == items.end()) fail(10, key);
@@ -251,8 +278,8 @@ void smokeBeforeFrame() {
         if (config::loadStr("qa-preserve", "unknown") != "keep-me") fail(12, "preserve");
         auto report = std::fopen("clarity-smoke-pass.txt", "w");
         if (!report) std::exit(6);
-        std::fprintf(report, "PASS: 114 native DX11 renders: 8 locales x 2 themes for library, controllers and About; all 11 Settings pages; GGPO/Naomi/Battle, quick menu, cheats and Advanced bottom; 32 additional quick-menu locale/theme captures at top and bottom with a long title. Unicode folder drop, duplicate prevention, persistence, game/disc routing and busy-state guard passed. Unknown config preserved.\nWidgets: %s\n",
-            ImGui::GetIO().DisplaySize.x >= 1000 ? "PASS: navigation, DSP save/reload, mapping A through input detection, mapping-file reload, synthetic unplug, return to library; original audio samples and resolution preserved." : "SKIPPED: compact rendering only");
+        std::fprintf(report, "PASS: 114 native renders: 8 locales x 2 themes for library, controllers and About; all 11 Settings pages; GGPO/Naomi/Battle, quick menu, cheats and Advanced bottom; 32 additional quick-menu locale/theme captures at top and bottom with a long title. Unicode folder drop, duplicate prevention, persistence, game/disc routing and busy-state guard passed. Unknown config preserved.\nWidgets: %s\n",
+            ImGui::GetIO().DisplaySize.x >= uiScaled(1000) ? "PASS: navigation, DSP save/reload, mapping A through input detection, mapping-file reload, synthetic unplug, return to library; original audio samples and resolution preserved." : "SKIPPED: compact rendering only");
         std::fclose(report);
         std::exit(0);
     }

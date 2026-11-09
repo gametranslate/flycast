@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 // Included by settings_controls.cpp. Reuses upstream input detection, mapping
 // tables, combo semantics and device names without copying the input backend.
-#include "clarity/clarity.h"
+#include "ui/clarity/clarity.h"
 namespace clarity {
 namespace {
 int mappingSystem = DC_PLATFORM_DREAMCAST;

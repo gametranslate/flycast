@@ -43,13 +43,29 @@ jobs:
         run: |
           args=(-G Ninja)
           if [ "$RUNNER_OS" = macOS ]; then args=(-G Xcode -DCMAKE_OSX_ARCHITECTURES='x86_64;arm64' "-DMOLTENVK_DYLIB=$MOLTENVK_DYLIB"); fi
-          cmake -S . -B build/clarity "${args[@]}" -DCMAKE_BUILD_TYPE=Release -DFLYCAST_CLARITY=ON -DFLYCAST_CLARITY_SMOKE_TEST=OFF -DUSE_BREAKPAD=OFF -DUSE_DISCORD=OFF -DUSE_LUA=OFF -DUSE_OPENMP=OFF -DUSE_HOST_SDL=OFF -DUSE_HOST_LIBZIP=OFF -DFT_DISABLE_PNG=ON -DFT_DISABLE_BZIP2=ON -DFT_DISABLE_BROTLI=ON
+          cmake -S . -B build/clarity "${args[@]}" -DCMAKE_BUILD_TYPE=Release -DFLYCAST_CLARITY=ON -DFLYCAST_CLARITY_SMOKE_TEST=ON -DUSE_BREAKPAD=OFF -DUSE_DISCORD=OFF -DUSE_LUA=OFF -DUSE_OPENMP=OFF -DUSE_HOST_SDL=OFF -DUSE_HOST_LIBZIP=OFF -DFT_DISABLE_PNG=ON -DFT_DISABLE_BZIP2=ON -DFT_DISABLE_BROTLI=ON
       - name: Build
         run: cmake --build build/clarity --config Release --parallel 3
       - name: Verify frontend and translations
         run: |
           python3 core/ui/clarity/tests/coverage_test.py
           grep -q 'FLYCAST_CLARITY:BOOL=ON' build/clarity/CMakeCache.txt
+      - name: Native OpenGL UI checks
+        shell: bash
+        run: |
+          exe=build/clarity/flycast
+          if [ "$RUNNER_OS" = macOS ]; then exe=build/clarity/Release/Flycast.app/Contents/MacOS/Flycast; fi
+          python3 core/ui/clarity/tests/run_desktop_smoke.py "$exe" smoke-evidence
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: Clarity-QA-${{ matrix.platform }}
+          path: smoke-evidence
+          if-no-files-found: ignore
+      - name: Rebuild user Release without test harness
+        run: |
+          cmake -S . -B build/clarity -DFLYCAST_CLARITY_SMOKE_TEST=OFF
+          cmake --build build/clarity --config Release --parallel 3
           grep -q 'FLYCAST_CLARITY_SMOKE_TEST:BOOL=OFF' build/clarity/CMakeCache.txt
       - name: Package Linux
         if: runner.os == 'Linux'

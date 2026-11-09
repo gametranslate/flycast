@@ -182,6 +182,7 @@
 {Page::System, "The new scale is applied when you save."},
 {Page::System, "UI Scaling"},
 {Page::System, "USA"},
+{Page::System, "Use SAF File Picker"},
 {Page::Video, "Anisotropic Filtering"},
 {Page::Video, "Aspect Ratio"},
 {Page::Video, "Automatic Frame Skipping"},

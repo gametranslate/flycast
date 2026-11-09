@@ -1387,7 +1387,6 @@ void gui_display_ui()
         ImGui::GetIO().ClearInputMouse();
     }
 #endif
-	ImGui::NewFrame();
 #if defined(CLARITY_DESKTOP_PICKER) || defined(CLARITY_ANDROID_PICKER)
     if (clarity::platformPickerActive()) {
         ImGui::GetIO().ClearEventsQueue();
@@ -1395,6 +1394,7 @@ void gui_display_ui()
         ImGui::GetIO().ClearInputMouse();
     }
 #endif
+	ImGui::NewFrame();
 #ifdef FLYCAST_CLARITY
     clarity::beginTheme();
 #if defined(_WIN32) && !defined(TARGET_UWP)

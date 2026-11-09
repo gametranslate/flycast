@@ -146,12 +146,18 @@ void library(Boxart& boxart) {
         if (button(tabs[i], platform == i)) platform = i;
     }
     ImGui::Spacing();
+#ifndef __ANDROID__
     if (!games.empty()) muted(tr(disk ? "Drop a disc image here to insert it." : "Drop a game to play, or a folder to add it to your library."));
+#endif
     if (games.empty()) {
         ImGui::BeginChild("welcome", ImVec2(0,0), ImGuiChildFlags_AutoResizeY | ImGuiChildFlags_Borders);
         ImGui::TextColored(accent(), ICON_FA_COMPACT_DISC "  DREAMCAST / NAOMI / ATOMISWAVE");
+#ifdef __ANDROID__
+        heading(disk ? "Choose a disc" : "Your library", "Choose a game folder using the system picker, then tap a game to play.");
+#else
         heading(disk ? "Choose a disc" : "Drop a game here", disk ? "Drop a disc image here to insert it."
-            : "Drag a game from Windows Explorer to start playing. Drop a folder to add its games to your library.");
+            : "Drag a game from your file manager to start playing. Drop a folder to add its games to your library.");
+#endif
         if (disk) { if (iconButton(ICON_FA_COMPACT_DISC, "Choose a disc")) open = true; }
         else if (iconButton(ICON_FA_FOLDER_PLUS, "Add game folder")) add = true;
         ImGui::EndChild();

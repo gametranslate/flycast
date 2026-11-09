@@ -123,6 +123,10 @@ void beginTheme() {
     s.ItemSpacing = ScaledVec2(10, 10);
     s.CellPadding = ScaledVec2(12, 12);
     s.ScrollbarSize = px(12);
+#ifdef __ANDROID__
+    s.TouchExtraPadding = ScaledVec2(4, 4);
+    s.ScrollbarSize = px(20);
+#endif
     s.FrameBorderSize = px(1);
     s.DisabledAlpha = night ? .65f : .82f;
 }
@@ -286,6 +290,11 @@ bool display(const std::function<void(bool)>& finishSettings,
     ImGui::PopStyleVar(2);
     topbar("Settings");
     bool compact = ImGui::GetContentRegionAvail().x < px(900);
+    int count = (int)Page::Count;
+#if defined(NDEBUG) && !defined(DEBUGFAST) && !FC_PROFILER
+    count--;
+#endif
+#ifndef __ANDROID__
     float sidebarWidth = px(compact ? 84 : 245);
     if (!compact) for (const char* label : pageKeys)
         sidebarWidth = std::max(sidebarWidth, ImGui::CalcTextSize(tr(label)).x + px(104));
@@ -298,10 +307,6 @@ bool display(const std::function<void(bool)>& finishSettings,
 #endif
     if (!compact) muted(tr("settings"));
     ImGui::BeginChild("navigation", ImVec2(0, -px(compact ? 100 : 112)), ImGuiChildFlags_None, ImGuiWindowFlags_NoBackground);
-    int count = (int)Page::Count;
-#if defined(NDEBUG) && !defined(DEBUGFAST) && !FC_PROFILER
-    count--;
-#endif
     for (int i = 0; i < count; ++i) {
         std::string label = std::string(pageIcons[i]) + (compact ? "" : std::string("  ") + tr(pageKeys[i])) + "##nav" + std::to_string(i);
         ImGui::PushStyleColor(ImGuiCol_Button, (int)page == i ? tint() : ImGui::GetStyleColorVec4(ImGuiCol_ChildBg));
@@ -322,9 +327,25 @@ bool display(const std::function<void(bool)>& finishSettings,
     ImGui::EndChild();
     ImGui::PopStyleVar();
     ImGui::SameLine(0, 0);
+#endif
     ImGui::PushStyleColor(ImGuiCol_ChildBg, color(night ? 0x101722 : 0xffffff));
     ImGui::BeginChild("workspace", ImVec2(0, 0), ImGuiChildFlags_AlwaysUseWindowPadding);
     ImGui::PopStyleColor();
+#ifdef __ANDROID__
+    if (button(game_started ? "Back to game" : "Library")) save = close = true;
+    ImGui::SameLine();
+    ImGui::SetNextItemWidth(-1);
+    std::string selectedCategory = std::string(pageIcons[(int)page]) + "  " + tr(pageKeys[(int)page]);
+    if (ImGui::BeginCombo("##settings-category", selectedCategory.c_str())) {
+        for (int i = 0; i < count; ++i) {
+            std::string category = std::string(pageIcons[i]) + "  " + tr(pageKeys[i]);
+            if (ImGui::Selectable(category.c_str(), (int)page == i, 0, ScaledVec2(0, 40))) {
+                closeMappings(); page = (Page)i; search[0] = 0; save = true;
+            }
+        }
+        ImGui::EndCombo();
+    }
+#endif
     ImGui::SetNextItemWidth(-1);
     ImGui::InputTextWithHint("##search", tr("Find a setting or category..."), search, sizeof(search));
     static Page lastPage = Page::Count;

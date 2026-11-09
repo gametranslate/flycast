@@ -4,6 +4,7 @@ on:
   push:
     branches-ignore:
       - 'l10n_**'
+      - 'codex/clarity-multiplatform'
   pull_request:
 
 jobs:

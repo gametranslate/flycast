@@ -26,8 +26,8 @@ if(NOT LIBRETRO)
             target_sources(${PROJECT_NAME} PRIVATE clarity/android_picker.cpp)
             target_compile_definitions(${PROJECT_NAME} PRIVATE CLARITY_ANDROID_PICKER)
         endif()
-        option(FLYCAST_CLARITY_SMOKE_TEST "Run deterministic DX11 UI capture test (not a user build)" OFF)
-        if(FLYCAST_CLARITY_SMOKE_TEST AND WIN32 AND NOT WINDOWS_STORE AND USE_DX11)
+        option(FLYCAST_CLARITY_SMOKE_TEST "Run deterministic desktop UI capture test (not a user build)" OFF)
+        if(FLYCAST_CLARITY_SMOKE_TEST AND NOT WINDOWS_STORE AND NOT ANDROID AND ((WIN32 AND USE_DX11) OR (NOT WIN32 AND USE_OPENGL)))
             target_sources(${PROJECT_NAME} PRIVATE clarity/tests/ui_smoke.cpp)
             set_property(SOURCE
                 "${CMAKE_CURRENT_SOURCE_DIR}/gui.cpp"

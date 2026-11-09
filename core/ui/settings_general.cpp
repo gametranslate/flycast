@@ -164,7 +164,7 @@ void addContentPath(bool start)
 			addContentPathCallback(selection);
 		return true;
     });
-#ifdef __ANDROID__
+#if defined(__ANDROID__) && !defined(FLYCAST_CLARITY)
     if (start)
     {
     	bool supported = hostfs::addStorage(true, false, title, [](bool cancelled, std::string selection) {

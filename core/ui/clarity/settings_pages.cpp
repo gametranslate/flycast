@@ -136,6 +136,9 @@ void finishFolders() {
 }
 
 void generalPage() {
+#ifdef __ANDROID__
+    OptionCheckbox(tr("Use SAF File Picker"), config::UseSafFilePicker);
+#endif
     section(tr("Appearance"));
     if (OptionSlider(tr("UI Scaling"), config::UIScaling, 50, 200, tr("Adjust the size of UI elements and fonts."), "%d%%"))
         uiUserScaleUpdated = true;

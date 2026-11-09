@@ -866,7 +866,7 @@ bool sdl_recreate_window(u32 flags)
 		}
 	}
 #endif
-#if defined(FLYCAST_CLARITY) && defined(_WIN32) && !defined(TARGET_UWP)
+#if defined(FLYCAST_CLARITY) && (defined(CLARITY_DESKTOP_PICKER) || (defined(_WIN32) && !defined(TARGET_UWP)))
 	const bool initializeClarityWindow = window == nullptr
 			&& !config::loadBool("clarity", "WindowSizeInitialized");
 	if (initializeClarityWindow
@@ -919,7 +919,7 @@ bool sdl_recreate_window(u32 flags)
 	}
 	settings.display.width = windowPos.w * hdpiScaling;
 	settings.display.height = windowPos.h * hdpiScaling;
-#if defined(FLYCAST_CLARITY) && defined(_WIN32) && !defined(TARGET_UWP)
+#if defined(FLYCAST_CLARITY) && (defined(CLARITY_DESKTOP_PICKER) || (defined(_WIN32) && !defined(TARGET_UWP)))
 	if (initializeClarityWindow)
 	{
 		// Persist the new restore size together with the migration marker, even
