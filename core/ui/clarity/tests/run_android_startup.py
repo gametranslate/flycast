@@ -55,7 +55,7 @@ try:
             pass
         elif index == 0:
             # Keep down/up apart for the software renderer's frame polling.
-            adb('shell', 'input', 'swipe', '99', '510', '99', '510', '350')  # Add game folder
+            adb('shell', 'input', 'swipe', '225', '390', '225', '390', '350')  # Add game folder
             time.sleep(3)
             capture('folder-dialog.png')
             picker = adb('shell', 'dumpsys', 'activity', 'activities')
@@ -65,9 +65,12 @@ try:
             time.sleep(2)
             capture('folder-cancelled.png')
         else:
-            adb('shell', 'input', 'swipe', '99', '700', '99', '700', '350')  # Button mapping
+            adb('shell', 'input', 'swipe', '225', '572', '225', '572', '350')  # Button mapping
             time.sleep(2)
             capture('button-mapping.png')
+            adb('shell', 'input', 'swipe', '1700', '750', '1700', '450', '600')
+            time.sleep(2)
+            capture('button-mapping-scrolled.png')
         activity = adb('shell', 'dumpsys', 'activity', 'activities')
         (output / f'activity-{index}.txt').write_text(activity)
         assert any(package in line for line in activity.splitlines() if 'mResumedActivity' in line or 'topResumedActivity' in line), 'Flycast is not foreground'
